@@ -1,0 +1,240 @@
+window.STOTT = window.STOTT || {};
+window.STOTT.quiz = window.STOTT.quiz || [];
+(function () {
+  const Q = [];
+  let n = 0;
+  function add(topic, q, a, flag) {
+    n++;
+    Q.push({ id: "eq" + n, topic, q, a, flag: flag || "" });
+  }
+
+  const T_BASIC = "Basic Principles";
+  const T_ANAT = "Anatomy — Terminology";
+  const T_OIA = "Anatomy — Muscle O/I/A";
+  const T_FUNC = "Anatomy — Muscle Function";
+  const T_POST = "Postural Analysis";
+  const T_MAT = "Mat";
+  const T_REF = "Reformer";
+  const T_CAD = "Cadillac";
+  const T_CHAIR = "Stability Chair";
+  const T_BAR = "Barrels";
+  const T_PROG = "Programming";
+
+  add(T_BASIC, "Which of the following is NOT one of the 5 STOTT Basic Principles: Ribcage Placement, Pelvic Placement, or \"Improving muscular awareness/cognition\"?", "\"Improving muscular awareness/cognition\" is not one of the named 5 (the 5 are Breathing, Pelvic Placement, Rib Cage Placement, Scapular Movement & Stabilization, Head & Cervical Placement).", "no source answer key, best-answer supplied");
+  add(T_BASIC, "In Essential programming, which is the LAST thing to consider: awareness of the Basic Principles, spinal segmentation, or improvement of limb/extremity strength?", "Improvement of limb/extremity strength — Essential programming prioritizes the Basic Principles and spinal articulation first.", "best-answer supplied");
+  add(T_BASIC, "Which of the following is NOT one of Joseph Pilates' original principles: Breathing, Precision, Scapular Placement, or Control?", "Scapular Placement (Joseph Pilates' originals were Breathing, Concentration, Control, Centering, Precision, Flow; Scapular Placement is a STOTT biomechanical principle).");
+  add(T_BASIC, "Which of the following does NOT represent how STOTT Pilates has evolved from Joseph Pilates' original method?", "\"Focus on more flat spine than original method\" — incorrect; STOTT emphasizes maintaining the spine's natural curves, not flattening them.");
+  add(T_BASIC, "True or False: Pilates tones the muscles, versus weightlifting, which grows muscles.", "True.");
+  add(T_BASIC, "What is included in an introductory (Essential) workout?", "The five Basic Principles, mobilization of the spine, mobilization of shoulders and hips, and initial strengthening of the abdominals.");
+  add(T_BASIC, "What questions should you ask a client before performing a postural analysis (information gathering)?", "Injuries or pain; health concerns; whether undergoing therapy; past/current sports activity; prior Pilates training; occupation; exercise goals. Also: name, history of injuries/surgeries, current illnesses/medications, whether receiving therapy.");
+  add(T_BASIC, "When in doubt about which version/modification of an exercise to give a client, what should you always start with?", "An easier modification.");
+
+  add(T_ANAT, "Which plane do Flexion and Extension occur in?", "Sagittal plane.");
+  add(T_ANAT, "Which plane does rotation of the femur occur in?", "Horizontal (transverse) plane.");
+  add(T_ANAT, "What is the inward rotation of the anterior aspect of the femur called?", "Medial rotation.");
+  add(T_ANAT, "In anatomical position, which direction do the palms face?", "Anteriorly (forward).");
+  add(T_ANAT, "What does \"Anterior\" mean?", "Front of the body (not \"toward the head,\" which is superior/cephalic).");
+  add(T_ANAT, "Which anatomical direction pairing is INCORRECT: superior=toward the head; posterior=toward the back; medial=toward the midline; deep=toward the surface?", "\"Deep = toward the surface\" is incorrect — deep means away from the surface; superficial means toward the surface.");
+  add(T_ANAT, "What does ipsilateral mean?", "Same side of the body.");
+  add(T_ANAT, "What does contra-lateral mean?", "Opposite side of the body.");
+  add(T_ANAT, "Rotation occurs in which plane?", "Transverse plane.");
+  add(T_ANAT, "What is another term used to describe the mid-sagittal plane?", "Median plane (a.k.a. \"medial plane\" on some answer keys).");
+  add(T_ANAT, "Movements in the Sagittal Plane occur around which axis?", "Frontal axis.");
+  add(T_ANAT, "Movements in the Frontal Plane occur around which axis?", "Sagittal axis.");
+  add(T_ANAT, "Movements in the Transverse Plane occur around which axis?", "Vertical axis.");
+  add(T_ANAT, "What movements occur in the Sagittal Plane?", "Flexion, extension, anterior pelvic tilt, posterior pelvic tilt, plantarflexion, dorsiflexion.");
+  add(T_ANAT, "What movements occur in the Frontal Plane?", "Lateral flexion, elevation, depression, upward/downward rotation (scapula), abduction, adduction.", "one source lists elbow flexion/extension here in error — that's sagittal-plane, treat with caution");
+  add(T_ANAT, "What movements occur in the Transverse Plane?", "Rotation, internal/external rotation (shoulder/hip), forearm supination/pronation, protraction, retraction.");
+  add(T_ANAT, "What movement is multiplanar?", "Circumduction (shoulder joint/hip).");
+  add(T_ANAT, "True or False: Circular movement of the arm and shoulder is multiplanar — this is where we get the most movement.", "True.");
+  add(T_ANAT, "Clockwise is a rotation to which side? Counter-clockwise?", "Clockwise = right; counter-clockwise = left.");
+  add(T_ANAT, "What type of joint is the shoulder (glenohumeral) joint?", "Ball-and-socket joint.");
+  add(T_ANAT, "The shoulder and hip joints are both ball-and-socket joints. True or False?", "True.");
+  add(T_ANAT, "The knee and elbow are the only hinge joints. True or False?", "True.");
+  add(T_ANAT, "Rotation does NOT occur at which of the following joints: knee, pelvis, elbow, spine?", "Elbow joint.");
+  add(T_ANAT, "The following joints rotate: spine, scapula, pelvis, knee. True or False?", "True.");
+  add(T_ANAT, "Rotation in a flexed position only occurs at which joint (of: hip, elbow, spine, knee, pelvis)?", "Elbow joint.");
+  add(T_ANAT, "Which of the following is an example of a facet joint: clavicle, spine, or rib cage?", "Spine (facet/zygapophyseal joints connect adjacent vertebrae).");
+  add(T_ANAT, "Which are fixed (immovable) joints: skull and teeth; fingers and feet; or elbows and knees?", "Skull and teeth (sutures — synarthroses).");
+  add(T_ANAT, "What type of joint is formed by the 1st and 2nd cervical vertebrae (atlas & axis)?", "Pivot joint.");
+  add(T_ANAT, "What is the term for the process where the clavicle and scapula meet?", "Acromion process.");
+  add(T_ANAT, "What scapular landmark articulates with the humerus?", "Glenoid fossa (cavity).");
+  add(T_ANAT, "Which joint involves the glenoid fossa?", "Shoulder joint.");
+  add(T_ANAT, "Where does the humerus attach at the shoulder?", "Glenoid fossa (cavity) of the scapula.");
+  add(T_ANAT, "Which of the following is a component of the scapula: humerus, \"other bone landmarks,\" or inferior angle?", "Inferior angle (the humerus is a separate bone).");
+  add(T_ANAT, "The scapula articulates with which bone: ribs, clavicle, or spine?", "Clavicle (at the acromioclavicular joint).");
+  add(T_ANAT, "Which is NOT an ideal position of the scapula: between T2–T7; resting flat against the ribcage; spinous-process-to-scapula distance of 3–4in (7.5–10cm); or medial border perpendicular to the floor?", "\"Medial border of the scapula perpendicular to the floor\" is not standard.", "low confidence, best-answer supplied");
+  add(T_ANAT, "Which is NOT a scapular movement: adduction (retraction), depression, lateral rotation, or downward rotation?", "Lateral rotation (scapular rotation is upward/downward, not lateral/medial).");
+  add(T_ANAT, "Which of the following does NOT occur at the scapula: winging, retraction, circumduction, or \"none of the above\"?", "Winging — a sign of instability/dysfunction, not a controlled functional movement.", "best-answer supplied");
+  add(T_ANAT, "What are the available scapular movements?", "Protraction, retraction, elevation, depression, upward rotation, downward rotation.");
+  add(T_ANAT, "Where is the rib cage located (vertebral levels)?", "T1–T12.");
+  add(T_ANAT, "How many cervical / thoracic / lumbar / sacral / coccygeal vertebrae/bones are there?", "Cervical 7; Thoracic 12; Lumbar 5; Sacrum 5 (fused); Coccyx 3–6 (fused, variable).");
+  add(T_ANAT, "The cervical spine has 7 vertebrae, thoracic has 12, lumbar has 5. True or False?", "True.");
+  add(T_ANAT, "What are the parts of a vertebra?", "Spinous process (only part palpable from the back), transverse processes (\"wings\"), vertebral body, superior articular processes (form the facet joints).");
+  add(T_ANAT, "The spine moves along with which structure: clavicle, pelvis, rib cage, or shoulder?", "Rib cage.");
+  add(T_ANAT, "Where do the pelvis and spine meet?", "Sacroiliac (SI) joint.");
+  add(T_ANAT, "What bones make up the pelvis?", "Ilium, ischium, and pubis.");
+  add(T_ANAT, "Which bone is NOT part of the pelvis: ilium, ischium, sacrum, or pubis?", "Sacrum (articulates with the pelvis at the SI joint but isn't one of the 3 pelvic bones).");
+  add(T_ANAT, "Which bone is NOT part of the hip joint: ilium, ischium, femur, or humerus?", "Humerus.");
+  add(T_ANAT, "What is the appendicular skeleton?", "126 bones of the upper and lower limbs, shoulders, and hips.");
+  add(T_ANAT, "What is the axial skeleton?", "The 80 bones of the skull, spine, ribs, vertebrae, and sternum (\"head, spine, rib cage\").");
+  add(T_ANAT, "Define anatomical position.", "Standing erect, arms at the sides, palms of the hands turned forward (facing anteriorly).");
+  add(T_ANAT, "Which bony landmark is found on the femur: ASIS, PSIS, or lesser trochanter?", "Lesser trochanter (ASIS/PSIS are pelvic landmarks).");
+  add(T_ANAT, "What is another name for the ankle bone (lateral malleolus)?", "Lateral malleolus (distal end of the fibula).");
+  add(T_ANAT, "Dorsiflexion — what does it mean?", "The shin (tibia) moves closer to the top of the foot / foot moves toward the shin.");
+  add(T_ANAT, "Plantarflexion — what does it mean?", "Foot points away from the shin, toward the floor (pointing the toes).");
+  add(T_ANAT, "When the foot is \"pointed,\" what is the state of the ankle joint?", "Plantar-flexed.");
+  add(T_ANAT, "What are the everters of the foot?", "Peroneus longus and peroneus brevis.");
+  add(T_ANAT, "What are the inverters of the foot?", "Tibialis posterior, flexor digitorum longus, flexor hallucis longus.");
+  add(T_ANAT, "What is not an anatomical structure: obturator foramen, obturator externus, or obturator internus?", "Obturator foramen (a bony opening, not a muscle).");
+  add(T_ANAT, "What is isotonic contraction?", "\"Normal\" (dynamic, joint-moving) muscle contraction, encompassing both concentric and eccentric phases.");
+  add(T_ANAT, "What is concentric contraction?", "Muscle shortening against resistance.");
+  add(T_ANAT, "What is isometric contraction?", "Muscle stays the same length against resistance — no joint movement.");
+  add(T_ANAT, "What is eccentric contraction?", "Muscle lengthens while under tension/resistance.", "best-answer supplied");
+  add(T_ANAT, "What are muscle fibers doing during a concentric contraction?", "Shortening.");
+  add(T_ANAT, "Origin of a muscle is typically located where relative to the body: distal, proximal, or medial?", "Proximal.");
+  add(T_ANAT, "Insertion of a muscle is generally located where: medial, proximal, or distal?", "Distal.");
+  add(T_ANAT, "True or False: The origin of a muscle is the beginning site of the more fixed end/attachment of a muscle.", "True.");
+  add(T_ANAT, "Skeletal muscles are often named by what factors?", "Origin and insertion, function, and number of origins (e.g. biceps = 2 origins/heads).");
+  add(T_ANAT, "Muscles have the capacity to increase (stretch) how far beyond resting length?", "Approximately 1.6 times their resting length.");
+  add(T_ANAT, "Which of the three planes of motion describes dividing the body into left and right sections?", "Sagittal plane.");
+
+
+  add(T_ANAT, "Muscle ID practice set — be able to identify on an unlabeled diagram and state O/I/A: Soleus, Gastrocnemius, Vastus intermedius, Vastus lateralis, Rectus femoris, Biceps femoris, Gluteus minimus, Gluteus maximus, Iliacus, Psoas major, Transversus abdominis, External intercostals, Diaphragm, Internal abdominal oblique, External abdominal oblique, Rectus abdominis, Multifidus, Supinator, Biceps brachii, Triceps brachii, Infraspinatus, Latissimus dorsi, Pectoralis minor, Serratus anterior, Piriformis.", "Practice recognizing each one's shape/location on an unlabeled diagram; cross-reference against the full Trail Guide O/I/A flashcards for exact attachments.");
+  add(T_ANAT, "The 2020 Written Exam's confirmed 25-item muscle-identification list (diagram-based, front-of-exam section) — know all of these on sight:", "Rhomboid major, Pectoralis minor, Supraspinatus, Subscapularis, Triceps brachii, Brachialis, Multifidus, Sternocleidomastoid, Rectus abdominis, External oblique, Internal oblique, Diaphragm, External intercostals, Transversus abdominis, Psoas major, Iliacus, Gluteus maximus, Gluteus medius, Pectineus, Piriformis, Vastus medialis, Vastus lateralis, Soleus, Biceps brachii, and one unremembered 25th muscle.", "strong predictor of the exam's ID section — includes muscles not in the O/I list above (Brachialis, Sternocleidomastoid, Pectineus) — know their O/I/A too");
+
+  add(T_FUNC, "Which is the correct action of biceps femoris at the knee joint?", "Flexion and lateral rotation (of the tibia).");
+  add(T_FUNC, "Which muscle flexes the knee and extends the hip?", "Biceps femoris.");
+  add(T_FUNC, "Which is NOT a hamstring muscle: biceps femoris, semitendinosus, semimembranosus, rectus femoris?", "Rectus femoris (a quadriceps muscle, crossing hip and knee anteriorly).");
+  add(T_FUNC, "What are the hamstring muscles?", "Biceps femoris, semitendinosus, semimembranosus.");
+  add(T_FUNC, "What are the quadriceps muscles, and what is their common insertion?", "Rectus femoris, vastus lateralis, vastus medialis, vastus intermedius; all insert at the patella (and via the patellar tendon to the tibial tuberosity).");
+  add(T_FUNC, "Which muscles extend the knee?", "The quadriceps: rectus femoris, vastus medialis, vastus lateralis, vastus intermedius.");
+  add(T_FUNC, "True or False: Rectus femoris crosses two joints.", "True (hip and knee).");
+  add(T_FUNC, "Which is NOT an action of gluteus maximus: flexion, extension, lateral rotation, abduction?", "Flexion (gluteus maximus extends and laterally rotates the hip; upper fibers assist abduction — it does not flex the hip).");
+  add(T_FUNC, "Gluteus maximus does NOT do which of the following: medially rotate the hip, laterally rotate the hip, extend the hip?", "Medially rotate the hip (it laterally rotates and extends the hip).");
+  add(T_FUNC, "Which muscles are medial rotators of the hip joint?", "Gluteus medius (anterior fibers), gluteus minimus, tensor fasciae latae.");
+  add(T_FUNC, "Gluteus maximus, piriformis, and obturator internus all do what at the hip?", "Laterally rotate the hip.");
+  add(T_FUNC, "What are the hip abductors?", "Gluteus medius, gluteus minimus, tensor fasciae latae (sartorius as a secondary contributor).");
+  add(T_FUNC, "Which is NOT a hip abductor: gluteus maximus, gluteus minimus, gracilis, sartorius?", "Gracilis is the clearest \"does not belong\" — it's actually a hip adductor, not abductor.", "conflicting phrasing across source guides");
+  add(T_FUNC, "What are the hip adductors?", "Adductor magnus, adductor longus, adductor brevis, gracilis, pectineus.");
+  add(T_FUNC, "When squeezing the legs together, which muscles are used?", "Adductor magnus, adductor brevis, adductor longus.");
+  add(T_FUNC, "What is the origin location for most hip adductors?", "Medially (pubis region).");
+  add(T_FUNC, "What are the hip extensors, and where is their origin generally located?", "Gluteus maximus and the hamstrings; origin generally located posteriorly.");
+  add(T_FUNC, "What are the hip flexor muscles?", "Psoas major, iliacus, tensor fasciae latae, rectus femoris (some lists also include sartorius).");
+  add(T_FUNC, "What are the hip flexor muscles (per the narrower postural-analysis list)?", "Rectus femoris, tensor fasciae latae, sartorius.");
+  add(T_FUNC, "Generally, muscles that flex the hip are found where?", "Anteriorly.");
+  add(T_FUNC, "Generally, muscles that extend the hip are found where?", "Posteriorly.");
+  add(T_FUNC, "Generally, muscles that flex the shoulder are found where?", "Anteriorly.");
+  add(T_FUNC, "Where are muscles that extend the spine generally located?", "Posteriorly.");
+  add(T_FUNC, "Which muscles abduct the shoulder/humerus?", "Deltoid (middle fibers) and supraspinatus.");
+  add(T_FUNC, "In Side Arm (sitting), external rotation of the humerus uses which muscles?", "Teres minor and infraspinatus.");
+  add(T_FUNC, "What are the lateral trunk muscles, and what do they do?", "Quadratus lumborum and the internal/external obliques; produce lateral flexion of the trunk. Attached at the lateral crest of the ilium.");
+  add(T_FUNC, "Which muscles laterally flex the spine?", "Rectus abdominis and quadratus lumborum (plus the obliques).");
+  add(T_FUNC, "What muscles stabilize the scapulae?", "Serratus anterior, trapezius, rhomboid major.");
+  add(T_FUNC, "Which muscle protracts the scapula?", "Serratus anterior.");
+  add(T_FUNC, "What causes anterior tipping (tilting) of the scapula?", "Tight pectoralis minor + weak serratus anterior.");
+  add(T_FUNC, "Latissimus dorsi is involved in all of the following EXCEPT: extension, retraction, medial rotation, flexion?", "Flexion (lat dorsi extends, adducts, and medially rotates the shoulder — it does not flex it).");
+  add(T_FUNC, "True or False: Latissimus dorsi assists in forced expiration.", "True.");
+  add(T_FUNC, "What muscles flex the neck?", "Scalenes and sternocleidomastoid.");
+  add(T_FUNC, "What is the action of serratus posterior superior?", "Elevates the ribs during inspiration.", "one source says \"expiration\" — inspiration is the anatomically correct action");
+  add(T_FUNC, "Which of the following muscle fibers run mainly horizontally: rectus abdominis, transversus abdominis, internal oblique, external oblique?", "Transversus abdominis.");
+  add(T_FUNC, "What are the four abdominal muscles, and which is used for breathing, spinal flexion, and stabilizing neutral spine?", "Rectus abdominis, external oblique, internal oblique, transversus abdominis. Breathing: TA. Spinal flexion: rectus abdominis + obliques. Stabilizing neutral spine: TA.");
+  add(T_FUNC, "Which pairing correctly identifies the obliques used during trunk rotation to one side?", "Same-side internal oblique + opposite-side external oblique work together (e.g. rotating the ribcage left = left internal oblique + right external oblique).");
+  add(T_FUNC, "True or False: With the pelvis fixed and the ribcage rotating right, the right external oblique and left internal oblique are used.", "False — rotating right uses the LEFT external oblique + RIGHT internal oblique.");
+  add(T_FUNC, "True or False: With the pelvis fixed and the ribcage rotating LEFT, the right external oblique and left internal oblique are used.", "True.");
+  add(T_FUNC, "Explain how breathing relates to spinal movement.", "On inhale, the rib cage opens/expands, promoting spinal extension. On exhale, the rib cage closes, promoting spinal flexion.");
+  add(T_FUNC, "Inhalation promotes which spinal movement — flexion or extension? Exhalation?", "Inhale promotes extension; exhale promotes flexion (and helps activate deep core/TA).");
+  add(T_FUNC, "True or False: Exhalation helps activate the deep core muscles.", "True.");
+  add(T_FUNC, "Which muscles are primarily recruited to maintain an Imprint position?", "Obliques and transversus abdominis (not the glutes).");
+  add(T_FUNC, "Neutral pelvis is defined as: the ASIS and pubic symphysis level in which plane?", "Frontal (coronal) plane, when lying supine.");
+  add(T_FUNC, "What is the position of the pelvis during Knee Raise on the Chair?", "Imprint.");
+  add(T_FUNC, "An anterior pelvic tilt puts the hip joints in what position? A posterior pelvic tilt?", "Anterior tilt = hips in flexion; posterior tilt = hips in extension.");
+  add(T_FUNC, "When the pelvis tilts anteriorly, what happens to the lumbar spine?", "It extends (increases lordosis).");
+  add(T_FUNC, "For a client with a hyperextended neck, what is the state of the deep neck flexors?", "Lengthened (and weak).");
+  add(T_FUNC, "In a forward-head posture, what is the alignment of the cervical spine?", "Hyperextended.");
+  add(T_FUNC, "Why is the Reformer headrest raised?", "To relieve excessive tension/strain in the neck when the headrest is flat and the cervical spine tends toward hyperextension.");
+
+  add(T_POST, "When performing postural analysis from the side view, what line should be observed?", "The plumb line.");
+  add(T_POST, "Ideal alignment based on the plumb line (side view) — what landmarks should it pass through/near?", "Slightly anterior to the lateral malleolus; slightly anterior to the midline of the knee; approximately through the greater trochanter; through the center of the trunk; through the shoulder joint/acromion; through the earlobe.");
+  add(T_POST, "Which of the following is NOT a reason for performing a Roll Down during postural analysis: identifying/diagnosing scoliosis; checking for flat areas along the spine; observing sequential (segmental) spinal movement?", "\"To identify and diagnose scoliosis\" — instructors screen movement quality, not medical diagnosis.");
+  add(T_POST, "What are the normal curves of the spine?", "Anterior convexity (lordosis) in the neck, posterior convexity (kyphosis) in the upper back, anterior convexity (lordosis) in the low back.");
+  add(T_POST, "The normal convex-anterior curve of the cervical spine can be described as what?", "Slight extension.");
+  add(T_POST, "When there is a normal curve in the low back, what is the pelvis position?", "Neutral.");
+  add(T_POST, "What is kyphosis?", "Excessive/increased outward (posterior convex) curve of the thoracic spine.");
+  add(T_POST, "What is lordosis?", "Excessive inward curve of the lumbar spine.");
+  add(T_POST, "Which posture has an increased thoracic curve?", "Kyphosis-lordosis posture.");
+  add(T_POST, "Which posture generally has tight hip flexors?", "Kyphosis-lordosis posture.");
+  add(T_POST, "What is typically present in kyphosis-lordosis posture — anterior or posterior pelvic tilt?", "Anterior pelvic tilt.");
+  add(T_POST, "Full breakdown of Kyphosis-Lordosis posture:", "Head: forward. Cervical: hyperextended. Scapula: abducted. Thoracic: increased flexion (kyphosis). Lumbar: hyperextended (lordosis). Pelvis: anterior tilt. Hip: flexed. Knee: slightly hyperextended. Ankle: slight plantarflexion. Short/strong: neck extensors, hip flexors, low back. Elongated/weak: neck flexors, upper back, erector spinae, external oblique (hamstrings slightly). Rectus abdominis is NOT elongated — the depressed chest offsets the anterior tilt's lengthening effect.");
+  add(T_POST, "Full breakdown of Sway-Back posture:", "Head: forward. Cervical: slightly extended. Thoracic: increased flexion (long kyphosis), posterior displacement of upper trunk. Lumbar: flexion/flattening in the low area. Pelvis: posterior tilt. Hip: hyperextended, anterior displacement of the pelvis. Knee: hyperextended. Ankle: neutral. Short/strong: hamstrings, upper fibers of internal oblique. Strong-not-short: low back. Elongated/weak: one-joint hip flexors, external oblique, upper back extensors, neck flexors.");
+  add(T_POST, "Full breakdown of Military-type posture:", "Head: neutral. Cervical: normal. Thoracic: normal. Lumbar: hyperextended (lordosis). Pelvis: anterior tilt. Knee: slightly hyperextended. Ankle: slightly plantarflexed. Short/strong: low back and hip flexors. Elongated/weak: anterior abdominals (sometimes hamstrings).");
+  add(T_POST, "Full breakdown of Flat-Back posture:", "Head: forward. Cervical: slightly extended. Thoracic: upper increased flexion, lower straight. Lumbar: flexed (straight). Pelvis: posterior tilt. Hip: extended. Knee: extended. Ankle: slight plantarflexion. Short/strong: hamstrings. Elongated/weak: one-joint hip flexors.");
+  add(T_POST, "Which posture especially requires emphasis on spinal segmental movement?", "Flat back.");
+  add(T_POST, "Which posture statement is INCORRECT: (flat back) pelvis posterior tilt; knee joints extended; elongated & weak one-joint hip flexors; short & strong low back and hip flexor muscles?", "\"Short and strong: low back and hip flexor muscles\" — that describes Military posture. In flat back, hamstrings are short/strong and the low back is generally flattened/lengthened.");
+  add(T_POST, "What position should someone with Kyphosis-Lordosis posture generally work in?", "Imprint.");
+  add(T_POST, "What should you emphasize for a client with Kyphosis-Lordosis posture?", "Thoracic extension, lumbar flexion, upper-back extensor strengthening, and scapular stabilization.");
+  add(T_POST, "What muscles should a Kyphosis-Lordosis client strengthen? Stretch?", "Strengthen: hamstrings, glutes, obliques, abdominals. Stretch: hip flexors, rectus abdominis, pecs, low back.");
+  add(T_POST, "What position should someone with Flat-Back posture work in?", "Neutral.");
+  add(T_POST, "True or False: Someone with Flat-Back posture needs to work on thoracic flexion.", "True.");
+  add(T_POST, "What should you emphasize for a Flat-Back client?", "Increasing spinal mobility and restoring normal spinal curves; strengthening the one-joint hip flexors; lengthening/stretching the hamstrings.");
+  add(T_POST, "What position should someone with Sway-Back posture work in?", "Imprint first, with thoracic flexion to strengthen the obliques, progressing toward Neutral over time.");
+  add(T_POST, "For which posture type should you ensure the ribcage is aligned directly over the pelvis in a seated position?", "Sway-back.");
+  add(T_POST, "True or False: Someone with Sway-Back posture may need to sit on a cushion/prop.", "True (a pad under the lumbar spine may also help supine).");
+  add(T_POST, "What should you emphasize for a Sway-Back client?", "Strengthening the one-joint hip flexors, external obliques, upper-back extensors, and neck flexors; lengthening the hamstrings, internal obliques, and pecs.");
+
+  add(T_MAT, "Which is NOT an Intermediate Mat exercise: Neck Pull, Seal, One Leg Kick, Side Bend?", "Seal — generally introduced as an Essential exercise, not Intermediate.", "flagged if your manual edition differs");
+  add(T_MAT, "True or False: A modification of reaching the hands forward during the roll-up phase of Neck Pull can be used to reduce excessive upper trapezius tension.", "True.");
+  add(T_MAT, "Which exercises can precede the Roll Up if a client finds it difficult?", "Half Roll Back and Spine Twist (preparatory building blocks).");
+  add(T_MAT, "If a Roll Down is difficult for a client, what's a good regression/solution?", "Perform it first on the Cadillac while holding the roll-down bar (support/counterbalance).");
+  add(T_MAT, "Which exercise is best to introduce first for a client with weak abdominals?", "Chair: Ab Press Sitting — more supported than Cadillac Push Thru on Back with Roll Up or Ladder Barrel Straight Back.");
+  add(T_MAT, "Which exercise should be introduced when abdominal strength is very weak: Reformer Tree, Chair Ab Press Sitting, Cadillac Push Thru on Back with Roll Up, or Ladder Barrel Rotation Prone?", "Chair Ab Press Sitting.");
+  add(T_MAT, "For a client with Kyphosis, what is the best environment/progression to introduce Swan Dive?", "Chair — Prone Prep (a controlled, supported entry point).");
+  add(T_MAT, "Which exercise correctly matches \"occurs exclusively in the coronal plane\": Single Thigh Stretch or Mermaid Short Box?", "Mermaid Short Box — a pure lateral-flexion movement.");
+  add(T_MAT, "Which movement occurs only in the coronal plane, among: Short Box Lean, Single Thigh Stretch, Short Box Mermaid #3 (Bow and Arrow), Short Box Mermaid #2 (Hawk)?", "Short Box Mermaid #3: Bow and Arrow.");
+  add(T_MAT, "Which exercise does NOT involve full extension of the spine: Ladder Barrel Tree (Essential), Swan Dive, or other exercises?", "Ladder Barrel: Tree (Essential) — a stretch-oriented movement, not a full-extension exercise.");
+  add(T_MAT, "Which warm-up exercises teach Pelvic Placement (Neutral, Imprint)?", "Leg Slide (closed kinetic chain) and Leg Lift (open kinetic chain).");
+  add(T_MAT, "Which combination of exercises is appropriate for teaching Pelvic Placement?", "Leg Slides + Leg Lifts.");
+  add(T_MAT, "Which exercise is NOT related to teaching Pelvic Placement: Neutral to Imprint, Leg Lifts, Spinal Rotation, Hip Release?", "Spinal Rotation — teaches rib cage/thoracic mobility, not pelvic placement.");
+  add(T_MAT, "Rond de jambe, oblique can-cans, and semicircle are all Intermediate (Reformer) exercises. True or False?", "True.", "best-answer supplied");
+  add(T_MAT, "Match exercise → primary target muscle: Leg Circles, Single Leg Extension, Breast Stroke, Ab Prep → Glutes, Hip Flexors, Internal Oblique, Erector Spinae.", "Leg Circles → Hip Flexors; Single Leg Extension → Glutes; Breast Stroke → Erector Spinae; Ab Prep → Internal Oblique.");
+  add(T_MAT, "Which exercise works the posterior deltoid both eccentrically and concentrically: Stag, Bend and Stretch, Long Spine, or Back Rowing Prep–Plow?", "Back Rowing Prep – Plow.");
+  add(T_MAT, "What is the starting position for Short Box/Round Back: imprint spine or neutral spine?", "Neutral spine.");
+  add(T_MAT, "Which exercise does NOT share elements similar to the Hawk: Mermaid 1 on the Short Box, Front Rowing Prep/Arm Circles with Flexion, Side Twist Kneeling, or Long Box Arms Pulling Strap #1?", "Long Box Arms Pulling Strap #1.");
+  add(T_MAT, "If lumbar segmentation/flexion is difficult during Short Box on the Reformer, what's a good regression/alternate environment?", "Perform it on the Arc Barrel or Ladder Barrel.");
+
+  add(T_REF, "Choose the correct scenario for when the Reformer headrest should be raised.", "When the headrest is flat AND there is excessive tension/hyperextension risk in the neck — not simply by default, and not directly tied to TA weakness or scapular instability.");
+  add(T_REF, "What happens to Standing Triceps Press recruitment if you add more spring tension (heavier spring)?", "Triceps are recruited LESS — confirmed consistently across the Chair-based equivalent question too.");
+
+  add(T_CAD, "Which exercise correctly utilizes the safety chain on the Cadillac, and why?", "Sources conflict: the TalkFile guide says Monkey — \"ensures safety from the risk of the springs during lower-body movements.\" The 2020 exam-recall guide instead marks Chest Press. Verify against your Cadillac manual; Monkey's rationale is the more mechanically consistent explanation.", "sources disagree, verify against your manual");
+  add(T_CAD, "Which exercise should be introduced first for someone with poor scapular stability, when doing Cadillac arm work?", "Supine Biceps Curls — more stable/ground-supported than Back Rowing Prep #7, Standing Biceps Curls with Push-Thru Bar, or Trapeze Pull-Up.");
+  add(T_CAD, "What modification can be used during Cadillac Breathing for a body type that struggles with rolling down (segmentation is difficult)?", "Flex (bend) the knees.");
+
+  add(T_CHAIR, "What joint action occurs during the \"Lean\" on the Chair?", "Hip extension.", "best-answer supplied, reasoned from the kneeling-to-leaning-back mechanics");
+  add(T_CHAIR, "What is the position of the pelvis during Knee Raise on the Chair?", "Imprint.");
+  add(T_CHAIR, "What happens to triceps recruitment on Standing Triceps (Chair) if the spring is set heavier?", "Triceps are recruited less.");
+
+  add(T_BAR, "What is the correct hand placement on the Arc Barrel when performing a Push-Up?", "Hands placed in front of the apex, toward the feet, so the wrists do not bend/hyperextend under load.");
+  add(T_BAR, "For a client with Kyphosis, is Ladder Barrel Swan Dive or Chair Prone Prep the better first environment?", "Chair: Prone Prep — a more supported/controlled progression before Ladder Barrel or Mat Swan Dive.");
+
+  add(T_PROG, "What is a good solution when a client finds lumbar spinal segmentation difficult in general (not exercise-specific)?", "Perform the movement on the Arc Barrel or Ladder Barrel — both provide a curved surface that supports/guides segmental articulation.");
+  add(T_PROG, "How should you handle programming when postural findings differ from a \"textbook\" posture type?", "Always let your live postural analysis findings — not just the \"textbook\" posture label — drive exercise selection and modification choices.", "study prompt, not a source Q&A");
+  add(T_PROG, "The 2020 exam recollection mentions a final block of 10 \"muscle-to-exercise matching\" questions (two 5×5 sets). What's the takeaway?", "The exact pairings weren't recorded in the source — unrecoverable. Treat this as a reminder to drill muscle↔exercise pairing broadly rather than memorizing one specific pair set.", "unrecoverable from source");
+  add(T_PROG, "A 2020 guide question flagged a distractor claiming the cervical spine curve does NOT follow the thoracic line — what's the correct relationship?", "The cervical spine's curve continues in the same direction as the thoracic curve through flexion, extension, and rotation — watch for exam wording that inverts or oversimplifies this.");
+
+
+  // ---- Dynamically generated O/I/A flashcards from the Trail Guide muscle tables ----
+  // Kept in sync with the Anatomy page automatically — one flashcard per muscle, grouped
+  // and ordered exactly as Trail Guide to the Body presents them, chapter by chapter.
+  var muscleGroups = (window.STOTT.anatomy && window.STOTT.anatomy.muscleGroups) || [];
+  muscleGroups.forEach(function (group) {
+    var topic = "O/I/A — " + group.region;
+    group.muscles.forEach(function (m) {
+      var answerParts = [];
+      if (m.origin) answerParts.push("O: " + m.origin + ".");
+      if (m.insertion) answerParts.push("I: " + m.insertion + ".");
+      if (m.action) answerParts.push("A: " + m.action + ".");
+      add(topic, m.muscle + " — Origin, Insertion & Action?", answerParts.join(" "));
+    });
+  });
+  window.STOTT.quiz = window.STOTT.quiz.concat(Q);
+})();

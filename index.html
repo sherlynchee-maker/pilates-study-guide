@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>STOTT Level 1 — Study Guide</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div id="app">
+  <nav class="nav-rail" id="navRail">
+    <div class="brand">
+      <span class="eyebrow">STOTT PILATES · LEVEL 1</span>
+      <h1>Exam Prep</h1>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Overview</div>
+      <button class="nav-btn" data-view="dashboard">Dashboard</button>
+      <button class="nav-btn" data-view="examinfo">Exam Info</button>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Foundations</div>
+      <button class="nav-btn" data-view="principles">Basic Principles</button>
+      <button class="nav-btn" data-view="anatomy">Anatomy</button>
+      <button class="nav-btn" data-view="posture">Posture Assessment</button>
+      <button class="nav-btn" data-view="programming">Programming</button>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Apparatus</div>
+      <button class="nav-btn" data-view="mat">Mat</button>
+      <button class="nav-btn" data-view="reformer">Reformer</button>
+      <button class="nav-btn" data-view="cadillac">Cadillac</button>
+      <button class="nav-btn" data-view="chair">Stability Chair</button>
+      <button class="nav-btn" data-view="archbarrel">Arc Barrel</button>
+      <button class="nav-btn" data-view="spinecorrector">Spine Corrector</button>
+      <button class="nav-btn" data-view="ladderbarrel">Ladder Barrel</button>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-label">Test Yourself</div>
+      <button class="nav-btn" data-view="quiz">Quiz</button>
+      <button class="nav-btn" data-view="progress">My Progress</button>
+    </div>
+
+    <div class="nav-footer">
+      <div class="theme-toggle" id="themeToggle">
+        <button data-theme="light">Light</button>
+        <button data-theme="dark">Dark</button>
+        <button data-theme="auto" class="active">Auto</button>
+      </div>
+    </div>
+  </nav>
+
+  <main id="mainView">
+    <!-- rendered by app.js -->
+  </main>
+</div>
+
+<script src="data/principles.js"></script>
+<script src="data/anatomy.js"></script>
+<script src="data/posture.js"></script>
+<script src="data/programming.js"></script>
+<script src="data/mat.js"></script>
+<script src="data/reformer.js"></script>
+<script src="data/cadillac.js"></script>
+<script src="data/chair.js"></script>
+<script src="data/barrels.js"></script>
+<script src="data/examinfo.js"></script>
+<script src="data/quiz.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
