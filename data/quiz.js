@@ -5,7 +5,7 @@ window.STOTT.quiz = window.STOTT.quiz || [];
   let n = 0;
   function add(topic, q, a, flag) {
     n++;
-    Q.push({ id: "eq" + n, topic, q, a, flag: flag || "" });
+    Q.push({ id: "eq" + n, topic, type: "recall", q, a, flag: flag || "" });
   }
 
   const T_BASIC = "Basic Principles";
@@ -236,5 +236,15 @@ window.STOTT.quiz = window.STOTT.quiz || [];
       add(topic, m.muscle + " — Origin, Insertion & Action?", answerParts.join(" "));
     });
   });
+  // ---- Real mock-exam questions (mcq / multi-select / ordering) sourced from the
+  // Exam Prep folder's actual STOTT mock tests, verified against the manuals — see
+  // data/quiz-exam.js. Kept as a separate file so the two sourcing passes stay distinct.
+  var exam = window.STOTT.quizExam || [];
+  exam.forEach(function (item, i) {
+    item.id = item.id || "mq" + (i + 1);
+    if (!item.flag) item.flag = "";
+    Q.push(item);
+  });
+
   window.STOTT.quiz = window.STOTT.quiz.concat(Q);
 })();

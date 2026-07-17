@@ -19,7 +19,7 @@ const APPARATUS_META = {
   ladderbarrel: { label: "Ladder Barrel", key: "ladderbarrel" },
 };
 
-const LS_KEY = "stott_l1_progress_v1";
+const LS_KEY = "stott_l1_progress_v2";
 
 function loadProgress() {
   try {
@@ -131,7 +131,7 @@ function renderDashboard() {
   const totalQ = DATA.quiz.length;
   const perQ = PROGRESS.perQuestion;
   const seen = Object.keys(perQ).length;
-  const mastered = Object.values(perQ).filter((q) => q.lastGrade === "got-it").length;
+  const mastered = Object.values(perQ).filter((q) => q.lastCorrect === true).length;
 
   mainView.innerHTML = "";
   mainView.append(
@@ -646,7 +646,7 @@ function renderQuiz() {
       el("div", {}, [
         el("span", { class: "eyebrow" }, "Active recall"),
         el("h2", {}, "Quiz"),
-        el("p", { class: "sub" }, "Answer in your own words, reveal, then grade yourself honestly — your grading drives what “My Progress” shows you."),
+        el("p", { class: "sub" }, "Multiple choice, choose-all-that-apply, and sequencing questions pulled from real STOTT mock exams — plus open-recall questions from your manuals. Most questions grade themselves; recall ones ask you to self-check."),
       ]),
     ])
   );
@@ -693,7 +693,7 @@ function renderQuiz() {
       const chipRow = el("div", { class: "chip-select" });
       let mode = "all";
       ["all", "due-for-review", "missed-before"].forEach((m, i) => {
-        const label = { "all": "All questions", "due-for-review": "Not yet marked ‘got it’", "missed-before": "Previously shaky / missed" }[m];
+        const label = { "all": "All questions", "due-for-review": "Not yet answered correctly", "missed-before": "Previously missed" }[m];
         const chip = el("button", { class: "chip" + (i === 0 ? " selected" : "") }, label);
         chip.addEventListener("click", () => {
           mode = m;
@@ -719,8 +719,8 @@ function renderQuiz() {
     return DATA.quiz.filter((q) => {
       if (!selectedTopics.has(q.topic || "General")) return false;
       const st = PROGRESS.perQuestion[q.id];
-      if (mode === "due-for-review") return !st || st.lastGrade !== "got-it";
-      if (mode === "missed-before") return st && (st.lastGrade === "shaky" || st.lastGrade === "missed");
+      if (mode === "due-for-review") return !st || st.lastCorrect !== true;
+      if (mode === "missed-before") return st && st.lastCorrect === false;
       return true;
     });
   }
@@ -760,16 +760,16 @@ function shuffle(arr) {
   return arr;
 }
 
-let flashcardKeyHandler = null;
-function clearFlashcardKeyHandler() {
-  if (flashcardKeyHandler) {
-    document.removeEventListener("keydown", flashcardKeyHandler);
-    flashcardKeyHandler = null;
+let quizKeyHandler = null;
+function clearQuizKeyHandler() {
+  if (quizKeyHandler) {
+    document.removeEventListener("keydown", quizKeyHandler);
+    quizKeyHandler = null;
   }
 }
 
 function renderQuizQuestion() {
-  clearFlashcardKeyHandler();
+  clearQuizKeyHandler();
   const { questions, index } = quizSession;
   if (index >= questions.length) { renderQuizResults(); return; }
   const q = questions[index];
@@ -781,82 +781,200 @@ function renderQuizQuestion() {
   ]);
   mainView.append(progWrap);
 
-  const scene = el("div", { class: "flashcard-scene" });
-  const card = el("div", { class: "flashcard", tabindex: "0" });
-  const frontFace = el("div", { class: "flashcard-face front" }, [
-    el("span", { class: "qtag" }, q.topic || "General"),
-    el("div", { class: "flashcard-text" }, q.q),
-    el("div", { class: "flashcard-hint" }, "Click the card, or press space, to flip"),
-  ]);
-  const backFace = el("div", { class: "flashcard-face back" }, [
-    el("span", { class: "qtag" }, q.topic || "General"),
-    el("div", { class: "flashcard-text" }, q.a),
-    q.flag ? el("div", { class: "flashcard-flag" }, q.flag) : null,
-  ]);
-  card.append(frontFace, backFace);
-  scene.append(card);
-  mainView.append(scene);
+  const card = el("div", { class: "question-card" });
+  card.append(el("span", { class: "qtag" }, q.topic || "General"));
+  card.append(el("div", { class: "qtext" }, q.q));
+  mainView.append(card);
 
-  const grades = el("div", { class: "self-grade-row flashcard-grades" }, [
-    gradeBtn("got-it", "✓ Got it"),
-    gradeBtn("shaky", "½ Shaky"),
-    gradeBtn("missed", "✗ Missed it"),
-  ]);
-  mainView.append(grades);
+  const nextBtn = el("button", { class: "btn", disabled: "disabled" }, "Next →");
+  const endBtn = el("button", { class: "btn secondary" }, "End quiz early");
+  const actions = el("div", { class: "quiz-actions" }, [endBtn, nextBtn]);
+  endBtn.addEventListener("click", () => { clearQuizKeyHandler(); renderQuizResults(); });
+  nextBtn.addEventListener("click", () => { clearQuizKeyHandler(); quizSession.index++; renderQuizQuestion(); });
 
-  const actions = el("div", { class: "quiz-actions" }, [
-    el("button", { class: "btn secondary" }, "End quiz early"),
-    el("span", { class: "mono", style: "font-size:11px;color:var(--ink-faint)" }, "space = flip · 1 / 2 / 3 = grade"),
-  ]);
-  actions.firstChild.addEventListener("click", () => { clearFlashcardKeyHandler(); renderQuizResults(); });
+  let answered = false;
+  function finish(correct) {
+    if (answered) return;
+    answered = true;
+    quizSession.results.push({ id: q.id, topic: q.topic || "General", correct });
+    recordAnswer(q, correct);
+    nextBtn.disabled = false;
+  }
+
+  const type = q.type || "recall";
+  if (type === "mcq") renderMCQBody(card, q, finish);
+  else if (type === "multi") renderMultiBody(card, q, finish);
+  else if (type === "order") renderOrderBody(card, q, finish);
+  else renderRecallBody(card, q, finish);
+
   mainView.append(actions);
 
-  let flipped = false;
-  function flip() {
-    if (flipped) return;
-    flipped = true;
-    card.classList.add("flipped");
-    grades.classList.add("visible");
-  }
-  card.addEventListener("click", flip);
-  card.focus({ preventScroll: true });
-
-  flashcardKeyHandler = (e) => {
+  quizKeyHandler = (e) => {
     if (document.activeElement && ["TEXTAREA", "INPUT"].includes(document.activeElement.tagName)) return;
-    if (e.code === "Space" || e.key === "Enter") { e.preventDefault(); flip(); }
-    if (flipped && ["1", "2", "3"].includes(e.key)) {
-      const map = { "1": "got-it", "2": "shaky", "3": "missed" };
-      const btn = grades.querySelector(`button[data-grade="${map[e.key]}"]`);
-      if (btn) btn.click();
-    }
+    if (answered && e.key === "Enter") { e.preventDefault(); nextBtn.click(); }
   };
-  document.addEventListener("keydown", flashcardKeyHandler);
+  document.addEventListener("keydown", quizKeyHandler);
+}
 
-  function gradeBtn(grade, label) {
-    const b = el("button", { "data-grade": grade }, label);
+function qzExplain(card, correct, text, flag) {
+  const box = el("div", { class: "qz-explain visible" }, [
+    el("div", { class: "qz-verdict " + (correct ? "correct" : "incorrect") }, correct ? "Correct" : "Not quite"),
+    el("div", { class: "qz-explain-text" }, text),
+    flag ? el("div", { class: "qz-flag" }, flag) : null,
+  ]);
+  card.append(box);
+}
+
+function renderMCQBody(card, q, finish) {
+  const optEls = q.options.map((opt) => el("button", { class: "qz-opt" }, el("span", { class: "qz-opt-text" }, opt)));
+  const wrap = el("div", { class: "qz-options" }, optEls);
+  card.append(wrap);
+
+  let done = false;
+  optEls.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+      if (done) return;
+      done = true;
+      const correct = i === q.answer;
+      optEls.forEach((b) => b.classList.add("disabled"));
+      btn.classList.add(correct ? "correct" : "incorrect");
+      if (!correct) optEls[q.answer].classList.add("correct");
+      qzExplain(card, correct, q.a, q.flag);
+      finish(correct);
+    });
+  });
+}
+
+function renderMultiBody(card, q, finish) {
+  const chosen = new Set();
+  let submitted = false;
+  const optEls = q.options.map((opt, i) => {
+    const b = el("button", { class: "qz-opt qz-opt-multi" }, [
+      el("span", { class: "qz-opt-check" }),
+      el("span", { class: "qz-opt-text" }, opt),
+    ]);
     b.addEventListener("click", () => {
-      if (!flipped) return;
-      b.parentElement.querySelectorAll("button").forEach((x) => x.classList.remove("chosen"));
+      if (submitted) return;
+      if (chosen.has(i)) { chosen.delete(i); b.classList.remove("selected"); }
+      else { chosen.add(i); b.classList.add("selected"); }
+    });
+    return b;
+  });
+  card.append(el("div", { class: "qz-options" }, optEls));
+  card.append(el("div", { class: "qz-order-hint" }, "Select every option that applies, then check your answer."));
+
+  const submitBtn = el("button", { class: "btn secondary", style: "margin-top:4px" }, "Check answer");
+  card.append(submitBtn);
+
+  submitBtn.addEventListener("click", () => {
+    if (submitted) return;
+    submitted = true;
+    submitBtn.disabled = true;
+    const correctSet = new Set(q.answer);
+    const allCorrect = chosen.size === correctSet.size && [...chosen].every((i) => correctSet.has(i));
+    optEls.forEach((b, i) => {
+      b.classList.add("disabled");
+      if (correctSet.has(i)) b.classList.add("correct");
+      else if (chosen.has(i)) b.classList.add("incorrect");
+    });
+    qzExplain(card, allCorrect, q.a, q.flag);
+    finish(allCorrect);
+  });
+}
+
+function renderOrderBody(card, q, finish) {
+  const correctOrder = q.options;
+  const pool = shuffle([...correctOrder]);
+  const built = [];
+  card.append(el("div", { class: "qz-order-hint" }, "Tap items below in the order they belong."));
+  const poolWrap = el("div", { class: "qz-order-pool" });
+  const builtWrap = el("div", { class: "qz-order-built" });
+  card.append(poolWrap, builtWrap);
+
+  let revealed = false;
+  function renderPool() {
+    poolWrap.innerHTML = "";
+    pool.forEach((item, i) => {
+      if (built.includes(i)) return;
+      const b = el("button", { class: "qz-order-chip" }, item);
+      b.addEventListener("click", () => {
+        if (revealed) return;
+        built.push(i);
+        renderPool();
+        renderBuilt();
+        if (built.length === correctOrder.length) reveal();
+      });
+      poolWrap.append(b);
+    });
+  }
+  function renderBuilt() {
+    builtWrap.innerHTML = "";
+    built.forEach((i, pos) => {
+      builtWrap.append(el("div", { class: "qz-order-slot" }, [el("span", { class: "qz-order-num" }, String(pos + 1)), el("span", {}, pool[i])]));
+    });
+  }
+  function reveal() {
+    revealed = true;
+    let correctCount = 0;
+    builtWrap.innerHTML = "";
+    built.forEach((i, pos) => {
+      const item = pool[i];
+      const isRight = correctOrder[pos] === item;
+      if (isRight) correctCount++;
+      builtWrap.append(el("div", { class: "qz-order-slot " + (isRight ? "correct" : "incorrect") }, [
+        el("span", { class: "qz-order-num" }, String(pos + 1)),
+        el("span", {}, item),
+        !isRight ? el("span", { class: "qz-order-correct-hint" }, `should be: ${correctOrder[pos]}`) : null,
+      ]));
+    });
+    const allCorrect = correctCount === correctOrder.length;
+    qzExplain(card, allCorrect, q.a, q.flag);
+    finish(allCorrect);
+  }
+  renderPool();
+  renderBuilt();
+}
+
+function renderRecallBody(card, q, finish) {
+  const revealBtn = el("button", { class: "btn secondary" }, "Show answer");
+  card.append(revealBtn);
+
+  const revealBox = el("div", { class: "reveal-box", style: "display:none" }, [
+    el("div", { class: "label" }, "Answer"),
+    el("div", { class: "answer-text" }, q.a),
+    q.flag ? el("div", { class: "qz-flag" }, q.flag) : null,
+  ]);
+  card.append(revealBox);
+
+  const grades = el("div", { class: "self-grade-row", style: "display:none" }, [
+    gradeBtn(true, "✓ I was right"),
+    gradeBtn(false, "✗ I got it wrong"),
+  ]);
+  card.append(grades);
+
+  revealBtn.addEventListener("click", () => {
+    revealBtn.style.display = "none";
+    revealBox.style.display = "block";
+    grades.style.display = "flex";
+  });
+
+  function gradeBtn(correct, label) {
+    const b = el("button", { "data-grade": correct ? "right" : "wrong" }, label);
+    b.addEventListener("click", () => {
+      grades.querySelectorAll("button").forEach((x) => x.classList.remove("chosen"));
       b.classList.add("chosen");
-      recordGrade(q, grade);
-      quizSession.results.push({ id: q.id, topic: q.topic || "General", grade });
-      clearFlashcardKeyHandler();
-      setTimeout(() => {
-        quizSession.index++;
-        renderQuizQuestion();
-      }, 260);
+      finish(correct);
     });
     return b;
   }
 }
 
-function recordGrade(q, grade) {
-  const st = PROGRESS.perQuestion[q.id] || { attempts: 0, gotIt: 0, shaky: 0, missed: 0 };
+function recordAnswer(q, correct) {
+  const st = PROGRESS.perQuestion[q.id] || { attempts: 0, correctCount: 0, incorrectCount: 0 };
   st.attempts++;
-  if (grade === "got-it") st.gotIt++;
-  if (grade === "shaky") st.shaky++;
-  if (grade === "missed") st.missed++;
-  st.lastGrade = grade;
+  if (correct) st.correctCount++;
+  else st.incorrectCount++;
+  st.lastCorrect = correct;
   st.lastSeen = Date.now();
   PROGRESS.perQuestion[q.id] = st;
   saveProgress(PROGRESS);
@@ -865,14 +983,12 @@ function recordGrade(q, grade) {
 function renderQuizResults() {
   const { results, startedAt } = quizSession;
   const total = results.length;
-  const gotIt = results.filter((r) => r.grade === "got-it").length;
-  const shaky = results.filter((r) => r.grade === "shaky").length;
-  const missed = results.filter((r) => r.grade === "missed").length;
-  const pct = total ? Math.round((gotIt / total) * 100) : 0;
+  const correct = results.filter((r) => r.correct).length;
+  const pct = total ? Math.round((correct / total) * 100) : 0;
 
   PROGRESS.sessions.push({
     date: new Date().toISOString(),
-    total, gotIt, shaky, missed,
+    total, correct,
     durationSec: Math.round((Date.now() - startedAt) / 1000),
   });
   if (PROGRESS.sessions.length > 200) PROGRESS.sessions = PROGRESS.sessions.slice(-200);
@@ -881,14 +997,27 @@ function renderQuizResults() {
   mainView.innerHTML = "";
   const summary = el("div", { class: "results-summary" });
   summary.append(el("div", { class: "score-ring-wrap" }, scoreRing(pct)));
-  summary.append(el("h2", { style: "margin-top:4px" }, `${gotIt} / ${total} got it`));
-  summary.append(el("p", {}, total ? `${pct}% on this pass. Shaky and missed items will resurface if you run "Not yet marked got it" again.` : "No questions in this session."));
+  summary.append(el("h2", { style: "margin-top:4px" }, `${correct} / ${total} correct`));
+  summary.append(el("p", {}, total ? `${pct}% on this pass. Missed items will resurface if you run "Not yet answered correctly" again.` : "No questions in this session."));
+
+  const missed = results.filter((r) => !r.correct);
+  if (missed.length) {
+    const missedBlock = el("div", { class: "section-block", style: "text-align:left;width:100%;max-width:640px" });
+    missedBlock.append(el("h3", {}, "Review these"));
+    const list = el("ul", { style: "padding-left:18px;display:flex;flex-direction:column;gap:6px" });
+    missed.forEach((r) => {
+      const mq = DATA.quiz.find((x) => x.id === r.id);
+      if (mq) list.append(el("li", { style: "font-size:13.5px" }, `${mq.topic ? mq.topic + " — " : ""}${mq.q}`));
+    });
+    missedBlock.append(list);
+    summary.append(missedBlock);
+  }
 
   const byTopic = {};
   results.forEach((r) => {
     byTopic[r.topic] = byTopic[r.topic] || { got: 0, total: 0 };
     byTopic[r.topic].total++;
-    if (r.grade === "got-it") byTopic[r.topic].got++;
+    if (r.correct) byTopic[r.topic].got++;
   });
   const breakdown = el("div", { class: "topic-breakdown" });
   Object.entries(byTopic).forEach(([topic, v]) => {
@@ -945,16 +1074,14 @@ function renderProgress() {
   const sessions = PROGRESS.sessions || [];
   const perQ = PROGRESS.perQuestion || {};
   const seenCount = Object.keys(perQ).length;
-  const gotItCount = Object.values(perQ).filter((q) => q.lastGrade === "got-it").length;
-  const shakyCount = Object.values(perQ).filter((q) => q.lastGrade === "shaky").length;
-  const missedCount = Object.values(perQ).filter((q) => q.lastGrade === "missed").length;
+  const correctCount = Object.values(perQ).filter((q) => q.lastCorrect === true).length;
+  const incorrectCount = Object.values(perQ).filter((q) => q.lastCorrect === false).length;
 
   mainView.append(
     el("div", { class: "stat-row" }, [
       statTile("Questions reviewed", `${seenCount} / ${DATA.quiz.length}`),
-      statTile("Got it", gotItCount),
-      statTile("Shaky", shakyCount),
-      statTile("Missed", missedCount),
+      statTile("Correct (latest)", correctCount),
+      statTile("Incorrect (latest)", incorrectCount),
     ])
   );
 
@@ -971,7 +1098,7 @@ function renderProgress() {
     const st = perQ[q.id];
     if (st) {
       byTopic[topic].seen++;
-      if (st.lastGrade === "got-it") byTopic[topic].got++;
+      if (st.lastCorrect === true) byTopic[topic].got++;
     }
   });
 
@@ -994,17 +1121,15 @@ function renderProgress() {
   histBlock.append(el("h3", {}, "Session history"));
   const wrap = el("div", { class: "table-wrap" });
   const table = el("table", {}, [
-    el("thead", {}, el("tr", {}, [el("th", {}, "Date"), el("th", {}, "Questions"), el("th", {}, "Got it"), el("th", {}, "Shaky"), el("th", {}, "Missed"), el("th", {}, "Score"), el("th", {}, "Duration")])),
+    el("thead", {}, el("tr", {}, [el("th", {}, "Date"), el("th", {}, "Questions"), el("th", {}, "Correct"), el("th", {}, "Score"), el("th", {}, "Duration")])),
   ]);
   const tbody = el("tbody");
   [...sessions].reverse().slice(0, 50).forEach((s) => {
-    const pct = s.total ? Math.round((s.gotIt / s.total) * 100) : 0;
+    const pct = s.total ? Math.round((s.correct / s.total) * 100) : 0;
     tbody.append(el("tr", {}, [
       el("td", { class: "mono" }, new Date(s.date).toLocaleString()),
       el("td", { class: "mono" }, String(s.total)),
-      el("td", { class: "mono" }, String(s.gotIt)),
-      el("td", { class: "mono" }, String(s.shaky)),
-      el("td", { class: "mono" }, String(s.missed)),
+      el("td", { class: "mono" }, String(s.correct)),
       el("td", { class: "mono" }, `${pct}%`),
       el("td", { class: "mono" }, `${Math.floor(s.durationSec / 60)}m ${s.durationSec % 60}s`),
     ]));
@@ -1029,7 +1154,7 @@ function renderProgress() {
 
 /* ================= ROUTER ================= */
 function render(view) {
-  if (view !== "quiz") clearFlashcardKeyHandler();
+  if (view !== "quiz") clearQuizKeyHandler();
   switch (view) {
     case "dashboard": return renderDashboard();
     case "principles": return renderPrinciples();
