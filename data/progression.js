@@ -120,4 +120,21 @@ window.STOTT.progression = {
       ],
     },
   },
+  buildupPaths: [
+    {
+      id: "ab-curl-cadillac",
+      title: "Building up to Abdominal Curls (Cadillac)",
+      principle: "Strengthen the abs and hip flexors progressively — from a stable, supported supine position up to a fully suspended curl with no rigid bar to brace against.",
+      source: "The user's own handwritten study notes — Cadillac Essentials manual, \"the exercises...\" divider page: \"Preparation Sequence for Ab Curl.\"",
+      steps: [
+        { name: "Tabletop position hold", apparatus: null, why: "Foundational pelvic-stability position, not a separate named exercise in the manual — the leg position the next few exercises are built from.", flag: "The note says \"Table Top\" as the easiest step. There's no exercise by that exact name in the Mat manual, so this is shown as a general concept rather than a specific exercise — let me know if a named exercise was meant instead (e.g. Ab Prep)." },
+        { name: "The Hundred", apparatus: "mat", why: "First loaded abdominal-endurance work in this same tabletop/imprinted position." },
+        { name: "Double Leg Stretch", apparatus: "mat", why: "Adds simultaneous arm/leg extension while holding the same abdominal connection." },
+        { name: "Slow Double Leg Stretch", apparatus: "mat", why: "Slows the same pattern down and removes momentum, forcing the abdominals to control the movement rather than assist it." },
+        { name: "Front Rowing Preps", apparatus: "reformer", why: "Moves the same abdominal/pelvic stability demand onto an unstable, moving carriage." },
+        { name: "Stomach Massage", apparatus: "reformer", why: "A seated, loaded leg-press pattern that directly trains hip-flexor strength against resistance." },
+      ],
+      target: { name: "Abdominal Curls", apparatus: "cadillac", why: "Combines everything above — abdominal curl strength and hip-flexor control — while hanging in the fuzzy straps with no bar to brace against, the hardest version of the pattern." },
+    },
+  ],
 };

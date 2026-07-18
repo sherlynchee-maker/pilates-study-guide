@@ -9,7 +9,7 @@ DATA.apparatus = DATA.apparatus || {};
 DATA.examInfo = DATA.examInfo || {};
 DATA.quiz = DATA.quiz || [];
 DATA.crossref = DATA.crossref || { columns: [], rows: [] };
-DATA.progression = DATA.progression || { source: "", general: { title: "", warmup: [], layers: [] }, byPosture: {} };
+DATA.progression = DATA.progression || { source: "", general: { title: "", warmup: [], layers: [] }, byPosture: {}, buildupPaths: [] };
 
 const APPARATUS_META = {
   mat: { label: "Mat", key: "mat" },
@@ -1370,7 +1370,7 @@ function renderProgression() {
     ])
   );
 
-  if (!data.general.layers.length && !Object.keys(data.byPosture).length) {
+  if (!data.general.layers.length && !Object.keys(data.byPosture).length && !(data.buildupPaths || []).length) {
     mainView.append(el("div", { class: "empty-state" }, "Still digesting these charts — check back shortly."));
     return;
   }
@@ -1378,7 +1378,8 @@ function renderProgression() {
   const tabRow = el("div", { class: "chip-select", style: "margin-bottom:20px" });
   const generalTab = el("button", { class: "chip selected" }, "General class progression");
   const postureTab = el("button", { class: "chip" }, "By posture");
-  tabRow.append(generalTab, postureTab);
+  const buildupTab = el("button", { class: "chip" }, "Build-up paths");
+  tabRow.append(generalTab, postureTab, buildupTab);
   mainView.append(tabRow);
 
   const body = el("div");
@@ -1422,6 +1423,9 @@ function renderProgression() {
         ["Reformer — new this layer", l.reformerNew || [], "reformer"],
       ]));
     });
+    if (data.source) {
+      body.append(el("p", { style: "margin-top:24px;font-size:12px;color:var(--ink-faint)" }, `Source: ${data.source}`));
+    }
   }
 
   function drawPosture(postureName) {
@@ -1434,20 +1438,69 @@ function renderProgression() {
         ["Reformer — new this layer", (l.reformerNewWarmup || []).concat(l.reformerNewExercises || []), "reformer"],
       ]));
     });
+    if (data.source) {
+      body.append(el("p", { style: "margin-top:24px;font-size:12px;color:var(--ink-faint)" }, `Source: ${data.source}`));
+    }
+  }
+
+  function buildupStepCard(step, isTarget) {
+    const card = el("div", { class: "buildup-step" + (isTarget ? " buildup-target" : "") });
+    const head = el("div", { class: "buildup-step-head" }, [
+      el("span", { class: "buildup-step-name" }, step.name),
+      step.apparatus ? el("span", { class: "pill" }, APPARATUS_META[step.apparatus] ? APPARATUS_META[step.apparatus].label : step.apparatus) : el("span", { class: "pill" }, "Concept"),
+    ]);
+    card.append(head);
+    if (step.why) card.append(el("div", { class: "buildup-step-why" }, step.why));
+    if (step.flag) card.append(el("div", { class: "buildup-step-flag" }, step.flag));
+    if (step.apparatus) {
+      card.addEventListener("click", () => navigate(step.apparatus, { focusName: step.name }));
+      card.classList.add("clickable");
+    }
+    return card;
+  }
+
+  function drawBuildup(pathId) {
+    body.innerHTML = "";
+    const path = (data.buildupPaths || []).find((p) => p.id === pathId);
+    if (!path) { body.append(el("div", { class: "empty-state" }, "No build-up path yet.")); return; }
+    body.append(el("div", { class: "progression-warmup" }, [
+      el("span", { class: "k" }, "Principle: "),
+      el("span", { class: "v" }, path.principle),
+    ]));
+    const chain = el("div", { class: "buildup-chain" });
+    path.steps.forEach((step) => {
+      chain.append(buildupStepCard(step, false));
+      chain.append(el("div", { class: "buildup-arrow" }, "↓"));
+    });
+    chain.append(buildupStepCard(path.target, true));
+    body.append(chain);
+    if (path.source) {
+      body.append(el("p", { style: "margin-top:16px;font-size:12px;color:var(--ink-faint)" }, `Source: ${path.source}`));
+    }
   }
 
   const postureNames = Object.keys(data.byPosture);
+  const buildupPaths = data.buildupPaths || [];
   let postureChipRow = null;
+  let buildupChipRow = null;
+
+  function clearTabExtras() {
+    if (postureChipRow) postureChipRow.remove();
+    if (buildupChipRow) buildupChipRow.remove();
+  }
 
   function showGeneral() {
     generalTab.classList.add("selected");
     postureTab.classList.remove("selected");
-    if (postureChipRow) postureChipRow.remove();
+    buildupTab.classList.remove("selected");
+    clearTabExtras();
     drawGeneral();
   }
   function showPosture() {
     postureTab.classList.add("selected");
     generalTab.classList.remove("selected");
+    buildupTab.classList.remove("selected");
+    clearTabExtras();
     if (!postureChipRow) {
       postureChipRow = el("div", { class: "chip-select", style: "margin-bottom:16px" });
       postureNames.forEach((name, i) => {
@@ -1463,12 +1516,30 @@ function renderProgression() {
     body.before(postureChipRow);
     drawPosture(postureNames[0]);
   }
+  function showBuildup() {
+    buildupTab.classList.add("selected");
+    generalTab.classList.remove("selected");
+    postureTab.classList.remove("selected");
+    clearTabExtras();
+    if (!buildupChipRow) {
+      buildupChipRow = el("div", { class: "chip-select", style: "margin-bottom:16px" });
+      buildupPaths.forEach((path, i) => {
+        const chip = el("button", { class: "chip" + (i === 0 ? " selected" : "") }, path.title);
+        chip.addEventListener("click", () => {
+          buildupChipRow.querySelectorAll(".chip").forEach((c) => c.classList.remove("selected"));
+          chip.classList.add("selected");
+          drawBuildup(path.id);
+        });
+        buildupChipRow.append(chip);
+      });
+    }
+    body.before(buildupChipRow);
+    if (buildupPaths.length) drawBuildup(buildupPaths[0].id);
+    else { body.innerHTML = ""; body.append(el("div", { class: "empty-state" }, "No build-up paths yet.")); }
+  }
   generalTab.addEventListener("click", showGeneral);
   postureTab.addEventListener("click", showPosture);
-
-  if (data.source) {
-    mainView.append(el("p", { style: "margin-top:24px;font-size:12px;color:var(--ink-faint)" }, `Source: ${data.source}`));
-  }
+  buildupTab.addEventListener("click", showBuildup);
 
   showGeneral();
 }
