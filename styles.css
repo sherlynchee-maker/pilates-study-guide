@@ -950,26 +950,42 @@ th { font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.05em; t
 }
 
 /* ---- Cross-reference table ---- */
-.crossref-wrap { max-width: 100%; }
-.crossref-table { font-size: 12.5px; }
+.crossref-wrap {
+  max-width: 100%;
+  max-height: 70vh;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+.crossref-table { font-size: 12.5px; border-collapse: separate; border-spacing: 0; }
 .crossref-table th {
   white-space: nowrap;
   line-height: 1.35;
   padding: 8px 10px;
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  z-index: 2;
+  box-shadow: 0 1px 0 var(--line-soft);
 }
 .crossref-table td { padding: 6px 8px; vertical-align: middle; }
 .crossref-name-col {
   position: sticky;
   left: 0;
+  width: 108px;
+  max-width: 108px;
   background: var(--paper);
   font-family: var(--font-body);
   font-weight: 600;
   color: var(--ink);
-  white-space: nowrap;
+  font-size: 12px;
+  line-height: 1.3;
+  white-space: normal;
+  word-break: break-word;
   z-index: 1;
   box-shadow: 1px 0 0 var(--line-soft);
 }
-th.crossref-name-col { background: var(--paper); z-index: 2; }
+th.crossref-name-col { background: var(--paper); z-index: 3; }
 .crossref-cell-btn {
   border: 1px solid var(--line);
   background: var(--paper-raised);
