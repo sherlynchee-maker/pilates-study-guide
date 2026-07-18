@@ -389,10 +389,10 @@ function renderProgramming() {
   prog.postures.forEach((p) => {
     const card = el("div", { class: "card posture-program" });
     card.append(el("h3", {}, p.posture));
-    card.append(el("div", { class: "pill-row" }, [el("span", { class: "pill success" }, `Work in: ${p.workIn}`)]));
     card.append(el("p", { class: "v" }, p.emphasis));
 
     const fg = el("div", { class: "field-grid" });
+    fg.append(el("div", { class: "field" }, [el("div", { class: "k" }, "Work in"), el("div", { class: "v" }, p.workIn)]));
     fg.append(el("div", { class: "field" }, [el("div", { class: "k" }, "Strengthen"), el("div", { class: "v" }, (p.strengthen || []).join(", "))]));
     fg.append(el("div", { class: "field" }, [el("div", { class: "k" }, "Stretch"), el("div", { class: "v" }, (p.stretch || []).join(", "))]));
     card.append(fg);
