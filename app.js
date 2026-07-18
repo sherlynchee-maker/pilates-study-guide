@@ -9,6 +9,7 @@ DATA.apparatus = DATA.apparatus || {};
 DATA.examInfo = DATA.examInfo || {};
 DATA.quiz = DATA.quiz || [];
 DATA.crossref = DATA.crossref || { columns: [], rows: [] };
+DATA.progression = DATA.progression || { source: "", general: { title: "", warmup: [], layers: [] }, byPosture: {} };
 
 const APPARATUS_META = {
   mat: { label: "Mat", key: "mat" },
@@ -1342,6 +1343,136 @@ function renderCrossRef() {
   document.getElementById("crossrefSearch").addEventListener("input", (e) => draw(e.target.value));
 }
 
+/* ================= PROGRESSION ================= */
+function progressionItemLabel(item) {
+  return item.variants ? `${item.name} ${item.variants}` : item.name;
+}
+
+function progressionChip(item, apparatusKey) {
+  const chip = el("button", { class: "prog-chip", type: "button", title: item.note || "" }, [
+    progressionItemLabel(item),
+    item.note ? el("span", { class: "prog-chip-note" }, ` — ${item.note}`) : null,
+  ]);
+  chip.addEventListener("click", () => navigate(apparatusKey, { focusName: item.name }));
+  return chip;
+}
+
+function renderProgression() {
+  const data = DATA.progression;
+  mainView.innerHTML = "";
+  mainView.append(
+    el("div", { class: "view-header" }, [
+      el("div", {}, [
+        el("span", { class: "eyebrow" }, "Learn"),
+        el("h2", {}, "Progression"),
+        el("p", { class: "sub" }, "How STOTT's own sample classes build up, layer by layer — which exercises get added within an apparatus, and how Mat and Reformer work build on each other. Pulled straight from the manual's Sample Workouts, not inferred."),
+      ]),
+    ])
+  );
+
+  if (!data.general.layers.length && !Object.keys(data.byPosture).length) {
+    mainView.append(el("div", { class: "empty-state" }, "Still digesting these charts — check back shortly."));
+    return;
+  }
+
+  const tabRow = el("div", { class: "chip-select", style: "margin-bottom:20px" });
+  const generalTab = el("button", { class: "chip selected" }, "General class progression");
+  const postureTab = el("button", { class: "chip" }, "By posture");
+  tabRow.append(generalTab, postureTab);
+  mainView.append(tabRow);
+
+  const body = el("div");
+  mainView.append(body);
+
+  function levelPill(level) {
+    return el("span", { class: `pill level-${(level || "").toLowerCase()}` }, level);
+  }
+
+  function layerCard(layerNum, level, cols) {
+    const card = el("div", { class: "progression-layer" });
+    card.append(el("div", { class: "progression-layer-head" }, [el("h3", {}, `Layer ${layerNum}`), level ? levelPill(level) : null]));
+    const colsWrap = el("div", { class: "progression-cols" });
+    cols.forEach(([label, items, apparatusKey]) => {
+      const col = el("div", { class: "progression-col" });
+      col.append(el("div", { class: "progression-col-label" }, label));
+      if (!items.length) {
+        col.append(el("div", { class: "progression-empty" }, "Nothing new this layer"));
+      } else {
+        const list = el("div", { class: "prog-chip-list" });
+        items.forEach((item) => list.append(progressionChip(item, apparatusKey)));
+        col.append(list);
+      }
+      colsWrap.append(col);
+    });
+    card.append(colsWrap);
+    return card;
+  }
+
+  function drawGeneral() {
+    body.innerHTML = "";
+    if (data.general.warmup && data.general.warmup.length) {
+      body.append(el("div", { class: "progression-warmup" }, [
+        el("span", { class: "k" }, "Warm-up (established Layer 1, repeated every layer): "),
+        el("span", { class: "v" }, data.general.warmup.join(", ")),
+      ]));
+    }
+    data.general.layers.forEach((l) => {
+      body.append(layerCard(l.layer, l.level, [
+        ["Mat — new this layer", l.matworkNew || [], "mat"],
+        ["Reformer — new this layer", l.reformerNew || [], "reformer"],
+      ]));
+    });
+  }
+
+  function drawPosture(postureName) {
+    body.innerHTML = "";
+    const prog = data.byPosture[postureName];
+    if (!prog) { body.append(el("div", { class: "empty-state" }, "No chart for this posture yet.")); return; }
+    prog.layers.forEach((l) => {
+      body.append(layerCard(l.layer, null, [
+        ["Mat — new this layer", (l.matworkNewWarmup || []).concat(l.matworkNewExercises || []), "mat"],
+        ["Reformer — new this layer", (l.reformerNewWarmup || []).concat(l.reformerNewExercises || []), "reformer"],
+      ]));
+    });
+  }
+
+  const postureNames = Object.keys(data.byPosture);
+  let postureChipRow = null;
+
+  function showGeneral() {
+    generalTab.classList.add("selected");
+    postureTab.classList.remove("selected");
+    if (postureChipRow) postureChipRow.remove();
+    drawGeneral();
+  }
+  function showPosture() {
+    postureTab.classList.add("selected");
+    generalTab.classList.remove("selected");
+    if (!postureChipRow) {
+      postureChipRow = el("div", { class: "chip-select", style: "margin-bottom:16px" });
+      postureNames.forEach((name, i) => {
+        const chip = el("button", { class: "chip" + (i === 0 ? " selected" : "") }, name);
+        chip.addEventListener("click", () => {
+          postureChipRow.querySelectorAll(".chip").forEach((c) => c.classList.remove("selected"));
+          chip.classList.add("selected");
+          drawPosture(name);
+        });
+        postureChipRow.append(chip);
+      });
+    }
+    body.before(postureChipRow);
+    drawPosture(postureNames[0]);
+  }
+  generalTab.addEventListener("click", showGeneral);
+  postureTab.addEventListener("click", showPosture);
+
+  if (data.source) {
+    mainView.append(el("p", { style: "margin-top:24px;font-size:12px;color:var(--ink-faint)" }, `Source: ${data.source}`));
+  }
+
+  showGeneral();
+}
+
 /* ================= ROUTER ================= */
 function render(view, opts = {}) {
   if (view !== "quiz") clearQuizKeyHandler();
@@ -1355,6 +1486,7 @@ function render(view, opts = {}) {
     case "quiz": return renderQuiz();
     case "progress": return renderProgress();
     case "crossref": return renderCrossRef();
+    case "progression": return renderProgression();
     case "mat": case "reformer": case "cadillac": case "chair":
     case "archbarrel": case "spinecorrector": case "ladderbarrel":
       return renderApparatus(view, opts);
