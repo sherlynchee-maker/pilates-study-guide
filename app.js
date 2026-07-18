@@ -670,7 +670,13 @@ function renderQuiz() {
         chipRow.querySelectorAll(".chip").forEach((c) => c.classList.add("selected"));
         updateCount();
       });
-      chipRow.append(allChip);
+      const noneChip = el("button", { class: "chip chip-ghost" }, "Deselect all");
+      noneChip.addEventListener("click", () => {
+        selectedTopics = new Set();
+        chipRow.querySelectorAll(".chip").forEach((c) => c.classList.remove("selected"));
+        updateCount();
+      });
+      chipRow.append(allChip, noneChip);
       topics.forEach((t) => {
         const n = DATA.quiz.filter((q) => (q.topic || "General") === t).length;
         const chip = el("button", { class: "chip selected" }, `${t} (${n})`);
