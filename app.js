@@ -8,6 +8,7 @@ DATA.programming = DATA.programming || { layers: [], workflow: [], postures: [] 
 DATA.apparatus = DATA.apparatus || {};
 DATA.examInfo = DATA.examInfo || {};
 DATA.quiz = DATA.quiz || [];
+DATA.crossref = DATA.crossref || { columns: [], rows: [] };
 
 const APPARATUS_META = {
   mat: { label: "Mat", key: "mat" },
@@ -122,6 +123,12 @@ function refreshNavCounts() {
     let countSpan = quizBtn.querySelector(".count");
     if (!countSpan) { countSpan = el("span", { class: "count" }, ""); quizBtn.appendChild(countSpan); }
     countSpan.textContent = DATA.quiz.length ? DATA.quiz.length : "";
+  }
+  const crossrefBtn = document.querySelector('.nav-btn[data-view="crossref"]');
+  if (crossrefBtn) {
+    let countSpan = crossrefBtn.querySelector(".count");
+    if (!countSpan) { countSpan = el("span", { class: "count" }, ""); crossrefBtn.appendChild(countSpan); }
+    countSpan.textContent = DATA.crossref.rows.length ? DATA.crossref.rows.length : "";
   }
 }
 
@@ -475,7 +482,15 @@ function exerciseDetailCard(ex) {
   return card;
 }
 
-function renderApparatus(key) {
+function normalizeExerciseName(s) {
+  return (s || "")
+    .toLowerCase()
+    .replace(/\([^)]*\)/g, "")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function renderApparatus(key, opts = {}) {
   const meta = APPARATUS_META[key];
   const data = DATA.apparatus[key] || {};
   mainView.innerHTML = "";
@@ -551,9 +566,28 @@ function renderApparatus(key) {
       }
       listHost.append(block);
     });
+    return flatList;
   }
-  draw("");
+  const initialFlatList = draw("");
   document.getElementById("apparatusSearch").addEventListener("input", (e) => draw(e.target.value));
+
+  if (opts.focusName) {
+    const target = normalizeExerciseName(opts.focusName);
+    let matchIndex = initialFlatList.findIndex((ex) => normalizeExerciseName(ex.name) === target);
+    if (matchIndex === -1) {
+      matchIndex = initialFlatList.findIndex((ex) => {
+        const n = normalizeExerciseName(ex.name);
+        return n && target && (n.includes(target) || target.includes(n));
+      });
+    }
+    if (matchIndex !== -1) {
+      openExerciseModal(initialFlatList, matchIndex);
+    } else {
+      const input = document.getElementById("apparatusSearch");
+      input.value = opts.focusName;
+      draw(opts.focusName);
+    }
+  }
 }
 
 function openExerciseModal(list, index) {
@@ -1202,8 +1236,97 @@ function renderProgress() {
   mainView.append(dangerRow);
 }
 
+/* ================= CROSS-REFERENCE ================= */
+const CROSSREF_SHORT_LABELS = {
+  matEss: "Mat\nEss.",
+  matInt: "Mat\nInt.",
+  reformerEss: "Reformer\nEss.",
+  reformerInt: "Reformer\nInt.",
+  cadillacEss: "Cadillac\nEss.",
+  cadillacInt: "Cadillac\nInt.",
+  archbarrel: "Arc\nBarrel",
+  spinecorrector: "Spine\nCorrector",
+  ladderbarrel: "Ladder\nBarrel",
+  chair: "Stability\nChair",
+};
+
+function twoLineText(text) {
+  return text.split("\n").map((line, i) => (i === 0 ? [line] : [el("br"), line])).flat();
+}
+
+function renderCrossRef() {
+  const meta = DATA.crossref;
+  mainView.innerHTML = "";
+  mainView.append(
+    el("div", { class: "view-header" }, [
+      el("div", {}, [
+        el("span", { class: "eyebrow" }, "Compare"),
+        el("h2", {}, "Exercise Cross-Reference"),
+        el("p", { class: "sub" }, "Same exercise family across every apparatus it shows up on — spot the pattern, then click any reference to jump straight to that exercise."),
+      ]),
+    ])
+  );
+
+  if (!meta.rows.length) {
+    mainView.append(el("div", { class: "empty-state" }, "Still building this table — check back shortly."));
+    return;
+  }
+
+  const searchWrap = el("div", { class: "search-box" }, [
+    el("input", { placeholder: "Search exercise family…", id: "crossrefSearch" }),
+  ]);
+  mainView.append(searchWrap);
+
+  const table = el("table", { class: "crossref-table" });
+  const thead = el(
+    "thead",
+    {},
+    el(
+      "tr",
+      {},
+      [el("th", { class: "crossref-name-col" }, "Exercise")].concat(
+        meta.columns.map((c) => el("th", { title: c.label }, twoLineText(CROSSREF_SHORT_LABELS[c.key] || c.label)))
+      )
+    )
+  );
+  const tbody = el("tbody");
+  table.append(thead, tbody);
+  mainView.append(el("div", { class: "table-wrap crossref-wrap" }, table));
+
+  function cellContent(row, col) {
+    const val = row.cells[col.key];
+    if (!val) return el("span", { class: "crossref-empty" }, "—");
+    const btn = el("button", { class: "crossref-cell-btn", type: "button" }, twoLineText(val));
+    btn.addEventListener("click", () => navigate(col.apparatus, { focusName: row.name }));
+    return btn;
+  }
+
+  function draw(filter) {
+    tbody.innerHTML = "";
+    const f = (filter || "").toLowerCase();
+    const rows = meta.rows.filter((r) => !f || r.name.toLowerCase().includes(f));
+    if (!rows.length) {
+      tbody.append(el("tr", {}, el("td", { colspan: meta.columns.length + 1, class: "empty-state" }, "No exercises match your search.")));
+      return;
+    }
+    rows.forEach((row) => {
+      tbody.append(
+        el(
+          "tr",
+          {},
+          [el("td", { class: "crossref-name-col" }, row.name)].concat(
+            meta.columns.map((col) => el("td", {}, cellContent(row, col)))
+          )
+        )
+      );
+    });
+  }
+  draw("");
+  document.getElementById("crossrefSearch").addEventListener("input", (e) => draw(e.target.value));
+}
+
 /* ================= ROUTER ================= */
-function render(view) {
+function render(view, opts = {}) {
   if (view !== "quiz") clearQuizKeyHandler();
   switch (view) {
     case "dashboard": return renderDashboard();
@@ -1214,9 +1337,10 @@ function render(view) {
     case "examinfo": return renderExamInfo();
     case "quiz": return renderQuiz();
     case "progress": return renderProgress();
+    case "crossref": return renderCrossRef();
     case "mat": case "reformer": case "cadillac": case "chair":
     case "archbarrel": case "spinecorrector": case "ladderbarrel":
-      return renderApparatus(view);
+      return renderApparatus(view, opts);
     default: return renderDashboard();
   }
 }
