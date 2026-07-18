@@ -228,6 +228,19 @@ function renderPrinciples() {
           p.commonErrors.map((e) => el("li", {}, [el("strong", {}, e.error + ": "), e.cue])))),
       ]));
     }
+    if (p.exercises && p.exercises.length) {
+      card.append(el("div", { class: "field", style: "margin-top:10px" }, [
+        el("div", { class: "k" }, "Named exercises in this Principle"),
+        el("div", { class: "v" }, el("ul", { style: "margin:4px 0 0;padding-left:18px" },
+          p.exercises.map((ex) => el("li", {}, [el("strong", {}, ex.name + ": "), ex.detail])))),
+      ]));
+    }
+    if (p.movementPatterns && p.movementPatterns.length) {
+      card.append(el("div", { class: "field", style: "margin-top:10px" }, [
+        el("div", { class: "k" }, "Related movement-pattern drills"),
+        el("div", { class: "v" }, p.movementPatterns.join(" · ")),
+      ]));
+    }
     mainView.append(card);
   });
 }

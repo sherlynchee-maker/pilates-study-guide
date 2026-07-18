@@ -15,6 +15,17 @@ window.STOTT.principles = [
       { error: "Belly bulging (losing abdominal control on inhale)", cue: "Maintain a gentle 'zip' in your lower abs as you widen your ribs." },
       { error: "Breath holding (stopping the breath on hard movements)", cue: "Use the exhale to power through the hardest part of the movement." },
     ],
+    exercises: [
+      { name: "1. Notice Natural Breath Pattern", detail: "Standing or supine — create awareness of existing breath pattern before changing anything." },
+      { name: "2. Upper Rib Cage Movement", detail: "Standing, hands on sternum — create awareness of the pump-handle pattern of the upper ribs." },
+      { name: "3. Lower Rib Cage & Last Two Ribs", detail: "Standing, hands on side/back of ribs — create awareness of the bucket-handle and caliper patterns." },
+      { name: "4. Three-Dimensional Breathing", detail: "Standing, one hand on sternum, one wrapped around the ribs — create awareness of a three-dimensional breath." },
+      { name: "5. Breathing Flexed Forward", detail: "Seated, rolling down into forward flexion over the legs — encourages breathing into the sides and back of the rib cage." },
+      { name: "6. Lateral Rib Cage Breathing Supine", detail: "Supine, hands on the sides of the ribs — encourages breathing into the sides and front of the rib cage." },
+      { name: "7. Pelvic Floor Sitting", detail: "Seated, legs crossed — create awareness of pelvic floor engagement." },
+      { name: "8. Transversus Engagement", detail: "(a) Supine, fingertips medial to ASIS; (b) Quadruped — create awareness of transversus abdominis activation without spinal movement." },
+      { name: "9. Breath Pattern Supine Incorporating Abdominals", detail: "Supine — layers pelvic floor, TA, and oblique engagement onto the breath; puts all prior elements together." },
+    ],
   },
   {
     id: "pelvic",
@@ -30,6 +41,12 @@ window.STOTT.principles = [
       { error: "Anterior tilting — excessive arch, often from weak abdominals or tight hip flexors", cue: "Imagine a marble sitting on your pubic bone; it shouldn't roll toward your belly." },
       { error: "Over-gripping — using hip flexors instead of deep core to hold the position", cue: "Balance the bowl of water on your pelvis — no spilling toward chest or thighs." },
     ],
+    exercises: [
+      { name: "1. Rocking Pelvis", detail: "Supine, knees flexed — rock through anterior and posterior tilts to explore the available range; neutral sits somewhere in between." },
+      { name: "2. Neutral to Imprint", detail: "Supine, knees flexed — move deliberately between neutral and imprinted pelvic positions, creating awareness of both." },
+      { name: "3. Leg Slides", detail: "Supine, knees flexed — slide one foot away along the mat while maintaining pelvic stability; can be done in imprint if neutral can't be held." },
+      { name: "4. Leg Lifts & Toe Taps", detail: "(a) Leg Lifts — lift one leg to tabletop, keeping the pelvis level; (b) Toe Taps — from imprint with both legs in tabletop, reach one foot toward the mat and return." },
+    ],
   },
   {
     id: "ribcage",
@@ -43,6 +60,10 @@ window.STOTT.principles = [
     commonErrors: [
       { error: "Rib flaring — lifting the chest on inhale or with arm movement", cue: "Soften the sternum. Imagine your front ribs are heavy, sinking toward the mat." },
       { error: "Over-engagement — pulling ribs down so hard the back flattens/rounds", cue: "Keep the back of your ribs heavy on the mat without losing the small curve in your lower back." },
+    ],
+    exercises: [
+      { name: "1. Arm Raises & Scissors", detail: "Supine, arms long by sides — reach arms overhead only as far as abdominal connection and rib-to-pelvis alignment can be maintained." },
+      { name: "2. Active Breathing with Physiological Spinal Motion", detail: "Supine, knees flexed — actively inhale into thoracic extension (ribs open), actively exhale into thoracic flexion (ribs close)." },
     ],
   },
   {
@@ -61,6 +82,20 @@ window.STOTT.principles = [
       { error: "Over-depression — pulling shoulders down so hard the neck strains", cue: "Let the shoulder blades slide down toward your back pockets, but keep them wide." },
       { error: "Retracting during flexion — pinching the blades together while rounding the spine", cue: "Allow the shoulder blades to widen away from each other as you curve forward." },
     ],
+    exercises: [
+      { name: "Prep. Scapular Setting on a Neutral Spine", detail: "Standing, hands on head — elevate, widen the elbows, then gently depress the scapulae to find a tension-free starting position." },
+      { name: "1. Scapula Isolations — Protraction & Retraction", detail: "Arms in front of shoulders — protract to neutral, then retract to neutral, mobilizing the scapulae." },
+      { name: "2. Scapula Isolations — Elevation & Depression", detail: "Arms long by sides — elevate the shoulder blades toward the ears, then depress away from the ears." },
+      { name: "3. Arm Scissors", detail: "Arms reaching in front of shoulders — reach one arm overhead as the other reaches down, scissoring, to create awareness of scapular movement with arm movement." },
+      { name: "4. Arm Circles", detail: "Arms long by sides — circle the arms overhead and around, creating awareness of elevation/depression with upward/downward rotation." },
+    ],
+    movementPatterns: [
+      "Bilateral Push in Neutral", "Bilateral Push with Flexion",
+      "Bilateral Pull in Neutral", "Bilateral Pull with Extension",
+      "Unilateral Push without Rotation", "Unilateral Push with Rotation",
+      "Unilateral Pull without Rotation", "Unilateral Pull with Rotation",
+      "Torso Rotation with Push & Pull",
+    ],
   },
   {
     id: "cervical",
@@ -76,6 +111,11 @@ window.STOTT.principles = [
       { error: "Chin poking — chin reaches forward, compressing the back of the neck", cue: "Imagine a small peach between your chin and your chest; don't squash it, but don't let it roll away." },
       { error: "Excessive tucking — jamming the chin into the throat", cue: "Focus on lengthening the back of your neck toward the ceiling." },
       { error: "Eye gaze misalignment — looking at the ceiling while the body is in flexion", cue: "Let your eyes lead the movement; look toward your knees as you lift." },
+    ],
+    exercises: [
+      { name: "1. Cranio-Vertebral Flexion (Head Nod)", detail: "Supine, head stays on the mat — lengthen the back of the neck to create segmental flexion of the upper cervical spine (C1–C2)." },
+      { name: "2. Modified Ab Prep", detail: "Supine, hands behind head — perform the Head Nod, then flex the thoracic spine, letting the head's weight drop into the hands without losing length in the back of the neck." },
+      { name: "3. Modified Breast Stroke Prep", detail: "Prone, hands by shoulders — depress/retract the scapulae and extend the thoracic spine, letting the cervical spine extend as part of the whole pattern (not an isolated reverse head nod)." },
     ],
   },
   {
@@ -93,5 +133,14 @@ window.STOTT.principles = [
       { error: "Sickling ankle — ankle rolls outward or inward", cue: "Press equally through the inner and outer edges of your feet." },
       { error: "Pelvic hiking — lifting one side of the pelvis when moving the leg", cue: "Keep your waist long on both sides as you lift your leg." },
     ],
+    exercises: [
+      { name: "1. Notice Natural Standing Alignment", detail: "Standing — become aware of torso placement and weight distribution across the foot's tripod (base of big toe, base of pinky toe, center of heel)." },
+      { name: "2. Squat", detail: "Standing — flex hips, knees, and ankles to squat while keeping the torso neutral; creates awareness of dynamic alignment." },
+      { name: "3. Standing Twist", detail: "Standing, arms crossed on shoulders — rotate freely left and right in a habitual pattern; creates awareness of flexibility in the transverse plane." },
+      { name: "4. Plié", detail: "Standing, legs wide and laterally rotated — flex hips/knees/ankles while keeping the pelvis and spine vertical; creates awareness of flexibility in the transverse and coronal planes." },
+      { name: "5. Step", detail: "Standing, hands on hips — step forward and return, allowing both knees to soften; creates awareness of weight shift and ground reaction forces." },
+      { name: "6. Step Lunge", detail: "Standing, hands on hips — step into a split stance, flexing both knees, then press back to standing; creates awareness of weight shift and ground reaction forces through a larger range." },
+    ],
+    movementPatterns: ["Hinge", "Squat", "Step", "Lunge"],
   },
 ];
