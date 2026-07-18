@@ -573,11 +573,27 @@ function renderApparatus(key, opts = {}) {
 
   if (opts.focusName) {
     const target = normalizeExerciseName(opts.focusName);
+    const targetTokens = target.split(" ").filter(Boolean);
     let matchIndex = initialFlatList.findIndex((ex) => normalizeExerciseName(ex.name) === target);
     if (matchIndex === -1) {
       matchIndex = initialFlatList.findIndex((ex) => {
         const n = normalizeExerciseName(ex.name);
         return n && target && (n.includes(target) || target.includes(n));
+      });
+    }
+    if (matchIndex === -1 && opts.focusPage) {
+      // Same exercise family, different apparatus-specific naming: fall back to
+      // matching on the page number the cross-reference cell pointed at, scored
+      // against name-token overlap so overlapping page ranges don't win on page alone.
+      let bestScore = 0;
+      initialFlatList.forEach((ex, i) => {
+        const pageNums = (ex.page || "").match(/\d+/g) || [];
+        if (!pageNums.includes(opts.focusPage)) return;
+        let score = (ex.page || "").trim() === opts.focusPage ? 2 : 1;
+        const exTokens = normalizeExerciseName(ex.name).split(" ").filter(Boolean);
+        const overlap = targetTokens.filter((t) => exTokens.some((n) => n === t || n.includes(t) || t.includes(n))).length;
+        score += overlap * 2;
+        if (score > bestScore) { bestScore = score; matchIndex = i; }
       });
     }
     if (matchIndex !== -1) {
@@ -1297,7 +1313,8 @@ function renderCrossRef() {
     const val = row.cells[col.key];
     if (!val) return el("span", { class: "crossref-empty" }, "—");
     const btn = el("button", { class: "crossref-cell-btn", type: "button" }, twoLineText(val));
-    btn.addEventListener("click", () => navigate(col.apparatus, { focusName: row.name }));
+    const pageMatch = val.match(/\d+/);
+    btn.addEventListener("click", () => navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null }));
     return btn;
   }
 
