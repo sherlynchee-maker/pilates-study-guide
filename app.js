@@ -398,13 +398,13 @@ function exerciseDetailCard(ex) {
   const pills = el("div", { class: "pill-row" });
   if (ex.level) pills.append(el("span", { class: `pill level-${ex.level.toLowerCase()}` }, ex.level));
   if (ex.category) pills.append(el("span", { class: "pill success" }, ex.category));
-  if (ex.springs) pills.append(el("span", { class: "pill" }, `Springs: ${ex.springs}`));
   if (ex.page) pills.append(el("span", { class: "pill" }, `p.${ex.page}`));
   card.append(el("h3", {}, ex.name));
   card.append(pills);
 
   const grid = el("div", { class: "field-grid" });
   const fields = [
+    ["Springs / setup", ex.springs],
     ["Starting position", ex.startingPosition],
     ["Pelvis", ex.pelvis],
     ["Spine", ex.spine],
@@ -488,7 +488,7 @@ function renderApparatus(key) {
   function makeRow(ex, flatList) {
     const row = el("div", { class: "exercise-row" }, [
       el("div", {}, [el("div", { class: "name" }, ex.name)]),
-      el("span", { class: "meta" }, ex.springs ? `springs ${ex.springs}` : (ex.page ? `p.${ex.page}` : "")),
+      el("span", { class: "meta" }, ex.springs && ex.springs.length <= 24 ? `springs ${ex.springs}` : (ex.page ? `p.${ex.page}` : "")),
     ]);
     const flatIndex = flatList.length;
     flatList.push(ex);
