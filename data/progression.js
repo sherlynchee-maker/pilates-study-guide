@@ -127,7 +127,7 @@ window.STOTT.progression = {
       principle: "Strengthen the abs and hip flexors progressively — from a stable, supported supine position up to a fully suspended curl with no rigid bar to brace against.",
       source: "The user's own handwritten study notes — Cadillac Essentials manual, \"the exercises...\" divider page: \"Preparation Sequence for Ab Curl.\"",
       steps: [
-        { name: "Tabletop position hold", apparatus: null, why: "Foundational pelvic-stability position, not a separate named exercise in the manual — the leg position the next few exercises are built from.", flag: "The note says \"Table Top\" as the easiest step. There's no exercise by that exact name in the Mat manual, so this is shown as a general concept rather than a specific exercise — let me know if a named exercise was meant instead (e.g. Ab Prep)." },
+        { name: "Leg Lifts", view: "principles", why: "Basic Principles' own Pelvic Placement drill (Exercise 4) — lift one leg to tabletop while keeping the pelvis level. This is the literal \"tabletop\" foundation the note starts from, before any loaded ab work." },
         { name: "The Hundred", apparatus: "mat", why: "First loaded abdominal-endurance work in this same tabletop/imprinted position." },
         { name: "Double Leg Stretch", apparatus: "mat", why: "Adds simultaneous arm/leg extension while holding the same abdominal connection." },
         { name: "Slow Double Leg Stretch", apparatus: "mat", why: "Slows the same pattern down and removes momentum, forcing the abdominals to control the movement rather than assist it." },

@@ -1443,17 +1443,25 @@ function renderProgression() {
     }
   }
 
+  const VIEW_LABELS = { principles: "Basic Principles", posture: "Posture Assessment", programming: "Programming" };
+
   function buildupStepCard(step, isTarget) {
     const card = el("div", { class: "buildup-step" + (isTarget ? " buildup-target" : "") });
+    let pillLabel = "Concept";
+    if (step.apparatus) pillLabel = APPARATUS_META[step.apparatus] ? APPARATUS_META[step.apparatus].label : step.apparatus;
+    else if (step.view) pillLabel = VIEW_LABELS[step.view] || step.view;
     const head = el("div", { class: "buildup-step-head" }, [
       el("span", { class: "buildup-step-name" }, step.name),
-      step.apparatus ? el("span", { class: "pill" }, APPARATUS_META[step.apparatus] ? APPARATUS_META[step.apparatus].label : step.apparatus) : el("span", { class: "pill" }, "Concept"),
+      el("span", { class: "pill" }, pillLabel),
     ]);
     card.append(head);
     if (step.why) card.append(el("div", { class: "buildup-step-why" }, step.why));
     if (step.flag) card.append(el("div", { class: "buildup-step-flag" }, step.flag));
     if (step.apparatus) {
       card.addEventListener("click", () => navigate(step.apparatus, { focusName: step.name }));
+      card.classList.add("clickable");
+    } else if (step.view) {
+      card.addEventListener("click", () => navigate(step.view));
       card.classList.add("clickable");
     }
     return card;
