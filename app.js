@@ -253,6 +253,29 @@ function renderAnatomy() {
     mainView.append(el("div", { class: "empty-state" }, "Still digesting this section."));
     return;
   }
+
+  const diagramBlock = el("div", { class: "section-block" });
+  diagramBlock.append(el("h3", {}, "Muscle Map"));
+  const diagramFig = el("figure", { class: "anatomy-diagram" });
+  const diagramImg = el("img", {
+    src: "images/anatomy/muscles-full-body.jpg",
+    alt: "Labeled anterior and posterior diagram of the major muscles of the human body",
+    loading: "lazy",
+  });
+  diagramImg.addEventListener("click", () => openImageLightbox(diagramImg.src, diagramImg.alt));
+  diagramFig.append(
+    diagramImg,
+    el("figcaption", {}, [
+      "Click to enlarge. Illustration: OpenStax, ",
+      el("i", {}, "Anatomy & Physiology"),
+      ", ",
+      el("a", { href: "https://commons.wikimedia.org/wiki/File:1105_Anterior_and_Posterior_Views_of_Muscles.jpg", target: "_blank", rel: "noopener" }, "CC BY 4.0"),
+      " via Wikimedia Commons.",
+    ])
+  );
+  diagramBlock.append(diagramFig);
+  mainView.append(diagramBlock);
+
   renderSectionsInto(mainView, sections);
 
   const groups = DATA.anatomy.muscleGroups || [];
@@ -590,6 +613,26 @@ function openExerciseModal(list, index) {
   detail = buildCard();
   overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
   overlay.append(detail);
+  document.body.append(overlay);
+  document.addEventListener("keydown", keyHandler);
+}
+
+function openImageLightbox(src, alt) {
+  const overlay = el("div", { class: "lightbox-overlay" });
+  const img = el("img", { src, alt, class: "lightbox-img" });
+  const closeBtn = el("button", { class: "lightbox-close", "aria-label": "Close" }, "×");
+
+  function close() {
+    document.removeEventListener("keydown", keyHandler);
+    overlay.remove();
+  }
+  function keyHandler(e) {
+    if (e.key === "Escape") close();
+  }
+
+  overlay.addEventListener("click", (e) => { if (e.target === overlay) close(); });
+  closeBtn.addEventListener("click", close);
+  overlay.append(img, closeBtn);
   document.body.append(overlay);
   document.addEventListener("keydown", keyHandler);
 }
