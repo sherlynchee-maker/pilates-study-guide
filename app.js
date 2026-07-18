@@ -509,9 +509,10 @@ function renderApparatus(key) {
   mainView.append(listHost);
 
   function makeRow(ex, flatList) {
+    const showSprings = key !== "chair" && key !== "cadillac" && ex.springs && ex.springs.length <= 24;
     const row = el("div", { class: "exercise-row" }, [
       el("div", {}, [el("div", { class: "name" }, ex.name)]),
-      el("span", { class: "meta" }, ex.springs && ex.springs.length <= 24 ? `springs ${ex.springs}` : (ex.page ? `p.${ex.page}` : "")),
+      el("span", { class: "meta" }, showSprings ? `springs ${ex.springs}` : (ex.page ? `p.${ex.page}` : "")),
     ]);
     const flatIndex = flatList.length;
     flatList.push(ex);

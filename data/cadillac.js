@@ -263,7 +263,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "A trained professional must spot with a hand on the push-thru bar throughout; the spotter must never lean over the bar. Sitting higher reduces range of motion.",
   },
   {
-    name: "Scapula Isolation (Springs from Above)",
+    name: "Scapula Isolation",
     level: "Essential",
     category: "Push-Thru Bar — Springs from Above",
     springs: "1 or 2",
@@ -562,7 +562,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "Similar to Cat Prep but with no extension phase expected. If the hip joint feels tight, start with Cat Prep first.",
   },
   {
-    name: "Scapula Isolation (Springs from Below)",
+    name: "Scapula Isolation",
     level: "Essential",
     category: "Push-Thru Bar — Springs from Below",
     springs: "2 springs; attach safety chain first from middle eyehook of top strut to an upper eyehook of the push-thru bar, then attach springs to lower eyehooks of the bar with locking spring clips, vinyl covers protecting the bed",
@@ -865,7 +865,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "",
   },
   {
-    name: "Biceps Curls (Arm Springs)",
+    name: "Biceps Curls",
     level: "Essential",
     category: "Arm Springs — Standing",
     springs: "Attached to eyehooks at the bottom of the uprights, foam-grip handles",
@@ -894,7 +894,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "",
   },
   {
-    name: "Triceps Press (Arm Springs)",
+    name: "Triceps Press",
     level: "Essential",
     category: "Arm Springs — Standing",
     springs: "Vertically sliding bar",
@@ -1012,7 +1012,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "The higher the sliding bar is set relative to the exerciser, the harder the exercise becomes.",
   },
   {
-    name: "Bend & Stretch (Supine)",
+    name: "Bend & Stretch",
     level: "Essential",
     category: "Leg Springs — Supine",
     springs: "White/green springs, vertically sliding bar set to shoulder level when sitting, padded long spine straps",
@@ -1098,7 +1098,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "Speed changes the challenge: slower is more challenging, faster is less challenging (opposite of what might be assumed).",
   },
   {
-    name: "Bend & Stretch (Side-Lying)",
+    name: "Bend & Stretch",
     level: "Essential",
     category: "Leg Springs — Side-Lying",
     springs: "Single spring, attached to the middle eyehook of the vertically sliding bar set to shoulder level when sitting, padded long spine strap",
@@ -1174,7 +1174,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "This is a coronal-plane stretch. Always stretch off the end of the Cadillac bed, sending weight away from the length of the frame — never stretch off the side, as this may cause the Cadillac to tip.",
   },
   {
-    name: "Biceps Curls (Push-Thru Bar)",
+    name: "Biceps Curls",
     level: "Essential",
     category: "Push-Thru Bar Standing",
     springs: "Springs from below, attached to the lowest eyehooks on the uprights, 1 or 2, bar swung away from the bed",
@@ -1200,7 +1200,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "A trained professional must spot with a hand on the push-thru bar throughout, never leaning over or under the bar.",
   },
   {
-    name: "Triceps Press (Push-Thru Bar)",
+    name: "Triceps Press",
     level: "Essential",
     category: "Push-Thru Bar Standing",
     springs: "Springs from below",
@@ -1436,7 +1436,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "Progression from Essential Ballet Stretches Kneeling (pg 36). Progresses further to Intermediate Standing Fuzzy (pg 164), which is the same sequence performed with fuzzy hanging straps instead of the trapeze.",
   },
   {
-    name: "Spread Eagle (Trapeze)",
+    name: "Spread Eagle",
     level: "Intermediate",
     category: "Trapeze",
     springs: "2 fixed trapeze springs; legs hooked around the springs while ankles rest on top of the trapeze",
@@ -1617,7 +1617,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "Progression from Essential Mermaid (pg 58). On the Cadillac, unlike the Reformer, the carriage stays still, so the exercise requires additional shoulder abduction/adduction rather than the carriage moving — this makes it busier and more shoulder-intensive than the Reformer equivalent, which the sliding carriage helps facilitate. A trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
   },
   {
-    name: "Spread Eagle (Hanging from Uprights)",
+    name: "Spread Eagle",
     level: "Intermediate",
     category: "Hanging from Uprights",
     springs: "None — hanging bodyweight exercise, hands on tops of the uprights",
@@ -2049,7 +2049,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     notes: "Same sequence as Ballet Stretches Standing with the Trapeze (pg 40) but performed on fuzzy hanging straps, which requires more hip-extensor recruitment for the hip-flexion phases than the trapeze version does. See page 40 for the complete breakdown of movements.",
   },
   {
-    name: "Spread Eagle (Fuzzy Hanging Straps)",
+    name: "Spread Eagle",
     level: "Intermediate",
     category: "Fuzzy Hanging Straps",
     springs: "No additional springs",

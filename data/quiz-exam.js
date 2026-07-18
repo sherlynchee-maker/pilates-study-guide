@@ -3468,7 +3468,7 @@ window.STOTT.quizExam = [
   {
     "topic": "Cadillac",
     "type": "mcq",
-    "q": "How many named positions/variations does \"Bend & Stretch (Supine)\" (Cadillac, Essential) include?",
+    "q": "How many named positions/variations does \"Bend & Stretch\" (Cadillac, Essential) include?",
     "options": [
       "2",
       "1",
@@ -3476,7 +3476,7 @@ window.STOTT.quizExam = [
       "4"
     ],
     "answer": 2,
-    "a": "Bend & Stretch (Supine) has 3 positions: Parallel, Laterally Rotated, Medially Rotated.",
+    "a": "Bend & Stretch has 3 positions: Parallel, Laterally Rotated, Medially Rotated.",
     "flag": "",
     "id": "mq215"
   },
