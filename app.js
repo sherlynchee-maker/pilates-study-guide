@@ -66,7 +66,7 @@ function navigate(view, opts = {}) {
   setActiveNav(view);
   if (window.location.hash.replace("#", "") !== view) window.location.hash = view;
   render(view, opts);
-  mainView.scrollTo({ top: 0 });
+  window.scrollTo({ top: 0 });
 }
 
 navButtons.forEach((b) =>
@@ -1589,3 +1589,15 @@ function render(view, opts = {}) {
 refreshNavCounts();
 const initialView = window.location.hash.replace("#", "") || "dashboard";
 navigate(initialView);
+
+/* ================= BACK TO TOP ================= */
+const backToTop = document.getElementById("backToTop");
+if (backToTop) {
+  const toggleBackToTop = () => backToTop.classList.toggle("visible", window.scrollY > 480);
+  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+  toggleBackToTop();
+  backToTop.addEventListener("click", () => {
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" });
+  });
+}
