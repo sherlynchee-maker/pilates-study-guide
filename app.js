@@ -26,14 +26,113 @@ const LS_KEY = "stott_l1_progress_v2";
 function loadProgress() {
   try {
     const raw = localStorage.getItem(LS_KEY);
-    if (raw) return JSON.parse(raw);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      parsed.reviewed = parsed.reviewed || {};
+      return parsed;
+    }
   } catch (e) {}
-  return { perQuestion: {}, sessions: [] };
+  return { perQuestion: {}, sessions: [], reviewed: {} };
 }
 function saveProgress(state) {
   localStorage.setItem(LS_KEY, JSON.stringify(state));
 }
 let PROGRESS = loadProgress();
+
+/* ---------- reviewed tracking ---------- */
+function isReviewed(scope, key) {
+  return !!(PROGRESS.reviewed[scope] && PROGRESS.reviewed[scope][key]);
+}
+function markReviewed(scope, key) {
+  PROGRESS.reviewed[scope] = PROGRESS.reviewed[scope] || {};
+  PROGRESS.reviewed[scope][key] = new Date().toISOString();
+  saveProgress(PROGRESS);
+}
+function unmarkReviewed(scope, key) {
+  if (PROGRESS.reviewed[scope]) {
+    delete PROGRESS.reviewed[scope][key];
+    saveProgress(PROGRESS);
+  }
+}
+function reviewedCount(scope) {
+  return Object.keys(PROGRESS.reviewed[scope] || {}).length;
+}
+
+/* ---------- mini-quiz question builders (drawn from the item's own verified fields) ---------- */
+function exerciseQuizPairs(ex) {
+  const pairs = [];
+  if (ex.startingPosition) pairs.push({ q: `What's the starting position for ${ex.name}?`, a: ex.startingPosition });
+  if (ex.pelvis) pairs.push({ q: `What pelvis placement does ${ex.name} use?`, a: ex.pelvis });
+  if (ex.breathing) pairs.push({ q: `What's the breathing pattern for ${ex.name}?`, a: ex.breathing });
+  if (ex.focus) pairs.push({ q: `What's the training focus / essence of ${ex.name}?`, a: ex.focus });
+  if (ex.targetMuscles) pairs.push({ q: `What muscles does ${ex.name} target?`, a: ex.targetMuscles });
+  if (ex.modifications && ex.modifications.length) pairs.push({ q: `Name a modification for ${ex.name}.`, a: ex.modifications.join(" · ") });
+  return pairs.slice(0, 5);
+}
+function principleQuizPairs(p) {
+  const pairs = [];
+  if (p.goal) pairs.push({ q: `In your own words — what's the core idea behind ${p.title}?`, a: p.goal });
+  (p.commonErrors || []).forEach((e) => pairs.push({ q: `What's the corrective cue for this common error: "${e.error}"?`, a: e.cue }));
+  return pairs.slice(0, 5);
+}
+function sectionQuizPairs(s) {
+  const answer = [...(s.body || []), ...(s.items || [])].join(" ");
+  if (!answer) return [];
+  return [{ q: `Recall what you know about "${s.title}" before revealing.`, a: answer }];
+}
+
+/* ---------- reusable review-control widget ---------- */
+function buildMiniQuiz(pairs, onAllRevealed) {
+  const wrap = el("div", { class: "mini-quiz" });
+  const flipped = new Set();
+  pairs.forEach((pair, i) => {
+    const item = el("div", { class: "mini-quiz-item" });
+    const revealBtn = el("button", { class: "btn secondary mini-quiz-reveal" }, "Reveal answer");
+    const aRow = el("div", { class: "mini-quiz-a hidden" }, pair.a);
+    revealBtn.addEventListener("click", () => {
+      const nowHidden = aRow.classList.toggle("hidden");
+      revealBtn.textContent = nowHidden ? "Reveal answer" : "Hide answer";
+      if (!nowHidden) {
+        flipped.add(i);
+        if (flipped.size === pairs.length) onAllRevealed();
+      }
+    });
+    item.append(el("div", { class: "mini-quiz-q" }, pair.q), revealBtn, aRow);
+    wrap.append(item);
+  });
+  return wrap;
+}
+
+function reviewControl(scope, key, buildPairs) {
+  const holder = el("div", { class: "review-control" });
+  function renderState() {
+    holder.innerHTML = "";
+    if (isReviewed(scope, key)) {
+      const when = PROGRESS.reviewed[scope][key];
+      const redo = el("button", { class: "link-btn" }, "Redo quiz");
+      redo.addEventListener("click", () => { unmarkReviewed(scope, key); renderState(); });
+      holder.append(
+        el("div", { class: "review-pill done" }, `✓ Reviewed ${new Date(when).toLocaleDateString()}`),
+        redo
+      );
+    } else {
+      const pairs = buildPairs();
+      const btn = el("button", { class: "btn secondary" }, pairs.length ? "Take mini quiz & mark reviewed" : "Mark as reviewed");
+      btn.addEventListener("click", () => {
+        if (!pairs.length) { markReviewed(scope, key); renderState(); return; }
+        const markBtn = el("button", { class: "btn", disabled: "disabled" }, "Mark as reviewed");
+        markBtn.addEventListener("click", () => { markReviewed(scope, key); renderState(); });
+        const quiz = buildMiniQuiz(pairs, () => { markBtn.disabled = false; });
+        quiz.append(el("div", { class: "mini-quiz-hint" }, "Reveal every answer to unlock marking this reviewed."), markBtn);
+        holder.innerHTML = "";
+        holder.append(quiz);
+      });
+      holder.append(btn);
+    }
+  }
+  renderState();
+  return holder;
+}
 
 /* ---------- theme ---------- */
 function applyTheme(mode) {
@@ -241,18 +340,22 @@ function renderPrinciples() {
         el("div", { class: "v" }, p.movementPatterns.join(" · ")),
       ]));
     }
+    card.append(reviewControl("principles", p.id, () => principleQuizPairs(p)));
     mainView.append(card);
   });
 }
 
 /* ================= ANATOMY & POSTURE (shared helpers) ================= */
-function renderSectionsInto(host, sections) {
+function renderSectionsInto(host, sections, scope) {
   sections.forEach((s) => {
     const block = el("div", { class: "section-block" });
     block.append(el("h3", {}, s.title));
     (s.body || []).forEach((para) => block.append(el("p", {}, para)));
     if (s.items && s.items.length) {
       block.append(el("ul", { style: "padding-left:18px" }, s.items.map((it) => el("li", {}, it))));
+    }
+    if (scope) {
+      block.append(reviewControl(scope, normalizeExerciseName(s.title), () => sectionQuizPairs(s)));
     }
     host.append(block);
   });
@@ -297,7 +400,7 @@ function renderAnatomy() {
   diagramBlock.append(diagramFig);
   mainView.append(diagramBlock);
 
-  renderSectionsInto(mainView, sections);
+  renderSectionsInto(mainView, sections, "anatomy-sections");
 
   const groups = DATA.anatomy.muscleGroups || [];
   if (groups.length) {
@@ -356,7 +459,7 @@ function renderPosture() {
     mainView.append(el("div", { class: "empty-state" }, "Still digesting this section."));
     return;
   }
-  renderSectionsInto(mainView, sections);
+  renderSectionsInto(mainView, sections, "posture-sections");
 }
 
 /* ================= PROGRAMMING ================= */
@@ -437,7 +540,7 @@ function renderProgramming() {
 }
 
 /* ================= APPARATUS ================= */
-function exerciseDetailCard(ex) {
+function exerciseDetailCard(ex, scope) {
   const card = el("div", { class: "card exercise-detail open" });
   const pills = el("div", { class: "pill-row" });
   if (ex.level) pills.append(el("span", { class: `pill level-${ex.level.toLowerCase()}` }, ex.level));
@@ -493,6 +596,9 @@ function exerciseDetailCard(ex) {
   if (ex.notes) {
     card.append(el("div", { class: "field", style: "margin-top:10px" }, [el("div", { class: "k" }, "Notes"), el("div", { class: "v" }, ex.notes)]));
   }
+  if (scope) {
+    card.append(reviewControl(scope, normalizeExerciseName(ex.name), () => exerciseQuizPairs(ex)));
+  }
   return card;
 }
 
@@ -539,17 +645,23 @@ function renderApparatus(key, opts = {}) {
 
   function makeRow(ex, flatList) {
     const showSprings = key !== "chair" && key !== "cadillac" && ex.springs && ex.springs.length <= 24;
+    const reviewed = isReviewed(key, normalizeExerciseName(ex.name));
     const row = el("div", { class: "exercise-row" }, [
-      el("div", {}, [el("div", { class: "name" }, ex.name)]),
+      el("div", { class: "row-name-wrap" }, [
+        el("div", { class: "name" }, ex.name),
+        reviewed ? el("span", { class: "row-check", title: "Reviewed" }, "✓") : null,
+      ]),
       el("span", { class: "meta" }, showSprings ? `springs ${ex.springs}` : (ex.page ? `p.${ex.page}` : "")),
     ]);
     const flatIndex = flatList.length;
     flatList.push(ex);
-    row.addEventListener("click", () => openExerciseModal(flatList, flatIndex));
+    row.addEventListener("click", () => openExerciseModal(flatList, flatIndex, key, () => draw(currentFilter)));
     return row;
   }
 
+  let currentFilter = "";
   function draw(filter) {
+    currentFilter = filter;
     listHost.innerHTML = "";
     const flatList = [];
     groups.forEach(([levelLabel, list]) => {
@@ -611,7 +723,7 @@ function renderApparatus(key, opts = {}) {
       });
     }
     if (matchIndex !== -1) {
-      openExerciseModal(initialFlatList, matchIndex);
+      openExerciseModal(initialFlatList, matchIndex, key, () => draw(currentFilter));
     } else {
       const input = document.getElementById("apparatusSearch");
       input.value = opts.focusName;
@@ -620,7 +732,7 @@ function renderApparatus(key, opts = {}) {
   }
 }
 
-function openExerciseModal(list, index) {
+function openExerciseModal(list, index, scope, onClose) {
   const overlay = el("div", {
     style: "position:fixed;inset:0;background:rgba(20,24,22,0.5);display:flex;align-items:flex-start;justify-content:center;padding:6vh 20px;overflow-y:auto;z-index:50",
   });
@@ -630,6 +742,7 @@ function openExerciseModal(list, index) {
   function close() {
     document.removeEventListener("keydown", keyHandler);
     overlay.remove();
+    if (onClose) onClose();
   }
 
   function go(delta) {
@@ -650,7 +763,7 @@ function openExerciseModal(list, index) {
   }
 
   function buildCard() {
-    const card = exerciseDetailCard(list[idx]);
+    const card = exerciseDetailCard(list[idx], scope);
     card.style.maxWidth = "640px";
     card.style.width = "100%";
     card.style.boxShadow = "var(--shadow-lift)";
@@ -1199,6 +1312,48 @@ function renderProgress() {
     ])
   );
 
+  const coverageRows = [
+    ...Object.keys(APPARATUS_META).map((k) => [APPARATUS_META[k].label, reviewedCount(k), apparatusCount(k)]),
+    ["Basic Principles", reviewedCount("principles"), DATA.principles.length],
+    ["Anatomy sections", reviewedCount("anatomy-sections"), (DATA.anatomy.sections || []).length],
+    ["Posture sections", reviewedCount("posture-sections"), (DATA.posture.sections || []).length],
+  ].filter(([, , total]) => total > 0);
+  const coverageBlock = el("div", { class: "section-block" });
+  coverageBlock.append(el("h3", {}, "Mark-as-reviewed coverage"));
+  coverageBlock.append(el("p", {}, "Marked reviewed via the mini quiz on each exercise, principle, or anatomy/posture section page."));
+  const coverageWrap = el("div", { class: "topic-breakdown" });
+  coverageRows.forEach(([label, got, total]) => {
+    const p = total ? Math.round((got / total) * 100) : 0;
+    const color = p >= 80 ? "var(--success)" : p >= 50 ? "var(--warning)" : "var(--error)";
+    coverageWrap.append(el("div", { class: "row" }, [
+      el("span", { class: "name" }, label),
+      el("div", { class: "bar" }, el("span", { style: `width:${p}%;background:${color}` })),
+      el("span", { class: "pct" }, `${got} / ${total}`),
+    ]));
+  });
+  coverageBlock.append(coverageWrap);
+  mainView.append(coverageBlock);
+
+  const dangerRow = el("div", { style: "margin-top:10px;margin-bottom:30px" });
+  const resetBtn = el("button", { class: "btn secondary" }, "Reset quiz history");
+  resetBtn.addEventListener("click", () => {
+    if (confirm("Clear all quiz history and grading? This can't be undone.")) {
+      PROGRESS = { perQuestion: {}, sessions: [], reviewed: PROGRESS.reviewed };
+      saveProgress(PROGRESS);
+      renderProgress();
+    }
+  });
+  const resetReviewedBtn = el("button", { class: "btn secondary", style: "margin-left:10px" }, "Reset reviewed marks");
+  resetReviewedBtn.addEventListener("click", () => {
+    if (confirm("Clear every exercise/principle/section marked as reviewed? This can't be undone.")) {
+      PROGRESS.reviewed = {};
+      saveProgress(PROGRESS);
+      renderProgress();
+    }
+  });
+  dangerRow.append(resetBtn, resetReviewedBtn);
+  mainView.append(dangerRow);
+
   if (!sessions.length) {
     mainView.append(el("div", { class: "empty-state" }, "No quiz sessions yet — run a quiz to start tracking your progress."));
     return;
@@ -1252,18 +1407,6 @@ function renderProgress() {
   wrap.append(table);
   histBlock.append(wrap);
   mainView.append(histBlock);
-
-  const dangerRow = el("div", { style: "margin-top:30px" });
-  const resetBtn = el("button", { class: "btn secondary" }, "Reset all progress");
-  resetBtn.addEventListener("click", () => {
-    if (confirm("Clear all quiz history and grading? This can't be undone.")) {
-      PROGRESS = { perQuestion: {}, sessions: [] };
-      saveProgress(PROGRESS);
-      renderProgress();
-    }
-  });
-  dangerRow.append(resetBtn);
-  mainView.append(dangerRow);
 }
 
 /* ================= CROSS-REFERENCE ================= */
