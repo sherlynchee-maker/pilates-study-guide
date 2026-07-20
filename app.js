@@ -540,7 +540,73 @@ function renderProgramming() {
 }
 
 /* ================= APPARATUS ================= */
-function exerciseDetailCard(ex, scope) {
+function meaningfulTokens(name) {
+  // Drop short/common tokens ("a", "in", "on", "of"...) — at word length 2 or
+  // less, substring-style comparisons produce false positives far too easily
+  // (e.g. "in" is a substring of "rolling"; "a" is a substring of "air").
+  return normalizeExerciseName(name).split(" ").filter((t) => t.length >= 3);
+}
+
+function findCrossRefMatch(scope, ex) {
+  const cols = (DATA.crossref.columns || []).filter((c) => c.apparatus === scope);
+  if (!cols.length) return null;
+  const exTokens = meaningfulTokens(ex.name);
+  const exPageMatch = (ex.page || "").match(/\d+/);
+  const exPageNum = exPageMatch ? exPageMatch[0] : null;
+  let best = null;
+  let bestScore = 0;
+  (DATA.crossref.rows || []).forEach((row) => {
+    const rowTokens = meaningfulTokens(row.name);
+    cols.forEach((col) => {
+      const val = row.cells[col.key];
+      if (!val) return;
+      const pageNums = val.match(/\d+/g) || [];
+      const pageMatches = !!(exPageNum && pageNums.includes(exPageNum));
+      // Exact whole-word matches only — no substring containment, which is
+      // what let short unrelated words coincidentally "match" each other.
+      const nameOverlap = exTokens.filter((t) => rowTokens.includes(t)).length;
+      const valTokens = meaningfulTokens(val.replace(/\d+/g, ""));
+      const valOverlap = exTokens.filter((t) => valTokens.includes(t)).length;
+      const wordOverlap = Math.max(nameOverlap, valOverlap);
+      // Two exercises can easily share one or two generic words ("Standing",
+      // "Press") without being the same family, so word overlap alone is
+      // only trusted when it's strong (3+ words). A page-number match is a
+      // much stronger, independent signal, so it only needs one shared word
+      // to corroborate it.
+      const confident = (pageMatches && wordOverlap >= 1) || (!pageMatches && wordOverlap >= 3);
+      if (!confident) return;
+      const score = (pageMatches ? 2 : 0) + wordOverlap;
+      if (score > bestScore) { bestScore = score; best = { row, matchedColKey: col.key }; }
+    });
+  });
+  return best;
+}
+
+function crossRefBlock(scope, ex, closeModal) {
+  const match = findCrossRefMatch(scope, ex);
+  if (!match) return null;
+  const { row, matchedColKey } = match;
+  const otherCols = (DATA.crossref.columns || []).filter((c) => c.key !== matchedColKey && row.cells[c.key]);
+  if (!otherCols.length) return null;
+  const wrap = el("div", { class: "field", style: "margin-top:14px;border-top:1px solid var(--line-soft);padding-top:10px" });
+  wrap.append(el("div", { class: "k" }, `Cross-reference — also part of the "${row.name}" family`));
+  const list = el("div", { class: "crossref-inline-list" });
+  otherCols.forEach((col) => {
+    row.cells[col.key].split("\n").forEach((line) => {
+      const pageMatch = line.match(/\d+/);
+      const btn = el("button", { class: "crossref-cell-btn", type: "button" }, `${col.label}: ${line}`);
+      btn.addEventListener("click", () => {
+        if (closeModal) closeModal();
+        navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null });
+      });
+      list.append(btn);
+    });
+  });
+  wrap.append(list);
+  return wrap;
+}
+
+function exerciseDetailCard(ex, scope, closeModal) {
   const card = el("div", { class: "card exercise-detail open" });
   const pills = el("div", { class: "pill-row" });
   if (ex.level) pills.append(el("span", { class: `pill level-${ex.level.toLowerCase()}` }, ex.level));
@@ -597,6 +663,8 @@ function exerciseDetailCard(ex, scope) {
     card.append(el("div", { class: "field", style: "margin-top:10px" }, [el("div", { class: "k" }, "Notes"), el("div", { class: "v" }, ex.notes)]));
   }
   if (scope) {
+    const crossRef = crossRefBlock(scope, ex, closeModal);
+    if (crossRef) card.append(crossRef);
     card.append(reviewControl(scope, normalizeExerciseName(ex.name), () => exerciseQuizPairs(ex)));
   }
   return card;
@@ -763,7 +831,7 @@ function openExerciseModal(list, index, scope, onClose) {
   }
 
   function buildCard() {
-    const card = exerciseDetailCard(list[idx], scope);
+    const card = exerciseDetailCard(list[idx], scope, close);
     card.style.maxWidth = "640px";
     card.style.width = "100%";
     card.style.boxShadow = "var(--shadow-lift)";

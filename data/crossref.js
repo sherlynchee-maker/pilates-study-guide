@@ -90,7 +90,7 @@ window.STOTT.crossref = {
     { id: 74, name: "Back-Rowing", cells: { reformerEss: "Ess. Prep 49", reformerInt: "Int. 50", cadillacEss: "Arms Sitting 76", cadillacInt: "Arms 110" } },
     { id: 75, name: "Side Arms Preps", cells: { reformerEss: "Sitting 58", reformerInt: "Kneel 106", cadillacEss: "Arms Stand 102" } },
     { id: 76, name: "Side Twist", cells: { reformerEss: "Sitting 62", reformerInt: "Kneel 114", cadillacInt: "Arms Stand 124" } },
-    { id: 77, name: "Front Rowing", cells: { reformerEss: "Ess. Prep 64", reformerInt: "Int. 55", cadillacEss: "Arms Sitting 86", cadillacInt: "Arms 114\nArms Stand Offering 132\nArms Stand HugATree 134" } },
+    { id: 77, name: "Front Rowing", cells: { reformerEss: "Ess. Prep 64", reformerInt: "Int. 55", cadillacEss: "Arms Sitting 86", cadillacInt: "Arms 114\nArms Stand Offering 132\nArms Stand Hug A Tree 134" } },
     { id: 78, name: "Stomach Massage", cells: { reformerEss: "Ess. 68", reformerInt: "Int. 63" } },
     { id: 79, name: "Arms pulling Straps L-box", cells: { reformerEss: "Ess. 72", reformerInt: "Int. 68" } },
     { id: 80, name: "Backstroke Prep L-box", cells: { reformerInt: "Int. 71" } },

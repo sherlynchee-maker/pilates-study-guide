@@ -1002,6 +1002,9 @@ th.crossref-name-col { background: var(--paper); z-index: 3; }
 .crossref-cell-btn:hover { background: var(--accent-soft); border-color: var(--accent); }
 .crossref-empty { color: var(--ink-faint); padding-left: 8px; }
 
+.crossref-inline-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+.crossref-inline-list .crossref-cell-btn { white-space: normal; }
+
 /* ---- Progression ---- */
 .progression-warmup {
   font-size: 13px;
