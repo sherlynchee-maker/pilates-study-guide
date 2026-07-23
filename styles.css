@@ -357,6 +357,7 @@ main {
 .pill.level-advanced { background: var(--error-soft); color: var(--error); }
 .pill.success { background: var(--success-soft); color: var(--success); }
 .pill.warning { background: var(--warning-soft); color: var(--warning); }
+.pill.apparatus { background: transparent; border: 1px solid var(--line); color: var(--ink-soft); font-weight: 600; }
 
 .field-grid {
   display: grid;
@@ -500,6 +501,24 @@ main {
 .workflow-list li { line-height: 1.65; max-width: 74ch; }
 
 .posture-program { padding-bottom: 22px; }
+
+.posture-type-grid { display: flex; flex-direction: column; gap: 14px; margin-top: 14px; }
+
+.posture-type .segment-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
+
+.checklist { display: flex; flex-direction: column; gap: 20px; margin-top: 14px; }
+
+.checklist-item .workflow-list,
+.checklist-item ul { margin-top: 8px; }
+
+.checklist-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
 
 .layer-tag {
   font-family: var(--font-mono);

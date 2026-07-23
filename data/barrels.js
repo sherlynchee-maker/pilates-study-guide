@@ -235,34 +235,6 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     ],
     notes: "The full Round Back (rolling all the way into extension over the back of the barrel, reaching arms overhead) is Advanced level; the Half version described here, staying within flexion, is the Essential/teaching progression."
   },
-  {
-    name: "Tree",
-    level: "Essential",
-    category: "Short Box Series",
-    page: "64-66",
-    startingPosition: "Seated upright, forward of apex (so lumbar is supported by apex on roll back), pelvis square to front, pelvis and spine as neutral as possible. One heel on appropriate rung to bring knee to hip height or slightly above, toes hooked under rung above. Other leg flexed, inside hand under knee, outside hand reaching to ankle. Scapulae stabilized.",
-    pelvis: "Square to front and as neutral as possible throughout the knee extension phase; only tips posteriorly (rolls away from the femur) during the Half roll-back.",
-    spine: "As upright/neutral as possible while extending the knee; the Half/Essential version stays within light lumbar flexion during the roll-back, not extending over the barrel.",
-    breathing: "Inhale to prepare; exhale keep pelvis square and extend knee, lengthening the hamstring while keeping torso as upright as possible; inhale flex knee back to start. Complete 3 repetitions, then on the last repetition inhale to keep leg straight, place other hand on ankle, then walk hands down the leg only as far as the Half roll-back allows before rolling back up.",
-    targetMuscles: "Transversus abdominis to compress abdomen and stabilize lumbo-pelvic region; deep pelvic floor; quadriceps of the gesture leg concentrically to extend the knee as hamstrings lengthen; hip flexors of the supporting leg eccentrically on roll down; rectus abdominis and obliques concentrically to create flexion; obliques and multifidus to prevent rotation; scapular stabilizers.",
-    focus: "Maintain pelvis as close to neutral as possible without gripping in the hip flexors; keep pelvis square, avoiding rotation; initiate any roll-back by rolling the pelvis away from the femurs and increasing lumbar flexion with abdominals, not by leaning back; keep transversus abdominis engaged, especially during roll up; avoid jamming the chin into the chest; articulate sequentially through the spine.",
-    cues: [
-      "Grow tall through the crown of the head as the knee extends and the hamstring lengthens",
-      "Keep the standing/seated side of the pelvis anchored and square — don't let it rotate open as the leg straightens",
-      "Walk the hands down the leg only as far as the torso can stay lifted and controlled"
-    ],
-    faults: [
-      "Rounding forward through the upper back to reach the leg — lengthen through a tall spine instead",
-      "Pelvis rotating as the leg extends — keep pelvis square to front",
-      "Gripping the hip flexor of the supporting leg — release length into it as the torso stays tall"
-    ],
-    modifications: [
-      "Omit roll back — hamstring stretch only",
-      "Half — roll only halfway back, sacrum area onto the barrel or as far as abdominals stay flat, to develop abdominal strength for the full version or if flexibility restricts full movement (this is the Essential-level teaching progression)",
-      "If range of motion at the hip joints is limited and prevents the lumbar spine from fully contacting the barrel, bring feet to the next rung up to ensure lumbar support"
-    ],
-    notes: "The full Tree — rolling all the way back into spinal extension over the barrel and rolling back up, described under Intermediate — builds directly on this Half/Essential progression."
-  }
 ], intermediate: [
   {
     name: "Obliques with Flexion",
@@ -638,14 +610,14 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     notes: "If neutral spine cannot be stabilized during the lean, imprint slightly to maintain stability and return to neutral as the torso returns to vertical."
   },
   {
-    name: "Tree (Full)",
+    name: "Tree",
     level: "Intermediate",
     category: "Short Box Series",
     page: "64-66",
     startingPosition: "Seated upright, forward of apex (so lumbar is supported by apex on roll back), pelvis square to front, pelvis and spine as neutral as possible. One heel on appropriate rung to bring knee to hip height or slightly above, toes hooked under rung above. Other leg flexed, inside hand under knee, outside hand reaching to ankle. Scapulae stabilized.",
-    pelvis: "Rolls fully away from the front of the supporting femur to flex the lumbar spine, sacrum rolling onto the barrel, then continues rolling into extension over the back of the barrel before rolling back up to sitting.",
-    spine: "After the knee-extension/hamstring-stretch phase (as in the Essential Tree), the spine rolls all the way back into extension over the barrel with hands walking down the leg, then flexes sequentially from head to tail rolling back up to sitting, hands walking back up to the ankle.",
-    breathing: "Following 3 repetitions of the knee extension/flexion (as in Essential Tree): inhale keep the leg straight and place the other hand on the ankle; exhale initiate by rolling the ASIS away from the front of the supporting femur and flex the lumbar spine, rolling the sacrum area onto the barrel (upper torso flexes in response), simultaneously walking hands down the back of the leg; inhale maintain abdominal engagement and continue rolling back, taking the spine into extension; exhale initiate from the head to flex the spine and roll up to sitting, walking hands back up the leg to the ankle during the roll up. Complete 3 repetitions on each side.",
+    pelvis: "Square to front and as neutral as possible throughout the knee extension phase; rolls fully away from the front of the supporting femur to flex the lumbar spine, sacrum rolling onto the barrel, then continues rolling into extension over the back of the barrel before rolling back up to sitting.",
+    spine: "As upright/neutral as possible while extending the knee; after the knee-extension/hamstring-stretch phase, the spine rolls all the way back into extension over the barrel with hands walking down the leg, then flexes sequentially from head to tail rolling back up to sitting, hands walking back up to the ankle.",
+    breathing: "Inhale to prepare; exhale keep pelvis square and extend knee, lengthening the hamstring while keeping torso as upright as possible; inhale flex knee back to start. Complete 3 repetitions, then on the last repetition inhale to keep the leg straight and place the other hand on the ankle; exhale initiate by rolling the ASIS away from the front of the supporting femur and flex the lumbar spine, rolling the sacrum area onto the barrel (upper torso flexes in response), simultaneously walking hands down the back of the leg; inhale maintain abdominal engagement and continue rolling back, taking the spine into extension; exhale initiate from the head to flex the spine and roll up to sitting, walking hands back up the leg to the ankle during the roll up. Complete 3 repetitions on each side.",
     targetMuscles: "Transversus abdominis to compress abdomen and stabilize lumbo-pelvic region; deep pelvic floor; quadriceps of the gesture leg concentrically to extend the knee as hamstrings lengthen; hip flexors of the supporting leg eccentrically on roll down; rectus abdominis and obliques concentrically to create flexion, eccentrically as the spine extends; obliques and multifidus to prevent rotation; scapular stabilizers.",
     focus: "Maintain pelvis as close to neutral as possible to begin, without gripping in the hip flexors; keep the pelvis as square as possible, avoiding rotation; initiate the roll by rolling the pelvis away from the femurs and increasing lumbar flexion with abdominals, instead of leaning back; ensure the sacrum area contacts the barrel on the roll down, preventing lumbar overextension; keep transversus abdominis engaged, especially during the roll up; avoid jamming the chin into the chest during roll down or roll up; articulate sequentially through the spine.",
     cues: [
@@ -659,10 +631,13 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Losing abdominal control and free-falling into the extension — control the roll back eccentrically throughout"
     ],
     modifications: [
+      "Omit roll back — hamstring stretch only",
+      "Half — roll only halfway back, sacrum area onto the barrel or as far as abdominals stay flat, to develop abdominal strength for the full version or if flexibility restricts full movement",
+      "If range of motion at the hip joints is limited and prevents the lumbar spine from fully contacting the barrel, bring feet to the next rung up to ensure lumbar support",
       "Flex top knee during roll back if hamstrings restrict the movement",
       "Reach arms overhead once the spine is in extension (one arm at a time, not both together) — to challenge stability of the pelvis and spine while taking more weight overhead"
     ],
-    notes: "Builds on the Essential/Half Tree progression by continuing the roll all the way into spinal extension over the barrel."
+    notes: "The manual presents Tree as a single Intermediate exercise — the halfway roll-back (stopping once the sacrum contacts the barrel) is a modification for building strength/flexibility toward the full version, not a separate Essential-level exercise."
   },
   {
     name: "Scissors (Sitting)",

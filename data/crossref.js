@@ -100,7 +100,7 @@ window.STOTT.crossref = {
     { id: 84, name: "Twist S-Box", cells: { reformerEss: "Ess. 79", ladderbarrel: "Ess. 54" } },
     { id: 85, name: "Twist Round back S-Box", cells: { reformerInt: "Int. 80", ladderbarrel: "Int. 56" } },
     { id: 86, name: "Lean", cells: { reformerInt: "Int. 82", ladderbarrel: "Int. 58", chair: "Int. T.Rot. 164" } },
-    { id: 87, name: "Tree", cells: { reformerEss: "Ess. 80", reformerInt: "Int. 84", ladderbarrel: "Ess. Half 64\nInt. 64" } },
+    { id: 87, name: "Tree", cells: { reformerEss: "Ess. 80", reformerInt: "Int. 84", ladderbarrel: "Int. 64-66" } },
     { id: 88, name: "Mermaid S-Box", cells: { reformerInt: "Int. 86" } },
     { id: 89, name: "Long Stretch", cells: { reformerInt: "Int. 92" } },
     { id: 90, name: "Down Stretch", cells: { reformerInt: "Int. 94" } },

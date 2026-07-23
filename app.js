@@ -75,8 +75,31 @@ function principleQuizPairs(p) {
   (p.commonErrors || []).forEach((e) => pairs.push({ q: `What's the corrective cue for this common error: "${e.error}"?`, a: e.cue }));
   return pairs.slice(0, 5);
 }
+function flattenSectionItem(it) {
+  if (typeof it === "string") return it;
+  if (it.segments) {
+    const segs = (it.segments || []).map(([k, v]) => `${k}: ${v}`).join(" · ");
+    return [
+      `${it.name} — ${segs}.`,
+      it.shortStrong ? `Short/strong: ${it.shortStrong}.` : "",
+      it.elongatedWeak ? `Elongated/weak: ${it.elongatedWeak}.` : "",
+      it.note ? `Note: ${it.note}.` : "",
+      it.workIn ? `Work in: ${it.workIn}` : "",
+      it.emphasize ? `Emphasize: ${it.emphasize}.` : "",
+      it.strengthen ? `Strengthen: ${it.strengthen}.` : "",
+      it.stretch ? `Stretch: ${it.stretch}.` : "",
+    ].filter(Boolean).join(" ");
+  }
+  if (it.label) {
+    if (it.steps) return `${it.label}: ${it.steps.join(" → ")}`;
+    if (it.tips) return `${it.label}: ${it.tips.join(" ")}`;
+    return `${it.label}: ${it.detail || ""}`;
+  }
+  return "";
+}
 function sectionQuizPairs(s) {
-  const answer = [...(s.body || []), ...(s.items || [])].join(" ");
+  const itemTexts = (s.items || []).map(flattenSectionItem);
+  const answer = [...(s.body || []), ...itemTexts].join(" ");
   if (!answer) return [];
   return [{ q: `Recall what you know about "${s.title}" before revealing.`, a: answer }];
 }
@@ -346,13 +369,55 @@ function renderPrinciples() {
 }
 
 /* ================= ANATOMY & POSTURE (shared helpers) ================= */
+function postureTypeCard(p) {
+  const card = el("div", { class: "card posture-type" });
+  card.append(el("h3", {}, p.name));
+  card.append(el("div", { class: "field-grid segment-grid" }, (p.segments || []).map(([k, v]) =>
+    el("div", { class: "field" }, [el("div", { class: "k" }, k), el("div", { class: "v" }, v)])
+  )));
+  const notesGrid = el("div", { class: "field-grid" });
+  if (p.shortStrong) notesGrid.append(el("div", { class: "field" }, [el("div", { class: "k" }, "Short/strong"), el("div", { class: "v" }, p.shortStrong)]));
+  if (p.elongatedWeak) notesGrid.append(el("div", { class: "field" }, [el("div", { class: "k" }, "Elongated/weak"), el("div", { class: "v" }, p.elongatedWeak)]));
+  if (p.strengthen) notesGrid.append(el("div", { class: "field" }, [el("div", { class: "k" }, "Strengthen"), el("div", { class: "v" }, p.strengthen)]));
+  if (p.stretch) notesGrid.append(el("div", { class: "field" }, [el("div", { class: "k" }, "Stretch/lengthen"), el("div", { class: "v" }, p.stretch)]));
+  if (notesGrid.children.length) card.append(notesGrid);
+  if (p.workIn || p.emphasize) {
+    const wrap = el("div", { class: "field", style: "margin-top:10px;border-top:1px solid var(--line-soft);padding-top:8px" });
+    wrap.append(el("div", { class: "k" }, "Programming"));
+    const workInText = p.workIn && p.emphasize && !/[.;]\s*$/.test(p.workIn) ? `${p.workIn}.` : p.workIn;
+    wrap.append(el("div", { class: "v" }, [workInText, p.emphasize ? `Emphasize ${p.emphasize}.` : ""].filter(Boolean).join(" ")));
+    card.append(wrap);
+  }
+  if (p.note) card.append(el("p", { style: "color:var(--ink-faint);font-size:12.5px;margin-top:10px" }, p.note));
+  return card;
+}
+
+function checklistItemBlock(it) {
+  const wrap = el("div", { class: "checklist-item" });
+  wrap.append(el("div", { class: "checklist-label" }, it.label));
+  if (it.steps) {
+    wrap.append(el("ol", { class: "workflow-list" }, it.steps.map((step) => el("li", {}, step))));
+  } else if (it.tips) {
+    wrap.append(el("ul", { style: "padding-left:18px" }, it.tips.map((t) => el("li", {}, t))));
+  } else {
+    wrap.append(el("p", { class: "v" }, it.detail));
+  }
+  return wrap;
+}
+
 function renderSectionsInto(host, sections, scope) {
   sections.forEach((s) => {
     const block = el("div", { class: "section-block" });
     block.append(el("h3", {}, s.title));
     (s.body || []).forEach((para) => block.append(el("p", {}, para)));
     if (s.items && s.items.length) {
-      block.append(el("ul", { style: "padding-left:18px" }, s.items.map((it) => el("li", {}, it))));
+      if (typeof s.items[0] === "string") {
+        block.append(el("ul", { style: "padding-left:18px" }, s.items.map((it) => el("li", {}, it))));
+      } else if (s.items[0].segments) {
+        block.append(el("div", { class: "posture-type-grid" }, s.items.map(postureTypeCard)));
+      } else {
+        block.append(el("div", { class: "checklist" }, s.items.map(checklistItemBlock)));
+      }
     }
     if (scope) {
       block.append(reviewControl(scope, normalizeExerciseName(s.title), () => sectionQuizPairs(s)));
@@ -551,12 +616,19 @@ function findCrossRefMatch(scope, ex) {
   const cols = (DATA.crossref.columns || []).filter((c) => c.apparatus === scope);
   if (!cols.length) return null;
   const exTokens = meaningfulTokens(ex.name);
+  const exNorm = normalizeExerciseName(ex.name);
   const exPageMatch = (ex.page || "").match(/\d+/);
   const exPageNum = exPageMatch ? exPageMatch[0] : null;
   let best = null;
   let bestScore = 0;
   (DATA.crossref.rows || []).forEach((row) => {
     const rowTokens = meaningfulTokens(row.name);
+    const rowNorm = normalizeExerciseName(row.name);
+    // The exercise being viewed is literally named after its own family row
+    // (e.g. "Tree — Short Box" vs. row "Tree") — a much stronger signal than
+    // any shared generic word ("Box", "Sitting"...) could give, and it's what
+    // breaks ties against unrelated rows that happen to share one such word.
+    const isNamesake = exNorm === rowNorm || exNorm.startsWith(rowNorm + " ");
     cols.forEach((col) => {
       const val = row.cells[col.key];
       if (!val) return;
@@ -575,7 +647,7 @@ function findCrossRefMatch(scope, ex) {
       // to corroborate it.
       const confident = (pageMatches && wordOverlap >= 1) || (!pageMatches && wordOverlap >= 3);
       if (!confident) return;
-      const score = (pageMatches ? 2 : 0) + wordOverlap;
+      const score = (pageMatches ? 2 : 0) + wordOverlap + (isNamesake ? 3 : 0);
       if (score > bestScore) { bestScore = score; best = { row, matchedColKey: col.key }; }
     });
   });
@@ -609,6 +681,8 @@ function crossRefBlock(scope, ex, closeModal) {
 function exerciseDetailCard(ex, scope, closeModal) {
   const card = el("div", { class: "card exercise-detail open" });
   const pills = el("div", { class: "pill-row" });
+  const apparatusLabel = APPARATUS_META[scope] && APPARATUS_META[scope].label;
+  if (apparatusLabel) pills.append(el("span", { class: "pill apparatus" }, apparatusLabel));
   if (ex.level) pills.append(el("span", { class: `pill level-${ex.level.toLowerCase()}` }, ex.level));
   if (ex.category) pills.append(el("span", { class: "pill success" }, ex.category));
   if (ex.page) pills.append(el("span", { class: "pill" }, `p.${ex.page}`));
@@ -768,28 +842,44 @@ function renderApparatus(key, opts = {}) {
   if (opts.focusName) {
     const target = normalizeExerciseName(opts.focusName);
     const targetTokens = target.split(" ").filter(Boolean);
-    let matchIndex = initialFlatList.findIndex((ex) => normalizeExerciseName(ex.name) === target);
+    let matchIndex = -1;
+    let weakPageOnlyIndex = -1;
+    if (opts.focusPage) {
+      // A page number pinpoints one specific level's exercise (e.g. distinguishing
+      // Essential "Mermaid" from Intermediate "Mermaid with Rotation" when both
+      // share the same family name) — so a page match backed by at least some
+      // name-token overlap takes priority over plain name matching, which would
+      // otherwise always resolve to whichever same-named entry happens to appear
+      // first in the list (usually the Essential one), even when the
+      // cross-reference points at a different level entirely. A page match with
+      // zero name overlap is kept only as a last-resort fallback (weakPageOnlyIndex)
+      // so it can't preempt a good name match on an unrelated coincidental page hit.
+      let bestScore = 0;
+      let bestWeakScore = 0;
+      initialFlatList.forEach((ex, i) => {
+        const pageNums = (ex.page || "").match(/\d+/g) || [];
+        if (!pageNums.includes(opts.focusPage)) return;
+        const pageScore = (ex.page || "").trim() === opts.focusPage ? 2 : 1;
+        const exTokens = normalizeExerciseName(ex.name).split(" ").filter(Boolean);
+        const overlap = targetTokens.filter((t) => exTokens.some((n) => n === t || n.includes(t) || t.includes(n))).length;
+        if (overlap > 0) {
+          const score = pageScore + overlap * 2;
+          if (score > bestScore) { bestScore = score; matchIndex = i; }
+        } else if (pageScore > bestWeakScore) {
+          bestWeakScore = pageScore; weakPageOnlyIndex = i;
+        }
+      });
+    }
+    if (matchIndex === -1) {
+      matchIndex = initialFlatList.findIndex((ex) => normalizeExerciseName(ex.name) === target);
+    }
     if (matchIndex === -1) {
       matchIndex = initialFlatList.findIndex((ex) => {
         const n = normalizeExerciseName(ex.name);
         return n && target && (n.includes(target) || target.includes(n));
       });
     }
-    if (matchIndex === -1 && opts.focusPage) {
-      // Same exercise family, different apparatus-specific naming: fall back to
-      // matching on the page number the cross-reference cell pointed at, scored
-      // against name-token overlap so overlapping page ranges don't win on page alone.
-      let bestScore = 0;
-      initialFlatList.forEach((ex, i) => {
-        const pageNums = (ex.page || "").match(/\d+/g) || [];
-        if (!pageNums.includes(opts.focusPage)) return;
-        let score = (ex.page || "").trim() === opts.focusPage ? 2 : 1;
-        const exTokens = normalizeExerciseName(ex.name).split(" ").filter(Boolean);
-        const overlap = targetTokens.filter((t) => exTokens.some((n) => n === t || n.includes(t) || t.includes(n))).length;
-        score += overlap * 2;
-        if (score > bestScore) { bestScore = score; matchIndex = i; }
-      });
-    }
+    if (matchIndex === -1) matchIndex = weakPageOnlyIndex;
     if (matchIndex !== -1) {
       openExerciseModal(initialFlatList, matchIndex, key, () => draw(currentFilter));
     } else {
