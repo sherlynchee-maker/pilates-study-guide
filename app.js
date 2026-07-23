@@ -90,6 +90,10 @@ function flattenSectionItem(it) {
       it.stretch ? `Stretch: ${it.stretch}.` : "",
     ].filter(Boolean).join(" ");
   }
+  if (it.groups) {
+    const groupText = it.groups.map((g) => `${g.label}: ${g.muscles}`).join(" · ");
+    return [`${it.title} — ${groupText}.`, it.notes || ""].filter(Boolean).join(" ");
+  }
   if (it.label) {
     if (it.steps) return `${it.label}: ${it.steps.join(" → ")}`;
     if (it.tips) return `${it.label}: ${it.tips.join(" ")}`;
@@ -288,6 +292,7 @@ function renderDashboard() {
   const grid = el("div", { class: "exercise-list" });
   const jumpTargets = [
     ["principles", "The 5 Basic Principles", "Breathing, pelvic/rib/scapular/cervical placement — the backbone of every score sheet."],
+    ["posture", "Posture Assessment", "Plumb line, the four posture types, and the full palpation checklist used in the practical exam."],
     ["programming", "Programming", "Layer 1 → Layer 2 exercise picks per posture type, with the reasoning behind each one."],
     ["examinfo", "Exam Info & Scripting", "Written + practical exam format, minimum exercise counts, and scripted cueing language."],
     ["quiz", "Run a quiz", "Self-graded recall practice across everything you've studied."],
@@ -392,6 +397,21 @@ function postureTypeCard(p) {
   return card;
 }
 
+function muscleGroupCard(g) {
+  const card = el("div", { class: "card muscle-group" });
+  card.append(el("h3", {}, g.title));
+  card.append(el("div", { class: "field-grid" }, (g.groups || []).map((grp) =>
+    el("div", { class: "field" }, [el("div", { class: "k" }, grp.label), el("div", { class: "v" }, grp.muscles)])
+  )));
+  if (g.notes) {
+    const wrap = el("div", { class: "field", style: "margin-top:10px;border-top:1px solid var(--line-soft);padding-top:8px" });
+    wrap.append(el("div", { class: "k" }, "Programming notes"));
+    wrap.append(el("div", { class: "v" }, g.notes));
+    card.append(wrap);
+  }
+  return card;
+}
+
 function checklistItemBlock(it) {
   const wrap = el("div", { class: "checklist-item" });
   wrap.append(el("div", { class: "checklist-label" }, it.label));
@@ -415,6 +435,8 @@ function renderSectionsInto(host, sections, scope) {
         block.append(el("ul", { style: "padding-left:18px" }, s.items.map((it) => el("li", {}, it))));
       } else if (s.items[0].segments) {
         block.append(el("div", { class: "posture-type-grid" }, s.items.map(postureTypeCard)));
+      } else if (s.items[0].groups) {
+        block.append(el("div", { class: "posture-type-grid" }, s.items.map(muscleGroupCard)));
       } else {
         block.append(el("div", { class: "checklist" }, s.items.map(checklistItemBlock)));
       }
@@ -1003,7 +1025,11 @@ function renderExamInfo() {
       block.append(wrap);
     }
     if (s.items && s.items.length) {
-      block.append(el("ul", { style: "padding-left:18px" }, s.items.map((it) => el("li", {}, it))));
+      if (typeof s.items[0] === "string") {
+        block.append(el("ul", { style: "padding-left:18px" }, s.items.map((it) => el("li", {}, it))));
+      } else {
+        block.append(el("div", { class: "checklist" }, s.items.map(checklistItemBlock)));
+      }
     }
     mainView.append(block);
   });

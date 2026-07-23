@@ -62,10 +62,38 @@ window.STOTT.examInfo = {
       title: "Study Priorities Checklist",
       body: ["From the informal STOTT Level 1 exam prep checklist — organized by exam track."],
       items: [
-        "Mat (IMP): memorize the Mat warm-up → Intermediate exercise chart by hand · master all 5 Basic Principles and which exercises teach each · know every manual detail per exercise (starting position, breathing, description, essence & focus, notes & modifications) · perform postural analysis in the correct sequence · know exact visual observation points and palpation points · memorize Green Book posture characteristics + Program Layers 1 & 2 · programming skill (design a program from postural observation) · anatomical terminology and muscle O/I/A (Green Book p.74–75).",
-        "Mat + Reformer (IMP + IR): everything above, plus the Reformer Intermediate chart by hand, full Reformer manual detail, and target-muscle-to-exercise mapping for Reformer.",
-        "Cadillac, Chair, Barrels (ICCB): Cadillac — roll-down bar (+standing), trapeze, push-thru bar (spring above & below), hanging from upright, arm springs (+standing), leg springs (+side-lying), fuzzy hanging straps · Stability Chair — leg work (+arm-supported), arm work, torso flexion/extension/flexion&extension, torso lateral flexion, torso rotation, split-pedal · Arc Barrel — warm-ups, sitting, inverted, prone, supported-on-hands · Spine Corrector — warm-ups, sitting, inverted, side-lying, prone, supported-on-hands · Ladder Barrel — stretch, feet-on-ladder, hands-on-ladder, side-lying, short box series, sitting. Plus full manual detail, postural analysis sequence, Green Book + Program Layers, program design, anatomy p.74–75, target-muscle mapping.",
-        "General advice: take the Mat + Reformer exam before attempting the full combined Mat/Reformer/CCB exam — the combined exam has a very large volume of material and can overwhelm first-time candidates.",
+        {
+          label: "Mat (IMP)",
+          tips: [
+            "Memorize the Mat warm-up → Intermediate exercise chart by hand",
+            "Master all 5 Basic Principles and which exercises teach each",
+            "Know every manual detail per exercise (starting position, breathing, description, essence & focus, notes & modifications)",
+            "Perform postural analysis in the correct sequence",
+            "Know exact visual observation points and palpation points",
+            "Memorize Green Book posture characteristics + Program Layers 1 & 2",
+            "Programming skill (design a program from postural observation)",
+            "Anatomical terminology and muscle O/I/A (Green Book p.74–75)",
+          ],
+        },
+        {
+          label: "Mat + Reformer (IMP + IR)",
+          detail: "Everything above, plus the Reformer Intermediate chart by hand, full Reformer manual detail, and target-muscle-to-exercise mapping for Reformer.",
+        },
+        {
+          label: "Cadillac, Chair, Barrels (ICCB)",
+          tips: [
+            "Cadillac — roll-down bar (+standing), trapeze, push-thru bar (spring above & below), hanging from upright, arm springs (+standing), leg springs (+side-lying), fuzzy hanging straps",
+            "Stability Chair — leg work (+arm-supported), arm work, torso flexion/extension/flexion&extension, torso lateral flexion, torso rotation, split-pedal",
+            "Arc Barrel — warm-ups, sitting, inverted, prone, supported-on-hands",
+            "Spine Corrector — warm-ups, sitting, inverted, side-lying, prone, supported-on-hands",
+            "Ladder Barrel — stretch, feet-on-ladder, hands-on-ladder, side-lying, short box series, sitting",
+            "Plus: full manual detail, postural analysis sequence, Green Book + Program Layers, program design, anatomy p.74–75, target-muscle mapping",
+          ],
+        },
+        {
+          label: "General advice",
+          detail: "Take the Mat + Reformer exam before attempting the full combined Mat/Reformer/CCB exam — the combined exam has a very large volume of material and can overwhelm first-time candidates.",
+        },
       ],
     },
     {

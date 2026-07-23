@@ -55,25 +55,140 @@ window.STOTT.anatomy = {
         "From Sherlyn's Anatomy folder — \"Synergists: Muscles Working Together\" (Trail Guide to the Body companion reference), reorganized by joint action into the functional group names tested on the written exam (\"hip flexors,\" \"hip extensors,\" etc.), each with a few STOTT exercises that target that group. Where a client tests weak in a group, these are reasonable go-to exercises; where a group tests short/tight instead, look to the antagonist group's stretch-oriented exercises.",
       ],
       items: [
-        "Hip Flexors (hip flexion) — psoas major, iliacus, tensor fasciae latae, sartorius, rectus femoris, gluteus medius (anterior fibers), gluteus minimus, adductor longus/brevis/magnus (assist). If weak: Mat Single Leg Stretch, Double Leg Stretch, Teaser series, Hip Twist; Reformer Hundred, Leg Circles, Knee Stretches; Cadillac/Chair leg-spring hip-flexion work (e.g. Chair Knee Raises). If short/tight (common in Kyphosis-Lordosis and Military posture): stretch with Mat Swan-family extension work, Single Thigh Stretch (Reformer/Cadillac), lunge-based stretches.",
-        "Hip Extensors (hip extension) — gluteus maximus (all fibers), biceps femoris (long head), semitendinosus, semimembranosus, adductor magnus (posterior fibers), gluteus medius (posterior fibers). If weak (common in Kyphosis-Lordosis and Sway-Back): Mat Shoulder Bridge, Leg Pull Front, Single Leg Kick, Swimming; Reformer Footwork, Hip Lift, Elephant; Barrel Prone Lower & Lift/Leg Circles/Single Leg Extensions.",
-        "Hip Abductors (hip abduction) — gluteus maximus (all fibers), gluteus medius (all fibers), gluteus minimus, tensor fasciae latae, sartorius, piriformis (hip flexed). If weak: Mat Side Leg Lift Series; Reformer Side Splits (abduction direction); Barrel/Cadillac Side-Lying leg-lift series.",
-        "Hip Adductors (hip adduction) — adductor magnus, adductor longus, adductor brevis, pectineus, gracilis, gluteus maximus (lower fibers). If weak: Reformer Side Splits (adduction direction), Bend & Stretch, Frog; Cadillac leg-spring adduction work.",
-        "Hip Medial (Internal) Rotators — gluteus medius (anterior fibers), gluteus minimus, tensor fasciae latae, adductor magnus/longus/brevis, pectineus, gracilis. Hip Lateral (External) Rotators — gluteus maximus (all fibers), piriformis, quadratus femoris, obturator internus/externus, gemellus superior/inferior, gluteus medius (posterior fibers), psoas major, iliacus, sartorius. If weak/imbalanced: Mat/Reformer footwork variants performed laterally rotated vs. parallel/medially rotated (a very common STOTT modification) deliberately bias one rotator group over the other.",
-        "Knee Flexors (knee flexion, i.e. the hamstrings + assistants) — biceps femoris, semitendinosus, semimembranosus, gracilis, sartorius, gastrocnemius, popliteus. Knee Extensors (the quadriceps) — rectus femoris, vastus lateralis, vastus medialis, vastus intermedius. If hamstrings are weak: Leg Pull Front, Shoulder Bridge, Swimming, Reformer Footwork (heels-on-bar variant). If quadriceps are weak: Footwork, Elephant, single-leg standing work, Chair lunges/step-ups.",
-        "Ankle Plantar Flexors — gastrocnemius, soleus, tibialis posterior, fibularis longus/brevis (assist). Ankle Dorsiflexors — tibialis anterior, extensor digitorum longus, extensor hallucis longus. If weak: Reformer Footwork through full range with attention to the ankle press, Running, Calf-raise-style standing work; dorsiflexor weakness (foot drop pattern) responds to slow, controlled dorsiflexion phases in Footwork and Running.",
-        "Abdominal Flexors of the Spine — rectus abdominis, external oblique (bilateral), internal oblique (bilateral), psoas major/iliacus (with the insertion fixed, i.e. from a seated/hook-lying position). Spinal Extensors — longissimus, iliocostalis, multifidus, rotatores, semispinalis capitis, spinalis, quadratus lumborum (assists), latissimus dorsi (assists). If abdominals are weak: Ab Prep, The Hundred, Roll Up, Teaser series, Chair Ab Press Sitting. If back extensors are weak (common in Sway-Back and Flat-Back): Swan Dive, Swimming, Breast Stroke, Rotation Prone and Spinal Extension on the barrels.",
-        "Spinal Rotators — external oblique (rotates trunk to the opposite side), internal oblique (rotates trunk to the same side), multifidi and rotatores (rotate to the opposite side, bilaterally paired for pure rotation). Exercises: Mat Saw, Spine Twist, Oblique Roll Back; Reformer Side Twist, Obliques with Flexion (Spine Corrector/Ladder Barrel only).",
-        "Spinal Lateral Flexors — iliocostalis, external oblique, internal oblique, longissimus, quadratus lumborum, psoas major (assists), spinalis, latissimus dorsi (assists) — all acting unilaterally to the same side. Exercises: Mat/Cadillac/Barrel Side Bend, Mermaid.",
-        "Scapular Elevators — trapezius (upper fibers), rhomboid major/minor, levator scapula. Scapular Depressors — trapezius (lower fibers), serratus anterior (origin fixed), pectoralis minor. Exercises: Scapula Isolation (Mat/Barrel warm-up), Elevation & Depression of Scapulae warm-up.",
-        "Scapular Retractors (adduction) — trapezius (middle fibers), rhomboid major/minor. Scapular Protractors (abduction) — serratus anterior (origin fixed), pectoralis minor. If weak (rounded-shoulder/kyphosis pattern — usually weak retractors + tight protractors): Reformer Back Rowing series, Chest Expansion, Midback Series; Cadillac Arm Springs rowing work.",
-        "Scapular Upward Rotators — trapezius (upper and lower fibers, unilaterally), serratus anterior (origin fixed). Scapular Downward Rotators — rhomboid major/minor, levator scapula, pectoralis minor. Exercises: Arm Circles, Push Up (loads serratus anterior through full protraction/upward rotation).",
-        "Shoulder Flexors — deltoid (anterior fibers), pectoralis major (upper fibers), biceps brachii, coracobrachialis. Shoulder Extensors — deltoid (posterior fibers), latissimus dorsi, teres major, pectoralis major (lower fibers), triceps brachii (long head). Exercises: Reformer/Cadillac Arm Springs and rowing series work both directions through the full arc.",
-        "Shoulder Abductors — deltoid (all fibers), supraspinatus. Shoulder Adductors — latissimus dorsi, teres major, infraspinatus, teres minor, pectoralis major (all fibers), triceps brachii (long head), coracobrachialis. Exercises: Reformer Side Arm Preps (adduction/abduction variants).",
-        "Shoulder Lateral (External) Rotators — deltoid (posterior fibers), infraspinatus, teres minor. Shoulder Medial (Internal) Rotators — deltoid (anterior fibers), latissimus dorsi, teres major, subscapularis, pectoralis major (all fibers). Exercises: Reformer Side Arm Preps (internal/external rotation variants).",
-        "Elbow Flexors — biceps brachii, brachialis, brachioradialis. Elbow Extensors — triceps brachii (all heads), anconeus. Exercises: Reformer/Cadillac Biceps Curls (elbow flexors), Triceps Press / Triceps work (elbow extensors).",
-        "Cervical Flexors (deep neck flexors) — sternocleidomastoid (bilateral), anterior scalene (bilateral), longus capitis/colli (bilateral). Cervical Extensors — trapezius (upper fibers, bilateral), levator scapula, splenius capitis/cervicis, rectus capitis posterior major/minor, oblique capitis superior, semispinalis capitis, multifidi, rotatores. If deep neck flexors are weak (very common with forward-head posture): Head Nods warm-up, the cranio-vertebral nod that initiates Ab Prep and every other flexion exercise.",
-        "Muscles of Inhalation — diaphragm, anterior/middle/posterior scalenes (bilateral), sternocleidomastoid (assists), external intercostals (assists), serratus posterior superior, quadratus lumborum, pectoralis major/minor (assist, with arm or scapula fixed), serratus anterior (with scapula fixed). Muscles of Exhalation — internal intercostals (assists), serratus posterior inferior, external oblique, internal oblique, transversus abdominis (all three by compressing the abdominal contents), quadratus lumborum. This is the biomechanical backbone of the STOTT Breathing principle — 3D lateral/posterior rib expansion on inhale, TA-led compression on exhale.",
+        {
+          title: "Hip Flexors (hip flexion)",
+          groups: [{ label: "Hip Flexors", muscles: "psoas major, iliacus, tensor fasciae latae, sartorius, rectus femoris, gluteus medius (anterior fibers), gluteus minimus, adductor longus/brevis/magnus (assist)" }],
+          notes: "If weak: Mat Single Leg Stretch, Double Leg Stretch, Teaser series, Hip Twist; Reformer Hundred, Leg Circles, Knee Stretches; Cadillac/Chair leg-spring hip-flexion work (e.g. Chair Knee Raises). If short/tight (common in Kyphosis-Lordosis and Military posture): stretch with Mat Swan-family extension work, Single Thigh Stretch (Reformer/Cadillac), lunge-based stretches.",
+        },
+        {
+          title: "Hip Extensors (hip extension)",
+          groups: [{ label: "Hip Extensors", muscles: "gluteus maximus (all fibers), biceps femoris (long head), semitendinosus, semimembranosus, adductor magnus (posterior fibers), gluteus medius (posterior fibers)" }],
+          notes: "If weak (common in Kyphosis-Lordosis and Sway-Back): Mat Shoulder Bridge, Leg Pull Front, Single Leg Kick, Swimming; Reformer Footwork, Hip Lift, Elephant; Barrel Prone Lower & Lift/Leg Circles/Single Leg Extensions.",
+        },
+        {
+          title: "Hip Abductors (hip abduction)",
+          groups: [{ label: "Hip Abductors", muscles: "gluteus maximus (all fibers), gluteus medius (all fibers), gluteus minimus, tensor fasciae latae, sartorius, piriformis (hip flexed)" }],
+          notes: "If weak: Mat Side Leg Lift Series; Reformer Side Splits (abduction direction); Barrel/Cadillac Side-Lying leg-lift series.",
+        },
+        {
+          title: "Hip Adductors (hip adduction)",
+          groups: [{ label: "Hip Adductors", muscles: "adductor magnus, adductor longus, adductor brevis, pectineus, gracilis, gluteus maximus (lower fibers)" }],
+          notes: "If weak: Reformer Side Splits (adduction direction), Bend & Stretch, Frog; Cadillac leg-spring adduction work.",
+        },
+        {
+          title: "Hip Medial / Lateral Rotators",
+          groups: [
+            { label: "Medial (Internal) Rotators", muscles: "gluteus medius (anterior fibers), gluteus minimus, tensor fasciae latae, adductor magnus/longus/brevis, pectineus, gracilis" },
+            { label: "Lateral (External) Rotators", muscles: "gluteus maximus (all fibers), piriformis, quadratus femoris, obturator internus/externus, gemellus superior/inferior, gluteus medius (posterior fibers), psoas major, iliacus, sartorius" },
+          ],
+          notes: "If weak/imbalanced: Mat/Reformer footwork variants performed laterally rotated vs. parallel/medially rotated (a very common STOTT modification) deliberately bias one rotator group over the other.",
+        },
+        {
+          title: "Knee Flexors / Extensors",
+          groups: [
+            { label: "Flexors (hamstrings + assistants)", muscles: "biceps femoris, semitendinosus, semimembranosus, gracilis, sartorius, gastrocnemius, popliteus" },
+            { label: "Extensors (quadriceps)", muscles: "rectus femoris, vastus lateralis, vastus medialis, vastus intermedius" },
+          ],
+          notes: "If hamstrings are weak: Leg Pull Front, Shoulder Bridge, Swimming, Reformer Footwork (heels-on-bar variant). If quadriceps are weak: Footwork, Elephant, single-leg standing work, Chair lunges/step-ups.",
+        },
+        {
+          title: "Ankle Plantar Flexors / Dorsiflexors",
+          groups: [
+            { label: "Plantar Flexors", muscles: "gastrocnemius, soleus, tibialis posterior, fibularis longus/brevis (assist)" },
+            { label: "Dorsiflexors", muscles: "tibialis anterior, extensor digitorum longus, extensor hallucis longus" },
+          ],
+          notes: "If weak: Reformer Footwork through full range with attention to the ankle press, Running, Calf-raise-style standing work; dorsiflexor weakness (foot drop pattern) responds to slow, controlled dorsiflexion phases in Footwork and Running.",
+        },
+        {
+          title: "Abdominal Flexors / Spinal Extensors",
+          groups: [
+            { label: "Abdominal Flexors of the Spine", muscles: "rectus abdominis, external oblique (bilateral), internal oblique (bilateral), psoas major/iliacus (insertion fixed — seated/hook-lying position)" },
+            { label: "Spinal Extensors", muscles: "longissimus, iliocostalis, multifidus, rotatores, semispinalis capitis, spinalis, quadratus lumborum (assists), latissimus dorsi (assists)" },
+          ],
+          notes: "If abdominals are weak: Ab Prep, The Hundred, Roll Up, Teaser series, Chair Ab Press Sitting. If back extensors are weak (common in Sway-Back and Flat-Back): Swan Dive, Swimming, Breast Stroke, Rotation Prone and Spinal Extension on the barrels.",
+        },
+        {
+          title: "Spinal Rotators",
+          groups: [{ label: "Spinal Rotators", muscles: "external oblique (rotates trunk to the opposite side), internal oblique (rotates trunk to the same side), multifidi and rotatores (rotate to the opposite side, bilaterally paired for pure rotation)" }],
+          notes: "Exercises: Mat Saw, Spine Twist, Oblique Roll Back; Reformer Side Twist, Obliques with Flexion (Spine Corrector/Ladder Barrel only).",
+        },
+        {
+          title: "Spinal Lateral Flexors",
+          groups: [{ label: "Spinal Lateral Flexors", muscles: "iliocostalis, external oblique, internal oblique, longissimus, quadratus lumborum, psoas major (assists), spinalis, latissimus dorsi (assists) — all acting unilaterally to the same side" }],
+          notes: "Exercises: Mat/Cadillac/Barrel Side Bend, Mermaid.",
+        },
+        {
+          title: "Scapular Elevators / Depressors",
+          groups: [
+            { label: "Elevators", muscles: "trapezius (upper fibers), rhomboid major/minor, levator scapula" },
+            { label: "Depressors", muscles: "trapezius (lower fibers), serratus anterior (origin fixed), pectoralis minor" },
+          ],
+          notes: "Exercises: Scapula Isolation (Mat/Barrel warm-up), Elevation & Depression of Scapulae warm-up.",
+        },
+        {
+          title: "Scapular Retractors / Protractors",
+          groups: [
+            { label: "Retractors (adduction)", muscles: "trapezius (middle fibers), rhomboid major/minor" },
+            { label: "Protractors (abduction)", muscles: "serratus anterior (origin fixed), pectoralis minor" },
+          ],
+          notes: "If weak (rounded-shoulder/kyphosis pattern — usually weak retractors + tight protractors): Reformer Back Rowing series, Chest Expansion, Midback Series; Cadillac Arm Springs rowing work.",
+        },
+        {
+          title: "Scapular Upward / Downward Rotators",
+          groups: [
+            { label: "Upward Rotators", muscles: "trapezius (upper and lower fibers, unilaterally), serratus anterior (origin fixed)" },
+            { label: "Downward Rotators", muscles: "rhomboid major/minor, levator scapula, pectoralis minor" },
+          ],
+          notes: "Exercises: Arm Circles, Push Up (loads serratus anterior through full protraction/upward rotation).",
+        },
+        {
+          title: "Shoulder Flexors / Extensors",
+          groups: [
+            { label: "Flexors", muscles: "deltoid (anterior fibers), pectoralis major (upper fibers), biceps brachii, coracobrachialis" },
+            { label: "Extensors", muscles: "deltoid (posterior fibers), latissimus dorsi, teres major, pectoralis major (lower fibers), triceps brachii (long head)" },
+          ],
+          notes: "Exercises: Reformer/Cadillac Arm Springs and rowing series work both directions through the full arc.",
+        },
+        {
+          title: "Shoulder Abductors / Adductors",
+          groups: [
+            { label: "Abductors", muscles: "deltoid (all fibers), supraspinatus" },
+            { label: "Adductors", muscles: "latissimus dorsi, teres major, infraspinatus, teres minor, pectoralis major (all fibers), triceps brachii (long head), coracobrachialis" },
+          ],
+          notes: "Exercises: Reformer Side Arm Preps (adduction/abduction variants).",
+        },
+        {
+          title: "Shoulder Lateral / Medial Rotators",
+          groups: [
+            { label: "Lateral (External) Rotators", muscles: "deltoid (posterior fibers), infraspinatus, teres minor" },
+            { label: "Medial (Internal) Rotators", muscles: "deltoid (anterior fibers), latissimus dorsi, teres major, subscapularis, pectoralis major (all fibers)" },
+          ],
+          notes: "Exercises: Reformer Side Arm Preps (internal/external rotation variants).",
+        },
+        {
+          title: "Elbow Flexors / Extensors",
+          groups: [
+            { label: "Flexors", muscles: "biceps brachii, brachialis, brachioradialis" },
+            { label: "Extensors", muscles: "triceps brachii (all heads), anconeus" },
+          ],
+          notes: "Exercises: Reformer/Cadillac Biceps Curls (elbow flexors), Triceps Press / Triceps work (elbow extensors).",
+        },
+        {
+          title: "Cervical Flexors / Extensors",
+          groups: [
+            { label: "Flexors (deep neck flexors)", muscles: "sternocleidomastoid (bilateral), anterior scalene (bilateral), longus capitis/colli (bilateral)" },
+            { label: "Extensors", muscles: "trapezius (upper fibers, bilateral), levator scapula, splenius capitis/cervicis, rectus capitis posterior major/minor, oblique capitis superior, semispinalis capitis, multifidi, rotatores" },
+          ],
+          notes: "If deep neck flexors are weak (very common with forward-head posture): Head Nods warm-up, the cranio-vertebral nod that initiates Ab Prep and every other flexion exercise.",
+        },
+        {
+          title: "Muscles of Inhalation / Exhalation",
+          groups: [
+            { label: "Inhalation", muscles: "diaphragm, anterior/middle/posterior scalenes (bilateral), sternocleidomastoid (assists), external intercostals (assists), serratus posterior superior, quadratus lumborum, pectoralis major/minor (assist, with arm or scapula fixed), serratus anterior (with scapula fixed)" },
+            { label: "Exhalation", muscles: "internal intercostals (assists), serratus posterior inferior, external oblique, internal oblique, transversus abdominis (all three by compressing the abdominal contents), quadratus lumborum" },
+          ],
+          notes: "This is the biomechanical backbone of the STOTT Breathing principle — 3D lateral/posterior rib expansion on inhale, TA-led compression on exhale.",
+        },
       ],
     },
     {
