@@ -51,7 +51,7 @@ window.STOTT.crossref = {
     { id: 35, name: "Roll over", cells: { matEss: "Ess. Prep 60", matInt: "Int. 60", archbarrel: "Int. Invert 48", spinecorrector: "Int. Invert 56", chair: "Int. T.Flex 126" } },
     { id: 36, name: "Heel squeeze prone", cells: { matEss: "Ess. 63" } },
     { id: 37, name: "One leg kick", cells: { matEss: "Ess. Prep 64", matInt: "Int. 64" } },
-    { id: 38, name: "Saw", cells: { matEss: "Ess. 70" } },
+    { id: 38, name: "Saw", cells: { matEss: "Ess. 69" } },
     { id: 39, name: "Open Leg rocker", cells: { matInt: "Int. 70" } },
     { id: 40, name: "Neck pull", cells: { matEss: "Ess. Prep 72", matInt: "Int. 72" } },
     { id: 41, name: "Obliques roll back", cells: { matEss: "Ess. 74" } },
