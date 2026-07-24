@@ -673,14 +673,20 @@ function crossRefBlock(scope, ex, closeModal) {
   const match = findCrossRefMatch(scope, ex);
   if (!match) return null;
   const { row, matchedColKey } = match;
-  const otherCols = (DATA.crossref.columns || []).filter((c) => c.key !== matchedColKey && row.cells[c.key]);
-  if (!otherCols.length) return null;
+  const exPageNums = (ex.page || "").match(/\d+/g) || [];
+  const cols = (DATA.crossref.columns || []).filter((c) => row.cells[c.key]);
   const wrap = el("div", { class: "field", style: "margin-top:14px;border-top:1px solid var(--line-soft);padding-top:10px" });
   wrap.append(el("div", { class: "k" }, `Cross-reference — also part of the "${row.name}" family`));
   const list = el("div", { class: "crossref-inline-list" });
-  otherCols.forEach((col) => {
+  let count = 0;
+  cols.forEach((col) => {
     row.cells[col.key].split("\n").forEach((line) => {
-      const pageMatch = line.match(/\d+/);
+      const linePageNums = line.match(/\d+/g) || [];
+      // Only skip the one line that IS the exercise being viewed. A whole-column
+      // skip would also hide true siblings that share its column — e.g. Mermaid
+      // and Mermaid — Short Box both live under Reformer Intermediate, so viewing
+      // one must still surface the other as a cross-reference.
+      if (col.key === matchedColKey && linePageNums.some((n) => exPageNums.includes(n))) return;
       const levelMatch = line.match(/^\s*(Ess|Int|Adv)\b/i);
       const focusLevel = levelMatch
         ? { ess: "Essential", int: "Intermediate", adv: "Advanced" }[levelMatch[1].toLowerCase()]
@@ -688,11 +694,13 @@ function crossRefBlock(scope, ex, closeModal) {
       const btn = el("button", { class: "crossref-cell-btn", type: "button" }, `${col.label}: ${line}`);
       btn.addEventListener("click", () => {
         if (closeModal) closeModal();
-        navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null, focusLevel });
+        navigate(col.apparatus, { focusName: row.name, focusPage: linePageNums[0] || null, focusLevel });
       });
       list.append(btn);
+      count++;
     });
   });
+  if (!count) return null;
   wrap.append(list);
   return wrap;
 }
