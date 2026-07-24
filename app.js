@@ -611,6 +611,15 @@ function meaningfulTokens(name) {
   return normalizeExerciseName(name).split(" ").filter((t) => t.length >= 3);
 }
 
+function columnLevelHint(col) {
+  // Ess/Int-suffixed column keys (reformerEss, reformerInt, matEss, matInt...)
+  // imply a fixed level; combined columns (chair, archbarrel...) carry level
+  // per-line in the cell text instead, so they have no single fixed level.
+  if (/Ess$/.test(col.key)) return "Essential";
+  if (/Int$/.test(col.key)) return "Intermediate";
+  return null;
+}
+
 function findCrossRefMatch(scope, ex) {
   const cols = (DATA.crossref.columns || []).filter((c) => c.apparatus === scope);
   if (!cols.length) return null;
@@ -646,7 +655,14 @@ function findCrossRefMatch(scope, ex) {
       // to corroborate it.
       const confident = (pageMatches && wordOverlap >= 1) || (!pageMatches && wordOverlap >= 3);
       if (!confident) return;
-      const score = (pageMatches ? 2 : 0) + wordOverlap + (isNamesake ? 3 : 0);
+      // Essential and Intermediate cells for the same family often cite the same
+      // page number (e.g. "Ess. 30" / "Int. 30"), tying pageMatches for both
+      // columns — so the column whose implied level matches the exercise being
+      // viewed must win, or the match silently collapses onto whichever column
+      // happens to be listed first (always the Essential one).
+      const levelHint = columnLevelHint(col);
+      const levelBonus = levelHint && ex.level === levelHint ? 5 : 0;
+      const score = (pageMatches ? 2 : 0) + wordOverlap + (isNamesake ? 3 : 0) + levelBonus;
       if (score > bestScore) { bestScore = score; best = { row, matchedColKey: col.key }; }
     });
   });
@@ -665,10 +681,14 @@ function crossRefBlock(scope, ex, closeModal) {
   otherCols.forEach((col) => {
     row.cells[col.key].split("\n").forEach((line) => {
       const pageMatch = line.match(/\d+/);
+      const levelMatch = line.match(/^\s*(Ess|Int|Adv)\b/i);
+      const focusLevel = levelMatch
+        ? { ess: "Essential", int: "Intermediate", adv: "Advanced" }[levelMatch[1].toLowerCase()]
+        : null;
       const btn = el("button", { class: "crossref-cell-btn", type: "button" }, `${col.label}: ${line}`);
       btn.addEventListener("click", () => {
         if (closeModal) closeModal();
-        navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null });
+        navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null, focusLevel });
       });
       list.append(btn);
     });
@@ -853,6 +873,13 @@ function renderApparatus(key, opts = {}) {
       // cross-reference points at a different level entirely. A page match with
       // zero name overlap is kept only as a last-resort fallback (weakPageOnlyIndex)
       // so it can't preempt a good name match on an unrelated coincidental page hit.
+      // When a cross-reference button carries a level hint (derived from its own
+      // "Ess./Int./Adv." prefix), an entry at that level must win any tie against
+      // a same-named, same-page entry at a different level — otherwise Essential
+      // and Intermediate entries that share an identical page range (e.g. both
+      // "Second Position" on p.28-29) are indistinguishable by page+name alone and
+      // the match always falls back to whichever appears first (Essential).
+      const levelBonus = (ex) => (opts.focusLevel && ex.level === opts.focusLevel ? 10 : 0);
       let bestScore = 0;
       let bestWeakScore = 0;
       initialFlatList.forEach((ex, i) => {
@@ -862,7 +889,7 @@ function renderApparatus(key, opts = {}) {
         const exTokens = normalizeExerciseName(ex.name).split(" ").filter(Boolean);
         const overlap = targetTokens.filter((t) => exTokens.some((n) => n === t || n.includes(t) || t.includes(n))).length;
         if (overlap > 0) {
-          const score = pageScore + overlap * 2;
+          const score = pageScore + overlap * 2 + levelBonus(ex);
           if (score > bestScore) { bestScore = score; matchIndex = i; }
         } else if (pageScore > bestWeakScore) {
           bestWeakScore = pageScore; weakPageOnlyIndex = i;
@@ -870,7 +897,16 @@ function renderApparatus(key, opts = {}) {
       });
     }
     if (matchIndex === -1) {
+      matchIndex = initialFlatList.findIndex((ex) => normalizeExerciseName(ex.name) === target && (!opts.focusLevel || ex.level === opts.focusLevel));
+    }
+    if (matchIndex === -1) {
       matchIndex = initialFlatList.findIndex((ex) => normalizeExerciseName(ex.name) === target);
+    }
+    if (matchIndex === -1) {
+      matchIndex = initialFlatList.findIndex((ex) => {
+        const n = normalizeExerciseName(ex.name);
+        return n && target && (n.includes(target) || target.includes(n)) && (!opts.focusLevel || ex.level === opts.focusLevel);
+      });
     }
     if (matchIndex === -1) {
       matchIndex = initialFlatList.findIndex((ex) => {
