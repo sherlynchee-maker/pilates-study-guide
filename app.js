@@ -1666,10 +1666,33 @@ function renderCrossRef() {
   function cellContent(row, col) {
     const val = row.cells[col.key];
     if (!val) return el("span", { class: "crossref-empty" }, "—");
-    const btn = el("button", { class: "crossref-cell-btn", type: "button" }, twoLineText(val));
-    const pageMatch = val.match(/\d+/);
-    btn.addEventListener("click", () => navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null }));
-    return btn;
+    const lines = val.split("\n");
+    if (lines.length === 1) {
+      const btn = el("button", { class: "crossref-cell-btn", type: "button" }, val);
+      const pageMatch = val.match(/\d+/);
+      const levelMatch = val.match(/^\s*(Ess|Int|Adv)\b/i);
+      const focusLevel = levelMatch
+        ? { ess: "Essential", int: "Intermediate", adv: "Advanced" }[levelMatch[1].toLowerCase()]
+        : null;
+      btn.addEventListener("click", () => navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null, focusLevel }));
+      return btn;
+    }
+    // Multiple lines in one cell (e.g. two distinct exercises at the same
+    // apparatus+level) each need their own button — a single button keyed off
+    // just the first line's page number would make every other line's
+    // reference permanently unreachable from this table.
+    const wrap = el("div", { class: "crossref-cell-multi" });
+    lines.forEach((line) => {
+      const pageMatch = line.match(/\d+/);
+      const levelMatch = line.match(/^\s*(Ess|Int|Adv)\b/i);
+      const focusLevel = levelMatch
+        ? { ess: "Essential", int: "Intermediate", adv: "Advanced" }[levelMatch[1].toLowerCase()]
+        : null;
+      const btn = el("button", { class: "crossref-cell-btn", type: "button" }, line);
+      btn.addEventListener("click", () => navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null, focusLevel }));
+      wrap.append(btn);
+    });
+    return wrap;
   }
 
   function draw(filter) {
