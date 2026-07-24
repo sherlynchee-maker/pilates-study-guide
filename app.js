@@ -69,68 +69,45 @@ function exerciseQuizPairs(ex) {
   if (ex.modifications && ex.modifications.length) pairs.push({ q: `Name a modification for ${ex.name}.`, a: ex.modifications.join(" · ") });
   return pairs.slice(0, 5);
 }
-function principleQuizPairs(p) {
-  const pairs = [];
-  if (p.goal) pairs.push({ q: `In your own words — what's the core idea behind ${p.title}?`, a: p.goal });
-  (p.commonErrors || []).forEach((e) => pairs.push({ q: `What's the corrective cue for this common error: "${e.error}"?`, a: e.cue }));
-  return pairs.slice(0, 5);
-}
-function flattenSectionItem(it) {
-  if (typeof it === "string") return it;
-  if (it.segments) {
-    const segs = (it.segments || []).map(([k, v]) => `${k}: ${v}`).join(" · ");
-    return [
-      `${it.name} — ${segs}.`,
-      it.shortStrong ? `Short/strong: ${it.shortStrong}.` : "",
-      it.elongatedWeak ? `Elongated/weak: ${it.elongatedWeak}.` : "",
-      it.note ? `Note: ${it.note}.` : "",
-      it.workIn ? `Work in: ${it.workIn}` : "",
-      it.emphasize ? `Emphasize: ${it.emphasize}.` : "",
-      it.strengthen ? `Strengthen: ${it.strengthen}.` : "",
-      it.stretch ? `Stretch: ${it.stretch}.` : "",
-    ].filter(Boolean).join(" ");
-  }
-  if (it.groups) {
-    const groupText = it.groups.map((g) => `${g.label}: ${g.muscles}`).join(" · ");
-    return [`${it.title} — ${groupText}.`, it.notes || ""].filter(Boolean).join(" ");
-  }
-  if (it.label) {
-    if (it.steps) return `${it.label}: ${it.steps.join(" → ")}`;
-    if (it.tips) return `${it.label}: ${it.tips.join(" ")}`;
-    return `${it.label}: ${it.detail || ""}`;
-  }
-  return "";
-}
-function sectionQuizPairs(s) {
-  const itemTexts = (s.items || []).map(flattenSectionItem);
-  const answer = [...(s.body || []), ...itemTexts].join(" ");
-  if (!answer) return [];
-  return [{ q: `Recall what you know about "${s.title}" before revealing.`, a: answer }];
+/* ---------- mini-quiz: pull real interactive (mcq/multi/order) questions from the main quiz bank, by topic ---------- */
+const QUIZ_TOPICS_BY_SCOPE = {
+  principles: ["Basic Principles"],
+  "posture-sections": ["Postural Analysis"],
+  "anatomy-sections": ["Anatomy — Terminology", "Anatomy — Muscle Function"],
+};
+function scopeQuizQuestions(scope, n) {
+  const topics = QUIZ_TOPICS_BY_SCOPE[scope] || [];
+  const pool = DATA.quiz.filter((q) => topics.includes(q.topic) && q.type && q.type !== "recall");
+  return shuffle([...pool]).slice(0, n);
 }
 
 /* ---------- reusable review-control widget ---------- */
-function buildMiniQuiz(pairs, onAllRevealed) {
+function buildInlineQuiz(questions, onAllAnswered) {
   const wrap = el("div", { class: "mini-quiz" });
-  const flipped = new Set();
-  pairs.forEach((pair, i) => {
+  let answeredCount = 0;
+  questions.forEach((q) => {
     const item = el("div", { class: "mini-quiz-item" });
-    const revealBtn = el("button", { class: "btn secondary mini-quiz-reveal" }, "Reveal answer");
-    const aRow = el("div", { class: "mini-quiz-a hidden" }, pair.a);
-    revealBtn.addEventListener("click", () => {
-      const nowHidden = aRow.classList.toggle("hidden");
-      revealBtn.textContent = nowHidden ? "Reveal answer" : "Hide answer";
-      if (!nowHidden) {
-        flipped.add(i);
-        if (flipped.size === pairs.length) onAllRevealed();
-      }
-    });
-    item.append(el("div", { class: "mini-quiz-q" }, pair.q), revealBtn, aRow);
+    if (q.topic) item.append(el("div", { class: "qtag" }, q.topic));
+    item.append(el("div", { class: "qtext" }, q.q));
+    let done = false;
+    function finish(correct) {
+      if (done) return;
+      done = true;
+      if (q.id) recordAnswer(q, correct);
+      answeredCount++;
+      if (answeredCount === questions.length) onAllAnswered();
+    }
+    const type = q.type || "recall";
+    if (type === "mcq") renderMCQBody(item, q, finish);
+    else if (type === "multi") renderMultiBody(item, q, finish);
+    else if (type === "order") renderOrderBody(item, q, finish);
+    else renderRecallBody(item, q, finish);
     wrap.append(item);
   });
   return wrap;
 }
 
-function reviewControl(scope, key, buildPairs) {
+function reviewControl(scope, key, buildQuestions) {
   const holder = el("div", { class: "review-control" });
   function renderState() {
     holder.innerHTML = "";
@@ -143,14 +120,14 @@ function reviewControl(scope, key, buildPairs) {
         redo
       );
     } else {
-      const pairs = buildPairs();
-      const btn = el("button", { class: "btn secondary" }, pairs.length ? "Take mini quiz & mark reviewed" : "Mark as reviewed");
+      const questions = buildQuestions();
+      const btn = el("button", { class: "btn secondary" }, questions.length ? "Take mini quiz & mark reviewed" : "Mark as reviewed");
       btn.addEventListener("click", () => {
-        if (!pairs.length) { markReviewed(scope, key); renderState(); return; }
+        if (!questions.length) { markReviewed(scope, key); renderState(); return; }
         const markBtn = el("button", { class: "btn", disabled: "disabled" }, "Mark as reviewed");
         markBtn.addEventListener("click", () => { markReviewed(scope, key); renderState(); });
-        const quiz = buildMiniQuiz(pairs, () => { markBtn.disabled = false; });
-        quiz.append(el("div", { class: "mini-quiz-hint" }, "Reveal every answer to unlock marking this reviewed."), markBtn);
+        const quiz = buildInlineQuiz(questions, () => { markBtn.disabled = false; });
+        quiz.append(el("div", { class: "mini-quiz-hint" }, "Answer every question to unlock marking this reviewed."), markBtn);
         holder.innerHTML = "";
         holder.append(quiz);
       });
@@ -368,7 +345,7 @@ function renderPrinciples() {
         el("div", { class: "v" }, p.movementPatterns.join(" · ")),
       ]));
     }
-    card.append(reviewControl("principles", p.id, () => principleQuizPairs(p)));
+    card.append(reviewControl("principles", p.id, () => scopeQuizQuestions("principles", 3)));
     mainView.append(card);
   });
 }
@@ -442,7 +419,7 @@ function renderSectionsInto(host, sections, scope) {
       }
     }
     if (scope) {
-      block.append(reviewControl(scope, normalizeExerciseName(s.title), () => sectionQuizPairs(s)));
+      block.append(reviewControl(scope, normalizeExerciseName(s.title), () => scopeQuizQuestions(scope, 3)));
     }
     host.append(block);
   });
