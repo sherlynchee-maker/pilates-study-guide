@@ -527,20 +527,10 @@ function renderPosture() {
 }
 
 /* ================= PROGRAMMING ================= */
-function renderProgramming() {
-  mainView.innerHTML = "";
-  mainView.append(
-    el("div", { class: "view-header" }, [
-      el("div", {}, [
-        el("span", { class: "eyebrow" }, "Foundations"),
-        el("h2", {}, "Programming"),
-        el("p", { class: "sub" }, "Turn a posture finding into a Layer 1 → Layer 2 workout, with the reasoning to defend every exercise choice on exam day."),
-      ]),
-    ])
-  );
+function renderProgrammingBuild(container) {
   const prog = DATA.programming;
   if (!prog || !prog.postures || !prog.postures.length) {
-    mainView.append(el("div", { class: "empty-state" }, "Still digesting this section."));
+    container.append(el("div", { class: "empty-state" }, "Still digesting this section."));
     return;
   }
 
@@ -557,19 +547,19 @@ function renderProgramming() {
     );
   });
   introBlock.append(layerGrid);
-  mainView.append(introBlock);
+  container.append(introBlock);
 
   if (prog.workflow && prog.workflow.length) {
     const flowBlock = el("div", { class: "section-block" });
     flowBlock.append(el("h3", {}, "Exam-Day Workflow"));
     flowBlock.append(el("ol", { class: "workflow-list" }, prog.workflow.map((step) => el("li", {}, step))));
-    mainView.append(flowBlock);
+    container.append(flowBlock);
   }
 
   if (prog.note) {
     const noteBlock = el("div", { class: "section-block" });
     noteBlock.append(el("p", { style: "color:var(--ink-faint);font-size:13px" }, prog.note));
-    mainView.append(noteBlock);
+    container.append(noteBlock);
   }
 
   const postureBlock = el("div", { class: "section-block" });
@@ -600,7 +590,46 @@ function renderProgramming() {
 
     postureBlock.append(card);
   });
-  mainView.append(postureBlock);
+  container.append(postureBlock);
+}
+
+function renderProgramming() {
+  mainView.innerHTML = "";
+  mainView.append(
+    el("div", { class: "view-header" }, [
+      el("div", {}, [
+        el("span", { class: "eyebrow" }, "Foundations"),
+        el("h2", {}, "Programming"),
+        el("p", { class: "sub" }, "Turn a posture finding into a workout, and see how STOTT's own sample classes build one up, layer by layer."),
+      ]),
+    ])
+  );
+
+  const tabRow = el("div", { class: "chip-select", style: "margin-bottom:20px" });
+  const buildTab = el("button", { class: "chip selected" }, "Build a Workout");
+  const progressionTab = el("button", { class: "chip" }, "Class Progression");
+  tabRow.append(buildTab, progressionTab);
+  mainView.append(tabRow);
+
+  const body = el("div");
+  mainView.append(body);
+
+  function showBuild() {
+    buildTab.classList.add("selected");
+    progressionTab.classList.remove("selected");
+    body.innerHTML = "";
+    renderProgrammingBuild(body);
+  }
+  function showProgression() {
+    progressionTab.classList.add("selected");
+    buildTab.classList.remove("selected");
+    body.innerHTML = "";
+    renderProgressionInto(body);
+  }
+  buildTab.addEventListener("click", showBuild);
+  progressionTab.addEventListener("click", showProgression);
+
+  showBuild();
 }
 
 /* ================= APPARATUS ================= */
@@ -1741,33 +1770,25 @@ function progressionChip(item, apparatusKey) {
   return chip;
 }
 
-function renderProgression() {
+function renderProgressionInto(container) {
   const data = DATA.progression;
-  mainView.innerHTML = "";
-  mainView.append(
-    el("div", { class: "view-header" }, [
-      el("div", {}, [
-        el("span", { class: "eyebrow" }, "Learn"),
-        el("h2", {}, "Progression"),
-        el("p", { class: "sub" }, "How STOTT's own sample classes build up, layer by layer — which exercises get added within an apparatus, and how Mat and Reformer work build on each other. Pulled straight from the manual's Sample Workouts, not inferred."),
-      ]),
-    ])
-  );
 
   if (!data.general.layers.length && !Object.keys(data.byPosture).length && !(data.buildupPaths || []).length) {
-    mainView.append(el("div", { class: "empty-state" }, "Still digesting these charts — check back shortly."));
+    container.append(el("div", { class: "empty-state" }, "Still digesting these charts — check back shortly."));
     return;
   }
+
+  container.append(el("p", { class: "sub", style: "margin:-4px 0 16px" }, "How STOTT's own sample classes build up, layer by layer — which exercises get added within an apparatus, and how Mat and Reformer work build on each other. Pulled straight from the manual's Sample Workouts, not inferred."));
 
   const tabRow = el("div", { class: "chip-select", style: "margin-bottom:20px" });
   const generalTab = el("button", { class: "chip selected" }, "General class progression");
   const postureTab = el("button", { class: "chip" }, "By posture");
   const buildupTab = el("button", { class: "chip" }, "Build-up paths");
   tabRow.append(generalTab, postureTab, buildupTab);
-  mainView.append(tabRow);
+  container.append(tabRow);
 
   const body = el("div");
-  mainView.append(body);
+  container.append(body);
 
   function levelPill(level) {
     return el("span", { class: `pill level-${(level || "").toLowerCase()}` }, level);
@@ -1949,7 +1970,7 @@ function render(view, opts = {}) {
     case "quiz": return renderQuiz();
     case "progress": return renderProgress();
     case "crossref": return renderCrossRef();
-    case "progression": return renderProgression();
+    case "progression": return renderProgramming();
     case "mat": case "reformer": case "cadillac": case "chair":
     case "archbarrel": case "spinecorrector": case "ladderbarrel":
       return renderApparatus(view, opts);
