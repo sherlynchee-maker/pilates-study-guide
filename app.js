@@ -821,12 +821,20 @@ function renderApparatus(key, opts = {}) {
     ])
   );
 
-  const groups = [
-    ["Warm-Up", data.warmup],
-    ["Essential", data.essential],
-    ["Intermediate", data.intermediate],
-    ["Advanced", data.advanced],
-  ].filter(([, list]) => list && list.length);
+  // Arc Barrel / Spine Corrector / Ladder Barrel are printed as one continuous
+  // workout-chart sequence (Essential and Intermediate exercises interleaved
+  // by category), not as separate Essential/Intermediate sections like Mat —
+  // so list them in that same file order with a level pill per row instead.
+  const unifyLevels = key === "archbarrel" || key === "spinecorrector" || key === "ladderbarrel";
+
+  const groups = unifyLevels
+    ? [["", [].concat(data.warmup || [], data.essential || [], data.intermediate || [], data.advanced || [])]].filter(([, list]) => list.length)
+    : [
+        ["Warm-Up", data.warmup],
+        ["Essential", data.essential],
+        ["Intermediate", data.intermediate],
+        ["Advanced", data.advanced],
+      ].filter(([, list]) => list && list.length);
 
   if (!groups.length) {
     mainView.append(el("div", { class: "empty-state" }, "Still digesting this apparatus — check back shortly."));
@@ -847,6 +855,7 @@ function renderApparatus(key, opts = {}) {
     const row = el("div", { class: "exercise-row" }, [
       el("div", { class: "row-name-wrap" }, [
         el("div", { class: "name" }, ex.name),
+        unifyLevels && ex.level ? el("span", { class: `pill level-${ex.level.toLowerCase()}` }, ex.level) : null,
         reviewed ? el("span", { class: "row-check", title: "Reviewed" }, "✓") : null,
       ]),
       el("span", { class: "meta" }, showSprings ? `springs ${ex.springs}` : (ex.page ? `p.${ex.page}` : "")),
@@ -866,7 +875,7 @@ function renderApparatus(key, opts = {}) {
       const filtered = list.filter((e) => !filter || e.name.toLowerCase().includes(filter.toLowerCase()));
       if (!filtered.length) return;
       const block = el("div", { class: "section-block" });
-      block.append(el("h3", {}, `${levelLabel} · ${filtered.length}`));
+      if (levelLabel) block.append(el("h3", {}, `${levelLabel} · ${filtered.length}`));
 
       const hasCategories = filtered.some((e) => e.category);
       if (hasCategories) {
