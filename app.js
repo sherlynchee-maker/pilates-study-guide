@@ -821,11 +821,11 @@ function renderApparatus(key, opts = {}) {
     ])
   );
 
-  // Arc Barrel / Spine Corrector / Ladder Barrel are printed as one continuous
-  // workout-chart sequence (Essential and Intermediate exercises interleaved
-  // by category), not as separate Essential/Intermediate sections like Mat —
-  // so list them in that same file order with a level pill per row instead.
-  const unifyLevels = key === "archbarrel" || key === "spinecorrector" || key === "ladderbarrel" || key === "chair";
+  // These apparatus are printed as one continuous workout-chart sequence
+  // (levels interleaved by page/category), not as separate Warm-Up/Essential/
+  // Intermediate sections — so list them in page order with a level pill per
+  // row instead.
+  const unifyLevels = key === "mat" || key === "archbarrel" || key === "spinecorrector" || key === "ladderbarrel" || key === "chair";
 
   // Essential/Intermediate arrays aren't always internally page-ordered (e.g.
   // Ladder Barrel's Short Box Series essential items are filed ahead of later
