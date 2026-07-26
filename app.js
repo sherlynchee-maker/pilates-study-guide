@@ -827,17 +827,15 @@ function renderApparatus(key, opts = {}) {
   // so list them in that same file order with a level pill per row instead.
   const unifyLevels = key === "archbarrel" || key === "spinecorrector" || key === "ladderbarrel" || key === "chair";
 
-  // Chair's Essential and Intermediate arrays don't share the same category
-  // set (e.g. "Leg Work Supported by Arms" is intermediate-only), so letting
-  // category order fall out of first-appearance in the concatenated list
-  // would misplace intermediate-only categories after ones that happen to
-  // have essential exercises too. Pin the real workout-chart category order.
-  const CATEGORY_ORDER = {
-    chair: ["Leg Work", "Leg Work Supported by Arms", "Arm Work", "Torso Flexion", "Torso Extension", "Torso Flexion & Extension", "Torso Lateral Flexion", "Torso Rotation"],
-  };
-
+  // Essential/Intermediate arrays aren't always internally page-ordered (e.g.
+  // Ladder Barrel's Short Box Series essential items are filed ahead of later
+  // Hands-on-Ladder/Side-Lying intermediate ones), and some apparatus have
+  // categories that only exist at one level (Chair's "Leg Work Supported by
+  // Arms" is intermediate-only). Sorting the merged list by page number fixes
+  // both: categories and rows naturally fall into true manual/chart order.
   const groups = unifyLevels
-    ? [["", [].concat(data.warmup || [], data.essential || [], data.intermediate || [], data.advanced || [])]].filter(([, list]) => list.length)
+    ? [["", [].concat(data.warmup || [], data.essential || [], data.intermediate || [], data.advanced || [])
+          .sort((a, b) => (parseInt(a.page) || Infinity) - (parseInt(b.page) || Infinity))]].filter(([, list]) => list.length)
     : [
         ["Warm-Up", data.warmup],
         ["Essential", data.essential],
@@ -895,13 +893,6 @@ function renderApparatus(key, opts = {}) {
           if (!catMap.has(cat)) { catMap.set(cat, []); catOrder.push(cat); }
           catMap.get(cat).push(ex);
         });
-        const pinnedOrder = CATEGORY_ORDER[key];
-        if (pinnedOrder) {
-          catOrder.sort((a, b) => {
-            const ia = pinnedOrder.indexOf(a), ib = pinnedOrder.indexOf(b);
-            return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
-          });
-        }
         catOrder.forEach((cat) => {
           block.append(el("div", { class: "apparatus-category-label" }, `${cat} · ${catMap.get(cat).length}`));
           const rows = el("div", { class: "exercise-list" });
