@@ -825,7 +825,16 @@ function renderApparatus(key, opts = {}) {
   // workout-chart sequence (Essential and Intermediate exercises interleaved
   // by category), not as separate Essential/Intermediate sections like Mat —
   // so list them in that same file order with a level pill per row instead.
-  const unifyLevels = key === "archbarrel" || key === "spinecorrector" || key === "ladderbarrel";
+  const unifyLevels = key === "archbarrel" || key === "spinecorrector" || key === "ladderbarrel" || key === "chair";
+
+  // Chair's Essential and Intermediate arrays don't share the same category
+  // set (e.g. "Leg Work Supported by Arms" is intermediate-only), so letting
+  // category order fall out of first-appearance in the concatenated list
+  // would misplace intermediate-only categories after ones that happen to
+  // have essential exercises too. Pin the real workout-chart category order.
+  const CATEGORY_ORDER = {
+    chair: ["Leg Work", "Leg Work Supported by Arms", "Arm Work", "Torso Flexion", "Torso Extension", "Torso Flexion & Extension", "Torso Lateral Flexion", "Torso Rotation"],
+  };
 
   const groups = unifyLevels
     ? [["", [].concat(data.warmup || [], data.essential || [], data.intermediate || [], data.advanced || [])]].filter(([, list]) => list.length)
@@ -886,6 +895,13 @@ function renderApparatus(key, opts = {}) {
           if (!catMap.has(cat)) { catMap.set(cat, []); catOrder.push(cat); }
           catMap.get(cat).push(ex);
         });
+        const pinnedOrder = CATEGORY_ORDER[key];
+        if (pinnedOrder) {
+          catOrder.sort((a, b) => {
+            const ia = pinnedOrder.indexOf(a), ib = pinnedOrder.indexOf(b);
+            return (ia === -1 ? 999 : ia) - (ib === -1 ? 999 : ib);
+          });
+        }
         catOrder.forEach((cat) => {
           block.append(el("div", { class: "apparatus-category-label" }, `${cat} · ${catMap.get(cat).length}`));
           const rows = el("div", { class: "exercise-list" });
