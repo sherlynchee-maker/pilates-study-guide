@@ -833,15 +833,16 @@ function renderApparatus(key, opts = {}) {
   // categories that only exist at one level (Chair's "Leg Work Supported by
   // Arms" is intermediate-only). Sorting the merged list by page number fixes
   // both: categories and rows naturally fall into true manual/chart order.
+  const byPage = (a, b) => (parseInt(a.page) || Infinity) - (parseInt(b.page) || Infinity);
+
   const groups = unifyLevels
-    ? [["", [].concat(data.warmup || [], data.essential || [], data.intermediate || [], data.advanced || [])
-          .sort((a, b) => (parseInt(a.page) || Infinity) - (parseInt(b.page) || Infinity))]].filter(([, list]) => list.length)
+    ? [["", [].concat(data.warmup || [], data.essential || [], data.intermediate || [], data.advanced || []).sort(byPage)]].filter(([, list]) => list.length)
     : [
         ["Warm-Up", data.warmup],
         ["Essential", data.essential],
         ["Intermediate", data.intermediate],
         ["Advanced", data.advanced],
-      ].filter(([, list]) => list && list.length);
+      ].map(([label, list]) => [label, list ? [...list].sort(byPage) : list]).filter(([, list]) => list && list.length);
 
   if (!groups.length) {
     mainView.append(el("div", { class: "empty-state" }, "Still digesting this apparatus — check back shortly."));
