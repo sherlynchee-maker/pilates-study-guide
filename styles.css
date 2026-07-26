@@ -380,7 +380,7 @@ main {
   margin-bottom: 3px;
 }
 
-.field .v { font-size: 13.5px; color: var(--ink); line-height: 1.5; }
+.field .v { font-size: 13.5px; color: var(--ink); line-height: 1.5; white-space: pre-line; }
 
 .position-list {
   margin: 4px 0 0;
@@ -677,7 +677,7 @@ main {
   margin-bottom: 6px;
 }
 
-.reveal-box .answer-text { font-size: 14.5px; line-height: 1.55; }
+.reveal-box .answer-text { font-size: 14.5px; line-height: 1.55; white-space: pre-line; }
 
 .self-grade-row { display: flex; gap: 8px; margin-top: 16px; }
 
