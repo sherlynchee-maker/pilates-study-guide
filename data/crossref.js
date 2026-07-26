@@ -180,7 +180,7 @@ window.STOTT.crossref = {
     { id: 167, name: "Guillotine", cells: { cadillacInt: "PTB-below 100" } },
     { id: 168, name: "Hip Opener", cells: { cadillacInt: "PTB-below 102" } },
     { id: 169, name: "Butterfly", cells: { cadillacInt: "Arms Stand 135" } },
-    { id: 170, name: "Punches", cells: { cadillacInt: "Arms Stand 137" } },
+    { id: 170, name: "Punches", cells: { cadillacInt: "Arms Stand 136" } },
     { id: 171, name: "Fencer Lunges", cells: { cadillacInt: "Arms Stand 138" } },
     { id: 172, name: "Squats", cells: { cadillacInt: "Arms Stand 140" } },
     { id: 173, name: "Ab curls", cells: { cadillacInt: "Fuzzy 168" } },

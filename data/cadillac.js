@@ -1852,7 +1852,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     level: "Intermediate",
     category: "Arm Springs — Standing",
     springs: "Foam-grip handles, attached to eyehooks at the bottom of the uprights",
-    page: "137",
+    page: "136",
     startingPosition: "Standing, facing away from the sliding bar, pelvis and spine neutral, whole body leaning away from the Cadillac (ski-jump lean).\nFeet hip-distance apart, legs straight.\nHolding handles in fists, palms facing down.\nHands directly in front of and close to the shoulders, elbows flexed and lifted out to the sides, slightly lower than shoulder level.\nScapulae stabilized.",
     pelvis: "Stabilized in neutral throughout the lean using glutes, hamstrings and abdominals",
     spine: "Stable and square through the torso and legs as one elbow extends to punch forward and returns",
