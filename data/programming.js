@@ -5,7 +5,7 @@ window.STOTT.programming = {
       id: "layer1",
       title: "Layer 1 — Connect",
       subtitle: "Warm-up + first abdominal connection",
-      body: "Introduce the STOTT Principles inside the warm-up, mobilize the spine through flexion, rotation, and extension, mobilize the shoulder and hip joints, and make the first connection to the deep abdominals. Everything stays low-load and position-driven — the goal is control and awareness, not strength. On exam day this is your Basic Principles block plus warm-up, the same segment the rubric already scores you on for covering all 5 principles without omission.",
+      body: "Introduce the STOTT Principles inside the warm-up, mobilize the spine through flexion, rotation, and extension, mobilize the shoulder and hip joints, and make the first connection to the deep abdominals. Everything stays low-load and position-driven — the goal is control and awareness, not strength. On exam day this is your Basic Principles block plus warm-up, the same segment the rubric already scores you on for covering all 6 principles without omission.",
     },
     {
       id: "layer2",
@@ -17,7 +17,7 @@ window.STOTT.programming = {
   workflow: [
     "Run the postural analysis (5–10 min) and note the pelvis position, spinal curves, and which muscle groups read short/strong vs. elongated/weak.",
     "Decide the working position (Neutral vs. Imprint) the posture calls for, and say it out loud — it signals to the examiner that your program design is intentional, not guessed.",
-    "Teach the 5 Basic Principles as your Layer 1 warm-up, weighting the cues and extra repetitions toward the placement this client needs most (e.g. more time on Pelvic Placement for a Sway-Back client).",
+    "Teach the 6 Basic Principles as your Layer 1 warm-up, weighting the cues and extra repetitions toward the placement this client needs most (e.g. more time on Pelvic Placement for a Sway-Back client).",
     "Choose Layer 1 exercises that mobilize the joints/planes this posture is missing, plus one gentle exercise that makes the first connection to whichever muscle group tested weak.",
     "Move into Layer 2: pick exercises that directly strengthen the \"elongated/weak\" list and/or lengthen the \"short/strong\" list from your findings — and be ready to justify each one out loud.",
     "Keep the session well-rounded across all planes (flexion, extension, rotation) even while biasing toward the correction — this is remedial-informed programming, not single-plane remedial work.",

@@ -268,7 +268,7 @@ function renderDashboard() {
   section.append(el("h3", {}, "Jump in"));
   const grid = el("div", { class: "exercise-list" });
   const jumpTargets = [
-    ["principles", "The 5 Basic Principles", "Breathing, pelvic/rib/scapular/cervical placement — the backbone of every score sheet."],
+    ["principles", "The 6 Basic Principles", "Breathing, pelvic/rib/scapular/cervical/lower-body placement — the backbone of every score sheet."],
     ["posture", "Posture Assessment", "Plumb line, the four posture types, and the full palpation checklist used in the practical exam."],
     ["programming", "Programming", "Layer 1 → Layer 2 exercise picks per posture type, with the reasoning behind each one."],
     ["examinfo", "Exam Info & Scripting", "Written + practical exam format, minimum exercise counts, and scripted cueing language."],
@@ -316,7 +316,7 @@ function renderPrinciples() {
     el("div", { class: "view-header" }, [
       el("div", {}, [
         el("span", { class: "eyebrow" }, "Foundations"),
-        el("h2", {}, "The 5 Basic Principles"),
+        el("h2", {}, "The 6 Basic Principles"),
         el("p", { class: "sub" }, "Every practical exam is scored around these. Introduced in this order, every time."),
       ]),
     ])

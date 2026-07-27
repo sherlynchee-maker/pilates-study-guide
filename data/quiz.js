@@ -20,12 +20,12 @@ window.STOTT.quiz = window.STOTT.quiz || [];
   const T_BAR = "Barrels";
   const T_PROG = "Programming";
 
-  add(T_BASIC, "Which of the following is NOT one of the 5 STOTT Basic Principles: Ribcage Placement, Pelvic Placement, or \"Improving muscular awareness/cognition\"?", "\"Improving muscular awareness/cognition\" is not one of the named 5 (the 5 are Breathing, Pelvic Placement, Rib Cage Placement, Scapular Movement & Stabilization, Head & Cervical Placement).", "no source answer key, best-answer supplied");
+  add(T_BASIC, "Which of the following is NOT one of the 6 STOTT Basic Principles: Ribcage Placement, Pelvic Placement, or \"Improving muscular awareness/cognition\"?", "\"Improving muscular awareness/cognition\" is not one of the named 6 (the 6 are Breathing, Pelvic Placement, Rib Cage Placement, Scapular Movement & Stabilization, Head & Cervical Placement, and Hip, Knee, Ankle & Foot Placement).", "no source answer key, best-answer supplied");
   add(T_BASIC, "In Essential programming, which is the LAST thing to consider: awareness of the Basic Principles, spinal segmentation, or improvement of limb/extremity strength?", "Improvement of limb/extremity strength — Essential programming prioritizes the Basic Principles and spinal articulation first.", "best-answer supplied");
   add(T_BASIC, "Which of the following is NOT one of Joseph Pilates' original principles: Breathing, Precision, Scapular Placement, or Control?", "Scapular Placement (Joseph Pilates' originals were Breathing, Concentration, Control, Centering, Precision, Flow; Scapular Placement is a STOTT biomechanical principle).");
   add(T_BASIC, "Which of the following does NOT represent how STOTT Pilates has evolved from Joseph Pilates' original method?", "\"Focus on more flat spine than original method\" — incorrect; STOTT emphasizes maintaining the spine's natural curves, not flattening them.");
   add(T_BASIC, "True or False: Pilates tones the muscles, versus weightlifting, which grows muscles.", "True.");
-  add(T_BASIC, "What is included in an introductory (Essential) workout?", "The five Basic Principles, mobilization of the spine, mobilization of shoulders and hips, and initial strengthening of the abdominals.");
+  add(T_BASIC, "What is included in an introductory (Essential) workout?", "The six Basic Principles, mobilization of the spine, mobilization of shoulders and hips, and initial strengthening of the abdominals.");
   add(T_BASIC, "What questions should you ask a client before performing a postural analysis (information gathering)?", "Injuries or pain; health concerns; whether undergoing therapy; past/current sports activity; prior Pilates training; occupation; exercise goals. Also: name, history of injuries/surgeries, current illnesses/medications, whether receiving therapy.");
   add(T_BASIC, "When in doubt about which version/modification of an exercise to give a client, what should you always start with?", "An easier modification.");
 
