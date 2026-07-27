@@ -1,4 +1,8 @@
 window.STOTT = window.STOTT || {};
+window.STOTT.principlesScript = {
+  intro: "\"Before we begin moving through the repertoire, we're going to work through the STOTT PILATES Basic Principles. These are the foundation for everything we do today — they keep your spine safe, make sure the right muscles are doing the work, and help you move with more control. Let's start lying on your back, knees bent, feet flat, hip-width apart.\"",
+  closing: "\"Great — that's all six of our Basic Principles: Breathing, Pelvic Placement, Rib Cage Placement, Scapular Movement and Stabilization, Head and Cervical Placement, and Hip, Knee, Ankle and Foot Placement. Keep these connections in mind as we move into today's workout — the goal is that eventually, you won't have to think about them consciously; your body will just do them naturally.\"",
+};
 window.STOTT.principles = [
   {
     id: "breathing",
@@ -26,6 +30,14 @@ window.STOTT.principles = [
       { name: "8. Transversus Engagement", detail: "(a) Supine, fingertips medial to ASIS; (b) Quadruped — create awareness of transversus abdominis activation without spinal movement." },
       { name: "9. Breath Pattern Supine Incorporating Abdominals", detail: "Supine — layers pelvic floor, TA, and oblique engagement onto the breath; puts all prior elements together." },
     ],
+    script: {
+      lines: [
+        "\"Let's start by simply noticing your breath. Don't change anything yet — just breathe naturally and notice: are you breathing through your nose or your mouth? Is it fast or slow?\"",
+        "\"Now bring both hands to rest gently on the sides of your rib cage. As you inhale through your nose, direct the breath into your hands — feel your ribs expand sideways and into the back of the mat, like an accordion opening. As you exhale through slightly pursed lips, as if you're blowing through a straw, feel the ribs draw in and down, and allow your deep abdominals to gently engage.\"",
+        "\"Keep the thoracic spine still here — we're not flexing or extending, just breathing three-dimensionally into the sides and back of the ribcage. Let's take five more breaths like this, keeping the connection to your deep abdominals on every exhale.\"",
+      ],
+      reps: "5–8 breaths",
+    },
   },
   {
     id: "pelvic",
@@ -47,6 +59,16 @@ window.STOTT.principles = [
       { name: "3. Leg Slides", detail: "Supine, knees flexed — slide one foot away along the mat while maintaining pelvic stability; can be done in imprint if neutral can't be held." },
       { name: "4. Leg Lifts & Toe Taps", detail: "(a) Leg Lifts — lift one leg to tabletop, keeping the pelvis level; (b) Toe Taps — from imprint with both legs in tabletop, reach one foot toward the mat and return." },
     ],
+    script: {
+      lines: [
+        "\"Now bring your attention to your pelvis. Let's gently rock the pelvis — tilt it forward into a small arch, then back to flatten the lower back into the mat. Explore that range a few times. Neutral will be found somewhere in the middle.\"",
+        "\"Find your Neutral Pelvis: your hip bones and your pubic bone are level, like they're resting on a flat table, and there's a small natural curve under your lower back — don't force it flat.\"",
+        "\"Now let's move to Imprint. Exhale, and use your abdominals — not your glutes — to slightly tilt the pelvis so your lower back lengthens toward the mat. Inhale back to Neutral. Feel how that movement comes from your deep core, not from gripping the buttocks.\"",
+        "\"Let's challenge that with Leg Slides. Staying in neutral, exhale to slide one foot away along the mat as far as you can without your pelvis tipping or shifting — imagine a bowl of soup balanced on your hip bones, and don't spill it. Inhale, slide it back. Switch legs.\"",
+        "\"Now, Leg Lifts. Exhale, maintain neutral, and float one leg up to tabletop — heel, then ball of foot, then toes leave the mat last. Inhale, lower it back down just as slowly, toes first. If you feel your pelvis rock, you can imprint here instead — that's absolutely fine while we build strength.\"",
+      ],
+      reps: "3–5 reps each side",
+    },
   },
   {
     id: "ribcage",
@@ -65,6 +87,15 @@ window.STOTT.principles = [
       { name: "1. Arm Raises & Scissors", detail: "Supine, arms long by sides — reach arms overhead only as far as abdominal connection and rib-to-pelvis alignment can be maintained." },
       { name: "2. Active Breathing with Physiological Spinal Motion", detail: "Supine, knees flexed — actively inhale into thoracic extension (ribs open), actively exhale into thoracic flexion (ribs close)." },
     ],
+    script: {
+      lines: [
+        "\"Keep your pelvis and spine neutral, and bring your focus up to your rib cage. Place your hands lightly over your lower ribs — these ribs like to pop up or flare open the moment we move our arms, and that's what we want to avoid.\"",
+        "\"Inhale, reach both arms up toward the ceiling. As you exhale, reach them overhead — but only as far as you can keep your ribs connected to your abdominals, without them popping up off the mat. If you feel your back arch, that's your ribs telling you they've gone too far.\"",
+        "\"Inhale, bring the arms back to the ceiling. Exhale, lower them by your sides.\"",
+        "\"Now let's add Arm Scissors — exhale, reach one arm overhead as the other reaches down by your hip, keeping both ribs anchored and quiet. Inhale to switch. The goal is that your ribcage stays stacked evenly over your pelvis the entire time, no matter what your arms are doing.\"",
+      ],
+      reps: "3–4 reps",
+    },
   },
   {
     id: "scapula",
@@ -89,6 +120,16 @@ window.STOTT.principles = [
       { name: "3. Arm Scissors", detail: "Arms reaching in front of shoulders — reach one arm overhead as the other reaches down, scissoring, to create awareness of scapular movement with arm movement." },
       { name: "4. Arm Circles", detail: "Arms long by sides — circle the arms overhead and around, creating awareness of elevation/depression with upward/downward rotation." },
     ],
+    script: {
+      lines: [
+        "\"Reach both arms straight up toward the ceiling, palms facing each other. This is where we'll explore your shoulder blades.\"",
+        "\"First, Protraction and Retraction: as you inhale, protract — widen your shoulder blades apart, letting them spread around your ribcage. Exhale, retract — draw them together toward your spine, staying wide across the collarbone. Let's do that a few more times.\"",
+        "\"Now, Elevation and Depression: arms long by your sides this time. Inhale, slide your shoulder blades up toward your ears. Exhale, melt them back down toward your back pockets — imagine them gliding flat against your ribcage, like butter melting down a warm pan. This is the stability that protects your neck and keeps your shoulders from creeping up.\"",
+        "\"Let's put it into movement with Arm Scissors — reach one arm overhead, the other down by your side, feeling the shoulder blades stay controlled and connected, not winging away from your ribcage. Switch.\"",
+        "\"And finally, Arm Circles — reach both arms forward and up overhead, then circle them out to the sides and down to your hips. Reverse direction. Notice the shoulder blades gliding smoothly the entire time — mobile, but always stable.\"",
+      ],
+      reps: "3–4 reps each",
+    },
     movementPatterns: [
       "Bilateral Push in Neutral", "Bilateral Push with Flexion",
       "Bilateral Pull in Neutral", "Bilateral Pull with Extension",
@@ -117,6 +158,15 @@ window.STOTT.principles = [
       { name: "2. Modified Ab Prep", detail: "Supine, hands behind head — perform the Head Nod, then flex the thoracic spine, letting the head's weight drop into the hands without losing length in the back of the neck." },
       { name: "3. Modified Breast Stroke Prep", detail: "Prone, hands by shoulders — depress/retract the scapulae and extend the thoracic spine, letting the cervical spine extend as part of the whole pattern (not an isolated reverse head nod)." },
     ],
+    script: {
+      lines: [
+        "\"Let's bring the head into this picture. Your skull should feel balanced directly over your shoulders, with a small natural space behind your neck.\"",
+        "\"We're going to perform a Head Nod — this is called cranio-vertebral flexion, and it's a tiny movement that happens only between your skull and the top two vertebrae of your neck.\"",
+        "\"Inhale to lengthen the back of your neck. As you exhale, gently nod your chin — imagine you're holding a small mandarin orange lightly between your chin and your collarbone. Keep your head resting on the mat the whole time; this isn't a lift yet, just the nod.\"",
+        "\"This small movement wakes up your deep neck flexors, so that when we do lift the head later in exercises like Ab Prep, it's your upper abdominals doing the work — not the big muscles at the front of your neck straining to pull you up. No jamming the chin, no heavy head — just a soft, controlled nod.\"",
+      ],
+      reps: "5 reps",
+    },
   },
   {
     id: "lowerbody",
@@ -142,5 +192,15 @@ window.STOTT.principles = [
       { name: "6. Step Lunge", detail: "Standing, hands on hips — step into a split stance, flexing both knees, then press back to standing; creates awareness of weight shift and ground reaction forces through a larger range." },
     ],
     movementPatterns: ["Hinge", "Squat", "Step", "Lunge"],
+    script: {
+      lines: [
+        "\"For our sixth principle, let's come up to standing — take your time rolling up through your spine.\"",
+        "\"Standing with feet hip-width apart, let's start with Standing Alignment. Breathe naturally and notice your weight distribution — you want an even tripod of support through the base of your big toe, your little toe, and your heel. Hips are level, knees point straight ahead in line with your second toe, and your pelvis sits directly over your feet.\"",
+        "\"Now let's add movement with the Squat. Keeping your spine neutral, inhale and flex your hips, knees, and ankles to lower down, as if sitting into a chair — heels stay grounded, knees track over your toes, torso hinges slightly forward without rounding the back. Exhale to press back up to standing.\"",
+        "\"Finally, the Step Lunge. Step one foot forward into a split stance, keeping your torso upright. Flex both knees, letting the back heel lift and the back knee soften toward the floor. Press through the front foot to return to standing, then switch legs.\"",
+        "\"Throughout all three, keep checking: hip, knee, and second toe in one straight line. This is what protects your joints from the ground up, and it's the foundation every standing and functional exercise in this session will build on.\"",
+      ],
+      reps: "Standing Alignment: 5 breaths  |  Squat: 5 reps  |  Step Lunge: 3 reps per side",
+    },
   },
 ];

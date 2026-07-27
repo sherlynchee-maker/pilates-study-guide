@@ -300,6 +300,16 @@ function statTile(label, value) {
 }
 
 /* ================= PRINCIPLES ================= */
+function scriptBox(script) {
+  if (!script || !script.lines || !script.lines.length) return null;
+  const box = el("div", { class: "field script-box", style: "margin-top:10px" }, [
+    el("div", { class: "k" }, "Verbal cueing script"),
+    el("ul", { class: "script-lines" }, script.lines.map((line) => el("li", {}, line))),
+  ]);
+  if (script.reps) box.append(el("div", { class: "script-reps" }, script.reps));
+  return box;
+}
+
 function renderPrinciples() {
   mainView.innerHTML = "";
   mainView.append(
@@ -314,6 +324,13 @@ function renderPrinciples() {
   if (!DATA.principles.length) {
     mainView.append(el("div", { class: "empty-state" }, "Still digesting this section."));
     return;
+  }
+  const scriptMeta = DATA.principlesScript;
+  if (scriptMeta && scriptMeta.intro) {
+    mainView.append(el("div", { class: "card script-box script-intro" }, [
+      el("div", { class: "k" }, "Session opening — verbatim script"),
+      el("ul", { class: "script-lines" }, [el("li", {}, scriptMeta.intro)]),
+    ]));
   }
   DATA.principles.forEach((p, i) => {
     const card = el("div", { class: "card" });
@@ -345,9 +362,17 @@ function renderPrinciples() {
         el("div", { class: "v" }, p.movementPatterns.join(" · ")),
       ]));
     }
+    const script = scriptBox(p.script);
+    if (script) card.append(script);
     card.append(reviewControl("principles", p.id, () => scopeQuizQuestions("principles", 3)));
     mainView.append(card);
   });
+  if (scriptMeta && scriptMeta.closing) {
+    mainView.append(el("div", { class: "card script-box script-closing" }, [
+      el("div", { class: "k" }, "Session closing — verbatim script"),
+      el("ul", { class: "script-lines" }, [el("li", {}, scriptMeta.closing)]),
+    ]));
+  }
 }
 
 /* ================= ANATOMY & POSTURE (shared helpers) ================= */
