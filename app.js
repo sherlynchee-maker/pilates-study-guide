@@ -820,6 +820,8 @@ function exerciseDetailCard(ex, scope, closeModal) {
   if (ex.notes) {
     card.append(el("div", { class: "field", style: "margin-top:10px" }, [el("div", { class: "k" }, "Notes"), el("div", { class: "v" }, ex.notes)]));
   }
+  const exScript = scriptBox(ex.script);
+  if (exScript) card.append(exScript);
   if (scope) {
     const crossRef = crossRefBlock(scope, ex, closeModal);
     if (crossRef) card.append(crossRef);
