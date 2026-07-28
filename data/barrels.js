@@ -125,7 +125,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Stand on riser — place supporting foot on a foam cushion, platform extender or box if hip flexibility does not allow leg to sit comfortably on top of barrel (useful for petite clients)"
     ],
     notes: "Different from Cadillac Trapeze/Fuzzy/Spine Corrector versions — on Cadillac Trapeze and Ladder Barrel the supporting-side arm lifts up\nOn the Fuzzy the supporting arm stays up.\nIf lifting the supporting-side arm up causes tension or hyperextension of the lumbar, lift with the top-leg-side arm instead.\nComplete 1 full sequence on each side.\nBarrel positioned all the way in for regular height\nMoving it further away increases oblique demand and range but brings torso closer to floor (best for longer-legged clients)."
-  },
+  , script: { lines: ["Let's move into Ballet Stretches. Stand with your back toward the ladder, gesture leg straight and resting on top of the barrel, both legs turned out, pelvis centered over your supporting foot.", "For the Front position: inhale to reach your arm overhead and flex the spine forward over the leg; exhale to extend the thoracic spine, lifting your sternum; inhale to return to vertical — then transition the leg from front to side to back.", "Keep your pelvis as level and square as possible in every position, and keep the barrel leg light — your weight stays on the supporting leg."] },},
   {
     name: "Side Bend",
     level: "Essential",
@@ -154,7 +154,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Full range — include lateral flexion toward the barrel as well as toward the ladder (four-breath version: inhale/exhale toward barrel, inhale/exhale toward ladder)"
     ],
     notes: "Same coordination pattern is echoed in the following Obliques with Flexion exercise, which adds a rotational/flexion component."
-  },
+  , script: { lines: ["Let's move into Side Bend. Stand facing sideways to the barrel, feet against the ladder, bottom hip resting against the barrel, arms long holding the pole overhead.", "Inhale to lengthen your spine away from the ladder into one long diagonal line from feet to hands; exhale to laterally flex the spine toward the ladder; inhale to lengthen back to that long line.", "Imagine your torso moving between two panes of glass — keep it a pure side bend, with no rotation or forward flexion."] },},
   {
     name: "Straight Back",
     level: "Essential",
@@ -178,7 +178,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     ],
     modifications: [],
     notes: "If neutral spine cannot be maintained during the hinge back, imprint slightly to maintain stability and return to neutral as the torso comes back to vertical."
-  },
+  , script: { lines: ["Let's move into Straight Back. Sit upright close to the apex of the barrel, heels on the rung that brings your knees to hip height, toes hooked under the rung above, arms straight overhead holding the pole.", "Inhale to hinge your pelvis away from your femurs to end range while keeping your spine neutral; exhale to return to vertical sitting, weight directly on your sit-bones.", "Move as one long unit from hip to head, like a straight plank hinging back — don't flex or round your spine to get there."] },},
   {
     name: "Twist",
     level: "Essential",
@@ -206,7 +206,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Hold a Fitness Circle resistance ring — place one handle against the rib cage, hold the opposite handle and apply slight pressure to aid scapular stabilization and isolate spinal rotation"
     ],
     notes: ""
-  },
+  , script: { lines: ["Let's move into Twist. Sit upright close to the apex, heels on the rung, arms straight out to the sides, palms down.", "For three counts, exhale and rotate your spine, lengthening and increasing the rotation with each pulse; inhale to lengthen and return to center.", "Rotate like wringing out a towel from the base of your spine upward, and keep your pelvis still and square to the front throughout."] },},
   {
     name: "Round Back",
     level: "Essential",
@@ -234,7 +234,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "If range of motion at the hips is limited and prevents the lumbar spine from fully contacting the barrel, bring feet up to the next rung to decrease the flexibility required and ensure lumbar support"
     ],
     notes: "The full Round Back (rolling all the way into extension over the back of the barrel, reaching arms overhead) is Advanced level\nThe Half version described here, staying within flexion, is the Essential/teaching progression."
-  },
+  , script: { lines: ["Let's move into Round Back. Sit forward of the apex, heels on the rung, each hand holding the opposite wrist in front of your lower abdomen.", "Exhale to roll your ASIS away from your femurs and flex your lumbar spine only as far as your abdominals stay flat; inhale to maintain that flexion and reach your arms overhead, then exhale to lower them and flex forward over your legs; inhale to sequentially lengthen your spine back to neutral.", "Scoop your tailbone under first, like curling over a beach ball, and let your sacrum land on the apex of the barrel — that's your depth limit for this version."] },},
 ], intermediate: [
   {
     name: "Obliques with Flexion",
@@ -261,7 +261,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Alternative hand position — place hands behind head and complete the full exercise"
     ],
     notes: "Requires more oblique/erector spinae work than the Side Bend since it adds rotation and flexion.\nCan be challenging for petite clients if the pubic bone sits too low on the barrel."
-  },
+  , script: { lines: ["Let's move into Obliques with Flexion. Stand facing sideways between the ladder and barrel, soles of your feet against the corners of the ladder frame, bottom hip resting against the barrel, backs of your hands on your forehead.", "Rotate your upper body toward the barrel; exhale to maintain that rotation and flex your thoracic spine toward the barrel; inhale to lengthen to neutral, then rotate toward the ladder and repeat the flexion there.", "Keep one continuous long line from feet to head — don't let your body sag toward the barrel or ladder, and keep your pelvis facing forward the entire time."] },},
   {
     name: "Rotation Prone",
     level: "Intermediate",
@@ -288,7 +288,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Add extension — rotate to one side, extend the top elbow while simultaneously extending spine and hips, then flex elbow and return torso to long line before continuing to the other side; can also be done in four breaths"
     ],
     notes: "May be challenging for petite clients if the pubic bone sits too low on the barrel."
-  },
+  , script: { lines: ["Let's move into Rotation Prone. Lie prone on the barrel, pelvis at the apex, head away from the ladder, feet hooked under the handles, legs abducted as wide as the ladder, backs of your hands on your forehead.", "Inhale to prepare; keep your pelvis stable and rotate your upper torso to one side, then back to center, then rotate to the other side.", "Rotate only the upper thoracic spine — your arms and head travel with the torso, and your legs stay hooked and still the whole time."] },},
   {
     name: "Swan Dive (Feet on Ladder)",
     level: "Intermediate",
@@ -315,7 +315,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Prep, reaching to diagonal — same starting position; inhale extend knees and lengthen to one line from feet to head; exhale flex knees and flex torso back over the barrel"
     ],
     notes: "Good preparation for the Arc Barrel and Spine Corrector spinal extension exercises, and for building erector spinae strength in a weak lumbar area.\nThe Prep modifications are useful for teaching sequencing and for clients uncomfortable with full lumbar extension."
-  },
+  , script: { lines: ["Let's move into Swan Dive with Feet on Ladder. Lie prone on the barrel with your head away from the ladder, knees bent, balls of your feet on one rung and heels on the rung above, heels together, toes apart, pelvis flexed behind the apex.", "Inhale, keep your heels together and extend your legs to slide your pelvis forward, lengthening your spine to neutral into a dart position, arms reaching to continue the line; exhale to extend your spine further, reaching your chest toward the ceiling as your knees flex and hips extend.", "Find the full dart line first — pubic bone and thighs pressing into the barrel — before you add any extension."] },},
   {
     name: "Lower & Lift",
     level: "Intermediate",
@@ -342,7 +342,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Legs laterally rotated — to emphasize the lateral rotators and lateral hamstrings more"
     ],
     notes: "Barrel setting distance similar to Swan Dive (Hands on Ladder)."
-  },
+  , script: { lines: ["Let's move into Lower and Lift. Lie prone on the barrel, pelvis at the apex, head toward the ladder, hands on the appropriate rung to keep your upper body slightly lower than your legs, legs straight and as high as your pelvic stability allows.", "Lower your legs slightly, flexing at the hips; then extend your hips to raise the legs back up, only as far as your pelvis stays stable.", "The legs move as one unit from the hip — your torso stays quiet, and you only lift as high as your pelvis can stay level and still."] },},
   {
     name: "Leg Circles (Hands on Ladder)",
     level: "Intermediate",
@@ -369,7 +369,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Legs slightly abducted — do not completely adduct if this causes loss of pelvic stability"
     ],
     notes: ""
-  },
+  , script: { lines: ["Let's move into Leg Circles. Same prone position as Lower and Lift, legs extended as high as your pelvic stability allows.", "Inhale to abduct the legs, circling as they lower and adducting at the bottom of the circle; exhale to extend your hips and lift the legs back up while staying adducted; reverse the direction for your next set.", "Draw even, symmetrical circles with both legs together, and keep your low back quiet — all the motion happens at the hip joint."] },},
   {
     name: "Scissors (Hands on Ladder)",
     level: "Intermediate",
@@ -398,7 +398,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Staccato breath — helps promote a full breath pattern and avoid holding the breath"
     ],
     notes: ""
-  },
+  , script: { lines: ["Let's move into Scissors. Same prone position, legs forming one long line from feet to head, hands on the rung.", "For five counts, reach one leg higher and the other lower, alternating legs with each count for a fluttering reciprocal action; complete four sets, finishing the last with your legs together.", "Keep your hips level and anchored while the legs reach in opposite directions like scissor blades."] },},
   {
     name: "Beats",
     level: "Intermediate",
@@ -426,7 +426,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Plantar flexed throughout — omit the dorsiflexion of the ankles"
     ],
     notes: ""
-  },
+  , script: { lines: ["Let's move into Beats. Same prone position, legs turned out, adducted, and extended as high as you can while keeping your pelvis stable.", "For a four-count inhale, plantar flex and adduct the legs with each count so they beat together; for a four-count exhale, dorsiflex and repeat the beat.", "Keep your legs at one constant height — only the small adduction beat should move."] },},
   {
     name: "Swan Dive (Hands on Ladder)",
     level: "Intermediate",
@@ -450,7 +450,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     ],
     modifications: [],
     notes: "May not be achievable on the Ladder Barrel for very petite clients due to barrel size/positioning."
-  },
+  , script: { lines: ["Let's move into Swan Dive. Come prone over the barrel with your pubic bone anchored on the apex, facing toward the ladder, legs straight, turned out and abducted just wider than shoulder-distance, hands on the handles of the top rung, torso lifted.", "Exhale, maintain the bow shape through your spine and hips, and initiate by reaching your legs back and up, allowing your elbows to flex to rock the torso forward; inhale to extend the elbows and rock back up to the starting position.", "Elbows point down, not out to the sides, and rock forward by reaching the legs back and up — never by diving your head down."] },},
   {
     name: "Grasshopper",
     level: "Intermediate",
@@ -474,7 +474,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     ],
     modifications: [],
     notes: "A progression of Swan Dive (Hands on Ladder)\nMaster Swan Dive's bow shape and rocking action before adding the ankle-crossing."
-  },
+  , script: { lines: ["Let's move into Grasshopper. Same starting position as Swan Dive — prone over the barrel, pubic bone on the apex, facing the ladder, hands on the handles.", "Exhale to rock forward the same way as Swan Dive; then, keeping your hips as extended as possible, flex your knees to cross your ankles three times, alternating, then extend the knees before rocking back up.", "This builds directly on Swan Dive's rock — keep your hips lifted and extended even as the knees flex to cross the ankles."] },},
   {
     name: "Side Leg Lifts",
     level: "Intermediate",
@@ -505,7 +505,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Top hand on barrel — to provide more support for the torso in the side-lying position (applies to all three variations)"
     ],
     notes: "The three positions progress in difficulty in the order listed."
-  },
+  , script: { lines: ["Let's move into Side Leg Lifts. Lie on your side on the barrel, head toward the ladder, side of your pelvis on the apex, legs straight and adducted in line with your torso, bottom hand holding the appropriate rung.", "For Top Leg Abduction: inhale, keeping the leg pointed, abduct the top leg as far as your pelvic stability allows; exhale to dorsiflex and adduct it back down to the bottom leg.", "Keep your torso like a plank between two panes of glass — the small base of support here challenges your stability more than on the Mat or Spine Corrector."] },},
   {
     name: "Scissors (Side-Lying)",
     level: "Intermediate",
@@ -536,7 +536,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Staccato breath — helps promote a full breath pattern and avoid holding the breath"
     ],
     notes: ""
-  },
+  , script: { lines: ["Let's move into Scissors. Same side-lying position as Side Leg Lifts, legs straight and adducted, in line with your torso.", "For five counts, keeping both legs straight and your pelvis stable, reach the top leg forward and the bottom leg backward equally, alternating with each count; continue for another five counts.", "Legs move like scissor blades in opposition, staying at the same height — keep the pelvis anchored and still while only the legs travel."] },},
   {
     name: "One Arm Press",
     level: "Intermediate",
@@ -560,7 +560,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     ],
     modifications: [],
     notes: ""
-  },
+  , script: { lines: ["Let's move into One Arm Press. Same side-lying position, bottom elbow flexed at 90 degrees, torso parallel to the floor.", "Exhale to extend the supporting arm, laterally flexing the torso up; inhale to flex the elbow and lengthen the torso back to one long line.", "The press comes from your obliques laterally flexing the spine, with the triceps assisting — return to the long line rather than just bending the elbow passively."] },},
   {
     name: "Twist with Round Back",
     level: "Intermediate",
@@ -584,7 +584,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     ],
     modifications: [],
     notes: "Combines the Round Back roll-back with the Twist rotation — a more advanced coordination challenge building on both."
-  },
+  , script: { lines: ["Let's move into Twist with Round Back. Sit upright forward of the apex, heels on the rung, arms straight overhead holding the pole.", "Exhale to roll your ASIS away from your femurs and flex your lumbar spine as low as your abdominals stay flat, lowering your arms to shoulder height; inhale to maintain that flexion and lift your arms overhead, then rotate your torso toward one side and back to center, then the other side, before flexing forward and re-extending to sitting.", "Establish the Round Back flexion completely before you add any rotation, and keep the pole level like a horizon line as you turn."] },},
   {
     name: "Lean",
     level: "Intermediate",
@@ -608,7 +608,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     ],
     modifications: [],
     notes: "If neutral spine cannot be stabilized during the lean, imprint slightly to maintain stability and return to neutral as the torso returns to vertical."
-  },
+  , script: { lines: ["Let's move into Lean. Sit upright close to the apex, heels on the rung, arms straight overhead holding the pole.", "Rotate your upper torso to one side; exhale, keep both sides of your torso equally long, and lean diagonally back and to the side, letting the opposite hip lift slightly off the barrel; inhale to return to vertical with both sit-bones evenly weighted, flexing your knees.", "Rotate fully first, then lean on that fixed rotational axis — both sides of your waist should stay equally long, with no side-bending."] },},
   {
     name: "Tree",
     level: "Intermediate",
@@ -638,7 +638,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Reach arms overhead once the spine is in extension (one arm at a time, not both together) — to challenge stability of the pelvis and spine while taking more weight overhead"
     ],
     notes: "The manual presents Tree as a single Intermediate exercise — the halfway roll-back (stopping once the sacrum contacts the barrel) is a modification for building strength/flexibility toward the full version, not a separate Essential-level exercise."
-  },
+  , script: { lines: ["Let's move into Tree. Sit upright forward of the apex, one heel on the rung to bring your knee to hip height, other leg flexed with your inside hand under the knee and outside hand reaching to your ankle.", "Exhale, keep your pelvis square and extend the knee, lengthening your hamstring while staying as upright as possible; inhale to flex the knee back; after three reps, keep the leg straight, then roll the ASIS away from your supporting femur to flex your lumbar spine and walk your hands down the leg into a full roll back into extension.", "Walk your hands down the leg only as your spine rolls back, and let your sacrum contact the barrel before any extension happens over the back of it."] },},
   {
     name: "Scissors (Sitting)",
     level: "Intermediate",
@@ -664,7 +664,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Laterally rotated — complete exercise maintaining lateral rotation at the hip joints throughout"
     ],
     notes: ""
-  },
+  , script: { lines: ["Let's move into Scissors, sitting. Sit on the apex facing away from the ladder, arms straight behind you holding the handles of the top rung, weight on the back of your sit-bones, legs flexed close to your body.", "Exhale, reach one leg into hip extension while the other flexes toward your torso, pulsing twice with the breath; inhale to switch legs so they pass by each other.", "Press down through your hands to keep your shoulder blades stabilized as your legs scissor past each other close to the body."] },},
   {
     name: "Bicycle (Sitting)",
     level: "Intermediate",
@@ -688,7 +688,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     ],
     modifications: [],
     notes: "Practiced in both a forward and a reverse pedaling direction."
-  },
+  , script: { lines: ["Let's move into Bicycle, sitting. Same seated-on-apex position as Scissors, arms behind you holding the rung.", "Inhale to reach one leg into extension at the hip while the other flexes; exhale to flex the knee of the bottom leg, reaching your toes toward the floor; continue pedaling in a smooth, continuous motion, then reverse direction.", "Keep your pelvis anchored on the apex the whole time — the legs move, but your torso and pelvis stay still."] },},
   {
     name: "Lower & Lift (Sitting)",
     level: "Intermediate",
@@ -714,7 +714,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Laterally rotated — complete exercise maintaining lateral rotation at the hip joints throughout"
     ],
     notes: ""
-  },
+  , script: { lines: ["Let's move into Lower and Lift, sitting. Same seated-on-apex position, legs flexed close to your body.", "Exhale to lower your legs away from your torso as far as your pelvic stability allows; inhale to hinge them back toward your torso.", "Legs move together as one unit — only lower them as far as your pelvis and lumbar position can stay stable."] },},
   {
     name: "Leg Circles (Sitting)",
     level: "Intermediate",
@@ -740,7 +740,7 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
       "Laterally rotated — complete exercise maintaining lateral rotation at the hip joints throughout"
     ],
     notes: ""
-  },
+  , script: { lines: ["Let's move into Leg Circles, sitting. Same seated-on-apex position, arms behind you holding the rung.", "Exhale to abduct your legs, circling as they lower and adducting at the bottom; inhale to hinge them toward your torso; reverse the direction for your next set.", "Draw even, matched circles with both legs together — the circling is entirely in the legs while your torso stays anchored on your arms."] },},
   {
     name: "Hip Twist",
     level: "Intermediate",
@@ -764,5 +764,5 @@ window.STOTT.apparatus.ladderbarrel = { essential: [
     ],
     modifications: [],
     notes: "Legs circumduct together as one unit (unlike the Leg Circles exercise which emphasizes abduction/adduction) — this is the largest, most demanding circular pattern in the Sitting series."
-  }
+  , script: { lines: ["Let's move into Hip Twist. Same seated-on-apex position, legs flexed close to your body, arms behind you holding the rung.", "Exhale to circumduct your legs together in one direction, reaching them away from your torso for about two-thirds of the circle; inhale to complete the circle and return.", "Legs travel together as a single unit through a large circular path — keep your pelvis anchored on the apex throughout."] },}
 ], advanced: [] };
