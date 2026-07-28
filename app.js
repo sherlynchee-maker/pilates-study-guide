@@ -421,6 +421,9 @@ function checklistItemBlock(it) {
     wrap.append(el("ol", { class: "workflow-list" }, it.steps.map((step) => el("li", {}, step))));
   } else if (it.tips) {
     wrap.append(el("ul", { style: "padding-left:18px" }, it.tips.map((t) => el("li", {}, t))));
+  } else if (it.lines) {
+    wrap.append(el("ul", { class: "script-lines" }, it.lines.map((line) => el("li", {}, line))));
+    if (it.reps) wrap.append(el("div", { class: "script-reps" }, it.reps));
   } else {
     wrap.append(el("p", { class: "v" }, it.detail));
   }
