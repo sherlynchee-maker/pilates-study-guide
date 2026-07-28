@@ -32,6 +32,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "One arm — hold center of bar with one hand, other hand at waist; resists rotation, works obliques and deep spinal muscles (3-5 reps each side)",
     ],
     notes: "Good prep for Roll Up on the mat.\nSimilar in feel to Reformer Intermediate Neck Pull (pg 22) but differs — Roll-Down flexes/extends elbows, Neck Pull does not.\nCan lighten to yellow arm springs to bias abdominal work over arm work, or use heavier white/green springs to bias arms less abs.\nIf knees are bent at start, straighten them once lumbar has touched the mat.",
+  
+    script: { lines: ["Let's move into Roll-Down. Come to seated, facing the roll-down bar, legs straight, feet against the uprights, holding the bar shoulder-distance apart.", "Exhale to roll down through flexion; once supine, flex your elbows to pull the bar to your chest, then extend them; exhale to roll back up through imprint to your sit-bones.", "Initiate by rolling your ASIS away from your femurs, not by leaning back, and articulate one vertebra at a time in both directions."] },
   },
   {
     name: "Roll-Down with Back Extension Prep",
@@ -62,6 +64,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Reduce range of the back extension for very flexible clients who tend to hyperextend",
     ],
     notes: "Sherlyn's note: people who are very flexible should focus on lengthening through the extension rather than reaching for more range.",
+  
+    script: { lines: ["Let's move into Roll-Down with Back Extension Prep. Come to seated, facing the roll-down bar, legs straight, feet against the uprights.", "Exhale to roll your spine down to supine and neutral; inhale to extend your spine, lifting your sternum toward the ceiling as your elbows straighten; exhale to lengthen back to neutral, then roll back up.", "Extend from your thoracic spine, not your lumbar — lead with your sternum and keep your bottom ribs anchored to the mat."] },
   },
   {
     name: "Airplane Prep",
@@ -91,6 +95,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Change to a heavier spring (green/white) if roll-up is difficult — abdominal strength should drive the movement, not the arms",
     ],
     notes: "Hand placement slightly above shoulder level, roughly eyehook #12/#13 on the frame.\nWatch that knees don't lift toward the ceiling — reach them toward the head instead.",
+  
+    script: { lines: ["Let's move into Airplane Prep. Come to supine, arms overhead braced against the uprights, knees hooked over the roll-down bar.", "Exhale to extend your hips, pressing your toes toward the bed; inhale to flex your hips, folding your knees back to your torso; exhale to roll your spine off the bed to your upper back; inhale to roll back down.", "Bring your knees close to your torso before you articulate off the bed — don't use hip extension or spring tension to yank yourself up."] },
   },
   {
     name: "Lat Press",
@@ -118,6 +124,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneel on Cadillac bed or floor — shifts stabilization demand to the hips, increases range of motion for taller clients (use platform extender for petite clients)",
     ],
     notes: "Standing further from the bar increases resistance/difficulty\nStanding closer is easier — build up strength progressively from low to high.",
+  
+    script: { lines: ["Let's move into Lat Press. Come to standing, facing the roll-down bar, arms straight and reaching forward to hold it.", "Exhale to press the bar down, arms straight, until it touches your thighs; inhale to return.", "Stand tall as if against a wall — don't lean back to help press the bar down, isolate the movement at your shoulders."] },
   },
   {
     name: "Press Down",
@@ -144,6 +152,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneel on Cadillac bed or floor — shifts focus to hip stabilization, increases range for taller clients; petite clients can stand on a platform extender",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Press Down. Come to standing, close to the roll-down bar, hands together in the center, elbows lifted out to the sides.", "Exhale, keeping your elbows higher than your wrists, to press the bar down as if plunging it in front of you; inhale to return.", "Keep your elbows actively lifted throughout the whole press — don't let them drop below wrist level."] },
   },
   {
     name: "Press Down with Triceps",
@@ -170,6 +180,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneel on Cadillac bed or floor; petite clients may use a platform extender to stand taller",
     ],
     notes: "On some equipment (e.g. V2 Max) arms start straight rather than elbows bent\nIf unable to fully extend elbows, stand closer to the tower.\nDistinguish from Intermediate Triceps Lunge (pg 38), which faces away from the roll-down bar.",
+  
+    script: { lines: ["Let's move into Press Down with Triceps. Come to standing, close to the roll-down bar, arms straight, reaching forward to hold it.", "Exhale to flex your elbows, pulling them to your sides; inhale to extend your elbows, pressing the bar down toward the floor; flex again, then reach your arms forward to return.", "Keep your upper arms fixed like they're glued to your sides — only your forearms move."] },
   },
   {
     name: "Breathing",
@@ -201,6 +213,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Staccato breath pattern (as in Hundred) — to encourage a full inhale",
     ],
     notes: "Head should be about three fingers' distance from the edge of the bed.\nWith legs flexed/laterally rotated modification: on roll up keep knees flexed until the lumbar is off the mat, then straighten\nOn the way down keep knees straight until the mid-back is on the mat, then flex, then lower the lumbar.",
+  
+    script: { lines: ["Let's move into Breathing. Come to supine, head toward the roll-down bar, feet hooked into the trapeze strap, holding the roll-down bar overhead.", "Exhale on a slow count of five, rolling your spine off the bed while pressing the bar down toward your hips; inhale on a slow count of five, rolling back down while controlling the bar's return.", "Take a full, slow breath on both the inhale and the exhale — commit to the whole five-count rather than rushing it."] },
   },
   {
     name: "Ballet Stretches Kneeling",
@@ -232,6 +246,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Elevate the supporting knee on a foam cushion, platform extender or box if hamstrings are too tight for a comfortable strap position",
     ],
     notes: "Use a pad under the kneeling knee to prevent excess knee tension.\nProgresses to Intermediate Standing Fuzzy (pg 164) and Intermediate Standing (pg 40).",
+  
+    script: { lines: ["Let's move into Ballet Stretches Kneeling. Come to kneeling on one knee, facing the trapeze, free leg's ankle resting on the strap.", "Exhale to press your free leg straight down against the strap; inhale to release it back up; then exhale to lunge forward keeping your pelvis square; inhale to shift your weight back. We'll do this with your leg to the front, then to the side.", "Press down through your hip joint, not just your ankle, and keep your pelvis square and level the whole time."] },
   },
   {
     name: "Lat Pull",
@@ -261,6 +277,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Palms facing away from torso — for both sitting and standing, if scapulae can't stabilize with palms facing torso",
     ],
     notes: "A trained professional must spot with a hand on the push-thru bar throughout\nThe spotter must never lean over the bar.\nSitting higher reduces range of motion.",
+  
+    script: { lines: ["Let's move into Lat Pull. Come to seated, behind the push-thru bar, holding it shoulder-distance apart, elbows angled down.", "Exhale to pull the bar down, directing your elbows toward the floor; inhale to return it as high as you can without lifting your shoulders.", "Keep your elbows tracking right next to your torso, not swinging behind it."] },
   },
   {
     name: "Scapula Isolation",
@@ -289,6 +307,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Full range — repeat going from complete protraction through neutral to complete retraction",
     ],
     notes: "Good foundational drill for building serratus anterior strength in clients who wing or tip their scapulae.\nHand placement options: top of shoulder (needs more flexibility), mid-shoulder (targets mid-traps/rhomboids), or armpit level (targets lower traps).\nGood prep for Reformer Back Rowing.",
+  
+    script: { lines: ["Let's move into Scapula Isolation. Come to supine, arms straight, holding the push-thru bar at shoulder level.", "Inhale to let your shoulder blades protract, the bar rising an inch or two; exhale to retract them back to neutral. We'll also reverse it, retracting first.", "Keep your scapulae flat against your rib cage — no winging as you retract, and no neck tension as you protract."] },
   },
   {
     name: "Pull Down",
@@ -315,6 +335,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Palms toward face — angle elbows toward the feet when flexing (biceps-curl-like focus)",
     ],
     notes: "Similar setup to Chest Press with springs from below (pg 64) — compare the two for target-muscle differences.",
+  
+    script: { lines: ["Let's move into Pull Down. Come to supine, arms straight, holding the push-thru bar at shoulder level.", "Exhale, keeping your scapulae stabilized, to flex your elbows out to the sides, pulling the bar toward your chest; inhale to extend your elbows and return it.", "Keep your elbows reaching out to the sides, not dropping down, and keep your shoulders from creeping up as you pull."] },
   },
   {
     name: "Push-Thru on Back",
@@ -340,6 +362,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Scapula isolations — keep bar pushed overhead, arms straight, gently elevate/depress scapulae",
     ],
     notes: "Progresses to Intermediate/Advanced Push-Thru on Back with Back Extension (pg 80).\nSpotter needed on the push-thru bar throughout.",
+  
+    script: { lines: ["Let's move into Push-Thru on Back. Come to supine, arms straight, holding the push-thru bar at shoulder level.", "Inhale to flex your elbows, pulling the bar toward your chest; exhale to stabilize and push the bar past your face, overhead through the uprights; inhale to bring it back to your forehead; exhale to extend your elbows, returning it toward the ceiling.", "Keep your ribs from popping as your arms reach overhead, and keep your neck neutral as the bar returns."] },
   },
   {
     name: "Push-Thru on Back with Roll Up",
@@ -367,6 +391,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Slightly imprinted — maintain a slight lumbar imprint at the top if full neutral support is lacking",
     ],
     notes: "Check bar position before starting: extend arms and sit on the sit-bones to check shoulder flexibility.\nSpot by holding the side of the bar without a spring on it.",
+  
+    script: { lines: ["Let's move into Push-Thru on Back with Roll Up. Come to supine, arms straight, bar pushed through the uprights at shoulder level.", "Inhale to flex your elbows, bar to your forehead; exhale to roll your spine off the bed to a neutral diagonal seated position while lengthening your arms; inhale to begin rolling back down from your ASIS; exhale to continue to supine while flexing your elbows, then push the bar back through the uprights.", "Initiate your roll-down from your ASIS, not by leaning back, and keep your weight settled at the back of your sit-bones rather than falling backward."] },
   },
   {
     name: "Teaser Prep",
@@ -390,6 +416,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Prep with one leg — flex one knee to chest while the other stays long on the bed; extend to form the V with the torso; requires less abdominal work to stabilize the pelvis; bottom knee can also stay bent, foot on the bed",
     ],
     notes: "Progresses to Intermediate Teaser (pg 62).",
+  
+    script: { lines: ["Let's move into Teaser Prep. Come to supine, arms straight, bar pushed through the uprights, legs straight and together.", "Inhale to flex your elbows and knees together, drawing your feet toward your seat; exhale to roll off the bed through imprint, knees to chest, then extend to a V-position; inhale to roll your ASIS away as your knees and elbows flex back in; exhale to extend your legs and push the bar back through.", "Move your arms and legs together, and use your abdominals — not your arms — to roll up."] },
   },
   {
     name: "Cat Prep",
@@ -414,6 +442,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Omit hinge back — keep torso vertical, flex elbows to pull bar down before flexing forward; also flex elbows on the roll up (good for flatter backs)",
     ],
     notes: "Progresses to Intermediate Cat Kneeling (pg 12 of intermediate manual).\nPush-thru bar always stays below shoulder level.",
+  
+    script: { lines: ["Let's move into Cat Prep. Come to seated on your heels, facing the push-thru bar, arms straight holding it.", "Inhale to hinge your pelvis back on your femurs in one straight line; exhale to initiate from your head and roll your spine into flexion; inhale to extend your spine sequentially from your tail; exhale to articulate back through flexion to neutral.", "Let your head and neck respond naturally as your spine flexes from the tail — don't leave your head still in space."] },
   },
   {
     name: "Swan Dive",
@@ -439,6 +469,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Two springs — assists spinal extension but makes shoulder stabilization harder",
     ],
     notes: "If shoulder flexibility allows, the bar can be pushed further out\nIf not, start with the bar slightly inward with a small hover at the beginning.",
+  
+    script: { lines: ["Let's move into Swan Dive. Come to prone, arms straight overhead, holding the push-thru bar, head hovering above the bed.", "Inhale to begin extending your spine, lengthening through the crown of your head as you press against the bar; exhale to continue extending as high as is comfortable; inhale to begin lengthening back down; exhale to lengthen fully to the bed.", "Extend only as high as you can keep your pubic bone on the bed, and stabilize your scapulae rather than sitting into your shoulders."] },
   },
   {
     name: "Push-Thru on Stomach with Back Extension Prep",
@@ -463,6 +495,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Two springs — assists extension but makes shoulder stabilization harder",
     ],
     notes: "Progresses to Intermediate version (pg 74 of intermediate manual).\nBe careful the bar doesn't touch the forehead as it comes overhead.",
+  
+    script: { lines: ["Let's move into Push-Thru on Stomach with Back Extension Prep. Come to prone, arms straight overhead holding the bar, starting in a low hover.", "Inhale to flex your elbows, bringing the bar behind your head; exhale to extend your thoracic spine, elbows staying flexed; inhale to return; exhale to extend your elbows and press the bar overhead.", "Keep this a small, controlled range — don't lift too high out of the hover — and keep your scapulae wide and flat, not winging."] },
   },
   {
     name: "Arms Backward",
@@ -487,6 +521,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Instructor assistance — a hand on the bar to help control it and prevent overstretching (not to increase the stretch)",
     ],
     notes: "Not recommended for clients with shoulder injuries — requires significant shoulder strength and flexibility.\nSimilar shape to Mat Saw at the far end of the movement.",
+  
+    script: { lines: ["Let's move into Arms Backward. Come to seated, facing away from the push-thru bar, spine flexed in a C-curve, arms straight to hold the bar behind you.", "Exhale to roll your torso away from your legs, pushing the bar slightly back; inhale to roll forward over your legs; exhale to let the bar move further back as your shoulders extend; inhale to roll forward again.", "Keep your elbows soft throughout — don't lock them — and let your hip flexors and abdominals control the motion rather than hanging off your shoulders."] },
   },
   {
     name: "Side Arm Pull",
@@ -512,6 +548,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Standing — between the uprights and bar, or on the opposite side; challenges torso/pelvis stabilization, small range of motion",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Side Arm Pull. Come to seated, facing sideways, one arm reaching up to hold the bar slightly ahead of your shoulder.", "Exhale, initiating from your scapula, to pull the bar down, elbow toward your waist; inhale to return it as high as you can without lifting your shoulder.", "Keep your torso upright — don't laterally flex toward the bar as you pull, isolate the movement at your shoulder."] },
   },
   {
     name: "Mermaid",
@@ -537,6 +575,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Alternate sitting position — dangle lower legs off the end of the Cadillac, legs adducted, or sit on a foam cushion/platform extender to relieve knee discomfort",
     ],
     notes: "A trained professional must spot with a hand on the push-thru bar throughout.",
+  
+    script: { lines: ["Let's move into Mermaid. Come to seated, facing sideways, knees flexed, one hand on the bar.", "Inhale to flex the elbow of your bar arm while reaching your other arm overhead; exhale to extend your bar arm, pushing the bar down as your spine laterally flexes toward it.", "Lengthen your spine first, then flex sideways — don't crunch into your side."] },
   },
   {
     name: "Forward Push-Thru",
@@ -560,6 +600,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Omit roll back — easier for abdominals and lats; instead pull bar down in front of the chest, then initiate from the top of the head to roll forward into flexion; emphasizes sequential articulation",
     ],
     notes: "Similar to Cat Prep but with no extension phase expected.\nIf the hip joint feels tight, start with Cat Prep first.",
+  
+    script: { lines: ["Let's move into Forward Push-Thru. Come to seated, facing the push-thru bar, legs straight, feet against the uprights.", "Inhale to roll back off your sit-bones, pulling the bar down with straight arms; exhale, initiating from your head, to sequentially flex your spine forward and push the bar through.", "Sit as if leaning against a wall — don't lean back — and push the bar forward using your abdominals, not by hinging at your hip flexors."] },
   },
   {
     name: "Scapula Isolation",
@@ -586,6 +628,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Full range — repeat from complete protraction through neutral to complete retraction",
     ],
     notes: "Good exercise for clients who can't stabilize scapulae during Reformer Long Stretch — trains serratus anterior specifically.\nTarget: serratus anterior (compare with Scapula Isolation, springs from above, pg 40, which targets rhomboids/mid/lower traps).",
+  
+    script: { lines: ["Let's move into Scapula Isolation. Come to supine, arms straight, holding the vertically sliding bar at shoulder level.", "Inhale to protract your scapulae, pushing the bar toward the ceiling; exhale to return to neutral, controlling the bar's return. We'll also reverse it, retracting first.", "Keep your scapulae flat against your rib cage on the return — no winging — and hold the bar firmly but relaxed."] },
   },
   {
     name: "Chest Press",
@@ -611,6 +655,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "One arm — other arm relaxed by side; challenges obliques/deep spinal muscles; usually one spring",
     ],
     notes: "Sherlyn's note: a good open-kinetic-chain foundation for developing push-up strength before progressing to closed-kinetic-chain work on the Reformer (Front Rowing, Reverse Expansion).\nSimilar setup to Pull Down (springs from above, pg 42).",
+  
+    script: { lines: ["Let's move into Chest Press. Come to supine, elbows flexed and angled out to the sides, holding the bar at shoulder level.", "Exhale, keeping your scapulae stabilized, to extend your elbows and press the bar up; inhale to flex your elbows, controlling its return.", "Keep your elbows reaching out to about forty-five degrees, and keep your ribs from popping as your arms return."] },
   },
   {
     name: "Leg Presses",
@@ -638,6 +684,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Omit dorsiflexion/plantar flexion — simplifies coordination, focuses on strengthening around the knees",
     ],
     notes: "Should only be attempted by flexible individuals who can attain the starting position comfortably (reduces risk of feet slipping off the bar).\nChallenges hip extensors (hamstrings).\nProgresses to Intermediate Monkey (pg 98) and Intermediate Guillotine (pg 100).\nTo get into position safely: place one foot on the bar (parallel to the floor or slightly higher), then place the second foot.",
+  
+    script: { lines: ["Let's move into Leg Presses. Come to supine, head toward the push-thru bar, knees extended so your hamstrings lengthen but your sacrum stays on the bed.", "Inhale to extend your knees and plantar flex your ankles, reaching the bar toward the ceiling; exhale to dorsiflex your ankles; inhale to plantar flex and press the bar up; exhale to flex your knees and return.", "Engage your quads, feel like you're pulling your kneecaps up, and keep your sacrum grounded as your knees extend."] },
   },
   {
     name: "Biceps Curls Supine",
@@ -670,6 +718,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Alternating or reciprocal arm movement; unilateral arm work",
     ],
     notes: "Considered the first layer of biceps-strength training on a large base of support — good for training biceps, obliques and hip flexors together, and challenges torso stability more than the Reformer version since springs are independent.",
+  
+    script: { lines: ["Let's move into Biceps Curls Supine. Come to supine, elbows resting on the bed, holding the handles with your palms up.", "Exhale, keeping your upper arms still, to flex your elbows and pull your hands toward your shoulders; inhale to extend and control the spring's return.", "Both arms need to work equally here — the springs are independent, so it takes more control than the equivalent Reformer exercise."] },
   },
   {
     name: "Midback Series",
@@ -705,6 +755,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Alternating, reciprocal, or unilateral arm movement",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Midback Series. Come to supine, hands in the straps, legs flexed with feet flat on the bed.", "We'll move through five arm patterns — triceps press, straight down, forty-five degrees, out to the sides, then circles — one breath pattern per position.", "Move both arms with equal weight and speed, and keep your abdominal connection throughout so your torso doesn't destabilize as the resistance changes through the arc."] },
   },
   {
     name: "Back Rowing Preps",
@@ -743,6 +795,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Alternate sitting positions — foam cushion, platform extender, bent knees, or crossed legs if neutral pelvis can't be achieved with legs straight",
     ],
     notes: "Progresses toward Intermediate Arm Springs work (pg 110 of intermediate manual).",
+  
+    script: { lines: ["Let's move into Back Rowing Preps. Come to seated, facing the vertically sliding bar, legs straight and together.", "We'll build through the whole rowing vocabulary — plow, open elbows, airplane, biceps curl, triceps, then three roll-down variations — one breath pattern per position.", "Keep your chest open as your arms press back — don't let your shoulders round forward under the spring resistance."] },
   },
   {
     name: "Front Rowing Preps",
@@ -774,6 +828,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "(Offering) Palms facing down / palms facing in; pronation or supination of forearms through the arc; omit opening arms to the side, simply extend/flex elbows",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Front Rowing Preps. Come to seated, facing away from the vertically sliding bar, legs straight and together.", "We'll move through Straight Forward, Second Position, then Offering — one breath pattern per position.", "Sit tall against the front-loaded spring resistance — don't let it collapse you into flexion."] },
   },
   {
     name: "Lower, Middle, Upper Trap Strengthener",
@@ -805,6 +861,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneel on Cadillac bed or floor — shifts focus to hip-joint stabilization",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into the Lower, Middle, Upper Trap Strengthener. Come to standing, facing the vertically sliding bar, arms straight reaching forward.", "We'll work through three eyehook positions targeting your upper, middle, then lower trapezius, one breath pattern each.", "Stand as if against a wall — don't lean back to help pull — and keep your shoulder blades from retracting, this targets your trapezius stabilizing, not a rowing motion."] },
   },
   {
     name: "Chest Expansion & Pulses",
@@ -836,6 +894,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneel on Cadillac bed or floor — on Cadillac this additionally requires stabilizing the knee and ankle joints (more joints, more balance, more functional) compared to Reformer kneeling",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Chest Expansion and Pulses. Come to standing, facing the vertically sliding bar, arms straight, holding the handles down and slightly forward.", "Exhale to pull your arms back and hold, turning your head side to side for Chest Expansion, or pulsing your arms back three times for Pulses; inhale to return.", "Pull your arms only slightly behind your hip line — the spring tension here is lighter than the Reformer, so don't overshoot the range."] },
   },
   {
     name: "Arms Sideways",
@@ -863,6 +923,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneel on Cadillac bed or floor",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Arms Sideways. Come to standing, facing the vertically sliding bar, arms straight out to the sides holding the handles.", "Exhale, keeping your arms at a constant height, to press them back; inhale to return.", "Keep your arm height constant through the whole set, and keep a small soft bend in your elbows rather than locking them."] },
   },
   {
     name: "Biceps Curls",
@@ -892,6 +954,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Curl with one arm, press back with the other — palms up, one elbow flexes/lifts humerus while the other pronates and extends shoulder, alternating; like an 'Upper Cut' shape",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Biceps Curls. Come to standing, facing the vertically sliding bar, arms straight at your sides, palms forward.", "Exhale, keeping your upper arms still, to flex your elbows and pull your hands to your shoulders; inhale to extend and control the return.", "Keep your torso square — don't let it rotate — and keep your shoulders down rather than shrugging as you curl."] },
   },
   {
     name: "Triceps Press",
@@ -919,6 +983,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneel on Cadillac bed or floor — good for clients who find standing stability difficult; builds hip-joint/pelvis stability before progressing to standing",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Triceps Press. Come to standing, facing the vertically sliding bar, elbows flexed beside your torso, forearms angled forward.", "Exhale, keeping your upper arms still, to extend your elbows, pressing your hands down toward the floor; inhale to flex and control the return.", "Keep your elbow next to your torso, not drifting behind it, and keep your rib cage from lifting to help the press."] },
   },
   {
     name: "Side Arm Work",
@@ -953,6 +1019,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneel on Cadillac bed — shifts focus to hip/pelvis stabilization",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Side Arm Work. Come to standing, facing sideways, the spring level with your elbow.", "We'll move through Internal Rotation, External Rotation, Adduction, then Abduction — one breath pattern per position.", "Keep your pelvis and shoulders square throughout — don't let your torso rotate or lean during the rotation work."] },
   },
   {
     name: "Snow Angels",
@@ -983,6 +1051,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneeling on the floor — increases range of motion at the shoulders",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Snow Angels. Come to standing, facing and close to the Cadillac, scapulae stabilized.", "We'll move through Two Arms, then One Arm — one breath pattern per position.", "Keep equal weight on both feet and your torso square, especially in the one-arm version, and keep your abdominal connection so your ribs don't pop as your arms pull down."] },
   },
   {
     name: "Standing Pull Down",
@@ -1010,6 +1080,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "In lunge position — one foot slightly ahead, legs parallel, torso in one long line with the back leg; switch legs; standing closer to the Cadillac is easier, further is harder",
     ],
     notes: "The higher the sliding bar is set relative to the exerciser, the harder the exercise becomes.",
+  
+    script: { lines: ["Let's move into Standing Pull Down. Come to standing, close to and facing away from the Cadillac, arms straight in front of your shoulders.", "Exhale, keeping your scapulae stabilized, to extend your shoulders, pulling your arms straight down by your hips; inhale to return.", "Reset a strong standing base before each rep — don't let the spring resistance pull you forward or back."] },
   },
   {
     name: "Bend & Stretch",
@@ -1040,6 +1112,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Keep ankles dorsiflexed throughout — simplifies coordination",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Bend and Stretch. Come to supine, arms overhead braced against the uprights, feet in the footstraps.", "Exhale to press your feet away, extending your knees and imprinting as your legs reach low; inhale to bend your knees back in. We'll move through parallel, turned out, then turned in.", "Both legs need to work equally here since the springs are independent — and keep your sacrum grounded as your knees flex."] },
   },
   {
     name: "Circles",
@@ -1069,6 +1143,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Small, quick circles — maintain imprint throughout, make smaller/quicker circles to challenge pelvic stability",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Circles. Come to supine, arms overhead braced against the uprights, imprinted, feet in the footstraps.", "Inhale to hinge your straight legs toward your torso; exhale to abduct and circle them out and away, imprinting and adducting as they return. We'll move through parallel, turned out, then turned in.", "Size your circle to what your hip comfortably allows — turned in will naturally be a smaller circle than turned out."] },
   },
   {
     name: "Walks",
@@ -1096,6 +1172,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Staccato breath — promotes a full breath pattern and avoids breath-holding",
     ],
     notes: "Speed changes the challenge: slower is more challenging, faster is less challenging (opposite of what might be assumed).",
+  
+    script: { lines: ["Let's move into Walks. Come to supine, arms overhead braced against the uprights, imprinted, feet in the footstraps.", "Inhale for five counts, scissoring your legs by flexing one hip slightly as the other extends; exhale for five counts continuing the scissor.", "Keep reaching your legs away rather than bouncing them, and match the stride length on both sides."] },
   },
   {
     name: "Bend & Stretch",
@@ -1123,6 +1201,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Top leg laterally rotated — works lateral rotators/hamstrings, smaller range",
     ],
     notes: "Same target pattern as Mat Side Leg Lift Series #1.",
+  
+    script: { lines: ["Let's move into Bend and Stretch. Come to side-lying, bottom arm straight supporting your head, top leg in the strap.", "Exhale to extend your top leg, pressing it away directly under your hip; inhale to flex your hip and knee about halfway back in.", "Keep your top hip from hiking as your leg extends — engage your bottom-side obliques to keep your pelvis stacked."] },
   },
   {
     name: "Lift & Lower",
@@ -1148,6 +1228,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Top leg laterally rotated — works lateral hip rotators and adductors, greater range of motion available",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Lift and Lower. Come to side-lying, bottom arm straight supporting your head, legs straight and parallel.", "Exhale to abduct your top leg, ankle plantar flexed; then dorsiflex your ankle and adduct it back down.", "Keep the lift low enough that your pelvis stays level — don't let it tilt or shorten the top side of your torso."] },
   },
   {
     name: "Side Stretch",
@@ -1172,6 +1254,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Quadratus lumborum stretch — lean out as above, then turn the body a quarter turn to face the Cadillac, flex knees and spine, posteriorly tilt the pelvis, and scoop the abdominals into one side of the back away from the Cadillac",
     ],
     notes: "This is a coronal-plane stretch.\nAlways stretch off the end of the Cadillac bed, sending weight away from the length of the frame — never stretch off the side, as this may cause the Cadillac to tip.",
+  
+    script: { lines: ["Let's move into Side Stretch. Come to standing slightly away from the upright, facing sideways, far hand overhead holding the fuzzy strap.", "Exhale, keeping your abdominals engaged and pelvis neutral, to lean sideways away from the Cadillac, leading with your outside hip.", "Keep this a pure lateral flexion — don't let your rib cage pop forward — and let your arm lengthen into the stretch rather than gripping the strap."] },
   },
   {
     name: "Biceps Curls",
@@ -1198,6 +1282,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Stand on a platform extender or box — increases range of motion",
     ],
     notes: "A trained professional must spot with a hand on the push-thru bar throughout, never leaning over or under the bar.",
+  
+    script: { lines: ["Let's move into Biceps Curls. Come to standing, facing the push-thru bar, arms straight, reaching down and forward to hold it.", "Exhale, keeping your torso and scapulae stable, to flex your elbows and pull the bar toward your shoulders; inhale to extend and return.", "Lift the bar to about sternum height at the top, and keep your weight centered over your midfoot rather than shifting onto your toes or heels."] },
   },
   {
     name: "Triceps Press",
@@ -1224,6 +1310,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "In lunge position — one foot slightly ahead, legs parallel, torso in one long line with the back leg, glutes engaged, front knee above the toes; switch legs",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Triceps Press. Come to standing, facing the push-thru bar, elbows flexed, hands supporting it slightly above shoulder level.", "Exhale, keeping your scapulae stabilized, to extend your elbows and flex your shoulders, pressing the bar up and forward; inhale to flex your elbows and control its return.", "Keep the bar close to your face, and keep your standing alignment steady as it presses forward."] },
   },
   {
     name: "Standing Push-Thru",
@@ -1249,6 +1337,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     ],
     modifications: [],
     notes: "A trained professional must spot with a hand on the push-thru bar throughout, never leaning over or under the bar.\nThis is the most complex Essential Cadillac exercise, combining full spinal articulation with standing balance and an arm press.",
+  
+    script: { lines: ["Let's move into Standing Push-Thru. Come to standing, facing the push-thru bar, arms reaching forward in line with your shoulders.", "Inhale to flex your elbows, pulling the bar down in front of your torso; exhale, initiating from your head, to sequentially roll down through flexion, lengthening your arms to push the bar down and through.", "Articulate from your tail to your head on the way back up, and keep your weight centered over your midfoot rather than shifting onto your toes or heels."] },
   },
 ], intermediate: [
   {
@@ -1277,6 +1367,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     ],
     modifications: [],
     notes: "Similar in feel and setup to Essential Roll-Down (pg 22) but distinguished by continuous elbow flexion/extension throughout the roll rather than a discrete pause at supine\nPractice for Mat Neck Pull.\nA good goal exercise for increasing abdominal strength while building awareness of the cervical spine following the thoracic.\nProgression: this is the Intermediate version of Essential Roll-Down.",
+  
+    script: { lines: ["Let's move into Neck Pull. Come to seated, facing the roll-down bar, legs straight, feet against the uprights.", "Exhale, initiating from your head, to roll your spine off the bed through flexion until your shoulder blades clear it; continue rolling to vertical, pulling the bar down as your elbows flex; roll back down to reverse.", "Roll with one continuous breath, no pausing mid-curve, and let the roll drive the arm work rather than pulling the bar in."] },
   },
   {
     name: "Roll-Down with Back Extension",
@@ -1303,6 +1395,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     ],
     modifications: [],
     notes: "Progression from Essential Roll-Down with Back Extension Prep (pg 24).\nSherlyn's note: distinguish from plain Roll-Down (pg 22) — this version adds the back-extension phase leading with the thoracic spine, done first forward-facing then in reverse.",
+  
+    script: { lines: ["Let's move into Roll-Down with Back Extension. Come to seated, facing the roll-down bar, legs straight, feet against the uprights.", "Exhale to roll your ASIS away from your femurs through flexion to supine; inhale to extend your spine, leading with your thoracic, and hinge your pelvis back toward your legs to vertical.", "Keep the extension in your upper thoracic only — your lumbar stays neutral — and extend your elbows as you lift back up to vertical."] },
   },
   {
     name: "Twist with Pulses",
@@ -1328,6 +1422,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     ],
     modifications: ["May be done in slight imprint during the hinge/lean if unable to stabilize in neutral"],
     notes: "May be done in slight imprint if full neutral cannot be maintained.\nSimilar sensation to the Chair 'lean.' Similar to the Reformer version but with different spring resistance, so scapular stabilizers may be more challenged here than on the Reformer.",
+  
+    script: { lines: ["Let's move into Twist with Pulses. Come to seated, facing the roll-down bar, one hand on the center of the bar, other hand reaching underneath it.", "Rotate your spine toward your gesture arm as it reaches to the side; exhale for three counts, lowering that arm toward the bed and sliding it out; inhale to return to center.", "Rotate from your spine, not your shoulders or arms, and keep your feet anchored against the frame throughout."] },
   },
   {
     name: "Port de Bras",
@@ -1354,6 +1450,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "PREP: Roll down to reach the arm to the closest upright only, then roll back up the same side to starting position; alternate sides — omits the full overhead circle and rotation to the far side",
     ],
     notes: "Shares the same starting position as Twist with Pulses (pg 26).\nThe circling arm work is essentially an armography added on top of the Roll-Down pattern.",
+  
+    script: { lines: ["Let's move into Port de Bras. Come to seated, facing the roll-down bar, one hand holding its center, other hand reaching underneath.", "Exhale, initiating by rolling your ASIS away, to roll down through flexion while your gesture arm reaches down and circles overhead, your torso rotating with it; inhale to roll back up circling the other direction.", "Let your eyes follow your circling hand, and pass through center on one long line — hand, head, navel, pubic bone."] },
   },
   {
     name: "Side Bend",
@@ -1383,6 +1481,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Flex and extend the elbow three times while maintaining the lateral flexion — increases muscular endurance demand on the lateral flexors",
     ],
     notes: "Setup differs from most roll-down-bar exercises in being side-lying with feet braced against opposite uprights rather than facing the bar seated.",
+  
+    script: { lines: ["Let's move into Side Bend. Come to side-lying, head toward the push-thru bar end, bottom arm supporting your head, top arm holding the center of the roll-down bar.", "Inhale to lengthen your torso along the bed and begin laterally flexing away from it, your bottom arm lifting with your torso; exhale to stabilize your scapulae and continue the flex.", "Press down through your hip joint, not just your ankle, and keep both balls of your feet pressed firmly against the frame."] },
   },
   {
     name: "Triceps Lunge",
@@ -1406,6 +1506,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Standing closer to the Cadillac and bracing the back leg against the bed to lessen spring resistance and help stabilize the lunge",
     ],
     notes: "Similar to the Reformer 'Salute' exercise but standing in a lunge here requires more balance and joint stability.\nDistinguish from Essential Press Down with Triceps (pg 32), which faces the bar rather than away from it.",
+  
+    script: { lines: ["Let's move into Triceps Lunge. Come to standing, facing away from the roll-down bar, in a lunge, whole body leaning away from the Cadillac.", "Exhale, stabilizing your torso and pelvis in the lunge, to extend your elbows and press the bar away; inhale, keeping your elbows reaching forward, to flex them and return.", "Keep your elbows pointing straight forward the whole time, as if resting on an invisible shelf, and keep your abdominals engaged so your rib cage doesn't push forward under the spring."] },
   },
   {
     name: "Ballet Stretches Standing",
@@ -1434,6 +1536,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Gesture leg on the trapeze strap instead of the bar itself, if hamstring, hip flexor, or lumbar flexibility prevents resting the leg on top of the trapeze",
     ],
     notes: "Progression from Essential Ballet Stretches Kneeling (pg 36).\nProgresses further to Intermediate Standing Fuzzy (pg 164), which is the same sequence performed with fuzzy hanging straps instead of the trapeze.",
+  
+    script: { lines: ["Let's move into Ballet Stretches Standing. Come to standing on the bed, facing the trapeze, gesture leg's ankle resting on top of it.", "We'll work through a linked sequence for each leg position — front, side, then back — flexing and extending your supporting knee, pressing into the strap, then lunging and returning.", "Keep your pelvis square and level throughout — this is about the target stretch, not chasing extra height or range in the lunge."] },
   },
   {
     name: "Spread Eagle",
@@ -1454,6 +1558,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     ],
     modifications: ["Reverse breathing — exhale during the extension phase instead of inhale, to help maintain abdominal/deep-neck-flexor support and prevent overextension"],
     notes: "Prep exercise for both Trapeze Pull Up (pg 48) and the Hanging/Fuzzy versions (pg 88, 166).\nA trained professional must spot throughout, ensuring a secure grip and that the feet stay securely on the trapeze.",
+  
+    script: { lines: ["Let's move into Spread Eagle. Come to suspended from the horizontals, front of your body facing the ceiling, ankles hooked around the springs.", "Exhale, keeping your legs straight and scapulae stabilized, to initiate from your tail and sequentially articulate your spine through flexion, extending your hips until your body is one line from feet to shoulders.", "Keep your hands directly above your shoulders when you're in one line, and don't let your scapulae protract at any point."] },
   },
   {
     name: "Pull Up",
@@ -1471,6 +1577,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Yanking the torso up using spinal extension instead of the biceps pull", "Body sinking between the shoulders from lost scapular stabilization"],
     modifications: [],
     notes: "Starting position is identical to Spread Eagle (pg 46) — this exercise adds the elbow-flexion pull once the body has articulated into the one-line pike-to-neutral position.\nA trained professional must spot throughout, ensuring a secure grip and that the feet stay secure in the trapeze.",
+  
+    script: { lines: ["Let's move into Pull Up. Come to suspended from the horizontals, same setup as Spread Eagle, legs straight with ankles hooked around the springs.", "Exhale, legs staying straight, to initiate from your tail and articulate through flexion, extending your hips until your body is one line, then pull your torso up using your arms.", "Keep your eyes gazing toward your feet the whole time, and pull with your biceps rather than yanking yourself up using spinal extension."] },
   },
   {
     name: "Sit-Up Combo",
@@ -1496,6 +1604,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     ],
     modifications: [],
     notes: "As springs decrease from 2 to 1 to 0, the abdominals are progressively more challenged while the shoulder girdle becomes easier to stabilize (2 springs = more bias to biceps, less abs; 0 springs = much more abs, less biceps — triceps may need to engage more to maintain the 90-degree elbow).\nTotal volume is roughly 30 reps across the three spring settings.\nExcellent prep for Teaser and also helps with Rolling Like a Ball and any exercise involving spinal flexion/rolling down from the lumbar.\nVery hypermobile clients should focus on exercises emphasizing upper-thoracic flexion rather than more lumbar flexion\nClients who overuse the arms more than the abs may get excess neck/shoulder tension — check that elbows stay bent, not extending the arms, and may skip the 1- or 0-spring reps if needed.\nA trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
+  
+    script: { lines: ["Let's move into Sit-Up Combo. Come to supine, hands well below shoulder level holding the bar overhead.", "Exhale, initiating from your head, to sequentially articulate your spine through flexion until your tailbone area is just off the bed, elbows flexing to recruit the springs.", "Keep roughly a ninety-degree bend in your elbows the whole time — don't let your arms straighten — and keep your tailbone anchored rather than lifting off the bed."] },
   },
   {
     name: "Teaser Series",
@@ -1523,6 +1633,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     ],
     modifications: ["One leg — during the roll-up, lift only one leg, keeping it straight, to challenge stabilization during unilateral movement (less challenge for the hip flexors)"],
     notes: "Do Essential Teaser Prep (pg 48) first as a foundation.\nA trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
+  
+    script: { lines: ["Let's move into Teaser. Come to supine, hands on the bar overhead, legs straight and together.", "Exhale, initiating from your head, to sequentially roll off the bed through imprint while your hips flex and legs reach up to balance in the V-position. We'll build from the basic Teaser into Arm Presses, Lower and Lift Legs, Alternating Arms and Legs, then Arms and Legs Together.", "Bend your knees at the start if your hamstrings are tight, but straighten them again as you lower back down."] },
   },
   {
     name: "Push-Thru With Feet",
@@ -1553,6 +1665,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Flex knees slightly during the roll up/down to focus on spinal articulation if the legs cannot extend fully with the sacrum on the bed",
     ],
     notes: "For a client who gets hamstring cramps during a regular shoulder bridge, this can be a useful alternative — a shoulder bridge is a short-lever closed-chain exercise, this is a long-lever, more open-chain exercise so it is actually more challenging for the hamstrings and plantar flexors, not less.\nA trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
+  
+    script: { lines: ["Let's move into Push-Thru With Feet. Come to supine, legs extended toward the ceiling, soles of your feet against the push-thru bar.", "Inhale to flex your knees, pulling the bar toward your torso, sacrum staying down; exhale to lengthen your legs, reaching the bar toward the ceiling, then roll your spine up to your upper back. We'll add Single Leg Lift, Two Leg Pump, then Single Leg Pumps from there.", "Keep the arch of your foot on the bar with your ankles maximally pointed, and keep your sacrum grounded during the initial press."] },
   },
   {
     name: "Cat",
@@ -1573,6 +1687,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     ],
     modifications: ["Omit the hinge — keep the torso vertical, flex elbows to pull the bar down before flexing forward, and flex elbows again on the roll up; a good build-up progression toward the standing version"],
     notes: "Progression from Essential Cat Prep (pg 50, sitting on heels).\nKneeling is good for clients with hip-joint issues or spine restrictions but is more challenging for balance and not ideal for knee issues/arthritis (pad the knees, press the bar gently rather than hard).\nThe standing version is good for shoulder-joint challenges but needs no balance challenge\nUse light, gentle pressure into the bar rather than forcing it.\nA trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
+  
+    script: { lines: ["Let's move into Cat. Come to kneeling, facing the push-thru bar, arms long, torso vertical, bar at its highest position.", "Inhale to hinge your femurs and torso back away from vertical, arms staying straight; exhale, initiating from your head, to sequentially articulate into flexion.", "Let your head respond naturally as your spine flexes from the tail, and keep your shoulders above the level of the bar during the extension."] },
   },
   {
     name: "Push-Thru on Stomach Back Extended",
@@ -1596,6 +1712,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Two springs — assists spinal extension but makes shoulder stabilization more difficult",
     ],
     notes: "Progression from Essential Push-Thru on Stomach with Back Extension Prep (pg 54).\nGood prep for Advanced Swan Dive and for the yoga wheel pose.\nShow and explain the motion before cueing it, given the complexity.\nA trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
+  
+    script: { lines: ["Let's move into Push-Thru on Stomach Back Extended. Come to prone, arms straight overhead holding the bar.", "Inhale, stabilizing your scapulae, to flex your elbows, bringing the bar behind your head; exhale to straighten your arms, reaching the bar up, and extend your spine as high as is comfortable.", "Keep this a small, controlled extension out of the hover, and keep your elbows pointing slightly down and out as they flex behind your head."] },
   },
   {
     name: "Mermaid with Rotation",
@@ -1615,6 +1733,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     ],
     modifications: ["Alternate sitting position — sit on a foam cushion or platform extender to relieve leg discomfort while dangling the lower legs off the end"],
     notes: "Progression from Essential Mermaid (pg 58).\nOn the Cadillac, unlike the Reformer, the carriage stays still, so the exercise requires additional shoulder abduction/adduction rather than the carriage moving — this makes it busier and more shoulder-intensive than the Reformer equivalent, which the sliding carriage helps facilitate.\nA trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
+  
+    script: { lines: ["Let's move into Mermaid with Rotation. Come to seated, facing sideways, knees flexed, one hand on the bar.", "Inhale to flex the elbow of your bar arm as your other arm reaches overhead; exhale to extend your bar arm and laterally flex toward it, then rotate to complete the twist.", "Sit up vertical first, then lean, and anchor your opposite hip down as you rotate."] },
   },
   {
     name: "Spread Eagle",
@@ -1632,6 +1752,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Overextending the lumbar or cervical spine on the extension phase"],
     modifications: ["Reverse breathing — exhale during the extension to help resist the tendency to overextend the lumbar/cervical spine"],
     notes: "Prep exercise for the Trapeze (pg 46) and Fuzzy Hanging Straps (pg 166) versions of Spread Eagle.\nBuilding grip strength for hanging work is a goal here — teach the movement and coordination first before adding a true hang, and check hip- and shoulder-joint mobility beforehand.\nCompare Essential breathing pattern to hanging breath, which is different, to avoid holding the breath while hanging.\nBuilds hip-extensor strength progressing from 'low lift' and 'short spine prep.' A trained professional must spot throughout, ensuring a secure grip and that the feet are secure against the uprights.",
+  
+    script: { lines: ["Let's move into Spread Eagle. Come to standing, hands holding the tops of the uprights, balls of your feet pressed against them, piked at your hips.", "Exhale, initiating from your tail, to draw your pelvis toward your femurs and sequentially roll through flexion to neutral spine and pelvis; inhale to slightly flex your elbows and reverse.", "Keep your hands at shoulder level in one long line, and press the balls of your feet firmly against the frame throughout."] },
   },
   {
     name: "Monkey",
@@ -1649,6 +1771,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Allowing the spine to hang/lengthen passively instead of staying actively lengthened and supported"],
     modifications: ["One leg only — place one foot on the bar and leave the other leg on the bed, straight if possible, to challenge symmetrical torso stabilization, maintaining alignment with the sit-bones"],
     notes: "Should only be attempted by flexible individuals who can attain the starting position comfortably, reducing the danger of feet slipping off the bar\nAbsolutely not-flexible clients should skip this exercise entirely.\nCompare to Essential Leg Press with springs from below (pg 66) for the setup.\nImportant to find the exact right starting spot — general guidance is that the sacrum stays on with the tailbone off\nIf weight sits too fully on the sacrum, the lumbar may be compressed, so it may be better to place the weight just slightly behind the tailbone.\nA trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
+  
+    script: { lines: ["Let's move into Monkey. Come to supine, neck off the end of the bed, balls of your feet on the push-thru bar.", "Exhale to extend your knees as far as you can and plantar flex your ankles, pressing the bar toward the ceiling; inhale, legs staying straight, to dorsiflex your ankles and lower the bar slightly.", "Fold as much as you can at your hip joint, nose toward your shins, and avoid your scapula lifting off the bed as you set up."] },
   },
   {
     name: "Guillotine",
@@ -1669,6 +1793,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Prep 2 (reverse order) — keep the knees flexed while articulating off the bed to the upper thoracic first, then extend the knees/plantar flex, then articulate back down with legs straight, then flex the knees to finish",
     ],
     notes: "Should only be attempted by flexible individuals who can attain the starting position comfortably\nEspecially suited to taller people.\nNot for clients with spinal issues, and absolutely contraindicated for anyone with hardware/bolts in the spine.\nExhale to support the lumbo-pelvic area through each articulation\nEngage abs and glutes\nBe mindful of high spinal compression at the top position — don't hold too long (roughly 1-2 seconds).\nA trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
+  
+    script: { lines: ["Let's move into Guillotine. Come to supine, neck directly under the push-thru bar, arms straight reaching overhead to hold the uprights.", "Exhale to extend your knees and plantar flex your ankles, reaching the bar toward the ceiling as your sacrum settles onto the bed; then initiate from your tail to sequentially articulate off the bed to your upper thoracic.", "Don't hold the top position too long — roughly one to two seconds — and keep your torso completely still during the knee-pumping phase."] },
   },
   {
     name: "Hip Opener",
@@ -1686,6 +1812,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Knee drifting inward or outward from center-of-foot alignment", "Pelvis rotating excessively instead of staying as square as possible"],
     modifications: [],
     notes: "Targets an adductor stretch/medial hamstring stretch as the leg extends and derotates.\nShould only be attempted by flexible individuals who can attain the starting position comfortably, reducing the danger of the foot slipping off the bar.\nA trained professional must spot throughout with a hand on the push-thru bar, never leaning over it.",
+  
+    script: { lines: ["Let's move into Hip Opener. Come to side-lying, head toward the push-thru bar, top foot on it, top knee flexed and turned out.", "Inhale to extend your knee and plantar flex your ankle, pressing the bar toward the ceiling; exhale, knee staying extended, to dorsiflex your ankle.", "Keep your knee tracking over the center of your foot, and keep your pelvis as square as possible rather than rotating excessively."] },
   },
   {
     name: "Back Rowing",
@@ -1709,6 +1837,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Alternate sitting positions — flex the knees slightly or sit on a foam cushion/platform extender if neutral pelvis cannot be achieved with legs straight",
     ],
     notes: "Progression from Essential Back Rowing prep (pg 76).\nBecause each arm spring is independent, the exercise requires more control from the stabilizing muscles than a single connected resistance would, and challenges both arms to work equally and at the same speed.\nOn the Cadillac, the height of the sliding bar can be adjusted to change spring resistance and target different muscles depending on where it is set (a higher sliding bar increases the shoulder-adductor challenge)\nThis is busier than the Reformer version since there is no carriage sliding through the range to help.",
+  
+    script: { lines: ["Let's move into Back Rowing. Come to seated, facing the vertically sliding bar, legs straight and together.", "We'll work through Round Back, then Straight Back, one full arm and torso sequence per position, five reps each.", "Roll into a deep C-curve with your head slightly higher than your pelvis, and keep both arms moving with equal weight and speed — the independent springs make it easy for one side to dominate."] },
   },
   {
     name: "Front Rowing",
@@ -1735,6 +1865,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Alternate sitting position — flex knees slightly or sit on a foam cushion/platform extender if neutral pelvis cannot be achieved with legs straight",
     ],
     notes: "Progression from Essential Front Rowing preps (pg 86).\nDistinguished from the Reformer version by not crossing the legs and by sitting fully vertical from a stable spine rather than a hinge.",
+  
+    script: { lines: ["Let's move into Front Rowing. Come to seated, facing away from the vertically sliding bar, legs straight and together, not crossed.", "We'll move through Arm Circles, Round Forward with Arm Circles, Salute, Second Position, then Offering — one breath pattern per position.", "Keep a large base of support — never cross your ankles — and maintain your scapular stabilization as your arms move through each plane."] },
   },
   {
     name: "Side Twist Standing",
@@ -1757,6 +1889,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Rotational disks — to focus on stabilization of the pelvis on the femurs",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Side Twist Standing. Come to standing, arms-length from the vertically sliding bar, torso turned slightly toward the uprights.", "Exhale, keeping your pelvis square and hands in front of your sternum, to rotate your upper torso away from the Cadillac; inhale to return.", "Rotate as a spiral initiated from your lower spine, not from your arms or shoulders, and keep your pelvis from shifting or tilting."] },
   },
   {
     name: "Reverse Expansion",
@@ -1785,6 +1919,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Alternate spring position — leave the springs attached to the vertically sliding bar to change the angle of resistance",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Reverse Expansion. Come to standing, facing away from the vertically sliding bar, whole body leaning back in a ski-jump position.", "We'll move through Reaching Forward, Teardrops Outward, Teardrops Inward, Salute, then Biceps Curls — one breath pattern per position.", "Set up your lean by dorsiflexing your ankle, not by flexing your hips, and keep your scapulae from winging under the resistance from behind."] },
   },
   {
     name: "Offering",
@@ -1805,6 +1941,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneeling on the Cadillac bed — maintains a neutral, vertical position, focusing stabilization at the hip joints",
     ],
     notes: "Similar in shape to the Essential Front Rowing prep 'Offering' (pg 86) but standing in a lean against resistance from behind rather than seated.",
+  
+    script: { lines: ["Let's move into Offering. Come to standing, facing away from the vertically sliding bar, in your ski-jump lean, elbows flexed slightly behind you.", "Exhale, scapulae stable, to extend your elbows, reaching your arms forward at shoulder level; inhale, arms straight, palms up, to horizontally abduct out to the sides; exhale to adduct, then flex to return.", "Keep your lean set by dorsiflexing your ankle rather than flexing your hips."] },
   },
   {
     name: "Hug a Tree",
@@ -1825,6 +1963,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Kneeling on the Cadillac bed — focuses stabilization at the hip joints rather than throughout the legs",
     ],
     notes: "Similar to the Essential seated Front Rowing prep 'Second Position' (pg 87) but performed standing in a lean.",
+  
+    script: { lines: ["Let's move into Hug a Tree. Come to standing, facing away from the vertically sliding bar, in your ski-jump lean, arms rounded in front of you.", "Exhale, stabilizing your scapulae, torso, and legs, to press your hands forward and together, then open your arms wide; inhale to return.", "Keep your chest lifted the whole time you open your arms — don't let your arms drop below shoulder height."] },
   },
   {
     name: "Butterfly",
@@ -1846,6 +1986,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Lunge position — one foot slightly forward, front leg flexed, one line from back heel to crown",
     ],
     notes: "The lateral flexion is a movement isolated purely to the spine, with the arms staying fixed relative to the torso throughout.",
+  
+    script: { lines: ["Let's move into Butterfly. Come to standing, facing away from the vertically sliding bar, in your ski-jump lean, arms out to the sides.", "Exhale, keeping your pelvis and torso square and equal pressure in both hands, to laterally flex your spine to one side; inhale to return, then repeat to the other side.", "Keep this a pure lateral flexion, not a rotation, and keep equal pressure through both hands so one side doesn't pull you off-square."] },
   },
   {
     name: "Punches",
@@ -1869,6 +2011,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Lunge position — one foot slightly forward, front leg flexed, one line from back heel to crown",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Punches. Come to standing, facing away from the sliding bar, in your ski-jump lean, holding the handles in fists.", "Exhale, maintaining scapular stability and squareness through your torso and legs, to extend one elbow, punching your fist directly forward; inhale to return.", "Reach the arm fully forward on each punch, and keep your torso square rather than rotating with the punch."] },
   },
   {
     name: "Fencer Lunges",
@@ -1890,6 +2034,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Torso rotating with the arm press instead of staying square", "Knee tracking inward or outward from the 2nd/3rd toe alignment"],
     modifications: ["Prep — omit the arm press, just lunge keeping the hands directly in front of the midline; can be done with either hand on top"],
     notes: "The lunged leg can be laterally rotated for clients with a medially rotated femur.",
+  
+    script: { lines: ["Let's move into Fencer Lunges. Come to standing, arms-length from the vertically sliding bar, hand closest to the uprights on the back handle, other hand on the front handle.", "Exhale, torso neutral and vertical, to step out diagonally into a lunge while pressing your near hand across your torso and your far hand down and away; inhale to bring your feet together and flex your elbows to return. We'll do Inside Arm Top, then Outside Arm Top.", "Your front knee points toward your second and third toe, and the further you step into the lunge, the harder this gets."] },
   },
   {
     name: "Squats",
@@ -1907,6 +2053,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Sitting the pelvis back in space instead of dropping the tailbone with active abdominal support", "Compressing the knees forward instead of keeping weight toward the back of the foot"],
     modifications: ["Rotational disks — to focus on stabilization of the pelvis on the femurs"],
     notes: "Start at the front (closest to the bar) to find the hardest point in the range — stepping forward makes it harder — then try the full exercise from that sweet spot.\nGood prep for a pistol lunge/squat, which requires maximal hip and knee flexion.\nThere should be little to no compression felt in the knee since the weight stays toward the back through the hinge at the hips.",
+  
+    script: { lines: ["Let's move into Squats. Come to standing, facing the vertically sliding bar, arms reaching forward just below shoulder level.", "Exhale, initiating from your head, to articulate your spine into flexion as you drop your tailbone and flex your knees, pronating your forearms as you press your arms down and back; inhale to extend your knees and lengthen your spine to return.", "Imagine squatting down against a wall, and use more legs than arms — keep your weight toward the back of your foot rather than compressing your knees forward."] },
   },
   {
     name: "Beats",
@@ -1928,6 +2076,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Parallel — maintain parallel leg alignment during the beats, controlling adduction to avoid the ankle bones hitting together",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Beats. Come to supine, arms overhead braced against the uprights, feet in the footstraps.", "For four counts, adduct your legs together with each inhale, beating them together; for four counts, dorsiflex and adduct with each exhale.", "Keep your elbows extended rather than bent — that's what stabilizes your torso and shoulders here — and imprint if you can't hold neutral."] },
   },
   {
     name: "Scissors",
@@ -1950,6 +2100,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Four-count breath — inhale for four counts scissoring the legs by each other, exhale for four counts continuing to scissor; can also use a staccato breath pattern to avoid holding the breath",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Scissors. Come to side-lying, head toward the vertically sliding bar, bottom arm straight supporting your head.", "Inhale, legs long and pelvis stable, to scissor your top leg forward and bottom leg back, each foot reaching toward an upright; exhale to switch.", "Keep both feet in line with your pelvis, and engage your glutes and obliques so your ribcage doesn't pop forward."] },
   },
   {
     name: "Ovals",
@@ -1974,6 +2126,8 @@ window.STOTT.apparatus.cadillac = { essential: [
       "Alternate position — torso on a diagonal line from the forward upright by the head to the back upright by the feet, bottom arm braced against the upright, spring attached to the front eyehook",
     ],
     notes: "",
+  
+    script: { lines: ["Let's move into Ovals. Come to side-lying, head toward the vertically sliding bar, bottom arm straight supporting your head.", "We'll trace Horizontal Ovals, then Vertical Ovals with your top leg, five to ten reps each direction, forward and reversed.", "Keep your pelvis from rocking or hiking as your leg traces each oval — the movement stays at your hip."] },
   },
   {
     name: "Side Kick Stretch",
@@ -1991,6 +2145,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Pelvis tilting or rocking as the leg moves through the sequence", "Losing lateral rotation of the femur partway through the range"],
     modifications: ["Keep leg parallel — decreases the range of motion when reaching into hip extension, reducing hip extension"],
     notes: "This progression builds toward other exercises like the yoga side crescent/lunge pose.\nProgresses to Developé and Rond de Jambe in the same setup family.",
+  
+    script: { lines: ["Let's move into Side Kick Stretch. Come to side-lying, head toward the vertically sliding bar, bottom arm straight supporting your head.", "Inhale to plantar flex your ankle and flex your top hip, reaching your foot forward; exhale to dorsiflex and extend your hip, reaching it back.", "Keep the range small, and keep your pelvis stable rather than tilting or rocking as your leg moves."] },
   },
   {
     name: "Developé",
@@ -2008,6 +2164,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Pelvis hiking as the knee draws in", "Losing lateral rotation of the femur as the leg extends"],
     modifications: ["Alternate position — torso on a diagonal line from the forward upright by the head to the back upright by the feet, bottom arm braced against the upright, spring attached to the front eyehook"],
     notes: "",
+  
+    script: { lines: ["Let's move into Developé. Come to side-lying, head toward the vertically sliding bar, top leg laterally rotated.", "Exhale, torso and pelvis stable, to dorsiflex your ankle and flex your top knee, drawing your foot up inside your bottom leg, then extend your leg up while controlling the spring.", "Keep your toes reaching slightly forward as your leg extends, and keep your pelvis from hiking as your knee draws in."] },
   },
   {
     name: "Rond de Jambe",
@@ -2025,6 +2183,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Pelvis rocking with the momentum of the circle instead of staying anchored"],
     modifications: ["Alternate position — torso on a diagonal line from the forward upright by the head to the back upright by the feet, bottom arm braced against the upright, spring attached to the front eyehook"],
     notes: "The full circular 'draw a circle' pattern combines the ranges used in Side Kick Stretch and Developé into one continuous path.",
+  
+    script: { lines: ["Let's move into Rond de Jambe. Come to side-lying, head toward the vertically sliding bar, top leg laterally rotated.", "Exhale, torso stable, to flex your hip and reach your leg forward, then horizontally abduct it out to the side, continuing the circle around.", "Keep the range of motion small enough that your pelvis doesn't rock with the momentum of the circle."] },
   },
   {
     name: "Ballet Stretches",
@@ -2047,6 +2207,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Losing square, level pelvis as the leg changes position"],
     modifications: [],
     notes: "Same sequence as Ballet Stretches Standing with the Trapeze (pg 40) but performed on fuzzy hanging straps, which requires more hip-extensor recruitment for the hip-flexion phases than the trapeze version does.\nSee page 40 for the complete breakdown of movements.",
+  
+    script: { lines: ["Let's move into Ballet Stretches. Come to standing on the Cadillac, facing the same upright as your supporting leg, gesture leg's ankle secured in the fuzzy strap.", "We'll repeat the same linked sequence as Ballet Stretches Standing — bend and stretch your supporting knee, press and release your gesture leg, then lunge — through leg-to-front, leg-to-side, then leg-to-back.", "Keep your pelvis square and level as your leg changes position through each variation."] },
   },
   {
     name: "Spread Eagle",
@@ -2064,6 +2226,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Body sinking between the shoulders from a lack of scapular engagement", "Overextending the lumbar as the hips press into further extension"],
     modifications: [],
     notes: "Compared to the Trapeze version (pg 46), hanging on the Fuzzy straps requires more grip strength and endurance because there is no rigid trapeze bar to brace the feet against.\nExtended trapeze-style progression that adds a knee-flexion arc not present in the Trapeze or Hanging-from-Uprights versions.\nA trained professional must spot throughout, ensuring a secure grip and that the feet stay secure in the fuzzy hanging straps.",
+  
+    script: { lines: ["Let's move into Spread Eagle. Come to suspended from the horizontals, front of your body facing the ceiling, ankles hooked into the fuzzy hanging straps.", "Exhale, legs straight and scapulae stabilized, to initiate from your tail and sequentially articulate through flexion, extending your hips until your body is one line from feet to shoulders.", "Keep one long line with your hips actively engaged, and articulate from your thoracic to your lumbar before you lengthen."] },
   },
   {
     name: "Abdominal Curls",
@@ -2081,6 +2245,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Swinging the body to gain momentum instead of curling with the abdominals", "Feet slipping out of the straps from insufficient ankle dorsiflexion"],
     modifications: ["Alternate arm position — hold behind the thighs instead of crossed in front of the torso"],
     notes: "See 'Getting into Fuzzy Hanging Straps' setup notes (pg 169): squat and hold the horizontals, secure one foot in the strap at a time with instructor assistance, roll the pelvis up.\nMaintain dorsiflexion at the ankles throughout to prevent the feet slipping out of the straps, and maintain medial rotation of the femur.\nA trained professional must spot throughout, ensuring a secure and comfortable starting position and security in the straps.",
+  
+    script: { lines: ["Let's move into Abdominal Curls. Come to hanging, feet hooked into the fuzzy straps, upper thoracic resting on the bed.", "Exhale to flex your knees slightly and contract your abdominals, curling your upper body off the bed toward your legs; inhale, spine staying flexed, to lower back down.", "Curl up and hover over the bed rather than resting between reps, and curl with your abdominals rather than swinging for momentum."] },
   },
   {
     name: "Half Hang",
@@ -2098,6 +2264,8 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Actively holding tension instead of allowing the muscles to release into the traction"],
     modifications: [],
     notes: "Maintain dorsiflexion at the ankles to prevent the feet slipping out of the straps, and maintain medial rotation of the femur.\nGetting into the straps: place the feet on the instructor's thigh, roll the pelvis up with ankles dorsiflexed and knees bent/rotated, then secure one foot at a time into the strap.\nPetite people may need a bolster under the torso, otherwise the lumbar sits too high off the mat.\nA trained professional must spot throughout, ensuring a secure and comfortable starting position and security in the straps.",
+  
+    script: { lines: ["Let's move into Half Hang. Come to hanging, feet secured in the fuzzy straps, upper thoracic resting on the bed.", "Breathe normally and simply hang, letting your spine release into the traction for several seconds, no more than a minute.", "Allow your muscles to actually release into the traction rather than holding tension."] },
   },
   {
     name: "Full Hang",
@@ -2119,5 +2287,7 @@ window.STOTT.apparatus.cadillac = { essential: [
     faults: ["Holding tension in the neck/shoulders instead of allowing a passive traction hang"],
     modifications: [],
     notes: "Not appropriate for clients with spinal injury or spinal surgery, for clients with diabetes due to eye pressure while inverted, for clients with ankle/knee/hip issues, or for clients with surgical pins in bones.\nMaintain dorsiflexion at the ankles to prevent the feet slipping out of the straps, and maintain medial rotation of the femur.\nSee 'Getting into Fuzzy Hanging Straps' (pg 169) for setup.\nA trained professional must spot throughout, ensuring a secure and comfortable starting position and security in the straps.",
+  
+    script: { lines: ["Let's move into Full Hang. Come to hanging, feet secured in the fuzzy straps, upper thoracic resting on the bed.", "We'll move through both Full Hang positions, one breath pattern each, reaching your arms and hands as directed.", "Slide the strap back away from the frame so it doesn't jam your chin, and let your neck and shoulders stay passive in the hang rather than holding tension."] },
   },
 ], advanced: [] };
