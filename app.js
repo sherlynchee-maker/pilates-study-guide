@@ -88,7 +88,7 @@ function buildInlineQuiz(questions, onAllAnswered) {
   questions.forEach((q) => {
     const item = el("div", { class: "mini-quiz-item" });
     if (q.topic) item.append(el("div", { class: "qtag" }, q.topic));
-    item.append(el("div", { class: "qtext" }, q.q));
+    item.append(el("div", { class: "qtext" }, breathText(q.q)));
     let done = false;
     function finish(correct) {
       if (done) return;
@@ -191,7 +191,10 @@ function el(tag, attrs = {}, children = []) {
     else if (k.startsWith("on") && typeof v === "function") node.addEventListener(k.slice(2), v);
     else node.setAttribute(k, v);
   });
-  (Array.isArray(children) ? children : [children]).forEach((c) => {
+  // Flattened so callers can freely nest arrays — e.g. mixing plain strings
+  // with the string/span arrays breathText() returns — without having to
+  // manually splice them into a single-level list first.
+  (Array.isArray(children) ? children.flat(Infinity) : [children]).forEach((c) => {
     if (c === null || c === undefined) return;
     node.appendChild(typeof c === "string" ? document.createTextNode(c) : c);
   });
@@ -199,6 +202,31 @@ function el(tag, attrs = {}, children = []) {
 }
 function esc(s) {
   return (s ?? "").toString();
+}
+/* Highlights "Inhale"/"Exhale" and their inflections (Inhaling, Exhaled,
+   Inhalation, ...) wherever they appear in exercise/principle text, so the
+   breath direction pops out of dense cueing paragraphs at a glance. Returns
+   the original string untouched when there's nothing to highlight, or a
+   mixed array of strings/spans (which `el()` already knows how to append)
+   when there is. */
+const BREATH_CUE_RE = /\b(Inhale[sd]?|Inhaling|Inhalations?|Exhale[sd]?|Exhaling|Exhalations?)\b/gi;
+function breathText(str) {
+  if (str === null || str === undefined) return str;
+  const text = String(str);
+  BREATH_CUE_RE.lastIndex = 0;
+  if (!BREATH_CUE_RE.test(text)) return text;
+  BREATH_CUE_RE.lastIndex = 0;
+  const out = [];
+  let last = 0;
+  let m;
+  while ((m = BREATH_CUE_RE.exec(text))) {
+    if (m.index > last) out.push(text.slice(last, m.index));
+    const kind = /^inhal/i.test(m[0]) ? "inhale" : "exhale";
+    out.push(el("span", { class: `breath-cue ${kind}` }, m[0]));
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) out.push(text.slice(last));
+  return out;
 }
 function countAll(arr) {
   return Array.isArray(arr) ? arr.length : 0;
@@ -304,7 +332,7 @@ function scriptBox(script) {
   if (!script || !script.lines || !script.lines.length) return null;
   const box = el("div", { class: "field script-box", style: "margin-top:10px" }, [
     el("div", { class: "k" }, "Verbal cueing script"),
-    el("ul", { class: "script-lines" }, script.lines.map((line) => el("li", {}, line))),
+    el("ul", { class: "script-lines" }, script.lines.map((line) => el("li", {}, breathText(line)))),
   ]);
   if (script.reps) box.append(el("div", { class: "script-reps" }, script.reps));
   return box;
@@ -329,31 +357,31 @@ function renderPrinciples() {
   if (scriptMeta && scriptMeta.intro) {
     mainView.append(el("div", { class: "card script-box script-intro" }, [
       el("div", { class: "k" }, "Session opening — verbatim script"),
-      el("ul", { class: "script-lines" }, [el("li", {}, scriptMeta.intro)]),
+      el("ul", { class: "script-lines" }, [el("li", {}, breathText(scriptMeta.intro))]),
     ]));
   }
   DATA.principles.forEach((p, i) => {
     const card = el("div", { class: "card" });
     card.append(el("h3", {}, `${i + 1}. ${p.title}`));
-    if (p.goal) card.append(el("p", {}, p.goal));
+    if (p.goal) card.append(el("p", {}, breathText(p.goal)));
     if (p.cues && p.cues.length) {
       card.append(el("div", { class: "field" }, [
         el("div", { class: "k" }, "Teaching cues"),
-        el("div", { class: "v" }, el("ul", { style: "margin:4px 0 0;padding-left:18px" }, p.cues.map((c) => el("li", {}, c)))),
+        el("div", { class: "v" }, el("ul", { style: "margin:4px 0 0;padding-left:18px" }, p.cues.map((c) => el("li", {}, breathText(c))))),
       ]));
     }
     if (p.commonErrors && p.commonErrors.length) {
       card.append(el("div", { class: "field", style: "margin-top:10px" }, [
         el("div", { class: "k" }, "Common errors → corrective cue"),
         el("div", { class: "v" }, el("ul", { style: "margin:4px 0 0;padding-left:18px" },
-          p.commonErrors.map((e) => el("li", {}, [el("strong", {}, e.error + ": "), e.cue])))),
+          p.commonErrors.map((e) => el("li", {}, [el("strong", {}, [breathText(e.error), ": "]), breathText(e.cue)])))),
       ]));
     }
     if (p.exercises && p.exercises.length) {
       card.append(el("div", { class: "field", style: "margin-top:10px" }, [
         el("div", { class: "k" }, "Named exercises in this Principle"),
         el("div", { class: "v" }, el("ul", { style: "margin:4px 0 0;padding-left:18px" },
-          p.exercises.map((ex) => el("li", {}, [el("strong", {}, ex.name + ": "), ex.detail])))),
+          p.exercises.map((ex) => el("li", {}, [el("strong", {}, ex.name + ": "), breathText(ex.detail)])))),
       ]));
     }
     if (p.movementPatterns && p.movementPatterns.length) {
@@ -370,7 +398,7 @@ function renderPrinciples() {
   if (scriptMeta && scriptMeta.closing) {
     mainView.append(el("div", { class: "card script-box script-closing" }, [
       el("div", { class: "k" }, "Session closing — verbatim script"),
-      el("ul", { class: "script-lines" }, [el("li", {}, scriptMeta.closing)]),
+      el("ul", { class: "script-lines" }, [el("li", {}, breathText(scriptMeta.closing))]),
     ]));
   }
 }
@@ -418,14 +446,14 @@ function checklistItemBlock(it) {
   const wrap = el("div", { class: "checklist-item" });
   wrap.append(el("div", { class: "checklist-label" }, it.label));
   if (it.steps) {
-    wrap.append(el("ol", { class: "workflow-list" }, it.steps.map((step) => el("li", {}, step))));
+    wrap.append(el("ol", { class: "workflow-list" }, it.steps.map((step) => el("li", {}, breathText(step)))));
   } else if (it.tips) {
-    wrap.append(el("ul", { style: "padding-left:18px" }, it.tips.map((t) => el("li", {}, t))));
+    wrap.append(el("ul", { style: "padding-left:18px" }, it.tips.map((t) => el("li", {}, breathText(t)))));
   } else if (it.lines) {
-    wrap.append(el("ul", { class: "script-lines" }, it.lines.map((line) => el("li", {}, line))));
+    wrap.append(el("ul", { class: "script-lines" }, it.lines.map((line) => el("li", {}, breathText(line)))));
     if (it.reps) wrap.append(el("div", { class: "script-reps" }, it.reps));
   } else {
-    wrap.append(el("p", { class: "v" }, it.detail));
+    wrap.append(el("p", { class: "v" }, breathText(it.detail)));
   }
   return wrap;
 }
@@ -785,7 +813,7 @@ function exerciseDetailCard(ex, scope, closeModal) {
   ];
   fields.forEach(([label, val]) => {
     if (!val) return;
-    grid.append(el("div", { class: "field" }, [el("div", { class: "k" }, label), el("div", { class: "v" }, val)]));
+    grid.append(el("div", { class: "field" }, [el("div", { class: "k" }, label), el("div", { class: "v" }, breathText(val))]));
   });
   card.append(grid);
 
@@ -794,7 +822,7 @@ function exerciseDetailCard(ex, scope, closeModal) {
       el("div", { class: "k" }, "Positions / Variations"),
       el("ol", { class: "position-list" }, ex.positions.map((p) => el("li", {}, [
         el("span", { class: "position-label" }, p.label),
-        p.detail ? el("span", { class: "position-detail" }, " — " + p.detail) : null,
+        p.detail ? el("span", { class: "position-detail" }, [" — ", breathText(p.detail)]) : null,
       ]))),
     ]));
   }
@@ -802,23 +830,23 @@ function exerciseDetailCard(ex, scope, closeModal) {
   if (ex.cues && ex.cues.length) {
     card.append(el("div", { class: "field", style: "margin-top:14px;border-top:1px solid var(--line-soft);padding-top:10px" }, [
       el("div", { class: "k" }, "Cues"),
-      el("ul", { style: "margin:4px 0 0;padding-left:18px" }, ex.cues.map((c) => el("li", { class: "v" }, c))),
+      el("ul", { style: "margin:4px 0 0;padding-left:18px" }, ex.cues.map((c) => el("li", { class: "v" }, breathText(c)))),
     ]));
   }
   if (ex.faults && ex.faults.length) {
     card.append(el("div", { class: "field", style: "margin-top:10px" }, [
       el("div", { class: "k" }, "Common faults & corrections"),
-      el("ul", { style: "margin:4px 0 0;padding-left:18px" }, ex.faults.map((c) => el("li", { class: "v" }, c))),
+      el("ul", { style: "margin:4px 0 0;padding-left:18px" }, ex.faults.map((c) => el("li", { class: "v" }, breathText(c)))),
     ]));
   }
   if (ex.modifications && ex.modifications.length) {
     card.append(el("div", { class: "field", style: "margin-top:10px" }, [
       el("div", { class: "k" }, "Modifications"),
-      el("ul", { style: "margin:4px 0 0;padding-left:18px" }, ex.modifications.map((c) => el("li", { class: "v" }, c))),
+      el("ul", { style: "margin:4px 0 0;padding-left:18px" }, ex.modifications.map((c) => el("li", { class: "v" }, breathText(c)))),
     ]));
   }
   if (ex.notes) {
-    card.append(el("div", { class: "field", style: "margin-top:10px" }, [el("div", { class: "k" }, "Notes"), el("div", { class: "v" }, ex.notes)]));
+    card.append(el("div", { class: "field", style: "margin-top:10px" }, [el("div", { class: "k" }, "Notes"), el("div", { class: "v" }, breathText(ex.notes))]));
   }
   const exScript = scriptBox(ex.script);
   if (exScript) card.append(exScript);
@@ -1291,7 +1319,7 @@ function renderQuizQuestion() {
 
   const card = el("div", { class: "question-card" });
   card.append(el("span", { class: "qtag" }, q.topic || "General"));
-  card.append(el("div", { class: "qtext" }, q.q));
+  card.append(el("div", { class: "qtext" }, breathText(q.q)));
   mainView.append(card);
 
   const nextBtn = el("button", { class: "btn", disabled: "disabled" }, "Next →");
@@ -1327,7 +1355,7 @@ function renderQuizQuestion() {
 function qzExplain(card, correct, text, flag) {
   const box = el("div", { class: "qz-explain visible" }, [
     el("div", { class: "qz-verdict " + (correct ? "correct" : "incorrect") }, correct ? "Correct" : "Not quite"),
-    el("div", { class: "qz-explain-text" }, text),
+    el("div", { class: "qz-explain-text" }, breathText(text)),
     flag ? el("div", { class: "qz-flag" }, flag) : null,
   ]);
   card.append(box);
@@ -1449,7 +1477,7 @@ function renderRecallBody(card, q, finish) {
 
   const revealBox = el("div", { class: "reveal-box", style: "display:none" }, [
     el("div", { class: "label" }, "Answer"),
-    el("div", { class: "answer-text" }, q.a),
+    el("div", { class: "answer-text" }, breathText(q.a)),
     q.flag ? el("div", { class: "qz-flag" }, q.flag) : null,
   ]);
   card.append(revealBox);

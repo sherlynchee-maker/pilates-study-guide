@@ -13,6 +13,7 @@
   --accent-soft: #e2eaed;
   --highlight: #c97b4a;
   --highlight-soft: #f4e3d6;
+  --breath-inhale: #1c6fd1;
 
   --success: #3f7d5c;
   --success-soft: #dfeee5;
@@ -46,6 +47,7 @@
     --accent-soft: #1f3238;
     --highlight: #e0a268;
     --highlight-soft: #3a2c1e;
+    --breath-inhale: #5b9fef;
 
     --success: #6fbe93;
     --success-soft: #1c3128;
@@ -72,6 +74,7 @@
   --accent-soft: #1f3238;
   --highlight: #e0a268;
   --highlight-soft: #3a2c1e;
+  --breath-inhale: #5b9fef;
   --success: #6fbe93;
   --success-soft: #1c3128;
   --error: #e08774;
@@ -93,6 +96,7 @@
   --accent-soft: #e2eaed;
   --highlight: #c97b4a;
   --highlight-soft: #f4e3d6;
+  --breath-inhale: #1c6fd1;
   --success: #3f7d5c;
   --success-soft: #dfeee5;
   --error: #b4483a;
@@ -381,6 +385,10 @@ main {
 }
 
 .field .v { font-size: 13.5px; color: var(--ink); line-height: 1.5; white-space: pre-line; }
+
+.breath-cue { font-weight: 700; }
+.breath-cue.inhale { color: var(--breath-inhale); }
+.breath-cue.exhale { color: var(--highlight); }
 
 .position-list {
   margin: 4px 0 0;
