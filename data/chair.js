@@ -45,7 +45,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Chair against a wall with cushion/box/arc barrel behind back", "End-range pulse for a smaller-range stability challenge", "Alternative arm positions: fingers on Chair or genie arms", "Free leg bent to avoid gripping in hip flexors", "Free leg resting on a ball, femur parallel to floor"],
     notes: "-",
   
-    script: { lines: ["Let's move into Single Leg. Stay seated close to the front edge, one heel on the pedal in line with your sit-bone, and reach the other leg straight out in front at hip height.", "Exhale, keep the working ankle steady and extend the knee to press the pedal down; inhale to flex hip and knee and control it back up.", "Keep the free leg floating at that same height the whole time — don't let it drop as the working leg presses."] },
+    script: { lines: ["Let's move into Single Leg. Stay seated close to the front edge, one heel on the pedal in line with your sit-bone, and reach the other leg straight out in front at hip height.", "Exhale, keep the working ankle steady and extend the knee to press the pedal down; inhale to flex hip and knee and control it back up.", "Keep the free leg floating at that same height the whole time — don't let it drop as the working leg presses, using your hip flexors to hold it steady while the working leg's hip extensors and quadriceps do the pressing."] },
   },
   {
     name: "Hamstring Press Hips Down",
@@ -102,7 +102,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Hold handles for support instead of hands on Chair"],
     notes: "Can be introduced before Footwork Lower & Lift.\nStanding-foot heel-to-earlobe should be in one long line\nWatch the space between patella/tibial tuberosity and the seat edge\nKnee not hyperextended.",
   
-    script: { lines: ["Let's move into the Ankle Exercise. Stand facing the Chair in a forward lunge, hands on the frame, ball of your gesture foot on the pedal and that knee resting just below the patella on the padded front edge.", "Exhale to plantar flex the ankle and press the pedal down; inhale to dorsiflex and control it back up.", "Point slowly, then flex slowly, resisting the spring both directions, and keep the standing knee soft rather than locked."] },
+    script: { lines: ["Let's move into the Ankle Exercise. Stand facing the Chair in a forward lunge, hands on the frame, ball of your gesture foot on the pedal and that knee resting just below the patella on the padded front edge.", "Exhale to plantar flex the ankle and press the pedal down; inhale to dorsiflex and control it back up.", "Point slowly, then flex slowly, resisting the spring both directions with the soleus doing the pressing, and keep the standing knee soft rather than locked."] },
   },
   {
     name: "Lower & Lift Standing",
@@ -121,7 +121,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Reciprocal — lower one heel as the other knee flexes, switching simultaneously, exhaling on each lowering, 10-12 reps"],
     notes: "Good prep before Reformer Running.",
   
-    script: { lines: ["Let's move into Lower and Lift Standing. Stand facing the Chair, legs straight and adducted, balls of both feet on the pedal, ankles pointed, holding the handles.", "Exhale to lower the heels with control, dorsiflexing the ankles; inhale to lift the heels back up, pointing the ankles again.", "Stand tall like a plank between two glass walls — keep the torso vertical and the weight even across both big toes and pinky toes."] },
+    script: { lines: ["Let's move into Lower and Lift Standing. Stand facing the Chair, legs straight and adducted, balls of both feet on the pedal, ankles pointed, holding the handles.", "Exhale to lower the heels with control, dorsiflexing the ankles; inhale to lift the heels back up, pointing the ankles again.", "Stand tall like a plank between two glass walls — keep the torso vertical, letting the gastrocnemius and soleus lower and lift the heels while the glutes and hamstrings stabilize the pelvis on the femurs — weight even across both big toes and pinky toes."] },
   },
   {
     name: "Foot Press on Long Box",
@@ -132,7 +132,7 @@ window.STOTT.apparatus.chair = { essential: [
     startingPosition: "Box on floor in front of Chair.\nStand facing side, one foot on box, other foot on pedal, legs parallel.\nPelvis and spine neutral, hips level.\nClosest hand holding handle for balance, other arm down by side, scapulae stabilized.\nWhich leg flexes to move the pedal varies by position below.",
     pelvis: "Level and neutral throughout, no hiking",
     spine: "Neutral\nNo articulation",
-    breathing: "Box Leg Flexing — exhale, maintain pelvis level, keep pedal leg straight and flex the knee of the box leg to press pedal down\nInhale, extend the knee of the box leg and allow pedal to lift.\nPedal Leg Flexing — inhale, keep the knee of the box leg flexed and flex the knee of the pedal leg, allowing pedal to lift\nExhale, keep the box knee flexed and extend the pedal knee to press pedal down.\n10 reps each side, per position.",
+    breathing: "Box Leg Flexing — inhale, maintain pelvis level, keep pedal leg straight and flex the knee of the box leg to press pedal down\nExhale, extend the knee of the box leg and allow pedal to lift.\nPedal Leg Flexing — inhale, keep the knee of the box leg flexed and flex the knee of the pedal leg, allowing pedal to lift\nExhale, keep the box knee flexed and extend the pedal knee to press pedal down.\n10 reps each side, per position.",
     targetMuscles: "Box leg: quadriceps and hip extensors — eccentrically/concentrically to flex/extend the knee in Box Leg Flexing, isometrically to hold position in Pedal Leg Flexing\nLateral rotators, adductors and abductors to stabilize pelvis on femur\nPedal leg: quadriceps isometrically to keep the knee straight in Box Leg Flexing, eccentrically/concentrically as it flexes/extends in Pedal Leg Flexing\nTransversus abdominis, obliques, erector spinae throughout",
     focus: "Keep pelvis neutral and level, no anterior/posterior tilt or hike\nDon't let knees hyperextend\nMaintain knee-ankle-toe alignment\nAs little weight on the handle as possible — it's for balance, not for holding the body up",
     positions: [
@@ -143,7 +143,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Alternative arm position — genie arms crossed at shoulder height to challenge balance"],
     notes: "-",
   
-    script: { lines: ["Let's move into Foot Press on Long Box. Set a box on the floor beside the Chair, stand facing sideways with one foot on the box and the other on the pedal, closest hand on the handle for balance.", "For Box Leg Flexing: exhale, keep the pedal leg straight and flex the box-leg knee to press the pedal down; inhale to extend it and let the pedal lift.", "Keep the pelvis level like a shelf throughout, and use as little weight on the handle as possible — it's for balance, not for holding you up."] },
+    script: { lines: ["Let's move into Foot Press on Long Box. Set a box on the floor beside the Chair, stand facing sideways with one foot on the box and the other on the pedal, closest hand on the handle for balance.", "For Box Leg Flexing: inhale, keep the pedal leg straight and flex the box-leg knee to press the pedal down; exhale to extend it and let the pedal lift.", "Keep the pelvis level like a shelf throughout — quadriceps and hip extensors of the box leg do the work while adductors and abductors stabilize the pelvis on the standing femur — and use as little weight on the handle as possible — it's for balance, not for holding you up."] },
   },
   {
     name: "Crossover Press",
@@ -162,7 +162,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Alternative arm position — genie arms, cross arms in front of body to challenge balance"],
     notes: "Focus areas: inner thighs/adductors and glutes.\nStanding-leg glute medius engages to prevent hip drop.",
   
-    script: { lines: ["Let's move into Crossover Press. Stand facing sideways to the Chair, closest leg straight near the back edge, other leg almost straight and crossed over it with the foot on the pedal.", "Inhale to flex the pedal-leg knee and let the pedal lift; exhale, keep the pelvis level, and extend the knee as far as possible to press it back down.", "Zip the inner thighs together as you press, and stay stacked over the standing leg rather than leaning toward the working side."] },
+    script: { lines: ["Let's move into Crossover Press. Stand facing sideways to the Chair, closest leg straight near the back edge, other leg almost straight and crossed over it with the foot on the pedal.", "Inhale to flex the pedal-leg knee and let the pedal lift; exhale, keep the pelvis level, and extend the knee as far as possible to press it back down.", "Zip the inner thighs together as you press, letting the pedal leg's hip extensors and quadriceps do the work, and squeeze the standing leg's glutes to stay stacked over it rather than leaning toward the working side."] },
   },
   {
     name: "Standing Leg Press",
@@ -184,7 +184,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Hold lower handles for balance", "Stand on a Bosu to increase the balance challenge"],
     notes: "-",
   
-    script: { lines: ["Let's move into Standing Leg Press. Stand facing the Chair for the Front position, or facing sideways for Side, supporting leg straight and the gesture leg reaching to press the pedal with the ball of the foot.", "Inhale to flex the pedal-leg knee and let the pedal lift; exhale to extend it fully, pressing the pedal down.", "Keep your weight anchored on the supporting leg the whole time — let the gesture leg float and press freely without shifting your weight onto it."] },
+    script: { lines: ["Let's move into Standing Leg Press. Stand facing the Chair for the Front position, or facing sideways for Side, supporting leg straight and the gesture leg reaching to press the pedal with the ball of the foot.", "Inhale to flex the pedal-leg knee and let the pedal lift; exhale to extend it fully, pressing the pedal down.", "Keep your weight anchored on the supporting leg's glutes and hamstrings the whole time — let the gesture leg's quadriceps and hip extensors float and press freely without shifting your weight onto it."] },
   },
   {
     name: "Scapula Isolation Prone",
@@ -207,7 +207,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Flex knees to decrease the leg lever and load on hip extensors/lumbar", "One arm — free hand on forehead (hardest), out to the side, or alongside torso (easiest)", "Full range — go from complete protraction through neutral to complete retraction", "On a foam cushion to raise the body for long-armed clients, or to reduce base of support", "Split-pedal bilateral / unilateral"],
     notes: "Harder than the Cadillac equivalent due to a smaller base of support.\nGood for winging scapulae or kyphosis\nAlso good for long legs or lumbar issues since it encourages glute engagement.\nProgression: Scapula Isolation to Rotation Prone.",
   
-    script: { lines: ["Let's move into Scapula Isolation Prone. Lie prone on the Chair in one line from head to feet, hands on the pedal with arms straight and fingers pointing forward, pedal hovering just above the frame.", "For Retraction: inhale to retract the shoulder blades toward the spine, letting the pedal lift; exhale to bring them back to neutral, pressing the pedal down.", "Keep the elbows straight and soft throughout — only the shoulder blades move, the torso stays completely still."] },
+    script: { lines: ["Let's move into Scapula Isolation Prone. Lie prone on the Chair in one line from head to feet, hands on the pedal with arms straight and fingers pointing forward, pedal hovering just above the frame.", "For Retraction: inhale to retract the shoulder blades toward the spine using mid-trapezius and rhomboids, letting the pedal lift; exhale to bring them back to neutral, pressing the pedal down. For Protraction, it's serratus anterior driving the press instead.", "Keep the elbows straight and soft throughout — only the shoulder blades move, the torso stays completely still."] },
   },
   {
     name: "One Arm Push Prone",
@@ -226,7 +226,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Two-arm push — both hands on pedal, less challenging for rotational stability, good prep", "Flex knees to reduce leg-lever load", "Alternative free-arm positions: forehead (hardest), out to side, or along torso (easiest)", "Angle elbow out to emphasize pectoralis major, in to emphasize triceps", "On a foam cushion for long arms or reduced base of support", "Split-pedal bilateral / unilateral / reciprocal"],
     notes: "For long-legged or lumbar-sensitive clients, a gym ball between the knees with knees flexed encourages glute/adductor engagement.\nSame foam-cushion modification applies to Scapula Isolation Prone.",
   
-    script: { lines: ["Let's move into One Arm Push Prone. Stay prone on the Chair, one hand on the pedal with the arm straight, other hand resting on your forehead, pedal hovering just above the frame.", "Inhale to flex the elbow, angling it slightly out to the side as the pedal lifts; exhale to extend the elbow and press the pedal down.", "Don't let the torso rotate as the pedal presses — keep the hips level and engage the obliques to resist twisting."] },
+    script: { lines: ["Let's move into One Arm Push Prone. Stay prone on the Chair, one hand on the pedal with the arm straight, other hand resting on your forehead, pedal hovering just above the frame.", "Inhale to flex the elbow, angling it slightly out to the side as the pedal lifts; exhale, driving through triceps and pectoralis major, to extend the elbow and press the pedal down.", "Don't let the torso rotate as the pedal presses — keep the hips level and engage the obliques to resist twisting."] },
   },
   {
     name: "Triceps Press Sitting",
@@ -245,7 +245,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Alternative sitting positions — box, foam cushion or platform extender, or adduct legs with knees flexed", "Alternative hand position — hands on outside of pedal, fingers pointing out to the side", "Split-pedal bilateral / unilateral / reciprocal"],
     notes: "Instructor tip: place one leg inside with the ball of the foot on the pedal (plantar flexed) to help press pedal down, other leg supports on the floor outside.",
   
-    script: { lines: ["Let's move into Triceps Press Sitting. Sit on the mat facing away from the Chair, legs tailor-crossed, elbows bent behind you with the heels of your hands pressing the pedal, fingers pointing forward.", "Inhale to stabilize the shoulder blades and flex the elbows, letting the pedal lift; exhale to extend the elbows and press it back down.", "Keep the shoulders anchored down and stacked over the hips — don't let them creep up toward your ears as the pedal lifts."] },
+    script: { lines: ["Let's move into Triceps Press Sitting. Sit on the mat facing away from the Chair, legs tailor-crossed, elbows bent behind you with the heels of your hands pressing the pedal, fingers pointing forward.", "Inhale to stabilize the shoulder blades and flex the elbows, letting the pedal lift; exhale, using the triceps, to extend the elbows and press it back down.", "Keep the shoulders anchored down and stacked over the hips — don't let them creep up toward your ears as the pedal lifts."] },
   },
   {
     name: "Scapula Isolation Standing",
@@ -264,7 +264,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Facing Chair — repeat with torso facing Chair, torso/hips as neutral as possible with feet on pedal"],
     notes: "Progresses to Knee Raises (p.61).\nFor clients with weak quads/legs, spring resistance can be increased for more assist.\nHandles around shoulder height while standing on the floor\nLower handles = more range but harder for scapular stabilizers.",
   
-    script: { lines: ["Let's move into Scapula Isolation Standing. Stand facing away from the Chair, hands holding the tops of the handles supporting your body weight, balls of both feet on the pedal, legs straight.", "Inhale, with control, let the shoulder blades shrug up toward your ears as your body lowers and the pedal drops; exhale, slide the shoulder blades back down the back to lift your body and the pedal.", "Keep the arms straight the whole time — the movement is isolated entirely to the scapulae, not the elbows."] },
+    script: { lines: ["Let's move into Scapula Isolation Standing. Stand facing away from the Chair, hands holding the tops of the handles supporting your body weight, balls of both feet on the pedal, legs straight.", "Inhale, with control, let the shoulder blades shrug up toward your ears as your body lowers and the pedal drops, lengthening latissimus dorsi; exhale, slide the shoulder blades back down the back using lower trapezius to lift your body and the pedal.", "Keep the arms straight the whole time — the movement is isolated entirely to the scapulae, not the elbows."] },
   },
   {
     name: "Triceps Press Standing",
@@ -283,7 +283,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Facing Chair — repeat with torso facing Chair, feet on pedal"],
     notes: "Prep exercise for Knee Raises (p.61).",
   
-    script: { lines: ["Let's move into Triceps Press Standing. Same standing position — hands on top of the handles, balls of the feet on the pedal, torso vertical.", "Inhale, keep the shoulder blades stable and flex the elbows as your body lowers; exhale, extend the elbows to bring your body back up as the pedal lifts.", "Open the collarbones wide as the elbows extend, and flex only the elbows — nothing else in the body should move."] },
+    script: { lines: ["Let's move into Triceps Press Standing. Same standing position — hands on top of the handles, balls of the feet on the pedal, torso vertical.", "Inhale, keep the shoulder blades stable and flex the elbows as your body lowers; exhale, using the triceps, to extend the elbows and bring your body back up as the pedal lifts.", "Open the collarbones wide as the elbows extend, and flex only the elbows — nothing else in the body should move."] },
   },
   {
     name: "One Arm Prep Hand on Floor",
@@ -302,7 +302,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Alternative starting position — knees farther back than pelvis, hips extended for one line from knees to head (~20% hip joint)", "Angle elbow out to emphasize pectoralis major, in to emphasize triceps"],
     notes: "Similar setup to Leg Pull Front Prep.\nFoot position (dorsiflexed or plantar flexed) doesn't matter.",
   
-    script: { lines: ["Let's move into One Arm Prep Hand on Floor. Come onto hands and knees at 90 degrees to the Chair, one hand on the pedal, the other on a cushion to bring it level, knees under your hips.", "Inhale, keep the torso stable and flex the elbow of the pedal arm, angling it slightly out as the pedal lifts; exhale to extend the elbow and press it back down.", "Keep both shoulders level throughout — don't let the pedal-side shoulder drop lower than the other as you press."] },
+    script: { lines: ["Let's move into One Arm Prep Hand on Floor. Come onto hands and knees at 90 degrees to the Chair, one hand on the pedal, the other on a cushion to bring it level, knees under your hips.", "Inhale, keep the torso stable and flex the elbow of the pedal arm, angling it slightly out as the pedal lifts; exhale, using triceps and pectoralis major, to extend the elbow and press it back down.", "Keep both shoulders level throughout — don't let the pedal-side shoulder drop lower than the other, keeping serratus anterior engaged to hold the shoulder blade flat against the ribcage."] },
   },
   {
     name: "Ab Press Sitting",
@@ -321,7 +321,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Omit flexion — keep torso neutral and vertical, press pedal down with arms only, emphasizing latissimus dorsi connection", "Alternative sitting positions — legs crossed on a cushion/platform extender, or knees slightly flexed", "Split-pedal bilateral (with torso flexion) or unilateral/reciprocal (combined with Omit Flexion modification, no spinal movement, arms only)"],
     notes: "Like Mat Spine Flex Forward / fitness-circle modification.\nWeight stays on the sit-bones\nHands in a diamond shape on the pedal\nFeet can be dorsiflexed or plantar flexed, legs can be bent or straight.",
   
-    script: { lines: ["Let's move into Ab Press Sitting. Sit on the mat facing the Chair, legs straight and wider than the frame, hands on the pedal with elbows slightly bent, pedal pressed down slightly to start.", "Exhale, keep your arms in the same relationship to your torso and sequentially articulate the spine into flexion from head to tail to press the pedal down; inhale to sequentially articulate back up to vertical, letting the pedal lift.", "Let your abdominals do the pressing, not your arms — imagine sitting between two glass walls, your spine only rounding forward, never leaning back."] },
+    script: { lines: ["Let's move into Ab Press Sitting. Sit on the mat facing the Chair, legs straight and wider than the frame, hands on the pedal with elbows slightly bent, pedal pressed down slightly to start.", "Exhale, keep your arms in the same relationship to your torso and sequentially articulate the spine into flexion from head to tail to press the pedal down; inhale to sequentially articulate back up to vertical, letting the pedal lift.", "Let your rectus abdominis and obliques do the pressing, not your arms — imagine sitting between two glass walls, your spine only rounding forward, never leaning back."] },
   },
   {
     name: "Cat Standing Front",
@@ -338,14 +338,14 @@ window.STOTT.apparatus.chair = { essential: [
     cues: ["Deep flexion — head lower than pelvis, articulate head to tail", "Don't shift your weight forward to press the pedal, use your abs", "Both hands leave the pedal at the same time, not one after another"],
     faults: ["Leaning weight forward onto the pedal instead of flexing from the abdominals — engage abs to press down, not body weight", "Coming out of flexion before the pelvis is vertical on the roll-up — sequence pelvis-to-vertical first"],
     positions: [
-      { label: "Articulation", detail: "Exhale, initiate from the head and roll the spine sequentially into flexion, reaching hands forward to press the pedal down until just above the frame; inhale, keep the pedal down and lengthen the spine from flexion to neutral from the tail; exhale, initiate from the tail to flex the spine again, releasing pedal tension while keeping the flexion; exhale, release the hands and continue rolling up sequentially to standing." },
+      { label: "Articulation", detail: "Exhale, initiate from the head and roll the spine sequentially into flexion, reaching hands forward to press the pedal down until just above the frame; inhale, keep the pedal down and lengthen the spine from flexion to neutral from the tail; exhale, initiate from the tail to flex the spine again, releasing pedal tension while keeping the flexion; inhale, release the hands and continue rolling up sequentially to standing." },
       { label: "Ab Pulses", detail: "Same roll-down, then for 3 counts press the pedal down in time with the breath, increasing flexion with each pulse (3 reps), then roll up." },
       { label: "Arm Presses", detail: "Same roll-down, then flex the elbows (angled slightly out) as the pedal lifts, extend the elbows to press down (3 reps), then roll up." },
     ],
     modifications: ["Prep — simply roll down to press pedal, roll up to release, for sequencing/stabilization practice", "Allow knees to flex during roll-down or lengthening if hamstrings are tight", "One arm — free hand on forehead, emphasizing obliques/multifidus against rotation", "Split-pedal bilateral (all 3 positions) / unilateral or reciprocal (Arm Presses)"],
     notes: "Trained professional must spot throughout, hands near the pedal, never leaning over it, ensuring the pedal doesn't release suddenly.\nLighter springs may not give enough abdominal-engagement feedback.",
   
-    script: { lines: ["Let's move into Cat Standing Front. Stand facing the Chair, feet hip-distance apart, legs straight and parallel, arms long by your sides.", "Exhale, initiate from the head and roll the spine sequentially into flexion, reaching your hands forward to press the pedal down; inhale to lengthen from the tail to neutral at the bottom, then continue the sequence back up to standing.", "Don't shift your weight forward onto the pedal to press it down — use your abdominals, and let both hands leave the pedal at the same time on the way up."] },
+    script: { lines: ["Let's move into Cat Standing Front. Stand facing the Chair, feet hip-distance apart, legs straight and parallel, arms long by your sides.", "Exhale, initiate from the head and roll the spine sequentially into flexion, reaching your hands forward to press the pedal down; inhale to lengthen from the tail to neutral at the bottom, then continue the sequence back up to standing.", "Don't shift your weight forward onto the pedal to press it down — use your rectus abdominis and obliques, and let both hands leave the pedal at the same time on the way up."] },
   },
   {
     name: "Torso Press Sitting Prep",
@@ -356,7 +356,7 @@ window.STOTT.apparatus.chair = { essential: [
     startingPosition: "Box on floor behind Chair.\nSeated in center of Chair, facing back.\nPelvis and spine neutral.\nFeet on box, knees flexed and hip-distance apart.\nArms straight and medially rotated, fingers reaching toward pedal, scapulae stabilized.\nSit far enough forward that the sacrum can roll onto (not off) the Chair.",
     pelvis: "Rolls the ASIS away from the front of the femurs into posterior tilt to initiate lumbar flexion",
     spine: "Whole-spine flexion, rolling back until the sacrum contacts the Chair, then rolling forward to release",
-    breathing: "Inhale to prepare\nExhale, keep feet stable on the box and roll the ASIS away from the femurs to flex the lumbar spine (upper spine flexes in response), reaching hands back to press pedal down, fingers pointing in, rolling back until the sacrum contacts the Chair, abdominals flat\nInhale, roll rib cage toward pelvis and roll forward just enough to allow pedal to lift\nThen try to increase spinal flexion and roll back to press pedal down again\nInhale to release.\n5-10 reps.\nTo finish, continue rolling forward, releasing hands from the pedal, until pelvis is vertical, then sequentially articulate tail-to-head to neutral sitting.",
+    breathing: "Inhale to prepare\nExhale, keep feet stable on the box and roll the ASIS away from the femurs to flex the lumbar spine (upper spine flexes in response), reaching hands back to press pedal down, fingers pointing in, rolling back until the sacrum contacts the Chair, abdominals flat\nInhale, roll rib cage toward pelvis and roll forward just enough to allow pedal to lift\nExhale, try to increase spinal flexion and roll back to press pedal down again.\n5-10 reps.\nTo finish: exhale, continue rolling forward, maintaining flexion and releasing hands from the pedal, until pelvis is vertical\nInhale, sequentially articulate spine from tail to head, returning to a neutral sitting position.",
     targetMuscles: "Transversus abdominis and pelvic floor\nRectus abdominis and obliques concentrically to create flexion\nScapular stabilizers",
     focus: "Roll the ASIS away from the femurs, avoid just hinging back at the hips\nAvoid overly flexing the cervical spine/jamming the chin to the chest\nFeel spinal flexion increasing in both directions\nAvoid overextending the wrists",
     cues: ["Feet stay higher than the pelvis, use the box to assist the roll back", "Maintain the whole-spine C-curve throughout, shorten the space between ribcage and pelvis"],
@@ -364,7 +364,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Add pulses — exhale for 3 counts, pressing lower with each pulse (3,3,3,4 pattern)"],
     notes: "Trained professional must spot throughout, hands near the pedal, never leaning over it.\nSit one fist-distance from the edge, not against it, to allow room for the sacrum to roll onto the Chair.",
   
-    script: { lines: ["Let's move into Torso Press Sitting Prep. Set a box behind the Chair and sit in the center facing the back, feet on the box with knees bent, arms straight and reaching back toward the pedal.", "Exhale, roll your ASIS away from your femurs to flex the lumbar spine, reaching back to press the pedal down until your sacrum contacts the Chair; inhale to roll your rib cage toward your pelvis and release just enough for the pedal to lift.", "Feet stay higher than your pelvis to help you roll back, and keep the whole-spine C-curve throughout rather than just hinging back at the hips."] },
+    script: { lines: ["Let's move into Torso Press Sitting Prep. Set a box behind the Chair and sit in the center facing the back, feet on the box with knees bent, arms straight and reaching back toward the pedal.", "Exhale, using rectus abdominis and obliques, roll your ASIS away from your femurs to flex the lumbar spine, reaching back to press the pedal down until your sacrum contacts the Chair; inhale to roll your rib cage toward your pelvis and release just enough for the pedal to lift.", "Feet stay higher than your pelvis to help you roll back, and keep the whole-spine C-curve throughout rather than just hinging back at the hips."] },
   },
   {
     name: "Swan Dive from Floor",
@@ -383,7 +383,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: [],
     notes: "Unlike the Mat Swan Dive (which has a held stay), this is a continuous, flowing movement without a pause.\nRequires shoulder and hip-joint mobility.",
   
-    script: { lines: ["Let's move into Swan Dive from Floor. Lie prone on the mat facing the Chair, an arm's length away, palms on the pedal shoulder-distance apart, head hovering between your arms.", "Inhale to begin extending the spine, lengthening through the crown of the head while pressing lightly on the pedal; exhale to continue extending as far as comfortable, using the pedal for leverage, then lengthen back down.", "Keep your pubic bone on the floor the entire time — this is a continuous, flowing extension, not a held stay."] },
+    script: { lines: ["Let's move into Swan Dive from Floor. Lie prone on the mat facing the Chair, an arm's length away, palms on the pedal shoulder-distance apart, head hovering between your arms.", "Inhale to begin extending the spine, lengthening through the crown of the head while pressing lightly on the pedal; exhale, using erector spinae and latissimus dorsi, to continue extending as far as comfortable, using the pedal for leverage, then lengthen back down.", "Keep your pubic bone on the floor the entire time — this is a continuous, flowing extension, not a held stay."] },
   },
   {
     name: "Swan Dive Prep",
@@ -402,7 +402,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Two breath — inhale to extend spine, exhale to return, instead of a held stay", "Split-pedal bilateral, avoiding rotation of the torso"],
     notes: "Trained professional must spot throughout, never leaning over the pedal, ensuring the exerciser controls the pedal at all times.",
   
-    script: { lines: ["Let's move into Swan Dive Prep. Lie prone on the Chair with your ASIS just behind the front edge, arms straight, hands on the pedal shoulder-distance apart, pedal hovering just above the frame.", "Exhale to stabilize the shoulder blades and extend the spine as high as comfortable, lifting and drawing the pedal toward you; inhale to hold, then exhale to lengthen back down.", "Engage your shoulder blades before you extend, and keep your pubic bone anchored on the Chair throughout — lead the extension from your upper back, not your low back."] },
+    script: { lines: ["Let's move into Swan Dive Prep. Lie prone on the Chair with your ASIS just behind the front edge, arms straight, hands on the pedal shoulder-distance apart, pedal hovering just above the frame.", "Exhale to stabilize the shoulder blades and extend the spine as high as comfortable using erector spinae and latissimus dorsi, lifting and drawing the pedal toward you; inhale to hold, then exhale to lengthen back down.", "Engage your shoulder blades before you extend, and keep your pubic bone anchored on the Chair throughout — lead the extension from your upper back, not your low back."] },
   },
   {
     name: "Mermaid",
@@ -421,7 +421,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Knees flexed if gripping in the hip flexors or to help achieve neutral sitting", "Feet on a ball if gripping in hip flexors — keep the whole sole of the foot on the ball, preventing it from rolling"],
     notes: "Long-lever exercise, so avoid leaning or extending the spine.\nTrained professional must spot throughout, never leaning over the pedal, and ensure the exerciser doesn't lose balance.",
   
-    script: { lines: ["Let's move into Mermaid. Sit on the Chair facing sideways, legs straight and reaching in front of you, arms out to the sides.", "Inhale to reach the outside arm overhead and the inside arm down toward the pedal; exhale to laterally flex the torso, placing your palm on the pedal and pressing it down as far as balance allows.", "Keep your spine tall like standing between two glass walls, and let the opposite hip lift slightly rather than leaning back."] },
+    script: { lines: ["Let's move into Mermaid. Sit on the Chair facing sideways, legs straight and reaching in front of you, arms out to the sides.", "Inhale to reach the outside arm overhead and the inside arm down toward the pedal; exhale, using the top-side obliques, to laterally flex the torso, placing your palm on the pedal and pressing it down as far as balance allows.", "Keep your spine tall like standing between two glass walls, and let the opposite hip lift slightly rather than leaning back."] },
   },
   {
     name: "Mermaid Kneeling",
@@ -440,7 +440,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: [],
     notes: "Knees positioned slightly behind the middle of the Chair, hand slightly in front of middle.",
   
-    script: { lines: ["Let's move into Mermaid Kneeling. Kneel on the mat in front of the Chair, facing sideways, knees hip-distance apart, hand closest to the Chair on the pedal, other arm reaching out to the side.", "Inhale to reach the outside arm overhead; exhale, initiating from the top of your head, laterally flex the spine toward the pedal, pressing it down while the free arm stays overhead.", "Keep equal weight on both knees the whole time, and let the hand slide along the pedal before you engage the shoulder to press it."] },
+    script: { lines: ["Let's move into Mermaid Kneeling. Kneel on the mat in front of the Chair, facing sideways, knees hip-distance apart, hand closest to the Chair on the pedal, other arm reaching out to the side.", "Inhale to reach the outside arm overhead; exhale, using the near-side obliques, initiating from the top of your head, laterally flex the spine toward the pedal, pressing it down while the free arm stays overhead.", "Keep equal weight on both knees the whole time, and let the hand slide along the pedal before you engage the shoulder to press it."] },
   },
 ], intermediate: [
   {
@@ -460,7 +460,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Perform imprinted if neutral spine can't be stabilized", "Split-pedal bilateral / unilateral / reciprocal (springs 2 heavy low)"],
     notes: "Only for clients already flexible in the hip joint — good for increasing hip flexibility/mobility.\nProgress to this from Cadillac Frog/Beats/Hip Opener/Developpe or Reformer/Ladder Barrel Ballet Stretch.",
   
-    script: { lines: ["Let's move into Frog Lying Flat. Lie supine with your head away from the Chair, legs bent and turned out, the outsides of your feet resting on top of the raised pedal.", "Exhale, increase the turnout and open the knees out to the sides to press the pedal down, without letting the feet press lower than the knees; inhale to control the return, keeping the knees open.", "Open the hip joint like a frog rather than pushing with your feet — keep the ankles slightly higher than the knees the whole time."] },
+    script: { lines: ["Let's move into Frog Lying Flat. Lie supine with your head away from the Chair, legs bent and turned out, the outsides of your feet resting on top of the raised pedal.", "Exhale, increase the turnout and open the knees out to the sides to press the pedal down, without letting the feet press lower than the knees; inhale to control the return, keeping the knees open.", "Open the hip joint like a frog, using the lateral rotators of the hip, rather than pushing with your feet — keep the ankles slightly higher than the knees the whole time."] },
   },
   {
     name: "Hamstring Press Hips Up",
@@ -471,7 +471,7 @@ window.STOTT.apparatus.chair = { essential: [
     startingPosition: "Supine on floor (mat in front of Chair), head away from Chair, pelvis and spine neutral.\nLegs parallel, abducted hip-distance apart, knees flexed with arches of feet on pedal in line with sit-bones.\nArms long by sides, scapulae stabilized.",
     pelvis: "Sequentially lifted off the mat to hips-up position, then held stable while pedal is worked",
     spine: "Articulates sequentially from tail to upper thoracic on the way up, thoracic to tail on the way down\nNot onto cervical spine",
-    breathing: "Inhale to prepare\nWithout pressing the pedal, sequentially articulate spine off the mat from the tail, one vertebra at a time, to upper thoracic\nInhale and stay\nThen for 3 counts keep hips lifted, flex knees to press pedal down in time with breath, extend knees slightly to allow pedal to lift (3 reps)\nExhale to sequentially articulate spine back down to the floor from thoracic to return (3 reps).",
+    breathing: "Inhale to prepare\nExhale, without pressing the pedal, to sequentially articulate spine off the mat from the tail, one vertebra at a time, to upper thoracic\nInhale and stay\nThen for 3 counts, exhale to keep hips lifted and flex knees to press pedal down in time with breath, inhale to extend knees slightly and allow pedal to lift (3 reps)\nTo finish, exhale to sequentially articulate spine back down to the floor from thoracic to return (3 reps).",
     targetMuscles: "Transversus abdominis and pelvic floor\nRectus abdominis and obliques concentrically to flex spine, eccentrically on return\nGluteus maximus and hamstrings concentrically to lift and hold the pelvis\nHamstrings concentrically to press pedal down, eccentrically on return\nScapular stabilizers",
     focus: "Articulate sequentially so each vertebra peels off/contacts separately\nMaintain abdominal connection to prevent lumbar overextension at the top\nSupport pelvis with glutes/hamstrings\nRoll only onto upper thoracic, not cervical\nMaintain parallel leg alignment",
     cues: ["Peel up bone by bone from the tail to the top of the shoulder blades", "Once up, hold the bridge steady while the knees pump the pedal", "Long hamstrings need to strengthen both the knee and hip joint"],
@@ -479,7 +479,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Single Leg Pumps — roll to neutral hips, lift one leg reaching to ceiling, press pedal with the other (challenges obliques/multifidus against rotation), keep at mid-range ~50% tension", "Split-pedal bilateral / unilateral / reciprocal (springs 2 heavy low)"],
     notes: "Prep for Cadillac Push-Thru with Feet.\nProgresses from Hamstring Press Hips Down.",
   
-    script: { lines: ["Let's move into Hamstring Press Hips Up. Lie supine with your head away from the Chair, knees bent, arches of your feet on the pedal in line with your sit-bones.", "Without pressing the pedal, sequentially articulate your spine up off the mat one vertebra at a time into a bridge; then hold the bridge and flex the knees to press the pedal down for three counts, extending slightly to let it lift.", "Peel up bone by bone from the tail to the top of your shoulder blades, then hold the bridge steady while your knees pump the pedal."] },
+    script: { lines: ["Let's move into Hamstring Press Hips Up. Lie supine with your head away from the Chair, knees bent, arches of your feet on the pedal in line with your sit-bones.", "Exhale, without pressing the pedal, to sequentially articulate your spine up off the mat one vertebra at a time into a bridge using your glutes and hamstrings; then hold the bridge and flex the knees to press the pedal down for three counts, extending slightly to let it lift.", "Peel up bone by bone from the tail to the top of your shoulder blades, then hold the bridge steady while your knees pump the pedal."] },
   },
   {
     name: "Forward Step Up",
@@ -498,7 +498,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Small range — start standing on top of Chair, press pedal only halfway down", "Alternative arm positions — genie arms, arms reaching up or out to the side"],
     notes: "Keep hip crest level with handle height if possible\nMay be easier for petite clients.",
   
-    script: { lines: ["Let's move into Forward Step Up. Stand facing the Chair, one leg straight with the ball of your foot on the pedal, the other knee bent with the foot flat on top of the Chair, hands on the handles.", "Exhale, plantar flex the pedal ankle and extend the knee of the Chair leg to stand up as the pedal lifts; inhale to flex that knee and control the pedal back down.", "Press through the whole foot and engage the quad of the standing leg — don't use your arms to haul yourself up."] },
+    script: { lines: ["Let's move into Forward Step Up. Stand facing the Chair, one leg straight with the ball of your foot on the pedal, the other knee bent with the foot flat on top of the Chair, hands on the handles.", "Exhale, plantar flex the pedal ankle and extend the knee of the Chair leg to stand up as the pedal lifts; inhale to flex that knee and control the pedal back down.", "Press through the whole foot, engaging the hip extensors and quadriceps of the standing leg — don't use your arms to haul yourself up."] },
   },
   {
     name: "Forward Step Down",
@@ -517,7 +517,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Alternative arm positions — genie arms, arms reaching up or to the side"],
     notes: "Toes land about two fingers from the edge\nLegs adducted/parallel (can be slightly abducted for bow-legged clients)\nBack heel up = more range, back heel down = less range.",
   
-    script: { lines: ["Let's move into Forward Step Down. Stand upright on top of the Chair facing the pedal, legs straight and parallel, hands resting on the handles.", "Inhale to reach one foot forward and point the toes; exhale, flex the supporting knee and reach the gesture leg to press the pedal down, then continue pulsing the gesture knee to work the pedal.", "Reach your toes forward first, then let the body follow down — keep the standing knee soft and stacked over the ankle."] },
+    script: { lines: ["Let's move into Forward Step Down. Stand upright on top of the Chair facing the pedal, legs straight and parallel, hands resting on the handles.", "Inhale to reach one foot forward and point the toes; exhale, flex the supporting knee and reach the gesture leg to press the pedal down, then continue pulsing the gesture knee to work the pedal.", "Reach your toes forward first, then let the body follow down — keep the standing knee's quadriceps engaged isometrically and stacked over the ankle."] },
   },
   {
     name: "Side Step Down",
@@ -536,7 +536,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Alternative arm positions", "Keep legs parallel throughout instead of laterally rotated"],
     notes: "-",
   
-    script: { lines: ["Let's move into Side Step Down. Stand upright on top of the Chair facing sideways, legs turned out, hand resting on the front handle.", "Inhale to reach the leg closest to the pedal out to the side and point the toes; exhale, flex the supporting knee and reach that leg to press the pedal down with the ball of the foot.", "Keep your pubic bone aligned with the handle pole, and don't let the pelvis hike as the working leg reaches out."] },
+    script: { lines: ["Let's move into Side Step Down. Stand upright on top of the Chair facing sideways, legs turned out, hand resting on the front handle.", "Inhale to reach the leg closest to the pedal out to the side and point the toes; exhale, flex the supporting knee and reach that leg to press the pedal down with the ball of the foot.", "Keep your pubic bone aligned with the handle pole and quadriceps of the supporting leg engaged, and don't let the pelvis hike as the working leg reaches out."] },
   },
   {
     name: "Backward Step Down",
@@ -555,7 +555,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Alternative arm positions; hold back corners of Chair in a forward-lunge position for a less balance-challenging variation"],
     notes: "Legs can be slightly laterally rotated depending on femur rotation\nKeep hip lower than shoulders, pelvis level.",
   
-    script: { lines: ["Let's move into Backward Step Down. Stand upright on top of the Chair facing away from the pedal, legs straight and parallel, hands on the handles.", "Inhale to reach one foot back and point the toes; exhale, flex the supporting knee and reach the gesture leg back to press the pedal down with the ball of the foot.", "Lean slightly forward from the hips as the leg reaches back, not from the low back, and keep your weight on the front supporting leg."] },
+    script: { lines: ["Let's move into Backward Step Down. Stand upright on top of the Chair facing away from the pedal, legs straight and parallel, hands on the handles.", "Inhale to reach one foot back and point the toes; exhale, flex the supporting knee and reach the gesture leg back to press the pedal down with the ball of the foot.", "Lean slightly forward from the hips as the leg reaches back, not from the low back, and keep your weight and quadriceps engagement on the front supporting leg."] },
   },
   {
     name: "Knee Raises",
@@ -574,7 +574,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Progress here from the Frog series once arm/ab strength is built"],
     notes: "Progression target for Scapula Isolation Standing/Triceps Press Standing/Frog Back Hips Up.",
   
-    script: { lines: ["Let's move into Knee Raises. Hold the tops of the handles, supporting your body weight, torso imprinted and vertical, legs straight and reaching slightly forward of the Chair.", "Exhale, stabilize your torso and shoulder blades and flex the knees and hips, pulling the knees as high as possible toward your torso; inhale to extend the knees and reach the feet back down.", "Imagine a wall behind you and keep your spine tall against it — if you're swinging, slow it right down and stabilize your shoulder blades first."] },
+    script: { lines: ["Let's move into Knee Raises. Hold the tops of the handles, supporting your body weight, torso imprinted and vertical, legs straight and reaching slightly forward of the Chair.", "Exhale, stabilize your torso and shoulder blades and use your hip flexors to flex the knees and hips, pulling the knees as high as possible toward your torso; inhale to extend the knees and reach the feet back down.", "Imagine a wall behind you and keep your spine tall against it — if you're swinging, slow it right down and stabilize your shoulder blades first."] },
   },
   {
     name: "Knee Raises with Obliques",
@@ -593,7 +593,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: [],
     notes: "Target: hip flexors plus obliques.",
   
-    script: { lines: ["Let's move into Knee Raises with Obliques. Same hanging position as Knee Raises — hands on the handles, torso imprinted, legs reaching slightly forward.", "Exhale, pull the knees up while simultaneously rotating your pelvis to one side so the knees reach toward that shoulder, keeping your upper body facing forward; inhale to extend the knees back down and return the pelvis to center.", "Rotate the pelvis first, then lift the knees, and keep both shoulders square to the front the whole time."] },
+    script: { lines: ["Let's move into Knee Raises with Obliques. Same hanging position as Knee Raises — hands on the handles, torso imprinted, legs reaching slightly forward.", "Exhale, using hip flexors and internal/external obliques together, pull the knees up while simultaneously rotating your pelvis to one side so the knees reach toward that shoulder, keeping your upper body facing forward; inhale to extend the knees back down and return the pelvis to center.", "Rotate the pelvis first, then lift the knees, and keep both shoulders square to the front the whole time."] },
   },
   {
     name: "Leg Circles",
@@ -612,7 +612,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Laterally rotate legs for the circle", "Flex knees as hips flex to raise legs, extend at the top (developpe-style), keep legs straight as they lower — can combine with forward/reverse direction and lateral rotation"],
     notes: "-",
   
-    script: { lines: ["Let's move into Leg Circles. Same hanging position as Knee Raises, legs straight and reaching slightly forward.", "Exhale, keep the legs straight and adducted and flex the hips to lift them as high as possible, then open them out to the sides; inhale to continue circling them down and back together at the bottom.", "Draw a big, controlled circle with both legs together, and keep the imprint the whole way around."] },
+    script: { lines: ["Let's move into Leg Circles. Same hanging position as Knee Raises, legs straight and reaching slightly forward.", "Exhale, keep the legs straight and adducted and flex the hips to lift them as high as possible, then open them out to the sides; inhale to continue circling them down and back together at the bottom.", "Draw a big, controlled circle with both legs together, using your hip flexors, adductors and abductors, and keep the imprint the whole way around."] },
   },
   {
     name: "Beats",
@@ -631,7 +631,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Plantar flexed throughout — omit the dorsiflexion/plantar flexion change", "Exhale only on the beats, four short exhales, inhaling between sets", "Face away from Chair — maintain imprinted position, hips slightly flexed during beats (good for lordosis)", "Legs parallel instead of laterally rotated — control adduction to avoid hitting ankle bones"],
     notes: "Like the Mat Swimming/Breast Stroke prep.\nRegular version good for kyphosis\nThe face-away modification is good for lordosis, though it is longer and harder on the scapular stabilizers.",
   
-    script: { lines: ["Let's move into Beats. Hold the tops of the handles facing the Chair, legs straight and turned out, torso and hips in a slight extension bow shape.", "For four counts, inhale and plantar flex the ankles, adducting the legs to beat them together with each inhale; for four counts, exhale and dorsiflex, beating them together on each exhale.", "Let your sternum reach toward the ceiling and beat the legs together like a mermaid tail — small and quick, not a big swing."] },
+    script: { lines: ["Let's move into Beats. Hold the tops of the handles facing the Chair, legs straight and turned out, torso and hips in a slight extension bow shape.", "For four counts, inhale and plantar flex the ankles, adducting the legs to beat them together with each inhale; for four counts, exhale and dorsiflex, beating them together on each exhale.", "Let your sternum reach toward the ceiling, using your erector spinae and glutes to hold the extension, and beat the legs together with your adductors like a mermaid tail — small and quick, not a big swing."] },
   },
   {
     name: "Frog Front",
@@ -650,7 +650,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Split-pedal bilateral / unilateral / reciprocal"],
     notes: "Requires hip joint flexibility — introduce Frog Back before this if hips are tight.\nHeavier springs are easier for arms but harder for legs.\nStart at mid-range (~50%).",
   
-    script: { lines: ["Let's move into Frog Front. Face the Chair, hands holding the sides near the front, arms straight and supporting your weight, balls of your feet on the pedal, heels together, toes apart, knees bent.", "Inhale to flex the knees and let the pedal lift; then for three counts, exhale and press the pedal down, extending the knees further with each pulse; hold it down, then for three counts inhale and pull the knees back up.", "Keep your eyes forward and gently nod your head to prevent your low back from overextending, and maintain the turnout throughout."] },
+    script: { lines: ["Let's move into Frog Front. Face the Chair, hands holding the sides near the front, arms straight and supporting your weight, balls of your feet on the pedal, heels together, toes apart, knees bent.", "Inhale to flex the knees and let the pedal lift; then for three counts, exhale and press the pedal down, extending the knees further with each pulse; hold it down, then for three counts inhale and pull the knees back up.", "Keep your eyes forward and gently nod your head to prevent your low back from overextending, using your hip extensors and quadriceps to press down and hamstrings to pull back up, and maintain the turnout throughout."] },
   },
   {
     name: "Frog Back",
@@ -669,7 +669,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Split-pedal bilateral / unilateral / reciprocal"],
     notes: "Requires hip joint mobility — introduce this before Frog Front.",
   
-    script: { lines: ["Let's move into Frog Back. Face away from the Chair, hands holding the sides near the front, feet on the pedal in the same turned-out position as Frog Front.", "Inhale to flex the knees and let the pedal lift; for three counts, exhale and press the pedal down, extending the knees further with each pulse, then reverse.", "Keep your spine as vertical as possible with your sacrum close to the Chair, and keep your elbows soft rather than locked."] },
+    script: { lines: ["Let's move into Frog Back. Face away from the Chair, hands holding the sides near the front, feet on the pedal in the same turned-out position as Frog Front.", "Inhale to flex the knees and let the pedal lift; for three counts, exhale and press the pedal down, extending the knees further with each pulse, then reverse.", "Keep your spine as vertical as possible with your sacrum close to the Chair, using latissimus dorsi and triceps to support your weight, and keep your elbows soft rather than locked."] },
   },
   {
     name: "Frog Back Hips Up",
@@ -688,7 +688,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Split-pedal bilateral / unilateral / reciprocal (springs 2 heavy low, 2 light top)"],
     notes: "Progresses to Knee Raises (p.61).\nInstructor spots with one hand under the heel, other under the thighs.",
   
-    script: { lines: ["Let's move into Frog Back Hips Up. Face away from the Chair, hands holding the sides near the back, feet on the pedal, and lift your pelvis into hip extension with your upper spine in slight flexion, pedal starting up.", "Exhale, maintain the height of your pelvis and extend the knees to press the pedal down; inhale to flex the knees and let it lift.", "Articulate from tail to shoulder to come into position, and keep your knees lower than your shoulders, slightly diagonal, as you press."] },
+    script: { lines: ["Let's move into Frog Back Hips Up. Face away from the Chair, hands holding the sides near the back, feet on the pedal, and lift your pelvis into hip extension with your upper spine in slight flexion, pedal starting up.", "Exhale, maintain the height of your pelvis and extend the knees to press the pedal down; inhale to flex the knees and let it lift.", "Articulate from tail to shoulder to come into position, using your glutes and hamstrings to keep the pelvis high and quadriceps to press, and keep your knees lower than your shoulders, slightly diagonal, as you press."] },
   },
   {
     name: "Pike on Floor",
@@ -710,7 +710,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Alternative sitting positions — foam cushion or platform extender to decrease gripping in the hips"],
     notes: "Roll Back is not recommended for clients with too much lumbar flexibility or lumbar issues due to the lumbar compression/flexion demand\nInstructor can help press the pedal to initiate the movement and keep it low.",
   
-    script: { lines: ["Let's move into Pike on Floor. Sit as upright as possible on the mat facing the Chair, feet on the front edge with knees slightly bent, hands reaching forward onto the raised pedal.", "For Flex Forward: exhale, initiate from the top of the head and increase spinal flexion to press the pedal down, arms staying in the same relationship to the torso; inhale to lengthen back to start.", "Let the abdominals flex the spine to press the pedal — the arms stay passive the whole time, they don't push."] },
+    script: { lines: ["Let's move into Pike on Floor. Sit as upright as possible on the mat facing the Chair, feet on the front edge with knees slightly bent, hands reaching forward onto the raised pedal.", "For Flex Forward: exhale, initiate from the top of the head and increase spinal flexion to press the pedal down, arms staying in the same relationship to the torso; inhale to lengthen back to start.", "Let the rectus abdominis and obliques flex the spine to press the pedal — the arms stay passive the whole time, they don't push."] },
   },
   {
     name: "Cat Kneeling",
@@ -727,14 +727,14 @@ window.STOTT.apparatus.chair = { essential: [
     cues: ["Don't shift your weight forward — keep it centered over the knees", "Eye gaze stays toward the Chair, not down", "Push the hips forward and engage the glutes/hip extensors to come back up to kneeling"],
     faults: ["Weight shifting forward onto the hands — keep weight centered over the knees", "Rushing back up to kneeling without articulating — sequence tail to head deliberately"],
     positions: [
-      { label: "Articulation", detail: "Exhale, sequentially articulate the spine into flexion from the head, rolling toward the pedal while reaching arms forward and pressing the pedal down as far as control allows; inhale, keep the pedal down and lengthen the spine tail-to-head into neutral; exhale, initiate from the tail to flex the spine again, releasing pedal tension; exhale, release the hands and continue rolling up to neutral kneeling." },
+      { label: "Articulation", detail: "Exhale, sequentially articulate the spine into flexion from the head, rolling toward the pedal while reaching arms forward and pressing the pedal down as far as control allows; inhale, keep the pedal down and lengthen the spine tail-to-head into neutral; exhale, initiate from the tail to flex the spine again, releasing pedal tension; inhale, release the hands and continue rolling up to neutral kneeling." },
       { label: "Ab Pulses", detail: "Same roll-down, then for 3 counts press the pedal down in time with the breath, increasing flexion each pulse (3 reps), then roll up." },
       { label: "Arm Presses", detail: "Same roll-down, then flex the elbows (angled out) as the pedal lifts, extend to press down (3 reps), then roll up." },
     ],
     modifications: ["Prep — roll down to press pedal, roll up to release, for sequencing practice", "One arm — free hand on forehead, emphasizing obliques/multifidus against rotation", "Split-pedal bilateral (all 3 positions) / unilateral or reciprocal (Arm Presses)"],
     notes: "Trained professional must spot throughout and can hold the client's lower legs to prevent tipping forward\nSpotter must not lean over the pedal.",
   
-    script: { lines: ["Let's move into Cat Kneeling. Kneel upright on the Chair facing the pedal, knees hip-distance apart, arms long by your sides.", "Exhale, initiate from the head and sequentially roll the spine into flexion toward the pedal, reaching your hands forward to press it down; inhale to lengthen from tail to head to neutral, then continue rolling back up to kneeling.", "Keep your weight centered over your knees rather than shifting forward onto your hands, and push your hips forward to come back up to kneeling."] },
+    script: { lines: ["Let's move into Cat Kneeling. Kneel upright on the Chair facing the pedal, knees hip-distance apart, arms long by your sides.", "Exhale, initiate from the head and sequentially roll the spine into flexion toward the pedal, reaching your hands forward to press it down; inhale to lengthen from tail to head to neutral, then continue rolling back up to kneeling.", "Keep your weight centered over your knees rather than shifting forward onto your hands, and use your rectus abdominis and obliques to flex, then your hip extensors to push your hips forward and come back up to kneeling."] },
   },
   {
     name: "Cat Standing Side",
@@ -751,14 +751,14 @@ window.STOTT.apparatus.chair = { essential: [
     cues: ["Anchor the sacrum down, bend the knees slightly, don't lean toward the pedal", "Keep equal weight on both feet, don't shift forward"],
     faults: ["Torso rotating toward the pedal side — keep hips/shoulders square to the side throughout", "Weight shifting onto the pedal-side foot — keep it even on both feet"],
     positions: [
-      { label: "Articulation", detail: "Exhale, sequentially articulate the spine into flexion from the head; reach the hand closest to the Chair down to press the pedal down until just above the frame, other hand reaches up toward the ceiling, wrist/elbow long, palm facing in; inhale, keep the pedal down and lengthen the spine tail-to-head to neutral; exhale, initiate from the tail to flex the spine and begin rolling up, releasing pedal tension; exhale, release the hand and continue rolling up to standing, hands returning to sides." },
+      { label: "Articulation", detail: "Exhale, sequentially articulate the spine into flexion from the head; reach the hand closest to the Chair down to press the pedal down until just above the frame, other hand reaches up toward the ceiling, wrist/elbow long, palm facing in; inhale, keep the pedal down and lengthen the spine tail-to-head to neutral; exhale, initiate from the tail to flex the spine and begin rolling up, releasing pedal tension; inhale, release the hand and continue rolling up to standing, hands returning to sides." },
       { label: "Ab Pulses", detail: "Same roll-down, then for 3 counts press the pedal down in time with the breath, increasing flexion each pulse (3 reps), then roll up." },
       { label: "Arm Presses", detail: "Same roll-down, then flex the pedal-arm elbow as the pedal lifts, extend to press down (3 reps), then roll up." },
     ],
     modifications: ["Prep — roll down to press, roll up to release", "Allow knees to flex during roll-down if hamstrings are tight"],
     notes: "Trained professional must spot throughout, never leaning over the pedal.",
   
-    script: { lines: ["Let's move into Cat Standing Side. Stand facing sideways to the Chair, feet hip-distance apart, arms long by your sides.", "Exhale, sequentially articulate the spine into flexion from the head, reaching the hand closest to the Chair down to press the pedal, other hand reaching toward the ceiling; inhale to lengthen tail-to-head to neutral, then continue rolling up.", "Anchor your sacrum down and keep equal weight on both feet — don't let the torso rotate toward the pedal side."] },
+    script: { lines: ["Let's move into Cat Standing Side. Stand facing sideways to the Chair, feet hip-distance apart, arms long by your sides.", "Exhale, sequentially articulate the spine into flexion from the head, reaching the hand closest to the Chair down to press the pedal, other hand reaching toward the ceiling; inhale to lengthen tail-to-head to neutral, then continue rolling up.", "Anchor your sacrum down, using rectus abdominis and obliques to flex, and keep equal weight on both feet — don't let the torso rotate toward the pedal side."] },
   },
   {
     name: "Cat Standing Back",
@@ -775,13 +775,13 @@ window.STOTT.apparatus.chair = { essential: [
     cues: ["Toes touch the frame at the start", "Long flexion here (vs. deep flexion in Cat Standing Front) — don't over-flex the lumbar", "Eyes gaze toward the Chair"],
     faults: ["Weight rocking forward/backward instead of staying centered — keep it stacked over the feet", "Over-flexing the lumbar — this variation calls for long flexion, not deep flexion"],
     positions: [
-      { label: "Articulation", detail: "Exhale, sequentially articulate the spine into flexion from the head, rolling toward the Chair, reaching hands forward to press the pedal down; inhale, keep the pedal down and lengthen the spine tail-to-head to neutral; exhale, initiate from the tail to flex the spine, begin rolling up releasing pedal tension; exhale, release the hands and continue rolling up to standing." },
+      { label: "Articulation", detail: "Exhale, sequentially articulate the spine into flexion from the head, rolling toward the Chair, reaching hands forward to press the pedal down; inhale, keep the pedal down and lengthen the spine tail-to-head to neutral; exhale, initiate from the tail to flex the spine, begin rolling up releasing pedal tension; inhale, release the hands and continue rolling up to standing." },
       { label: "Ab Pulses", detail: "Same roll-down, then for 3 counts press the pedal down in time with the breath, increasing flexion each pulse (3 reps), then roll up." },
     ],
     modifications: ["Prep — roll down to press, roll up to release", "Allow knees to flex during roll-down if hamstrings are tight", "One arm — free hand on forehead", "Split-pedal bilateral"],
     notes: "Trained professional must spot throughout, never leaning over the pedal.\nNote the distinction: deep flexion belongs to Cat Standing Front/Side, long flexion to Cat Standing Back.",
   
-    script: { lines: ["Let's move into Cat Standing Back. Stand facing the back of the Chair, feet hip-distance apart, arms long by your sides.", "Exhale, sequentially articulate the spine into flexion from the head, rolling toward the Chair and reaching your hands forward to press the pedal down; inhale to lengthen tail-to-head to neutral, then roll back up to standing.", "This is a long flexion, not a deep one — keep your toes touching the frame at the start and your eyes gazing toward the Chair."] },
+    script: { lines: ["Let's move into Cat Standing Back. Stand facing the back of the Chair, feet hip-distance apart, arms long by your sides.", "Exhale, sequentially articulate the spine into flexion from the head, rolling toward the Chair and reaching your hands forward to press the pedal down; inhale to lengthen tail-to-head to neutral, then roll back up to standing.", "This is a long flexion, not a deep one, driven by rectus abdominis and obliques — keep your toes touching the frame at the start and your eyes gazing toward the Chair."] },
   },
   {
     name: "Roll Over",
@@ -800,7 +800,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Slide Feet — once feet are on top of Chair, keep legs adducted and increase thoracic flexion to slide feet slightly toward the back of the Chair, avoiding rolling onto the cervical spine", "May be done starting and returning to neutral once strength/ability is established"],
     notes: "Requires prior scapula-isolation prep work\nProgresses from Cadillac Push-Thru (springs from above).\nNot appropriate for clients with cervical spine issues (same caution applies to Jack Knife).\nPad the metal bar with a sticky mat or thick cushion for comfort.",
   
-    script: { lines: ["Let's move into Roll Over. Lie supine with your head toward the Chair, imprinted, legs straight and reaching on the diagonal, arms overhead gently holding the pedal.", "Inhale, hinge the hips to bring the legs toward your torso; exhale, apply pressure to the pedal and sequentially articulate the spine off the floor, tail to upper thoracic, reaching the legs overhead to place your feet on top of the Chair.", "Weight stays on your shoulders, never your neck — roll only as far as the upper thoracic spine, never onto the cervical spine."] },
+    script: { lines: ["Let's move into Roll Over. Lie supine with your head toward the Chair, imprinted, legs straight and reaching on the diagonal, arms overhead gently holding the pedal.", "Inhale, hinge the hips to bring the legs toward your torso; exhale, apply pressure to the pedal and sequentially articulate the spine off the floor, tail to upper thoracic, reaching the legs overhead to place your feet on top of the Chair.", "Weight stays on your shoulders, never your neck — using rectus abdominis and obliques to roll, hip flexors to hinge the legs, roll only as far as the upper thoracic spine, never onto the cervical spine."] },
   },
   {
     name: "Jack Knife",
@@ -819,7 +819,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Same breath-pattern modification as Roll Over can reduce breath-holding and endurance demand"],
     notes: "Pad the metal bar the same way as for Roll Over.\nNot recommended for clients with cervical spine issues.",
   
-    script: { lines: ["Let's move into Jack Knife. Same starting position as Roll Over — supine, head toward the Chair, imprinted, arms overhead holding the pedal.", "Inhale, roll the spine up to the upper thoracic, placing your feet on the Chair; exhale, extend your hips to reach the legs toward the ceiling, balancing on the upper back with the spine still slightly flexed.", "Keep the hips extended as long as possible before rolling back down, and never let the weight settle onto the cervical spine."] },
+    script: { lines: ["Let's move into Jack Knife. Same starting position as Roll Over — supine, head toward the Chair, imprinted, arms overhead holding the pedal.", "Inhale, roll the spine up to the upper thoracic, placing your feet on the Chair; exhale, extend your hips to reach the legs toward the ceiling, balancing on the upper back with the spine still slightly flexed.", "Keep the hips extended as long as possible, using your glutes and hamstrings, before rolling back down, and never let the weight settle onto the cervical spine."] },
   },
   {
     name: "Swan Dive",
@@ -838,7 +838,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: [],
     notes: "Trained professional must spot throughout, ensuring the exerciser's control of pedal and balance\nSpotter must not lean over the pedal.\nOn the Chair the legs hover to start (unlike the Mat version, where legs start on the mat) — the Chair gives more range but demands more from the shoulder stabilizers.",
   
-    script: { lines: ["Let's move into Swan Dive. Lie prone on the Chair with your ASIS just behind the front edge, spine extended, legs turned out and reaching wide, hands on the pedal lifted as high as your extension allows.", "Exhale, maintain the bow shape through your spine and hips and initiate by reaching the legs back and up, rocking the torso forward on the edge of the Chair, elbows flexing slightly if needed; inhale to rock back up to start.", "Initiate the rock from your feet, not your head, and maintain the bow shape the whole time."] },
+    script: { lines: ["Let's move into Swan Dive. Lie prone on the Chair with your ASIS just behind the front edge, spine extended, legs turned out and reaching wide, hands on the pedal lifted as high as your extension allows.", "Exhale, maintain the bow shape through your spine and hips and initiate by reaching the legs back and up, rocking the torso forward on the edge of the Chair, elbows flexing slightly if needed; inhale to rock back up to start.", "Initiate the rock from your feet, not your head, and maintain the bow shape with erector spinae, glutes and hamstrings the whole time."] },
   },
   {
     name: "Grasshopper",
@@ -849,7 +849,7 @@ window.STOTT.apparatus.chair = { essential: [
     startingPosition: "Prone on Chair, ASIS just back of the front edge.\nSpine extended.\nLegs straight, laterally rotated and abducted shoulder-distance apart, parallel with floor.\nHands on pedal, arms straight, fingers long and pointing forward.\nPedal lifted as high as extension allows, scapulae stabilized.",
     pelvis: "Neutral within the bow shape, hips in extension, femurs lifted off the Chair while ankles cross",
     spine: "Extended, bow-shaped, maintained isometrically throughout",
-    breathing: "Inhale to prepare\nExhale, maintain the bow shape with spine and hips in extension, reach legs back and up, rock torso forward on the edge of the Chair, elbows flexing slightly if needed\nThen, maintaining torso position and hips as extended as possible, flex knees to cross ankles 3 times, alternating, then extend knees\nInhale, maintain bow shape and scapular stabilization, rock torso up to start.\n5 reps.",
+    breathing: "Inhale to prepare\nExhale, maintain the bow shape with spine and hips in extension, reach legs back and up, rock torso forward on the edge of the Chair, elbows flexing slightly if needed\nInhale, maintaining torso position and hips as extended as possible, flex knees to cross ankles 3 times, alternating\nExhale, maintaining torso position and hips as extended as possible, extend knees\nInhale, maintain bow shape and scapular stabilization, rock torso up to start.\n5 reps.",
     targetMuscles: "Transversus abdominis and pelvic floor\nErector spinae isometrically to maintain spinal extension\nGluteus maximus and hamstrings isometrically to maintain hip extension\nObliques to prevent lumbar overextension\nHamstrings concentrically to flex knees\nQuadriceps concentrically to extend knees\nScapular stabilizers",
     focus: "Initiate rock forward by reaching legs back and up, not by dropping head/shoulders\nMaintain even spinal extension\nExtend only as high as support allows\nKeep femurs lifted in space while crossing ankles, don't let them drop",
     cues: ["Bend the knees to reach the heels toward the sit-bones", "Keep the thighs lifted off the Chair the whole time — femurs don't drop while ankles cross"],
@@ -857,7 +857,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: [],
     notes: "Trained professional must spot throughout, ensuring control and balance, never leaning over the pedal.\nSame starting position as Swan Dive.",
   
-    script: { lines: ["Let's move into Grasshopper. Same prone position as Swan Dive, ASIS just behind the edge, legs reaching wide, hands on the pedal.", "Exhale, rock forward the same way as Swan Dive; then, keeping your hips as extended as possible, flex the knees to cross the ankles three times, alternating, before extending the knees and rocking back up.", "Keep your thighs lifted off the Chair the entire time you're crossing the ankles — don't let the femurs drop."] },
+    script: { lines: ["Let's move into Grasshopper. Same prone position as Swan Dive, ASIS just behind the edge, legs reaching wide, hands on the pedal.", "Exhale, rock forward the same way as Swan Dive; then, keeping your hips as extended as possible, flex the knees to cross the ankles three times, alternating, before extending the knees and rocking back up.", "Keep your thighs lifted off the Chair using your glutes and hamstrings the entire time you're crossing the ankles with hamstrings and quadriceps — don't let the femurs drop."] },
   },
   {
     name: "Spread Eagle",
@@ -880,7 +880,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Omit pressing up (Facing Away) — sequence through the spine only without pressing the torso up, done standing on the pedal or off it in front of the Chair, to practice hand position and weight shifting"],
     notes: "Trained professional must sit on the Chair to secure it throughout and spot the exerciser's control of the pedal.\nWeight-shifting demands strong scapular stabilization and triceps strength.",
   
-    script: { lines: ["Let's move into Spread Eagle. Stand on the pedal facing the Chair, piked at the hips with your weight hanging back, hands holding the back of the handles.", "Exhale, initiate from the tailbone and sequentially articulate the spine through flexion, extending the hips to bring your weight over your feet; then place your hands on top of the handles and extend the elbows to press your body up, unrolling the spine and lifting your sternum.", "Change your hand position from the back of the handles to the top as you press up, and don't push your pubic bone forward too much — lift through your sternum instead."] },
+    script: { lines: ["Let's move into Spread Eagle. Stand on the pedal facing the Chair, piked at the hips with your weight hanging back, hands holding the back of the handles.", "Exhale, initiate from the tailbone and sequentially articulate the spine through flexion, extending the hips to bring your weight over your feet; then place your hands on top of the handles and extend the elbows to press your body up, unrolling the spine and lifting your sternum.", "Change your hand position from the back of the handles to the top as you press up, using your triceps to lift and rectus abdominis/obliques to flex, and don't push your pubic bone forward too much — lift through your sternum instead."] },
   },
   {
     name: "Side Bend",
@@ -899,7 +899,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Place top hand's fingertips on the Chair in front for extra support/balance"],
     notes: "Use Spine Corrector Side Bend as prep for this.\nTo finish, allow the client to slowly release the pedal to come back up rather than pressing it down.",
   
-    script: { lines: ["Let's move into Side Bend. Lie on your side on top of the Chair, head toward the pedal, legs straight and adducted in one long line, supporting arm straight with your hand on the pedal directly under your shoulder.", "Exhale, keep the legs still in space and laterally flex the spine, letting your top hand slide along your thigh as the pedal lifts; inhale to lengthen back to start, pressing the pedal down.", "Flex only through the ribcage — your lumbar spine stays neutral, and your legs stay quiet the whole time."] },
+    script: { lines: ["Let's move into Side Bend. Lie on your side on top of the Chair, head toward the pedal, legs straight and adducted in one long line, supporting arm straight with your hand on the pedal directly under your shoulder.", "Exhale, keep the legs still in space and laterally flex the spine, letting your top hand slide along your thigh as the pedal lifts; inhale to lengthen back to start, pressing the pedal down.", "Flex only through the ribcage, using your top-side obliques — your lumbar spine stays neutral, and your legs stay quiet the whole time."] },
   },
   {
     name: "Rotation Prone",
@@ -918,7 +918,7 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Flex knees to decrease leg-lever load on hip extensors/lumbar", "Reaching Arm — in four breaths: rotate torso, extend elbow of the gesture arm, flex elbow to return hand to forehead, return to center", "Add Extension — rotate torso, extend elbow while simultaneously extending spine/hips and abducting/laterally rotating the legs, then flex elbow and return torso to neutral (still rotated), return to center", "Split-pedal — both hands on pedals, one lifts as the other presses down during rotation"],
     notes: "Progression from Scapula Isolation Prone.\nCan use a pad/cushion under the torso for comfort.",
   
-    script: { lines: ["Let's move into Rotation Prone. Stay prone on the Chair, one hand on the pedal with the arm straight, other hand on your forehead, pedal hovering just above the frame.", "Exhale, keep the supporting arm straight and the spine parallel to the floor, and rotate away from the pedal hand, letting the pedal press down as you rotate; inhale to return to center.", "The pedal moves because of shoulder rotation, not because you push it — keep your hips level as the spine rotates."] },
+    script: { lines: ["Let's move into Rotation Prone. Stay prone on the Chair, one hand on the pedal with the arm straight, other hand on your forehead, pedal hovering just above the frame.", "Exhale, keep the supporting arm straight and the spine parallel to the floor, and rotate away from the pedal hand, letting the pedal press down as you rotate; inhale to return to center.", "The pedal moves because of shoulder rotation, not because you push it — using your contralateral obliques to rotate, keep your hips level as the spine rotates."] },
   },
   {
     name: "Lean",
@@ -937,6 +937,6 @@ window.STOTT.apparatus.chair = { essential: [
     modifications: ["Alternative sitting position — feet on top of a ball for support during the lean (start with knees bent, straighten as you lean away; keep the ball from rolling)", "Reach the free arm overhead in the lean position for one long line from feet to hand"],
     notes: "Trained professional must spot throughout, never leaning over the pedal, ensuring the exerciser doesn't lose balance.\nLowering the legs too much can cause spinal hyperextension — maintain leg height.",
   
-    script: { lines: ["Let's move into Lean. Sit on the Chair facing away from the pedal, legs straight and reaching in front, arms straight out to the sides.", "Inhale to rotate the spine to one side; exhale, keep both sides of your torso equally long and hinge the pelvis away from the femurs, leaning diagonally back and to the side while the back arm presses the pedal down.", "Reach up and away from the hip joint rather than pushing with the arm, and let your eyes follow the reaching hand."] },
+    script: { lines: ["Let's move into Lean. Sit on the Chair facing away from the pedal, legs straight and reaching in front, arms straight out to the sides.", "Inhale to rotate the spine to one side; exhale, keep both sides of your torso equally long and hinge the pelvis away from the femurs, leaning diagonally back and to the side while the back arm presses the pedal down.", "Reach up and away from the hip joint, using your contralateral obliques to rotate, rather than pushing with the arm, and let your eyes follow the reaching hand."] },
   },
 ], advanced: [] };
