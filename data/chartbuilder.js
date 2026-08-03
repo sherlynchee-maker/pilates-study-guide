@@ -20,14 +20,28 @@ window.STOTT.CHART_APPARATUS = [
    filter applies. */
 window.STOTT.SPLIT_LEVEL_APPARATUS = ["mat", "reformer", "cadillac"];
 
-/* Mat and Reformer's official Intermediate chart folds Essential items back
-   into one continuous list (verified against the STOTT "Workout Charts"
-   booklet — e.g. Intermediate Matwork runs Ab Prep, Breast Stroke Preps,
-   Shell Stretch... straight through to Slow Double Leg Stretch and beyond,
-   with no separate Essential section). Cadillac's Intermediate & Advanced
-   chart instead prints ONLY new intermediate/advanced content per category —
-   it never repeats Essential rows like "Roll-Down" under Roll-Down Bar. */
-window.STOTT.INCLUSIVE_INTERMEDIATE_APPARATUS = ["mat", "reformer"];
+/* Mat's official Intermediate chart folds Essential items back into one
+   continuous list (verified against the STOTT "Workout Charts" booklet —
+   Intermediate Matwork runs Ab Prep, Breast Stroke Preps, Shell Stretch...
+   straight through to Slow Double Leg Stretch and beyond, with no separate
+   Essential section). Reformer's intermediate data already bakes those
+   carryover rows in directly under names like "Footwork (Intermediate)", so
+   it must NOT be merged with Essential too — that would print every carried-
+   over exercise twice (hence the "duplicate Footwork" bug) and pull in
+   Essential-only prep items like "Lift & Lower" that never appear on the
+   real Intermediate Reformer chart. Cadillac's Intermediate & Advanced chart
+   also prints only new content per category — it never repeats Essential
+   rows like "Roll-Down" under Roll-Down Bar. */
+window.STOTT.INCLUSIVE_INTERMEDIATE_APPARATUS = ["mat"];
+
+/* Even for Mat, the real Intermediate chart isn't a blind essential+
+   intermediate concatenation — it drops the Essential "Prep" precursor once
+   a client graduates to the full Intermediate movement (e.g. "Roll Over
+   Prep" disappears once "Roll Over" appears on the chart). Verified against
+   the printed chart's own annotations for each of these. */
+window.STOTT.INTERMEDIATE_CHART_EXCLUDE = {
+  mat: ["Shoulder Bridge Prep", "Roll Over Prep", "Heel Squeeze Prone", "One Leg Kick Prep", "Neck Pull Prep", "Teaser Prep", "Single Leg Extension", "Swan Dive Prep", "Swimming Prep", "Leg Pull Front Prep", "Side Bend Prep", "Push Up Prep"],
+};
 
 /* Rebuilds an apparatus's true workout-chart order: optionally restricts to
    one level (opts.level: "essential" | "intermediate" | "all", default
@@ -45,9 +59,13 @@ window.STOTT.buildChart = function (key, opts) {
   let all;
   if (level === "essential") all = [].concat(data.warmup || [], data.essential || []);
   else if (level === "intermediate") {
-    all = inclusiveIntermediate
-      ? [].concat(data.essential || [], data.intermediate || [], data.advanced || [])
-      : [].concat(data.intermediate || [], data.advanced || []);
+    if (inclusiveIntermediate) {
+      const exclude = (window.STOTT.INTERMEDIATE_CHART_EXCLUDE && window.STOTT.INTERMEDIATE_CHART_EXCLUDE[key]) || [];
+      const carriedEssential = (data.essential || []).filter((ex) => exclude.indexOf(ex.name) === -1);
+      all = [].concat(carriedEssential, data.intermediate || [], data.advanced || []);
+    } else {
+      all = [].concat(data.intermediate || [], data.advanced || []);
+    }
   } else {
     all = [].concat(data.warmup || [], data.essential || [], data.intermediate || [], data.advanced || []);
   }
