@@ -7,6 +7,10 @@ window.STOTT.quiz = window.STOTT.quiz || [];
     n++;
     Q.push({ id: "eq" + n, topic, type: "recall", q, a, flag: flag || "" });
   }
+  function addOrder(topic, q, options, a, flag) {
+    n++;
+    Q.push({ id: "eq" + n, topic, type: "order", q, options, a, flag: flag || "" });
+  }
 
   const T_BASIC = "Basic Principles";
   const T_ANAT = "Anatomy — Terminology";
@@ -244,6 +248,35 @@ window.STOTT.quiz = window.STOTT.quiz || [];
     item.id = item.id || "mq" + (i + 1);
     if (!item.flag) item.flag = "";
     Q.push(item);
+  });
+
+  // ---- Auto-generated chart-order drills — one "order" question per
+  // category/level chunk of each apparatus's true workout-chart sequence
+  // (data/chartbuilder.js), so every apparatus gets chart-memorization quiz
+  // coverage, not just the hand-authored Mat questions above. Mat, Reformer,
+  // and Cadillac print separate Essential/Intermediate charts, so those three
+  // generate one batch per level instead of one merged batch.
+  (window.STOTT.CHART_APPARATUS || []).forEach(function (appEntry) {
+    var isSplit = (window.STOTT.SPLIT_LEVEL_APPARATUS || []).indexOf(appEntry.key) !== -1;
+    var levels = isSplit ? ["essential", "intermediate"] : ["all"];
+    levels.forEach(function (lvl) {
+      var chart = window.STOTT.buildChart(appEntry.key, { level: lvl });
+      var levelSuffix = lvl === "all" ? "" : " — " + (lvl === "essential" ? "Essential" : "Intermediate") + " chart";
+      chart.groups.forEach(function (group) {
+        var chunks = window.STOTT.chunkItems(group.items, 8);
+        chunks.forEach(function (chunk, ci) {
+          if (chunk.length < 3) return;
+          var names = chunk.map(function (it) { return it.name; });
+          var partSuffix = chunks.length > 1 ? ", part " + (ci + 1) + " of " + chunks.length : "";
+          addOrder(
+            appEntry.label,
+            "Put these " + appEntry.label + " exercises in the correct workout-chart order (" + group.label + partSuffix + levelSuffix + ").",
+            names,
+            "Matches the " + appEntry.label + " workout chart's \"" + group.label + "\" section" + levelSuffix + ", in manual page order."
+          );
+        });
+      });
+    });
   });
 
   window.STOTT.quiz = window.STOTT.quiz.concat(Q);

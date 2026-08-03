@@ -1472,6 +1472,11 @@ function renderOrderBody(card, q, finish) {
 }
 
 function renderRecallBody(card, q, finish) {
+  card.append(el("div", { class: "recall-input-wrap" }, [
+    el("label", { class: "recall-input-label" }, "Your answer (optional — for your own comparison)"),
+    el("textarea", { class: "answer-input", rows: "3", placeholder: "Type or write out your answer here before revealing…" }),
+  ]));
+
   const revealBtn = el("button", { class: "btn secondary" }, "Show answer");
   card.append(revealBtn);
 
@@ -2033,6 +2038,257 @@ function renderProgressionInto(container) {
 }
 
 /* ================= ROUTER ================= */
+/* ---------- Chart Trainer: drills for memorizing each apparatus's true workout-chart order ---------- */
+function singleSelectChips(options, active, onSelect) {
+  const row = el("div", { class: "chip-select" });
+  function refresh() {
+    row.querySelectorAll("button").forEach((b) => b.classList.toggle("selected", b.dataset.value === active));
+  }
+  options.forEach((opt) => {
+    const chip = el("button", { class: "chip" }, opt.label);
+    chip.dataset.value = opt.value;
+    chip.addEventListener("click", () => {
+      active = opt.value;
+      refresh();
+      onSelect(opt.value);
+    });
+    row.append(chip);
+  });
+  refresh();
+  return row;
+}
+
+// Splits an apparatus's true chart order (data/chartbuilder.js) into practice
+// "rounds" — either one round per manual category/section (chunked further if
+// a section runs long), or a single round covering the whole merged chart.
+// `level` ("essential" | "intermediate" | "all") only matters for Mat,
+// Reformer, and Cadillac, which print separate Essential/Intermediate charts.
+function chartRounds(key, chunkMode, level) {
+  const chart = window.STOTT.buildChart(key, { level: level || "all" });
+  if (chunkMode === "whole") {
+    const items = [];
+    chart.groups.forEach((g) => items.push(...g.items));
+    return items.length ? [{ label: "Full chart, start to finish", items }] : [];
+  }
+  const rounds = [];
+  chart.groups.forEach((g) => {
+    window.STOTT.chunkItems(g.items, 10).forEach((chunk, i, chunks) => {
+      rounds.push({ label: chunks.length > 1 ? `${g.label} — part ${i + 1} of ${chunks.length}` : g.label, items: chunk });
+    });
+  });
+  return rounds;
+}
+
+function renderReorderRound(round) {
+  const wrap = el("div", { class: "chart-round" });
+  wrap.append(el("div", { class: "chart-round-title" }, `${round.label} · ${round.items.length}`));
+  wrap.append(el("div", { class: "qz-order-hint" }, "Tap the exercises below in the order they appear on the chart."));
+  const correctOrder = round.items.map((it) => it.name);
+  const poolWrap = el("div", { class: "qz-order-pool" });
+  const builtWrap = el("div", { class: "qz-order-built" });
+  const resetBtn = el("button", { class: "btn secondary chart-reset-btn" }, "Shuffle again");
+  resetBtn.style.display = "none";
+  wrap.append(poolWrap, builtWrap, resetBtn);
+
+  let pool = [];
+  let built = [];
+  let revealed = false;
+
+  function drawPool() {
+    poolWrap.innerHTML = "";
+    pool.forEach((item, i) => {
+      if (built.includes(i)) return;
+      const b = el("button", { class: "qz-order-chip" }, item);
+      b.addEventListener("click", () => {
+        if (revealed) return;
+        built.push(i);
+        drawPool();
+        drawBuilt();
+        if (built.length === correctOrder.length) reveal();
+      });
+      poolWrap.append(b);
+    });
+  }
+  function drawBuilt() {
+    builtWrap.innerHTML = "";
+    built.forEach((i, pos) => {
+      builtWrap.append(el("div", { class: "qz-order-slot" }, [el("span", { class: "qz-order-num" }, String(pos + 1)), el("span", {}, pool[i])]));
+    });
+  }
+  function reveal() {
+    revealed = true;
+    builtWrap.innerHTML = "";
+    built.forEach((i, pos) => {
+      const item = pool[i];
+      const isRight = correctOrder[pos] === item;
+      builtWrap.append(el("div", { class: "qz-order-slot " + (isRight ? "correct" : "incorrect") }, [
+        el("span", { class: "qz-order-num" }, String(pos + 1)),
+        el("span", {}, item),
+        !isRight ? el("span", { class: "qz-order-correct-hint" }, `should be: ${correctOrder[pos]}`) : null,
+      ]));
+    });
+    resetBtn.style.display = "inline-flex";
+  }
+  function setup() {
+    pool = shuffle([...correctOrder]);
+    built = [];
+    revealed = false;
+    resetBtn.style.display = "none";
+    drawPool();
+    drawBuilt();
+  }
+  resetBtn.addEventListener("click", setup);
+  setup();
+  return wrap;
+}
+
+function renderFlipRound(round) {
+  const wrap = el("div", { class: "chart-round" });
+  wrap.append(el("div", { class: "chart-round-title" }, `${round.label} · ${round.items.length}`));
+  const controls = el("div", { class: "flip-controls" });
+  const revealAllBtn = el("button", { class: "btn secondary" }, "Flip all");
+  const hideAllBtn = el("button", { class: "btn secondary" }, "Flip all back");
+  controls.append(revealAllBtn, hideAllBtn);
+  const grid = el("div", { class: "flip-grid" });
+  round.items.forEach((it, i) => {
+    const card = el("div", { class: "flip-card" });
+    card.append(el("div", { class: "flip-card-inner" }, [
+      el("div", { class: "flip-card-face flip-card-front" }, String(i + 1)),
+      el("div", { class: "flip-card-face flip-card-back" }, it.name),
+    ]));
+    card.addEventListener("click", () => card.classList.toggle("flipped"));
+    grid.append(card);
+  });
+  revealAllBtn.addEventListener("click", () => grid.querySelectorAll(".flip-card").forEach((c) => c.classList.add("flipped")));
+  hideAllBtn.addEventListener("click", () => grid.querySelectorAll(".flip-card").forEach((c) => c.classList.remove("flipped")));
+  wrap.append(controls, grid);
+  return wrap;
+}
+
+function renderTypeRound(round) {
+  const wrap = el("div", { class: "chart-round" });
+  wrap.append(el("div", { class: "chart-round-title" }, `${round.label} · ${round.items.length}`));
+  const rows = el("div", { class: "typelist-rows" });
+  const inputs = round.items.map((it, i) => {
+    const input = el("input", { class: "typelist-input", type: "text", placeholder: `#${i + 1}` });
+    rows.append(el("div", { class: "typelist-row" }, [el("span", { class: "typelist-num" }, String(i + 1)), input]));
+    return input;
+  });
+  const checkBtn = el("button", { class: "btn" }, "Check answers");
+  const clearBtn = el("button", { class: "btn secondary" }, "Clear");
+  const scoreLabel = el("span", { class: "typelist-score" }, "");
+  const norm = (s) => (s || "").trim().toLowerCase().replace(/\s+/g, " ");
+  checkBtn.addEventListener("click", () => {
+    let correctCount = 0;
+    inputs.forEach((input, i) => {
+      const correct = round.items[i].name;
+      const row = input.parentElement;
+      const existingHint = row.querySelector(".typelist-hint");
+      if (existingHint) existingHint.remove();
+      const isRight = norm(input.value) === norm(correct);
+      input.classList.remove("correct", "incorrect");
+      if (isRight) { input.classList.add("correct"); correctCount++; }
+      else { input.classList.add("incorrect"); row.append(el("span", { class: "typelist-hint" }, correct)); }
+    });
+    scoreLabel.textContent = `${correctCount} / ${inputs.length} correct`;
+  });
+  clearBtn.addEventListener("click", () => {
+    inputs.forEach((input) => input.classList.remove("correct", "incorrect"));
+    inputs.forEach((input) => { input.value = ""; });
+    rows.querySelectorAll(".typelist-hint").forEach((h) => h.remove());
+    scoreLabel.textContent = "";
+  });
+  wrap.append(rows, el("div", { class: "typelist-actions" }, [checkBtn, clearBtn, scoreLabel]));
+  return wrap;
+}
+
+function renderChartTrainer() {
+  mainView.innerHTML = "";
+  mainView.append(
+    el("div", { class: "view-header" }, [
+      el("div", {}, [
+        el("span", { class: "eyebrow" }, "Memorize"),
+        el("h2", {}, "Chart Trainer"),
+        el("p", { class: "sub" }, "Drill the exact order each apparatus's workout chart is taught in. Reorder exercises from memory, flip cards to test recall, or type out the whole list — then self-check against the real chart."),
+      ]),
+    ])
+  );
+
+  let apparatus = "mat";
+  let drill = "reorder";
+  let chunkMode = "category";
+  let level = "essential";
+
+  const apparatusRow = singleSelectChips(
+    Object.entries(APPARATUS_META).map(([key, meta]) => ({ value: key, label: meta.label })),
+    apparatus,
+    (v) => { apparatus = v; syncLevelVisibility(); draw(); }
+  );
+  const drillRow = singleSelectChips(
+    [
+      { value: "reorder", label: "🔀 Reorder" },
+      { value: "flip", label: "🃏 Flip Cards" },
+      { value: "type", label: "✍️ Type the List" },
+    ],
+    drill,
+    (v) => { drill = v; draw(); }
+  );
+  const levelRow = singleSelectChips(
+    [
+      { value: "essential", label: "Essential" },
+      { value: "intermediate", label: "Intermediate" },
+    ],
+    level,
+    (v) => { level = v; draw(); }
+  );
+  const chunkRow = singleSelectChips(
+    [
+      { value: "category", label: "By category" },
+      { value: "whole", label: "Whole chart at once" },
+    ],
+    chunkMode,
+    (v) => { chunkMode = v; draw(); }
+  );
+
+  // Mat, Reformer, and Cadillac print separate Essential/Intermediate charts
+  // (data/chartbuilder.js's SPLIT_LEVEL_APPARATUS); everything else prints one
+  // combined chart, so the level row only makes sense — and only shows — for
+  // those three.
+  const levelGroup = el("div", { class: "chart-control-group" }, [el("div", { class: "nav-group-label", style: "padding:0;margin-bottom:8px" }, "Level"), levelRow]);
+  function syncLevelVisibility() {
+    levelGroup.style.display = (window.STOTT.SPLIT_LEVEL_APPARATUS || []).includes(apparatus) ? "" : "none";
+  }
+  syncLevelVisibility();
+
+  mainView.append(
+    el("div", { class: "chart-controls" }, [
+      el("div", { class: "chart-control-group" }, [el("div", { class: "nav-group-label", style: "padding:0;margin-bottom:8px" }, "Apparatus"), apparatusRow]),
+      levelGroup,
+      el("div", { class: "chart-control-group" }, [el("div", { class: "nav-group-label", style: "padding:0;margin-bottom:8px" }, "Drill"), drillRow]),
+      el("div", { class: "chart-control-group" }, [el("div", { class: "nav-group-label", style: "padding:0;margin-bottom:8px" }, "Chunking"), chunkRow]),
+    ])
+  );
+
+  const host = el("div", { class: "chart-round-host" });
+  mainView.append(host);
+
+  function draw() {
+    host.innerHTML = "";
+    const isSplit = (window.STOTT.SPLIT_LEVEL_APPARATUS || []).includes(apparatus);
+    const rounds = chartRounds(apparatus, chunkMode, isSplit ? level : "all");
+    if (!rounds.length) {
+      host.append(el("div", { class: "empty-state" }, "No chart data for this apparatus yet."));
+      return;
+    }
+    rounds.forEach((round) => {
+      if (drill === "reorder") host.append(renderReorderRound(round));
+      else if (drill === "flip") host.append(renderFlipRound(round));
+      else host.append(renderTypeRound(round));
+    });
+  }
+  draw();
+}
+
 function render(view, opts = {}) {
   if (view !== "quiz") clearQuizKeyHandler();
   switch (view) {
@@ -2046,6 +2302,7 @@ function render(view, opts = {}) {
     case "progress": return renderProgress();
     case "crossref": return renderCrossRef();
     case "progression": return renderProgramming();
+    case "charttrainer": return renderChartTrainer();
     case "mat": case "reformer": case "cadillac": case "chair":
     case "archbarrel": case "spinecorrector": case "ladderbarrel":
       return renderApparatus(view, opts);

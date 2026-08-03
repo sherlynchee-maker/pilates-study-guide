@@ -696,6 +696,18 @@ main {
 
 .answer-input:focus { border-color: var(--accent); }
 
+.recall-input-wrap { margin-bottom: 16px; }
+
+.recall-input-label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--ink-faint);
+  margin-bottom: 6px;
+}
+
 .reveal-box {
   margin-top: 18px;
   padding: 16px 18px;
@@ -892,6 +904,117 @@ main {
   font-style: italic;
   color: var(--ink-faint);
 }
+
+.chart-reset-btn { margin-top: 14px; }
+
+/* ---- Chart Trainer ---- */
+.chart-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 28px;
+  max-width: 720px;
+}
+
+.chart-round { margin: 0 0 40px; padding-bottom: 32px; border-bottom: 1px solid var(--line-soft); }
+.chart-round:last-child { border-bottom: none; }
+
+.chart-round-title {
+  font-family: var(--font-display);
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.flip-controls { display: flex; gap: 8px; margin-bottom: 14px; }
+
+.flip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 10px;
+}
+
+.flip-card { height: 74px; perspective: 900px; cursor: pointer; }
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.45s;
+  transform-style: preserve-3d;
+}
+
+.flip-card.flipped .flip-card-inner { transform: rotateY(180deg); }
+
+.flip-card-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  font-size: 12.5px;
+  line-height: 1.3;
+}
+
+.flip-card-front {
+  background: var(--paper-raised);
+  color: var(--ink-faint);
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.flip-card-back {
+  background: var(--accent-soft);
+  color: var(--ink);
+  font-weight: 600;
+  transform: rotateY(180deg);
+}
+
+.typelist-rows { display: flex; flex-direction: column; gap: 8px; max-width: 480px; }
+
+.typelist-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.typelist-num {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--ink-faint);
+  width: 18px;
+  flex-shrink: 0;
+  text-align: right;
+}
+
+.typelist-input {
+  flex: 1;
+  min-width: 180px;
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.typelist-input:focus { border-color: var(--accent); }
+.typelist-input.correct { border-color: var(--success); background: var(--success-soft); color: var(--success); }
+.typelist-input.incorrect { border-color: var(--error); background: var(--error-soft); color: var(--error); }
+
+.typelist-hint {
+  font-size: 12px;
+  font-style: italic;
+  color: var(--ink-faint);
+  flex-basis: 100%;
+  padding-left: 28px;
+}
+
+.typelist-actions { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
+
+.typelist-score { font-family: var(--font-mono); font-size: 12.5px; color: var(--ink-faint); }
 
 .self-grade-row button[data-grade="right"]:hover,
 .self-grade-row button[data-grade="right"].chosen {
