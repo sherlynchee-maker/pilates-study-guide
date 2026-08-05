@@ -571,6 +571,8 @@ main {
 
 .chip-select { display: flex; gap: 8px; flex-wrap: wrap; }
 
+.apparatus-jump { margin-bottom: 20px; }
+
 .chip {
   border: 1px solid var(--line);
   background: var(--paper-raised);

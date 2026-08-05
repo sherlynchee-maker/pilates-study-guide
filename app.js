@@ -876,6 +876,13 @@ function renderApparatus(key, opts = {}) {
         el("span", { class: "eyebrow" }, "Apparatus"),
         el("h2", {}, meta.label),
       ]),
+    ]),
+    el("div", { class: "apparatus-jump" }, [
+      singleSelectChips(
+        Object.keys(APPARATUS_META).map((k) => ({ value: k, label: APPARATUS_META[k].label })),
+        key,
+        (val) => { if (val !== key) navigate(val); }
+      ),
     ])
   );
 
