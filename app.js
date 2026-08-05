@@ -876,13 +876,6 @@ function renderApparatus(key, opts = {}) {
         el("span", { class: "eyebrow" }, "Apparatus"),
         el("h2", {}, meta.label),
       ]),
-    ]),
-    el("div", { class: "apparatus-jump" }, [
-      singleSelectChips(
-        Object.keys(APPARATUS_META).map((k) => ({ value: k, label: APPARATUS_META[k].label })),
-        key,
-        (val) => { if (val !== key) navigate(val); }
-      ),
     ])
   );
 
@@ -912,6 +905,24 @@ function renderApparatus(key, opts = {}) {
   if (!groups.length) {
     mainView.append(el("div", { class: "empty-state" }, "Still digesting this apparatus — check back shortly."));
     return;
+  }
+
+  // Level quick-jump: filters the list down to one level instead of making
+  // Mat/Chair/the Barrels' long combined lists (or Reformer/Cadillac's
+  // multi-section ones) require scrolling past levels you're not reviewing.
+  const LEVEL_ORDER = ["Warm-Up", "Essential", "Intermediate", "Advanced"];
+  const presentLevels = LEVEL_ORDER.filter((lvl) => (data[lvl.toLowerCase().replace("-", "")] || []).length);
+  let levelFilter = "all";
+  if (presentLevels.length > 1) {
+    mainView.append(
+      el("div", { class: "apparatus-level-nav" }, [
+        singleSelectChips(
+          [{ value: "all", label: "All" }, ...presentLevels.map((l) => ({ value: l, label: l }))],
+          levelFilter,
+          (val) => { levelFilter = val; draw(currentFilter); }
+        ),
+      ])
+    );
   }
 
   const searchWrap = el("div", { class: "search-box" }, [
@@ -945,7 +956,10 @@ function renderApparatus(key, opts = {}) {
     listHost.innerHTML = "";
     const flatList = [];
     groups.forEach(([levelLabel, list]) => {
-      const filtered = list.filter((e) => !filter || e.name.toLowerCase().includes(filter.toLowerCase()));
+      const filtered = list.filter((e) =>
+        (!filter || e.name.toLowerCase().includes(filter.toLowerCase())) &&
+        (levelFilter === "all" || e.level === levelFilter)
+      );
       if (!filtered.length) return;
       const block = el("div", { class: "section-block" });
       if (levelLabel) block.append(el("h3", {}, `${levelLabel} · ${filtered.length}`));
