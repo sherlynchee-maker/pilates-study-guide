@@ -910,8 +910,13 @@ function renderApparatus(key, opts = {}) {
   // Level quick-jump: filters the list down to one level instead of making
   // Mat/Chair/the Barrels' long combined lists (or Reformer/Cadillac's
   // multi-section ones) require scrolling past levels you're not reviewing.
+  // Chair/Arc Barrel/Spine Corrector/Ladder Barrel file everything under a
+  // single "essential" array and carry the real level on each exercise's
+  // .level field instead, so detect levels from the exercises themselves
+  // rather than assuming one array per level.
   const LEVEL_ORDER = ["Warm-Up", "Essential", "Intermediate", "Advanced"];
-  const presentLevels = LEVEL_ORDER.filter((lvl) => (data[lvl.toLowerCase().replace("-", "")] || []).length);
+  const allLeveledItems = [].concat(data.warmup || [], data.essential || [], data.intermediate || [], data.advanced || []);
+  const presentLevels = LEVEL_ORDER.filter((lvl) => allLeveledItems.some((e) => e.level === lvl));
   let levelFilter = "all";
   if (presentLevels.length > 1) {
     mainView.append(
