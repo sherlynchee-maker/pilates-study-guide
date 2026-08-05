@@ -705,6 +705,24 @@ function columnLevelHint(col) {
   return null;
 }
 
+// A column's own key already pins the level for Ess/Int-suffixed columns
+// (cadillacEss, cadillacInt...) — trust that over the cell text, since most
+// of those cells are written as category abbreviations ("RDB 24", "PTB-above
+// 40", "Legs Supine 110") rather than "Ess./Int." prefixes. Relying on the
+// text prefix alone left every un-prefixed Cadillac cell with no focusLevel,
+// which made same-page Essential/Intermediate pairs (e.g. Roll-Down with
+// Back Extension, both filed under page 24) unable to disambiguate and fall
+// back to whichever entry happened to be first in the list — always
+// Essential, even when clicking the Intermediate cross-reference. Combined
+// columns (chair, archbarrel, spinecorrector, ladderbarrel) have no fixed
+// column-level, so they still fall back to the per-line Ess/Int/Adv prefix.
+function lineLevelHint(col, line) {
+  const fixed = columnLevelHint(col);
+  if (fixed) return fixed;
+  const m = line.match(/^\s*(Ess|Int|Adv)\b/i);
+  return m ? { ess: "Essential", int: "Intermediate", adv: "Advanced" }[m[1].toLowerCase()] : null;
+}
+
 function findCrossRefMatch(scope, ex) {
   const cols = (DATA.crossref.columns || []).filter((c) => c.apparatus === scope);
   if (!cols.length) return null;
@@ -772,10 +790,7 @@ function crossRefBlock(scope, ex, closeModal) {
       // and Mermaid — Short Box both live under Reformer Intermediate, so viewing
       // one must still surface the other as a cross-reference.
       if (col.key === matchedColKey && linePageNums.some((n) => exPageNums.includes(n))) return;
-      const levelMatch = line.match(/^\s*(Ess|Int|Adv)\b/i);
-      const focusLevel = levelMatch
-        ? { ess: "Essential", int: "Intermediate", adv: "Advanced" }[levelMatch[1].toLowerCase()]
-        : null;
+      const focusLevel = lineLevelHint(col, line);
       const btn = el("button", { class: "crossref-cell-btn", type: "button" }, `${col.label}: ${line}`);
       btn.addEventListener("click", () => {
         if (closeModal) closeModal();
@@ -1813,10 +1828,7 @@ function renderCrossRef() {
     if (lines.length === 1) {
       const btn = el("button", { class: "crossref-cell-btn", type: "button" }, val);
       const pageMatch = val.match(/\d+/);
-      const levelMatch = val.match(/^\s*(Ess|Int|Adv)\b/i);
-      const focusLevel = levelMatch
-        ? { ess: "Essential", int: "Intermediate", adv: "Advanced" }[levelMatch[1].toLowerCase()]
-        : null;
+      const focusLevel = lineLevelHint(col, val);
       btn.addEventListener("click", () => navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null, focusLevel }));
       return btn;
     }
@@ -1827,10 +1839,7 @@ function renderCrossRef() {
     const wrap = el("div", { class: "crossref-cell-multi" });
     lines.forEach((line) => {
       const pageMatch = line.match(/\d+/);
-      const levelMatch = line.match(/^\s*(Ess|Int|Adv)\b/i);
-      const focusLevel = levelMatch
-        ? { ess: "Essential", int: "Intermediate", adv: "Advanced" }[levelMatch[1].toLowerCase()]
-        : null;
+      const focusLevel = lineLevelHint(col, line);
       const btn = el("button", { class: "crossref-cell-btn", type: "button" }, line);
       btn.addEventListener("click", () => navigate(col.apparatus, { focusName: row.name, focusPage: pageMatch ? pageMatch[0] : null, focusLevel }));
       wrap.append(btn);
